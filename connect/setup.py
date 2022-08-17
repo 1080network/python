@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+"""Mica client SDK module"""
+
+import io
+
+from setuptools import setup
+
+# Get the long description from the README file
+with io.open('README.md', encoding='utf-8') as strm:
+    long_description = strm.read()
+
+with io.open('requirements.txt') as f:
+    install_require = [l.strip() for l in f if not l.startswith('#')]
+
+with io.open('requirements-dev.txt') as f:
+    test_require = [l.strip() for l in f if not l.startswith('#')]
+
+setup_params = dict(
+    name="micaconnect",
+    author="1080 Network",
+    version="0.0.0",
+    description="MICA network connect sdk for python",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    include_package_data=True,
+    install_requires=install_require,
+    tests_require=test_require,
+    python_requires='>=3.6.*',
+    packages=["micaconnect"]
+)
+
+
+def main():
+    """Package installation entry point."""
+    setup(**setup_params)
+
+
+if __name__ == '__main__':
+    main()
