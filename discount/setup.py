@@ -9,11 +9,22 @@ from setuptools import setup
 with io.open('README.md', encoding='utf-8') as strm:
     long_description = strm.read()
 
-with io.open('requirements.txt') as f:
+with io.open('../requirements.txt') as f:
     install_require = [l.strip() for l in f if not l.startswith('#')]
 
-with io.open('requirements-dev.txt') as f:
+with io.open('requirements.txt') as f:
+    for l in f:
+        if not l.startswith('#'):
+            install_require.insert(l.strip())
+
+with io.open('../requirements-dev.txt') as f:
     test_require = [l.strip() for l in f if not l.startswith('#')]
+
+with io.open('requirements-dev.txt') as f:
+    for l in f:
+        if not l.startswith('#'):
+            test_require.insert(l.strip())
+
 
 setup_params = dict(
     name="micadiscount",

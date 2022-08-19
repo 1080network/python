@@ -4,14 +4,13 @@ import grpc
 
 from micadiscount.discount.service.v1.discount_service_pb2_grpc import add_DiscountServiceServicer_to_server, DiscountService
 import micadiscount.common.ping.v1.ping_pb2 as ping
-from micadiscount import create_channel, build_discount_client
+from micadiscount import build_test_discount_client
 
 
 def test_discount_ping():
     server = get_discount_server()
     server.start()
-    channel = create_channel(addr='localhost:50051')
-    client = build_discount_client(channel=channel)
+    client = build_test_discount_client(addr='[::]:50051')
     response = client.Ping(ping.PingRequest())
     assert response.status == ping.PingResponse.STATUS_SUCCESS
     assert response.build_version == 'test version'
@@ -32,6 +31,8 @@ def get_discount_server():
 class MockMicaDiscount(DiscountService):
 
     def Ping(self, request, context):
+        for key, value in context.invocation_metadata():
+            print('Received initial metadata: key=%s value=%s' % (key, value))
         response = ping.PingResponse(status=ping.PingResponse.STATUS_SUCCESS, build_version='test version')
         response.server_time.GetCurrentTime()
         return response
