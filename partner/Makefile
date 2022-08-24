@@ -4,7 +4,7 @@ build: clean
 
 .PHONY: clean
 clean:
-	rm -rf build dist micadiscount.egg-info .pytest_cache
+	rm -rf build dist *.egg-info .pytest_cache
 
 .PHONY: test
 test:
