@@ -23,7 +23,7 @@ from micadiscount.common.v1 import address_pb2 as common_dot_v1_dot_address__pb2
 from micadiscount.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4discount/discountprovider/v1/discount_provider.proto\x12\x14\x64iscount.discount.v1\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\"\xd0\x02\n\x10\x44iscountProvider\x12\x1d\n\x15\x64iscount_provider_key\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x12.common.v1.Address\x12\x14\n\x0c\x63\x61llback_url\x18\x06 \x01(\t\x12\r\n\x05\x65mail\x18\x07 \x01(\t\x12\r\n\x05phone\x18\x08 \x01(\t\x12#\n\x1b\x64omestic_ach_routing_number\x18\x0b \x01(\t\x12(\n international_ach_routing_number\x18\x0c \x01(\t\x12\x1b\n\x13wire_routing_number\x18\r \x01(\t\x12\x1c\n\x14swift_routing_number\x18\x0e \x01(\t\x12\x1b\n\x13\x62\x61nk_account_number\x18\x0f \x01(\t\"\x1c\n\x1aGetDiscountProviderRequest\"\xa9\x02\n\x1bGetDiscountProviderResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.discount.discount.v1.GetDiscountProviderResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x41\n\x11\x64iscount_provider\x18\x03 \x01(\x0b\x32&.discount.discount.v1.DiscountProvider\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xcc\x02\n\x1dUpdateDiscountProviderRequest\x12\x1d\n\x15\x64iscount_provider_key\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x12.common.v1.Address\x12\x14\n\x0c\x63\x61llback_url\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12\r\n\x05phone\x18\x06 \x01(\t\x12#\n\x1b\x64omestic_ach_routing_number\x18\x07 \x01(\t\x12(\n international_ach_routing_number\x18\x08 \x01(\t\x12\x1b\n\x13wire_routing_number\x18\t \x01(\t\x12\x1c\n\x14swift_routing_number\x18\n \x01(\t\x12\x1b\n\x13\x62\x61nk_account_number\x18\x0b \x01(\t\"\xfd\x01\n\x1eUpdateDiscountProviderResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.discount.discount.v1.UpdateDiscountProviderResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42l\n$io.mica.discount.discountprovider.v1B\x15\x44iscountProviderProtoZ&mica/proto/discount/discountproviderv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4discount/discountprovider/v1/discount_provider.proto\x12\x1c\x64iscount.discountprovider.v1\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\"\xd4\x02\n\x10\x44iscountProvider\x12\x1d\n\x15\x64iscount_provider_key\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x12.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x06 \x01(\t\x12\r\n\x05\x65mail\x18\x07 \x01(\t\x12\r\n\x05phone\x18\x08 \x01(\t\x12#\n\x1b\x64omestic_ach_routing_number\x18\x0b \x01(\t\x12(\n international_ach_routing_number\x18\x0c \x01(\t\x12\x1b\n\x13wire_routing_number\x18\r \x01(\t\x12\x1c\n\x14swift_routing_number\x18\x0e \x01(\t\x12\x1b\n\x13\x62\x61nk_account_number\x18\x0f \x01(\t\"\x1c\n\x1aGetDiscountProviderRequest\"\xb9\x02\n\x1bGetDiscountProviderResponse\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.discount.discountprovider.v1.GetDiscountProviderResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12I\n\x11\x64iscount_provider\x18\x03 \x01(\x0b\x32..discount.discountprovider.v1.DiscountProvider\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xd0\x02\n\x1dUpdateDiscountProviderRequest\x12\x1d\n\x15\x64iscount_provider_key\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x12.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12\r\n\x05phone\x18\x06 \x01(\t\x12#\n\x1b\x64omestic_ach_routing_number\x18\x07 \x01(\t\x12(\n international_ach_routing_number\x18\x08 \x01(\t\x12\x1b\n\x13wire_routing_number\x18\t \x01(\t\x12\x1c\n\x14swift_routing_number\x18\n \x01(\t\x12\x1b\n\x13\x62\x61nk_account_number\x18\x0b \x01(\t\"\x85\x02\n\x1eUpdateDiscountProviderResponse\x12S\n\x06status\x18\x01 \x01(\x0e\x32\x43.discount.discountprovider.v1.UpdateDiscountProviderResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42l\n$io.mica.discount.discountprovider.v1B\x15\x44iscountProviderProtoZ&mica/proto/discount/discountproviderv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -37,35 +37,35 @@ _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS = _UPDATEDISCOUNTPROVIDERRESPONSE.enum_ty
 DiscountProvider = _reflection.GeneratedProtocolMessageType('DiscountProvider', (_message.Message,), {
   'DESCRIPTOR' : _DISCOUNTPROVIDER,
   '__module__' : 'discount.discountprovider.v1.discount_provider_pb2'
-  # @@protoc_insertion_point(class_scope:discount.discount.v1.DiscountProvider)
+  # @@protoc_insertion_point(class_scope:discount.discountprovider.v1.DiscountProvider)
   })
 _sym_db.RegisterMessage(DiscountProvider)
 
 GetDiscountProviderRequest = _reflection.GeneratedProtocolMessageType('GetDiscountProviderRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETDISCOUNTPROVIDERREQUEST,
   '__module__' : 'discount.discountprovider.v1.discount_provider_pb2'
-  # @@protoc_insertion_point(class_scope:discount.discount.v1.GetDiscountProviderRequest)
+  # @@protoc_insertion_point(class_scope:discount.discountprovider.v1.GetDiscountProviderRequest)
   })
 _sym_db.RegisterMessage(GetDiscountProviderRequest)
 
 GetDiscountProviderResponse = _reflection.GeneratedProtocolMessageType('GetDiscountProviderResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETDISCOUNTPROVIDERRESPONSE,
   '__module__' : 'discount.discountprovider.v1.discount_provider_pb2'
-  # @@protoc_insertion_point(class_scope:discount.discount.v1.GetDiscountProviderResponse)
+  # @@protoc_insertion_point(class_scope:discount.discountprovider.v1.GetDiscountProviderResponse)
   })
 _sym_db.RegisterMessage(GetDiscountProviderResponse)
 
 UpdateDiscountProviderRequest = _reflection.GeneratedProtocolMessageType('UpdateDiscountProviderRequest', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEDISCOUNTPROVIDERREQUEST,
   '__module__' : 'discount.discountprovider.v1.discount_provider_pb2'
-  # @@protoc_insertion_point(class_scope:discount.discount.v1.UpdateDiscountProviderRequest)
+  # @@protoc_insertion_point(class_scope:discount.discountprovider.v1.UpdateDiscountProviderRequest)
   })
 _sym_db.RegisterMessage(UpdateDiscountProviderRequest)
 
 UpdateDiscountProviderResponse = _reflection.GeneratedProtocolMessageType('UpdateDiscountProviderResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEDISCOUNTPROVIDERRESPONSE,
   '__module__' : 'discount.discountprovider.v1.discount_provider_pb2'
-  # @@protoc_insertion_point(class_scope:discount.discount.v1.UpdateDiscountProviderResponse)
+  # @@protoc_insertion_point(class_scope:discount.discountprovider.v1.UpdateDiscountProviderResponse)
   })
 _sym_db.RegisterMessage(UpdateDiscountProviderResponse)
 
@@ -73,18 +73,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n$io.mica.discount.discountprovider.v1B\025DiscountProviderProtoZ&mica/proto/discount/discountproviderv1\242\002\004MICA'
-  _DISCOUNTPROVIDER._serialized_start=127
-  _DISCOUNTPROVIDER._serialized_end=463
-  _GETDISCOUNTPROVIDERREQUEST._serialized_start=465
-  _GETDISCOUNTPROVIDERREQUEST._serialized_end=493
-  _GETDISCOUNTPROVIDERRESPONSE._serialized_start=496
-  _GETDISCOUNTPROVIDERRESPONSE._serialized_end=793
-  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=701
-  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=793
-  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_start=796
-  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_end=1128
-  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_start=1131
-  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_end=1384
-  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=701
-  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=793
+  _DISCOUNTPROVIDER._serialized_start=135
+  _DISCOUNTPROVIDER._serialized_end=475
+  _GETDISCOUNTPROVIDERREQUEST._serialized_start=477
+  _GETDISCOUNTPROVIDERREQUEST._serialized_end=505
+  _GETDISCOUNTPROVIDERRESPONSE._serialized_start=508
+  _GETDISCOUNTPROVIDERRESPONSE._serialized_end=821
+  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=729
+  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=821
+  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_start=824
+  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_end=1160
+  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_start=1163
+  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_end=1424
+  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=729
+  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=821
 # @@protoc_insertion_point(module_scope)

@@ -8,11 +8,12 @@ from typing import List
 
 
 class _ClientCallDetails(
-        collections.namedtuple(
-            '_ClientCallDetails',
-            ('method', 'timeout', 'metadata', 'credentials')),
-        grpc.ClientCallDetails):
+    collections.namedtuple(
+        '_ClientCallDetails',
+        ('method', 'timeout', 'metadata', 'credentials')),
+    grpc.ClientCallDetails):
     pass
+
 
 class MicaAuthNJWTInterceptor(grpc.UnaryUnaryClientInterceptor):
 
@@ -36,7 +37,7 @@ class MicaAuthNJWTInterceptor(grpc.UnaryUnaryClientInterceptor):
             metadata.append(self.authHeader)
 
         client_call_details = _ClientCallDetails(client_call_details.method, client_call_details.timeout, metadata,
-                                                     client_call_details.credentials)
+                                                 client_call_details.credentials)
         return continuation(client_call_details, request)
 
     def __generate_token(self):
@@ -44,4 +45,3 @@ class MicaAuthNJWTInterceptor(grpc.UnaryUnaryClientInterceptor):
         claims = {"iss": "mica.io", "iat": datetime.now(tz=timezone.utc), "exp": self.expiry, "roles": self.roles}
         encoded = jwt.encode(claims, self.jwt_key, algorithm="HS256")
         self.authHeader = ('authorization', f'Bearer {encoded}')
-

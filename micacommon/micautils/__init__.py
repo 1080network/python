@@ -1,7 +1,14 @@
+import base64
+from datetime import datetime, timedelta, timezone
+
 import grpc
 from typing import List
 
+import jwt
+
 from micautils.jwtauth import MicaAuthNJWTInterceptor
+
+base64_default_jwt_key = 'idv7Nf/7476PxbMX6iVIXHCc/kMSqSjPQNgBNDU2kz4='
 
 
 class CertLoader:
@@ -20,10 +27,11 @@ class CertLoader:
 
 
 def create_channel(addr: str, credentials: grpc.ChannelCredentials = None, certificates: CertLoader = None,
-                   jwt_key: str = 'idv7Nf/7476PxbMX6iVIXHCc/kMSqSjPQNgBNDU2kz4=', jwt_roles: List[str] = None,
+                   base64_jwt_key: str = base64_default_jwt_key, jwt_roles: List[str] = None,
                    options=None, compression=None):
     if certificates is None and credentials is None:
         insecure = grpc.insecure_channel(addr, options, compression)
+        jwt_key = base64.b64decode(base64_jwt_key)
         jwt_interceptor = MicaAuthNJWTInterceptor(roles=jwt_roles, jwt_key=jwt_key)
         return grpc.intercept_channel(insecure, jwt_interceptor)
     else:
@@ -36,3 +44,11 @@ def create_channel(addr: str, credentials: grpc.ChannelCredentials = None, certi
                                    options=options,
                                    compression=compression
                                    )
+
+
+def create_test_jwt_token(jwt_roles: List[str], base64_jwt_key: str = base64_default_jwt_key):
+    expiry = datetime.now(tz=timezone.utc) + timedelta(hours=1)
+    claims = {"iss": "mica.io", "iat": datetime.now(tz=timezone.utc), "exp": expiry, "roles": jwt_roles}
+    jwt_key = base64.b64decode(base64_jwt_key)
+    encoded = jwt.encode(claims, jwt_key, algorithm="HS256")
+    return encoded

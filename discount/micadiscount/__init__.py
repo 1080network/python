@@ -1,7 +1,7 @@
 import grpc
 from micautils import create_channel
 
-import micadiscount.discount.service.v1.discount_service_pb2_grpc as discount
+import micadiscount.discount.service.v1.discount_service_to_mica_pb2_grpc as discount
 
 discount_roles = ['RoleDiscountAdmin']
 
@@ -12,5 +12,5 @@ def build_test_discount_client(addr: str = 'localhost:14100'):
 
 
 def build_discount_client(channel: grpc.Channel):
-    stub = discount.DiscountServiceStub(channel)
+    stub = discount.DiscountToMicaServiceStub(channel)
     return stub

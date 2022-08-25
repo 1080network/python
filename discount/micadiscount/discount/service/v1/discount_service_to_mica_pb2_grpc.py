@@ -14,7 +14,7 @@ from micadiscount.discount.discount.v1 import discount_pb2 as discount_dot_disco
 from micadiscount.discount.discountprovider.v1 import discount_provider_pb2 as discount_dot_discountprovider_dot_v1_dot_discount__provider__pb2
 
 
-class DiscountServiceStub(object):
+class DiscountToMicaServiceStub(object):
     """API Operations made by the Mica Admin Console to manage the platform.
     <editor-fold desc="Discount Provider Operations">
     """
@@ -26,33 +26,38 @@ class DiscountServiceStub(object):
             channel: A grpc.Channel.
         """
         self.GetDiscountProvider = channel.unary_unary(
-                '/discount.service.v1.DiscountService/GetDiscountProvider',
+                '/discount.service.v1.DiscountToMicaService/GetDiscountProvider',
                 request_serializer=discount_dot_discountprovider_dot_v1_dot_discount__provider__pb2.GetDiscountProviderRequest.SerializeToString,
                 response_deserializer=discount_dot_discountprovider_dot_v1_dot_discount__provider__pb2.GetDiscountProviderResponse.FromString,
                 )
         self.UpdateDiscountProvider = channel.unary_unary(
-                '/discount.service.v1.DiscountService/UpdateDiscountProvider',
+                '/discount.service.v1.DiscountToMicaService/UpdateDiscountProvider',
                 request_serializer=discount_dot_discountprovider_dot_v1_dot_discount__provider__pb2.UpdateDiscountProviderRequest.SerializeToString,
                 response_deserializer=discount_dot_discountprovider_dot_v1_dot_discount__provider__pb2.UpdateDiscountProviderResponse.FromString,
                 )
         self.CreateDiscount = channel.unary_unary(
-                '/discount.service.v1.DiscountService/CreateDiscount',
+                '/discount.service.v1.DiscountToMicaService/CreateDiscount',
                 request_serializer=discount_dot_discount_dot_v1_dot_discount__pb2.CreateDiscountRequest.SerializeToString,
                 response_deserializer=discount_dot_discount_dot_v1_dot_discount__pb2.CreateDiscountResponse.FromString,
                 )
         self.GetDiscount = channel.unary_unary(
-                '/discount.service.v1.DiscountService/GetDiscount',
+                '/discount.service.v1.DiscountToMicaService/GetDiscount',
                 request_serializer=discount_dot_discount_dot_v1_dot_discount__pb2.GetDiscountRequest.SerializeToString,
                 response_deserializer=discount_dot_discount_dot_v1_dot_discount__pb2.GetDiscountResponse.FromString,
                 )
         self.Ping = channel.unary_unary(
-                '/discount.service.v1.DiscountService/Ping',
+                '/discount.service.v1.DiscountToMicaService/Ping',
+                request_serializer=common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
+                response_deserializer=common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+                )
+        self.PingWithRoundTrip = channel.unary_unary(
+                '/discount.service.v1.DiscountToMicaService/PingWithRoundTrip',
                 request_serializer=common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
                 response_deserializer=common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
                 )
 
 
-class DiscountServiceServicer(object):
+class DiscountToMicaServiceServicer(object):
     """API Operations made by the Mica Admin Console to manage the platform.
     <editor-fold desc="Discount Provider Operations">
     """
@@ -92,8 +97,16 @@ class DiscountServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PingWithRoundTrip(self, request, context):
+        """An operation that triggers a ping to the Mica servervice and that in turn triggers a ping to the discount provider service.
+        This is a useful call to ensure that the connectivity and security between the mica an external services is working.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-def add_DiscountServiceServicer_to_server(servicer, server):
+
+def add_DiscountToMicaServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetDiscountProvider': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDiscountProvider,
@@ -120,14 +133,19 @@ def add_DiscountServiceServicer_to_server(servicer, server):
                     request_deserializer=common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
                     response_serializer=common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
             ),
+            'PingWithRoundTrip': grpc.unary_unary_rpc_method_handler(
+                    servicer.PingWithRoundTrip,
+                    request_deserializer=common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
+                    response_serializer=common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'discount.service.v1.DiscountService', rpc_method_handlers)
+            'discount.service.v1.DiscountToMicaService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class DiscountService(object):
+class DiscountToMicaService(object):
     """API Operations made by the Mica Admin Console to manage the platform.
     <editor-fold desc="Discount Provider Operations">
     """
@@ -143,7 +161,7 @@ class DiscountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountService/GetDiscountProvider',
+        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountToMicaService/GetDiscountProvider',
             discount_dot_discountprovider_dot_v1_dot_discount__provider__pb2.GetDiscountProviderRequest.SerializeToString,
             discount_dot_discountprovider_dot_v1_dot_discount__provider__pb2.GetDiscountProviderResponse.FromString,
             options, channel_credentials,
@@ -160,7 +178,7 @@ class DiscountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountService/UpdateDiscountProvider',
+        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountToMicaService/UpdateDiscountProvider',
             discount_dot_discountprovider_dot_v1_dot_discount__provider__pb2.UpdateDiscountProviderRequest.SerializeToString,
             discount_dot_discountprovider_dot_v1_dot_discount__provider__pb2.UpdateDiscountProviderResponse.FromString,
             options, channel_credentials,
@@ -177,7 +195,7 @@ class DiscountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountService/CreateDiscount',
+        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountToMicaService/CreateDiscount',
             discount_dot_discount_dot_v1_dot_discount__pb2.CreateDiscountRequest.SerializeToString,
             discount_dot_discount_dot_v1_dot_discount__pb2.CreateDiscountResponse.FromString,
             options, channel_credentials,
@@ -194,7 +212,7 @@ class DiscountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountService/GetDiscount',
+        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountToMicaService/GetDiscount',
             discount_dot_discount_dot_v1_dot_discount__pb2.GetDiscountRequest.SerializeToString,
             discount_dot_discount_dot_v1_dot_discount__pb2.GetDiscountResponse.FromString,
             options, channel_credentials,
@@ -211,7 +229,24 @@ class DiscountService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountService/Ping',
+        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountToMicaService/Ping',
+            common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
+            common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PingWithRoundTrip(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountToMicaService/PingWithRoundTrip',
             common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
             common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
             options, channel_credentials,
