@@ -24,9 +24,11 @@ from micadiscount.common.enums.currency.v1 import currency_pb2 as common_dot_enu
 from micadiscount.common.enums.unit.v1 import unit_pb2 as common_dot_enums_dot_unit_dot_v1_dot_unit__pb2
 from micadiscount.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from micadiscount.common.v1 import address_pb2 as common_dot_v1_dot_address__pb2
+from micadiscount.common.v1 import line_item_pb2 as common_dot_v1_dot_line__item__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#discount/discount/v1/discount.proto\x12\x14\x64iscount.discount.v1\x1a\'common/enums/currency/v1/currency.proto\x1a\x1f\x63ommon/enums/unit/v1/unit.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfb\x03\n\x08\x44iscount\x12\x14\n\x0c\x64iscount_key\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x14\n\x0c\x65xternal_ref\x18\x03 \x01(\t\x12\x1b\n\x13receipt_description\x18\x04 \x01(\t\x12\x34\n\x06status\x18\x05 \x01(\x0e\x32$.discount.discount.v1.DiscountStatus\x12\x30\n\x04type\x18\x06 \x01(\x0e\x32\".discount.discount.v1.DiscountType\x12-\n\tdate_from\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x08\x63urrency\x18\t \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x17\n\x0f\x64iscount_amount\x18\n \x01(\t\x12\x1b\n\x13\x64iscount_tax_amount\x18\x0b \x01(\t\x12\x10\n\x08user_key\x18\x0c \x01(\t\x12\x10\n\x08user_ref\x18\r \x01(\t\x12\x41\n\x11\x64iscount_criteria\x18\x0e \x03(\x0b\x32&.discount.discount.v1.DiscountCriteria\"F\n\x08Quantity\x12\x10\n\x08quantity\x18\x01 \x01(\t\x12(\n\x04unit\x18\x02 \x01(\x0e\x32\x1a.common.enums.unit.v1.Unit\"s\n\x10\x44iscountCriteria\x12\x30\n\x08quantity\x18\x01 \x01(\x0b\x32\x1e.discount.discount.v1.Quantity\x12\x16\n\x0eproduct_groups\x18\x02 \x03(\t\x12\x15\n\rproduct_codes\x18\x03 \x03(\t\"\xe1\x03\n\x15\x43reateDiscountRequest\x12\x14\n\x0c\x65xternal_ref\x18\x01 \x01(\t\x12\x1b\n\x13receipt_description\x18\x02 \x01(\t\x12\x34\n\x06status\x18\x03 \x01(\x0e\x32$.discount.discount.v1.DiscountStatus\x12\x30\n\x04type\x18\x04 \x01(\x0e\x32\".discount.discount.v1.DiscountType\x12-\n\tdate_from\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x08\x63urrency\x18\x07 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x17\n\x0f\x64iscount_amount\x18\x08 \x01(\t\x12\x1b\n\x13\x64iscount_tax_amount\x18\t \x01(\t\x12\x10\n\x08user_key\x18\n \x01(\t\x12\x10\n\x08user_ref\x18\x0b \x01(\t\x12\x41\n\x11\x64iscount_criteria\x18\x0c \x03(\x0b\x32&.discount.discount.v1.DiscountCriteria\"\xed\x01\n\x16\x43reateDiscountResponse\x12\x43\n\x06status\x18\x01 \x01(\x0e\x32\x33.discount.discount.v1.CreateDiscountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x14\n\x0c\x64iscount_key\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\x03\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"*\n\x12GetDiscountRequest\x12\x14\n\x0c\x64iscount_key\x18\x01 \x01(\t\"\x88\x02\n\x13GetDiscountResponse\x12@\n\x06status\x18\x01 \x01(\x0e\x32\x30.discount.discount.v1.GetDiscountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x30\n\x08\x64iscount\x18\x03 \x01(\x0b\x32\x1e.discount.discount.v1.Discount\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03*\xbf\x01\n\x0e\x44iscountStatus\x12\x1f\n\x1b\x44ISCOUNT_STATUS_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x44ISCOUNT_STATUS_AVAILABLE\x10\x01\x12\x18\n\x14\x44ISCOUNT_STATUS_HOLD\x10\x02\x12\x1d\n\x19\x44ISCOUNT_STATUS_SUSPENDED\x10\x03\x12\x18\n\x14\x44ISCOUNT_STATUS_USED\x10\x04\x12\x1a\n\x16\x44ISCOUNT_STATUS_CLOSED\x10\x05*\xa1\x01\n\x0c\x44iscountType\x12\x1d\n\x19\x44ISCOUNT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x44ISCOUNT_TYPE_CPG\x10\x01\x12\x1c\n\x18\x44ISCOUNT_TYPE_GOVERNMENT\x10\x02\x12\x19\n\x15\x44ISCOUNT_TYPE_PARTNER\x10\x03\x12\"\n\x1e\x44ISCOUNT_TYPE_SERVICE_PROVIDER\x10\x04\x42T\n\x1cio.mica.discount.discount.v1B\rDiscountProtoZ\x1emica/proto/discount/discountv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#discount/discount/v1/discount.proto\x12\x14\x64iscount.discount.v1\x1a\'common/enums/currency/v1/currency.proto\x1a\x1f\x63ommon/enums/unit/v1/unit.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17\x63ommon/v1/address.proto\x1a\x19\x63ommon/v1/line_item.proto\"\xff\x04\n\x08\x44iscount\x12\x1f\n\x17\x64iscount_definition_key\x18\x01 \x01(\t\x12\x14\n\x0c\x64iscount_key\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\x03\x12\x14\n\x0c\x64iscount_ref\x18\x04 \x01(\t\x12\x1b\n\x13receipt_description\x18\x05 \x01(\t\x12\x34\n\x06status\x18\x06 \x01(\x0e\x32$.discount.discount.v1.DiscountStatus\x12\x30\n\x04type\x18\x07 \x01(\x0e\x32\".discount.discount.v1.DiscountType\x12-\n\tdate_from\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x41\n\x11\x64iscount_criteria\x18\n \x03(\x0b\x32&.discount.discount.v1.DiscountCriteria\x12\x34\n\x08\x63urrency\x18\x0b \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x10\n\x08user_key\x18\x0c \x01(\t\x12\x10\n\x08user_ref\x18\r \x01(\t\x12?\n\x0fmonetary_amount\x18\x0e \x01(\x0b\x32$.discount.discount.v1.MonetaryAmountH\x00\x12\x43\n\x11percentage_amount\x18\x0f \x01(\x0b\x32&.discount.discount.v1.PercentageAmountH\x00\x42\x11\n\x0f\x64iscount_amount\"F\n\x08Quantity\x12\x10\n\x08quantity\x18\x01 \x01(\t\x12(\n\x04unit\x18\x02 \x01(\x0e\x32\x1a.common.enums.unit.v1.Unit\"\xd6\x01\n\x10\x44iscountCriteria\x12\x30\n\x08quantity\x18\x01 \x01(\x0b\x32\x1e.discount.discount.v1.Quantity\x12=\n\x0fmonetary_amount\x18\x02 \x01(\x0b\x32$.discount.discount.v1.MonetaryAmount\x12\"\n\x1a\x64iscount_amount_applicable\x18\x03 \x01(\x08\x12\x16\n\x0eproduct_groups\x18\x04 \x03(\t\x12\x15\n\rproduct_codes\x18\x05 \x03(\t\"4\n\x0eMonetaryAmount\x12\x0e\n\x06\x61mount\x18\x01 \x01(\t\x12\x12\n\ntax_amount\x18\x02 \x01(\t\"\xc0\x01\n\x10PercentageAmount\x12\x19\n\x11percentage_amount\x18\x01 \x01(\t\x12\x1d\n\x15percentage_tax_amount\x18\x02 \x01(\t\x12\x38\n\nmax_amount\x18\x03 \x01(\x0b\x32$.discount.discount.v1.MonetaryAmount\x12\x38\n\x08\x63riteria\x18\x04 \x01(\x0b\x32&.discount.discount.v1.DiscountCriteria\"\xe6\x04\n\x15\x43reateDiscountRequest\x12 \n\x18\x64iscount_description_key\x18\x01 \x01(\t\x12\x14\n\x0c\x64iscount_ref\x18\x02 \x01(\t\x12\x1b\n\x13receipt_description\x18\x03 \x01(\t\x12\x34\n\x06status\x18\x04 \x01(\x0e\x32$.discount.discount.v1.DiscountStatus\x12\x30\n\x04type\x18\x05 \x01(\x0e\x32\".discount.discount.v1.DiscountType\x12-\n\tdate_from\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x41\n\x11\x64iscount_criteria\x18\x08 \x03(\x0b\x32&.discount.discount.v1.DiscountCriteria\x12\x10\n\x08user_key\x18\t \x01(\t\x12\x10\n\x08user_ref\x18\n \x01(\t\x12\x34\n\x08\x63urrency\x18\x0b \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12?\n\x0fmonetary_amount\x18\x0c \x01(\x0b\x32$.discount.discount.v1.MonetaryAmountH\x00\x12\x43\n\x11percentage_amount\x18\r \x01(\x0b\x32&.discount.discount.v1.PercentageAmountH\x00\x42\x11\n\x0f\x64iscount_amount\"\xed\x01\n\x16\x43reateDiscountResponse\x12\x43\n\x06status\x18\x01 \x01(\x0e\x32\x33.discount.discount.v1.CreateDiscountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x14\n\x0c\x64iscount_key\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\x03\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"*\n\x12GetDiscountRequest\x12\x14\n\x0c\x64iscount_key\x18\x01 \x01(\t\"\x88\x02\n\x13GetDiscountResponse\x12@\n\x06status\x18\x01 \x01(\x0e\x32\x30.discount.discount.v1.GetDiscountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x30\n\x08\x64iscount\x18\x03 \x01(\x0b\x32\x1e.discount.discount.v1.Discount\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xda\x04\n ApplyDiscountNotificationRequest\x12\x14\n\x0c\x64iscount_key\x18\x01 \x01(\t\x12\x14\n\x0c\x64iscount_ref\x18\x02 \x01(\t\x12\x34\n\x06status\x18\x03 \x01(\x0e\x32$.discount.discount.v1.DiscountStatus\x12\x34\n\x08\x63urrency\x18\x04 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12=\n\x0fmonetary_amount\x18\x05 \x01(\x0b\x32$.discount.discount.v1.MonetaryAmount\x12\x17\n\x0ftransaction_key\x18\n \x01(\t\x12\x37\n\x13transaction_created\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0bpartner_key\x18\r \x01(\t\x12\x14\n\x0cpartner_name\x18\x0e \x01(\t\x12\x18\n\x10organization_key\x18\x0f \x01(\t\x12\x19\n\x11organization_name\x18\x10 \x01(\t\x12\x30\n\x14organization_address\x18\x11 \x01(\x0b\x32\x12.common.v1.Address\x12\x11\n\tstore_key\x18\x13 \x01(\t\x12\x14\n\x0cstore_number\x18\x14 \x01(\t\x12)\n\rstore_address\x18\x15 \x01(\x0b\x32\x12.common.v1.Address\x12\'\n\nline_items\x18\x16 \x03(\x0b\x32\x13.common.v1.LineItem\"\xf2\x01\n!ApplyDiscountNotificationResponse\x12N\n\x06status\x18\x01 \x01(\x0e\x32>.discount.discount.v1.ApplyDiscountNotificationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x14\n\x0c\x65xternal_ref\x18\x03 \x01(\t\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02*\xbf\x01\n\x0e\x44iscountStatus\x12\x1f\n\x1b\x44ISCOUNT_STATUS_UNSPECIFIED\x10\x00\x12\x1d\n\x19\x44ISCOUNT_STATUS_AVAILABLE\x10\x01\x12\x18\n\x14\x44ISCOUNT_STATUS_HOLD\x10\x02\x12\x1d\n\x19\x44ISCOUNT_STATUS_SUSPENDED\x10\x03\x12\x18\n\x14\x44ISCOUNT_STATUS_USED\x10\x04\x12\x1a\n\x16\x44ISCOUNT_STATUS_CLOSED\x10\x05*\xa1\x01\n\x0c\x44iscountType\x12\x1d\n\x19\x44ISCOUNT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x44ISCOUNT_TYPE_CPG\x10\x01\x12\x1c\n\x18\x44ISCOUNT_TYPE_GOVERNMENT\x10\x02\x12\x19\n\x15\x44ISCOUNT_TYPE_PARTNER\x10\x03\x12\"\n\x1e\x44ISCOUNT_TYPE_SERVICE_PROVIDER\x10\x04\x42T\n\x1cio.mica.discount.discount.v1B\rDiscountProtoZ\x1emica/proto/discount/discountv1\xa2\x02\x04MICAb\x06proto3')
 
 _DISCOUNTSTATUS = DESCRIPTOR.enum_types_by_name['DiscountStatus']
 DiscountStatus = enum_type_wrapper.EnumTypeWrapper(_DISCOUNTSTATUS)
@@ -48,12 +50,17 @@ DISCOUNT_TYPE_SERVICE_PROVIDER = 4
 _DISCOUNT = DESCRIPTOR.message_types_by_name['Discount']
 _QUANTITY = DESCRIPTOR.message_types_by_name['Quantity']
 _DISCOUNTCRITERIA = DESCRIPTOR.message_types_by_name['DiscountCriteria']
+_MONETARYAMOUNT = DESCRIPTOR.message_types_by_name['MonetaryAmount']
+_PERCENTAGEAMOUNT = DESCRIPTOR.message_types_by_name['PercentageAmount']
 _CREATEDISCOUNTREQUEST = DESCRIPTOR.message_types_by_name['CreateDiscountRequest']
 _CREATEDISCOUNTRESPONSE = DESCRIPTOR.message_types_by_name['CreateDiscountResponse']
 _GETDISCOUNTREQUEST = DESCRIPTOR.message_types_by_name['GetDiscountRequest']
 _GETDISCOUNTRESPONSE = DESCRIPTOR.message_types_by_name['GetDiscountResponse']
+_APPLYDISCOUNTNOTIFICATIONREQUEST = DESCRIPTOR.message_types_by_name['ApplyDiscountNotificationRequest']
+_APPLYDISCOUNTNOTIFICATIONRESPONSE = DESCRIPTOR.message_types_by_name['ApplyDiscountNotificationResponse']
 _CREATEDISCOUNTRESPONSE_STATUS = _CREATEDISCOUNTRESPONSE.enum_types_by_name['Status']
 _GETDISCOUNTRESPONSE_STATUS = _GETDISCOUNTRESPONSE.enum_types_by_name['Status']
+_APPLYDISCOUNTNOTIFICATIONRESPONSE_STATUS = _APPLYDISCOUNTNOTIFICATIONRESPONSE.enum_types_by_name['Status']
 Discount = _reflection.GeneratedProtocolMessageType('Discount', (_message.Message,), {
   'DESCRIPTOR' : _DISCOUNT,
   '__module__' : 'discount.discount.v1.discount_pb2'
@@ -74,6 +81,20 @@ DiscountCriteria = _reflection.GeneratedProtocolMessageType('DiscountCriteria', 
   # @@protoc_insertion_point(class_scope:discount.discount.v1.DiscountCriteria)
   })
 _sym_db.RegisterMessage(DiscountCriteria)
+
+MonetaryAmount = _reflection.GeneratedProtocolMessageType('MonetaryAmount', (_message.Message,), {
+  'DESCRIPTOR' : _MONETARYAMOUNT,
+  '__module__' : 'discount.discount.v1.discount_pb2'
+  # @@protoc_insertion_point(class_scope:discount.discount.v1.MonetaryAmount)
+  })
+_sym_db.RegisterMessage(MonetaryAmount)
+
+PercentageAmount = _reflection.GeneratedProtocolMessageType('PercentageAmount', (_message.Message,), {
+  'DESCRIPTOR' : _PERCENTAGEAMOUNT,
+  '__module__' : 'discount.discount.v1.discount_pb2'
+  # @@protoc_insertion_point(class_scope:discount.discount.v1.PercentageAmount)
+  })
+_sym_db.RegisterMessage(PercentageAmount)
 
 CreateDiscountRequest = _reflection.GeneratedProtocolMessageType('CreateDiscountRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATEDISCOUNTREQUEST,
@@ -103,30 +124,54 @@ GetDiscountResponse = _reflection.GeneratedProtocolMessageType('GetDiscountRespo
   })
 _sym_db.RegisterMessage(GetDiscountResponse)
 
+ApplyDiscountNotificationRequest = _reflection.GeneratedProtocolMessageType('ApplyDiscountNotificationRequest', (_message.Message,), {
+  'DESCRIPTOR' : _APPLYDISCOUNTNOTIFICATIONREQUEST,
+  '__module__' : 'discount.discount.v1.discount_pb2'
+  # @@protoc_insertion_point(class_scope:discount.discount.v1.ApplyDiscountNotificationRequest)
+  })
+_sym_db.RegisterMessage(ApplyDiscountNotificationRequest)
+
+ApplyDiscountNotificationResponse = _reflection.GeneratedProtocolMessageType('ApplyDiscountNotificationResponse', (_message.Message,), {
+  'DESCRIPTOR' : _APPLYDISCOUNTNOTIFICATIONRESPONSE,
+  '__module__' : 'discount.discount.v1.discount_pb2'
+  # @@protoc_insertion_point(class_scope:discount.discount.v1.ApplyDiscountNotificationResponse)
+  })
+_sym_db.RegisterMessage(ApplyDiscountNotificationResponse)
+
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\034io.mica.discount.discount.v1B\rDiscountProtoZ\036mica/proto/discount/discountv1\242\002\004MICA'
-  _DISCOUNTSTATUS._serialized_start=1926
-  _DISCOUNTSTATUS._serialized_end=2117
-  _DISCOUNTTYPE._serialized_start=2120
-  _DISCOUNTTYPE._serialized_end=2281
-  _DISCOUNT._serialized_start=192
-  _DISCOUNT._serialized_end=699
-  _QUANTITY._serialized_start=701
-  _QUANTITY._serialized_end=771
-  _DISCOUNTCRITERIA._serialized_start=773
-  _DISCOUNTCRITERIA._serialized_end=888
-  _CREATEDISCOUNTREQUEST._serialized_start=891
-  _CREATEDISCOUNTREQUEST._serialized_end=1372
-  _CREATEDISCOUNTRESPONSE._serialized_start=1375
-  _CREATEDISCOUNTRESPONSE._serialized_end=1612
-  _CREATEDISCOUNTRESPONSE_STATUS._serialized_start=1542
-  _CREATEDISCOUNTRESPONSE_STATUS._serialized_end=1612
-  _GETDISCOUNTREQUEST._serialized_start=1614
-  _GETDISCOUNTREQUEST._serialized_end=1656
-  _GETDISCOUNTRESPONSE._serialized_start=1659
-  _GETDISCOUNTRESPONSE._serialized_end=1923
-  _GETDISCOUNTRESPONSE_STATUS._serialized_start=1831
-  _GETDISCOUNTRESPONSE_STATUS._serialized_end=1923
+  _DISCOUNTSTATUS._serialized_start=3442
+  _DISCOUNTSTATUS._serialized_end=3633
+  _DISCOUNTTYPE._serialized_start=3636
+  _DISCOUNTTYPE._serialized_end=3797
+  _DISCOUNT._serialized_start=244
+  _DISCOUNT._serialized_end=883
+  _QUANTITY._serialized_start=885
+  _QUANTITY._serialized_end=955
+  _DISCOUNTCRITERIA._serialized_start=958
+  _DISCOUNTCRITERIA._serialized_end=1172
+  _MONETARYAMOUNT._serialized_start=1174
+  _MONETARYAMOUNT._serialized_end=1226
+  _PERCENTAGEAMOUNT._serialized_start=1229
+  _PERCENTAGEAMOUNT._serialized_end=1421
+  _CREATEDISCOUNTREQUEST._serialized_start=1424
+  _CREATEDISCOUNTREQUEST._serialized_end=2038
+  _CREATEDISCOUNTRESPONSE._serialized_start=2041
+  _CREATEDISCOUNTRESPONSE._serialized_end=2278
+  _CREATEDISCOUNTRESPONSE_STATUS._serialized_start=2208
+  _CREATEDISCOUNTRESPONSE_STATUS._serialized_end=2278
+  _GETDISCOUNTREQUEST._serialized_start=2280
+  _GETDISCOUNTREQUEST._serialized_end=2322
+  _GETDISCOUNTRESPONSE._serialized_start=2325
+  _GETDISCOUNTRESPONSE._serialized_end=2589
+  _GETDISCOUNTRESPONSE_STATUS._serialized_start=2497
+  _GETDISCOUNTRESPONSE_STATUS._serialized_end=2589
+  _APPLYDISCOUNTNOTIFICATIONREQUEST._serialized_start=2592
+  _APPLYDISCOUNTNOTIFICATIONREQUEST._serialized_end=3194
+  _APPLYDISCOUNTNOTIFICATIONRESPONSE._serialized_start=3197
+  _APPLYDISCOUNTNOTIFICATIONRESPONSE._serialized_end=3439
+  _APPLYDISCOUNTNOTIFICATIONRESPONSE_STATUS._serialized_start=2208
+  _APPLYDISCOUNTNOTIFICATIONRESPONSE_STATUS._serialized_end=2278
 # @@protoc_insertion_point(module_scope)

@@ -21,9 +21,10 @@ _sym_db = _symbol_database.Default()
 
 from micaconnect.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n common/v1/mtls_certificate.proto\x12\tcommon.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"2\n\x1fMTLSCertificateSignatureRequest\x12\x0f\n\x07pem_csr\x18\x01 \x01(\t\"\xfb\x01\n\x0fMTLSCertificate\x12\x15\n\rserial_number\x18\x01 \x01(\t\x12*\n\x06issued\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12*\n\x06\x65xpiry\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07\x65nabled\x18\x04 \x01(\x08\x12\x17\n\x0fpem_certificate\x18\x05 \x01(\t\x12\x16\n\x0epem_issuing_ca\x18\x06 \x01(\t\x12\x14\n\x0cpem_ca_chain\x18\x07 \x03(\t\x12\x12\n\npem_bundle\x18\x08 \x01(\t\x12\r\n\x05roles\x18\t \x03(\t\"h\n\x1eGenerateMTLSCertificateRequest\x12\x37\n\x03\x63sr\x18\x01 \x01(\x0b\x32*.common.v1.MTLSCertificateSignatureRequest\x12\r\n\x05roles\x18\x03 \x03(\t\"\xfe\x01\n\x1fGenerateMTLSCertificateResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.common.v1.GenerateMTLSCertificateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12/\n\x0b\x63\x65rtificate\x18\x03 \x01(\x0b\x32\x1a.common.v1.MTLSCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"F\n\x1cUpdateMTLSCertificateRequest\x12\x15\n\rserial_number\x18\x01 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\"\xe0\x01\n\x1dUpdateMTLSCertificateResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.common.v1.UpdateMTLSCertificateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x15\n\rserial_number\x18\x03 \x01(\t\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"2\n\x19GetMTLSCertificateRequest\x12\x15\n\rserial_number\x18\x01 \x01(\t\"\x8a\x02\n\x1aGetMTLSCertificateResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.common.v1.GetMTLSCertificateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12/\n\x0b\x63\x65rtificate\x18\x03 \x01(\x0b\x32\x1a.common.v1.MTLSCertificate\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x14\n\x10STATUS_NOT_FOUND\x10\x02\x12\x10\n\x0cSTATUS_ERROR\x10\x03\"\x1e\n\x1cSearchMTLSCertificateRequest\"\xfb\x01\n\x1dSearchMTLSCertificateResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.common.v1.SearchMTLSCertificateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x30\n\x0c\x63\x65rtificates\x18\x03 \x03(\x0b\x32\x1a.common.v1.MTLSCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42K\n\x11io.mica.common.v1B\x10MTLSCertificatesZ\x1dmica/proto/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n common/v1/mtls_certificate.proto\x12\tcommon.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\";\n\x1fMTLSCertificateSignatureRequest\x12\x18\n\x07pem_csr\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\"\x8e\x02\n\x0fMTLSCertificate\x12\x1e\n\rserial_number\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\x12*\n\x06issued\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x06\x65xpiry\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\xfa\x42\x05\xb2\x01\x02\x08\x01\x12\x0f\n\x07\x65nabled\x18\x04 \x01(\x08\x12\x17\n\x0fpem_certificate\x18\x05 \x01(\t\x12\x16\n\x0epem_issuing_ca\x18\x06 \x01(\t\x12\x14\n\x0cpem_ca_chain\x18\x07 \x03(\t\x12\x12\n\npem_bundle\x18\x08 \x01(\t\x12\r\n\x05roles\x18\t \x03(\t\"|\n\x1eGenerateMTLSCertificateRequest\x12\x41\n\x03\x63sr\x18\x01 \x01(\x0b\x32*.common.v1.MTLSCertificateSignatureRequestB\x08\xfa\x42\x05\x8a\x01\x02\x10\x01\x12\x17\n\x05roles\x18\x03 \x03(\tB\x08\xfa\x42\x05\x92\x01\x02\x08\x01\"\xfe\x01\n\x1fGenerateMTLSCertificateResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.common.v1.GenerateMTLSCertificateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12/\n\x0b\x63\x65rtificate\x18\x03 \x01(\x0b\x32\x1a.common.v1.MTLSCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"O\n\x1cUpdateMTLSCertificateRequest\x12\x1e\n\rserial_number\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\"\xe0\x01\n\x1dUpdateMTLSCertificateResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.common.v1.UpdateMTLSCertificateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x15\n\rserial_number\x18\x03 \x01(\t\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\";\n\x19GetMTLSCertificateRequest\x12\x1e\n\rserial_number\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\"\x8a\x02\n\x1aGetMTLSCertificateResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.common.v1.GetMTLSCertificateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12/\n\x0b\x63\x65rtificate\x18\x03 \x01(\x0b\x32\x1a.common.v1.MTLSCertificate\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x14\n\x10STATUS_NOT_FOUND\x10\x02\x12\x10\n\x0cSTATUS_ERROR\x10\x03\"\x1e\n\x1cSearchMTLSCertificateRequest\"\xfb\x01\n\x1dSearchMTLSCertificateResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.common.v1.SearchMTLSCertificateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x30\n\x0c\x63\x65rtificates\x18\x03 \x03(\x0b\x32\x1a.common.v1.MTLSCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42K\n\x11io.mica.common.v1B\x10MTLSCertificatesZ\x1dmica/proto/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -115,32 +116,46 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\021io.mica.common.v1B\020MTLSCertificatesZ\035mica/proto/common/v1;commonv1\242\002\004MICA'
-  _MTLSCERTIFICATESIGNATUREREQUEST._serialized_start=103
-  _MTLSCERTIFICATESIGNATUREREQUEST._serialized_end=153
-  _MTLSCERTIFICATE._serialized_start=156
-  _MTLSCERTIFICATE._serialized_end=407
-  _GENERATEMTLSCERTIFICATEREQUEST._serialized_start=409
-  _GENERATEMTLSCERTIFICATEREQUEST._serialized_end=513
-  _GENERATEMTLSCERTIFICATERESPONSE._serialized_start=516
-  _GENERATEMTLSCERTIFICATERESPONSE._serialized_end=770
-  _GENERATEMTLSCERTIFICATERESPONSE_STATUS._serialized_start=700
-  _GENERATEMTLSCERTIFICATERESPONSE_STATUS._serialized_end=770
-  _UPDATEMTLSCERTIFICATEREQUEST._serialized_start=772
-  _UPDATEMTLSCERTIFICATEREQUEST._serialized_end=842
-  _UPDATEMTLSCERTIFICATERESPONSE._serialized_start=845
-  _UPDATEMTLSCERTIFICATERESPONSE._serialized_end=1069
-  _UPDATEMTLSCERTIFICATERESPONSE_STATUS._serialized_start=700
-  _UPDATEMTLSCERTIFICATERESPONSE_STATUS._serialized_end=770
-  _GETMTLSCERTIFICATEREQUEST._serialized_start=1071
-  _GETMTLSCERTIFICATEREQUEST._serialized_end=1121
-  _GETMTLSCERTIFICATERESPONSE._serialized_start=1124
-  _GETMTLSCERTIFICATERESPONSE._serialized_end=1390
-  _GETMTLSCERTIFICATERESPONSE_STATUS._serialized_start=1298
-  _GETMTLSCERTIFICATERESPONSE_STATUS._serialized_end=1390
-  _SEARCHMTLSCERTIFICATEREQUEST._serialized_start=1392
-  _SEARCHMTLSCERTIFICATEREQUEST._serialized_end=1422
-  _SEARCHMTLSCERTIFICATERESPONSE._serialized_start=1425
-  _SEARCHMTLSCERTIFICATERESPONSE._serialized_end=1676
-  _SEARCHMTLSCERTIFICATERESPONSE_STATUS._serialized_start=700
-  _SEARCHMTLSCERTIFICATERESPONSE_STATUS._serialized_end=770
+  _MTLSCERTIFICATESIGNATUREREQUEST.fields_by_name['pem_csr']._options = None
+  _MTLSCERTIFICATESIGNATUREREQUEST.fields_by_name['pem_csr']._serialized_options = b'\372B\004r\002\020\001'
+  _MTLSCERTIFICATE.fields_by_name['serial_number']._options = None
+  _MTLSCERTIFICATE.fields_by_name['serial_number']._serialized_options = b'\372B\004r\002\020\001'
+  _MTLSCERTIFICATE.fields_by_name['expiry']._options = None
+  _MTLSCERTIFICATE.fields_by_name['expiry']._serialized_options = b'\372B\005\262\001\002\010\001'
+  _GENERATEMTLSCERTIFICATEREQUEST.fields_by_name['csr']._options = None
+  _GENERATEMTLSCERTIFICATEREQUEST.fields_by_name['csr']._serialized_options = b'\372B\005\212\001\002\020\001'
+  _GENERATEMTLSCERTIFICATEREQUEST.fields_by_name['roles']._options = None
+  _GENERATEMTLSCERTIFICATEREQUEST.fields_by_name['roles']._serialized_options = b'\372B\005\222\001\002\010\001'
+  _UPDATEMTLSCERTIFICATEREQUEST.fields_by_name['serial_number']._options = None
+  _UPDATEMTLSCERTIFICATEREQUEST.fields_by_name['serial_number']._serialized_options = b'\372B\004r\002\020\001'
+  _GETMTLSCERTIFICATEREQUEST.fields_by_name['serial_number']._options = None
+  _GETMTLSCERTIFICATEREQUEST.fields_by_name['serial_number']._serialized_options = b'\372B\004r\002\020\001'
+  _MTLSCERTIFICATESIGNATUREREQUEST._serialized_start=128
+  _MTLSCERTIFICATESIGNATUREREQUEST._serialized_end=187
+  _MTLSCERTIFICATE._serialized_start=190
+  _MTLSCERTIFICATE._serialized_end=460
+  _GENERATEMTLSCERTIFICATEREQUEST._serialized_start=462
+  _GENERATEMTLSCERTIFICATEREQUEST._serialized_end=586
+  _GENERATEMTLSCERTIFICATERESPONSE._serialized_start=589
+  _GENERATEMTLSCERTIFICATERESPONSE._serialized_end=843
+  _GENERATEMTLSCERTIFICATERESPONSE_STATUS._serialized_start=773
+  _GENERATEMTLSCERTIFICATERESPONSE_STATUS._serialized_end=843
+  _UPDATEMTLSCERTIFICATEREQUEST._serialized_start=845
+  _UPDATEMTLSCERTIFICATEREQUEST._serialized_end=924
+  _UPDATEMTLSCERTIFICATERESPONSE._serialized_start=927
+  _UPDATEMTLSCERTIFICATERESPONSE._serialized_end=1151
+  _UPDATEMTLSCERTIFICATERESPONSE_STATUS._serialized_start=773
+  _UPDATEMTLSCERTIFICATERESPONSE_STATUS._serialized_end=843
+  _GETMTLSCERTIFICATEREQUEST._serialized_start=1153
+  _GETMTLSCERTIFICATEREQUEST._serialized_end=1212
+  _GETMTLSCERTIFICATERESPONSE._serialized_start=1215
+  _GETMTLSCERTIFICATERESPONSE._serialized_end=1481
+  _GETMTLSCERTIFICATERESPONSE_STATUS._serialized_start=1389
+  _GETMTLSCERTIFICATERESPONSE_STATUS._serialized_end=1481
+  _SEARCHMTLSCERTIFICATEREQUEST._serialized_start=1483
+  _SEARCHMTLSCERTIFICATEREQUEST._serialized_end=1513
+  _SEARCHMTLSCERTIFICATERESPONSE._serialized_start=1516
+  _SEARCHMTLSCERTIFICATERESPONSE._serialized_end=1767
+  _SEARCHMTLSCERTIFICATERESPONSE_STATUS._serialized_start=773
+  _SEARCHMTLSCERTIFICATERESPONSE_STATUS._serialized_end=843
 # @@protoc_insertion_point(module_scope)

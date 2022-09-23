@@ -10,11 +10,11 @@
 import grpc
 
 from micadiscount.common.ping.v1 import ping_pb2 as common_dot_ping_dot_v1_dot_ping__pb2
+from micadiscount.discount.discount.v1 import discount_pb2 as discount_dot_discount_dot_v1_dot_discount__pb2
 
 
 class DiscountFromMicaServiceStub(object):
-    """API Operations made by the Mica Admin Console to manage the platform.
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -22,6 +22,11 @@ class DiscountFromMicaServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.ApplyDiscountNotification = channel.unary_unary(
+                '/discount.service.v1.DiscountFromMicaService/ApplyDiscountNotification',
+                request_serializer=discount_dot_discount_dot_v1_dot_discount__pb2.ApplyDiscountNotificationRequest.SerializeToString,
+                response_deserializer=discount_dot_discount_dot_v1_dot_discount__pb2.ApplyDiscountNotificationResponse.FromString,
+                )
         self.Ping = channel.unary_unary(
                 '/discount.service.v1.DiscountFromMicaService/Ping',
                 request_serializer=common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
@@ -30,13 +35,16 @@ class DiscountFromMicaServiceStub(object):
 
 
 class DiscountFromMicaServiceServicer(object):
-    """API Operations made by the Mica Admin Console to manage the platform.
-    """
+    """Missing associated documentation comment in .proto file."""
+
+    def ApplyDiscountNotification(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def Ping(self, request, context):
-        """<editor-fold desc="Admin Operations">
-
-        An operation to ping the server to ensure it's up and running and that the connection is good.
+        """An operation to ping the server to ensure it's up and running and that the connection is good.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -45,6 +53,11 @@ class DiscountFromMicaServiceServicer(object):
 
 def add_DiscountFromMicaServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'ApplyDiscountNotification': grpc.unary_unary_rpc_method_handler(
+                    servicer.ApplyDiscountNotification,
+                    request_deserializer=discount_dot_discount_dot_v1_dot_discount__pb2.ApplyDiscountNotificationRequest.FromString,
+                    response_serializer=discount_dot_discount_dot_v1_dot_discount__pb2.ApplyDiscountNotificationResponse.SerializeToString,
+            ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
                     request_deserializer=common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
@@ -58,8 +71,24 @@ def add_DiscountFromMicaServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DiscountFromMicaService(object):
-    """API Operations made by the Mica Admin Console to manage the platform.
-    """
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def ApplyDiscountNotification(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountFromMicaService/ApplyDiscountNotification',
+            discount_dot_discount_dot_v1_dot_discount__pb2.ApplyDiscountNotificationRequest.SerializeToString,
+            discount_dot_discount_dot_v1_dot_discount__pb2.ApplyDiscountNotificationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Ping(request,

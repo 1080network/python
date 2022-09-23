@@ -101,13 +101,13 @@ class PartnerToMicaServiceStub(object):
                 request_serializer=partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.SerializeToString,
                 response_deserializer=partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderResponse.FromString,
                 )
-        self.ClosePaymentToken = channel.unary_unary(
-                '/partner.service.v1.PartnerToMicaService/ClosePaymentToken',
+        self.RemovePaymentToken = channel.unary_unary(
+                '/partner.service.v1.PartnerToMicaService/RemovePaymentToken',
                 request_serializer=partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenRequest.SerializeToString,
                 response_deserializer=partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenResponse.FromString,
                 )
-        self.ReplacePaymentToken = channel.unary_unary(
-                '/partner.service.v1.PartnerToMicaService/ReplacePaymentToken',
+        self.ExchangePaymentToken = channel.unary_unary(
+                '/partner.service.v1.PartnerToMicaService/ExchangePaymentToken',
                 request_serializer=partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenRequest.SerializeToString,
                 response_deserializer=partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenResponse.FromString,
                 )
@@ -271,7 +271,7 @@ class PartnerToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ClosePaymentToken(self, request, context):
+    def RemovePaymentToken(self, request, context):
         """<editor-fold desc="Payment Token Operations">
 
         When a user no longer wishes to use their payment tokens this operation can remove them from mica.
@@ -280,7 +280,7 @@ class PartnerToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ReplacePaymentToken(self, request, context):
+    def ExchangePaymentToken(self, request, context):
         """A Partner can proactively replace a payment token with a new one for future use.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -433,13 +433,13 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.FromString,
                     response_serializer=partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderResponse.SerializeToString,
             ),
-            'ClosePaymentToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.ClosePaymentToken,
+            'RemovePaymentToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemovePaymentToken,
                     request_deserializer=partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenRequest.FromString,
                     response_serializer=partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenResponse.SerializeToString,
             ),
-            'ReplacePaymentToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReplacePaymentToken,
+            'ExchangePaymentToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExchangePaymentToken,
                     request_deserializer=partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenRequest.FromString,
                     response_serializer=partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenResponse.SerializeToString,
             ),
@@ -743,7 +743,7 @@ class PartnerToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ClosePaymentToken(request,
+    def RemovePaymentToken(request,
             target,
             options=(),
             channel_credentials=None,
@@ -753,14 +753,14 @@ class PartnerToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/partner.service.v1.PartnerToMicaService/ClosePaymentToken',
+        return grpc.experimental.unary_unary(request, target, '/partner.service.v1.PartnerToMicaService/RemovePaymentToken',
             partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenRequest.SerializeToString,
             partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ReplacePaymentToken(request,
+    def ExchangePaymentToken(request,
             target,
             options=(),
             channel_credentials=None,
@@ -770,7 +770,7 @@ class PartnerToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/partner.service.v1.PartnerToMicaService/ReplacePaymentToken',
+        return grpc.experimental.unary_unary(request, target, '/partner.service.v1.PartnerToMicaService/ExchangePaymentToken',
             partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenRequest.SerializeToString,
             partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenResponse.FromString,
             options, channel_credentials,

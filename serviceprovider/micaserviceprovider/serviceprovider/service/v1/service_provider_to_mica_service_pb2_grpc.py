@@ -10,6 +10,7 @@
 import grpc
 
 from micaserviceprovider.common.ping.v1 import ping_pb2 as common_dot_ping_dot_v1_dot_ping__pb2
+from micaserviceprovider.common.v1 import receipt_pb2 as common_dot_v1_dot_receipt__pb2
 from micaserviceprovider.serviceprovider.instrument.v1 import instrument_pb2 as serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2
 from micaserviceprovider.serviceprovider.paymenttoken.v1 import payment_token_pb2 as serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2
 from micaserviceprovider.serviceprovider.serviceprovider.v1 import service_provider_pb2 as serviceprovider_dot_serviceprovider_dot_v1_dot_service__provider__pb2
@@ -140,6 +141,11 @@ class ServiceProviderToMicaServiceStub(object):
                 '/serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionPartnerData',
                 request_serializer=serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataRequest.SerializeToString,
                 response_deserializer=serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataResponse.FromString,
+                )
+        self.GetReceipt = channel.unary_unary(
+                '/serviceprovider.service.v1.ServiceProviderToMicaService/GetReceipt',
+                request_serializer=common_dot_v1_dot_receipt__pb2.GetReceiptRequest.SerializeToString,
+                response_deserializer=common_dot_v1_dot_receipt__pb2.GetReceiptResponse.FromString,
                 )
         self.Ping = channel.unary_unary(
                 '/serviceprovider.service.v1.ServiceProviderToMicaService/Ping',
@@ -310,6 +316,15 @@ class ServiceProviderToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetReceipt(self, request, context):
+        """<editor-fold desc="Transaction Operations">
+
+        Retrieve a transaction based on it's key.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Ping(self, request, context):
         """<editor-fold desc="Admin Operations">
 
@@ -421,6 +436,11 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
                     servicer.SearchTransactionPartnerData,
                     request_deserializer=serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataRequest.FromString,
                     response_serializer=serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataResponse.SerializeToString,
+            ),
+            'GetReceipt': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetReceipt,
+                    request_deserializer=common_dot_v1_dot_receipt__pb2.GetReceiptRequest.FromString,
+                    response_serializer=common_dot_v1_dot_receipt__pb2.GetReceiptResponse.SerializeToString,
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
@@ -788,6 +808,23 @@ class ServiceProviderToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionPartnerData',
             serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataRequest.SerializeToString,
             serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetReceipt(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/serviceprovider.service.v1.ServiceProviderToMicaService/GetReceipt',
+            common_dot_v1_dot_receipt__pb2.GetReceiptRequest.SerializeToString,
+            common_dot_v1_dot_receipt__pb2.GetReceiptResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
