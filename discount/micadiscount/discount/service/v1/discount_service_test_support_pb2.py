@@ -21,9 +21,10 @@ _sym_db = _symbol_database.Default()
 
 from micadiscount.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from micadiscount.common.v1 import line_item_pb2 as common_dot_v1_dot_line__item__pb2
+from micadiscount.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7discount/service/v1/discount_service_test_support.proto\x12\x13\x64iscount.service.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x19\x63ommon/v1/line_item.proto\"_\n\x18\x44\x65termineDiscountRequest\x12\x1a\n\x12\x66\x65\x64\x65rated_user_key\x18\x0c \x01(\t\x12\'\n\nline_items\x18\x0e \x03(\x0b\x32\x13.common.v1.LineItem\"\xcb\x01\n\x19\x44\x65termineDiscountResponse\x12\x45\n\x06status\x18\x01 \x01(\x0e\x32\x35.discount.service.v1.DetermineDiscountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\x16\n\x14\x41pplyDiscountRequest\"\xc3\x01\n\x15\x41pplyDiscountResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.discount.service.v1.ApplyDiscountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x32\x84\x02\n\x1a\x44iscountTestSupportService\x12x\n\x15TestDetermineDiscount\x12-.discount.service.v1.DetermineDiscountRequest\x1a..discount.service.v1.DetermineDiscountResponse\"\x00\x12l\n\x11TestApplyDiscount\x12).discount.service.v1.ApplyDiscountRequest\x1a*.discount.service.v1.ApplyDiscountResponse\"\x00\x42\x64\n\x1bio.mica.discount.service.v1B\x1f\x44iscountTestSupportServiceProtoZ\x1dmica/proto/discount/servicev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7discount/service/v1/discount_service_test_support.proto\x12\x13\x64iscount.service.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x19\x63ommon/v1/line_item.proto\x1a\x17validate/validate.proto\"t\n\x18\x44\x65termineDiscountRequest\x12%\n\x12\x66\x65\x64\x65rated_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x31\n\nline_items\x18\x02 \x03(\x0b\x32\x13.common.v1.LineItemB\x08\xfa\x42\x05\x92\x01\x02\x08\x01\"\xcb\x01\n\x19\x44\x65termineDiscountResponse\x12\x45\n\x06status\x18\x01 \x01(\x0e\x32\x35.discount.service.v1.DetermineDiscountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\x16\n\x14\x41pplyDiscountRequest\"\xc3\x01\n\x15\x41pplyDiscountResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.discount.service.v1.ApplyDiscountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x32\x84\x02\n\x1a\x44iscountTestSupportService\x12x\n\x15TestDetermineDiscount\x12-.discount.service.v1.DetermineDiscountRequest\x1a..discount.service.v1.DetermineDiscountResponse\"\x00\x12l\n\x11TestApplyDiscount\x12).discount.service.v1.ApplyDiscountRequest\x1a*.discount.service.v1.ApplyDiscountResponse\"\x00\x42\x64\n\x1bio.mica.discount.service.v1B\x1f\x44iscountTestSupportServiceProtoZ\x1dmica/proto/discount/servicev1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -66,18 +67,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\033io.mica.discount.service.v1B\037DiscountTestSupportServiceProtoZ\035mica/proto/discount/servicev1\242\002\004MICA'
-  _DETERMINEDISCOUNTREQUEST._serialized_start=130
-  _DETERMINEDISCOUNTREQUEST._serialized_end=225
-  _DETERMINEDISCOUNTRESPONSE._serialized_start=228
-  _DETERMINEDISCOUNTRESPONSE._serialized_end=431
-  _DETERMINEDISCOUNTRESPONSE_STATUS._serialized_start=361
-  _DETERMINEDISCOUNTRESPONSE_STATUS._serialized_end=431
-  _APPLYDISCOUNTREQUEST._serialized_start=433
-  _APPLYDISCOUNTREQUEST._serialized_end=455
-  _APPLYDISCOUNTRESPONSE._serialized_start=458
-  _APPLYDISCOUNTRESPONSE._serialized_end=653
-  _APPLYDISCOUNTRESPONSE_STATUS._serialized_start=361
-  _APPLYDISCOUNTRESPONSE_STATUS._serialized_end=431
-  _DISCOUNTTESTSUPPORTSERVICE._serialized_start=656
-  _DISCOUNTTESTSUPPORTSERVICE._serialized_end=916
+  _DETERMINEDISCOUNTREQUEST.fields_by_name['federated_user_key']._options = None
+  _DETERMINEDISCOUNTREQUEST.fields_by_name['federated_user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _DETERMINEDISCOUNTREQUEST.fields_by_name['line_items']._options = None
+  _DETERMINEDISCOUNTREQUEST.fields_by_name['line_items']._serialized_options = b'\372B\005\222\001\002\010\001'
+  _DETERMINEDISCOUNTREQUEST._serialized_start=155
+  _DETERMINEDISCOUNTREQUEST._serialized_end=271
+  _DETERMINEDISCOUNTRESPONSE._serialized_start=274
+  _DETERMINEDISCOUNTRESPONSE._serialized_end=477
+  _DETERMINEDISCOUNTRESPONSE_STATUS._serialized_start=407
+  _DETERMINEDISCOUNTRESPONSE_STATUS._serialized_end=477
+  _APPLYDISCOUNTREQUEST._serialized_start=479
+  _APPLYDISCOUNTREQUEST._serialized_end=501
+  _APPLYDISCOUNTRESPONSE._serialized_start=504
+  _APPLYDISCOUNTRESPONSE._serialized_end=699
+  _APPLYDISCOUNTRESPONSE_STATUS._serialized_start=407
+  _APPLYDISCOUNTRESPONSE_STATUS._serialized_end=477
+  _DISCOUNTTESTSUPPORTSERVICE._serialized_start=702
+  _DISCOUNTTESTSUPPORTSERVICE._serialized_end=962
 # @@protoc_insertion_point(module_scope)

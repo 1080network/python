@@ -21,9 +21,10 @@ _sym_db = _symbol_database.Default()
 
 from micadiscount.common.v1 import address_pb2 as common_dot_v1_dot_address__pb2
 from micadiscount.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
+from micadiscount.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4discount/discountprovider/v1/discount_provider.proto\x12\x1c\x64iscount.discountprovider.v1\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\"\xd4\x02\n\x10\x44iscountProvider\x12\x1d\n\x15\x64iscount_provider_key\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x12.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x06 \x01(\t\x12\r\n\x05\x65mail\x18\x07 \x01(\t\x12\r\n\x05phone\x18\x08 \x01(\t\x12#\n\x1b\x64omestic_ach_routing_number\x18\x0b \x01(\t\x12(\n international_ach_routing_number\x18\x0c \x01(\t\x12\x1b\n\x13wire_routing_number\x18\r \x01(\t\x12\x1c\n\x14swift_routing_number\x18\x0e \x01(\t\x12\x1b\n\x13\x62\x61nk_account_number\x18\x0f \x01(\t\"\x1c\n\x1aGetDiscountProviderRequest\"\xb9\x02\n\x1bGetDiscountProviderResponse\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.discount.discountprovider.v1.GetDiscountProviderResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12I\n\x11\x64iscount_provider\x18\x03 \x01(\x0b\x32..discount.discountprovider.v1.DiscountProvider\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xc2\x02\n\x1dUpdateDiscountProviderRequest\x12\x0f\n\x07version\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x12.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12\r\n\x05phone\x18\x06 \x01(\t\x12#\n\x1b\x64omestic_ach_routing_number\x18\x07 \x01(\t\x12(\n international_ach_routing_number\x18\x08 \x01(\t\x12\x1b\n\x13wire_routing_number\x18\t \x01(\t\x12\x1c\n\x14swift_routing_number\x18\n \x01(\t\x12\x1b\n\x13\x62\x61nk_account_number\x18\x0b \x01(\t\"\x85\x02\n\x1eUpdateDiscountProviderResponse\x12S\n\x06status\x18\x01 \x01(\x0e\x32\x43.discount.discountprovider.v1.UpdateDiscountProviderResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42l\n$io.mica.discount.discountprovider.v1B\x15\x44iscountProviderProtoZ&mica/proto/discount/discountproviderv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4discount/discountprovider/v1/discount_provider.proto\x12\x1c\x64iscount.discountprovider.v1\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x17validate/validate.proto\"\xc7\x03\n\x10\x44iscountProvider\x12(\n\x15\x64iscount_provider_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12\x15\n\x04name\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12#\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x12.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x06 \x01(\t\x12\r\n\x05\x65mail\x18\x07 \x01(\t\x12\r\n\x05phone\x18\x08 \x01(\t\x12\x34\n\x1b\x64omestic_ach_routing_number\x18\t \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12\x39\n international_ach_routing_number\x18\n \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12,\n\x13wire_routing_number\x18\x0b \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x14swift_routing_number\x18\x0c \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x13\x62\x61nk_account_number\x18\r \x01(\tB\x10\xfa\x42\rr\x0b\x32\t^|\\w{14}$\"\x1c\n\x1aGetDiscountProviderRequest\"\xb9\x02\n\x1bGetDiscountProviderResponse\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.discount.discountprovider.v1.GetDiscountProviderResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12I\n\x11\x64iscount_provider\x18\x03 \x01(\x0b\x32..discount.discountprovider.v1.DiscountProvider\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xaa\x03\n\x1dUpdateDiscountProviderRequest\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12\x15\n\x04name\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12#\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x12.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12\r\n\x05phone\x18\x06 \x01(\t\x12\x34\n\x1b\x64omestic_ach_routing_number\x18\x07 \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12\x39\n international_ach_routing_number\x18\x08 \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12,\n\x13wire_routing_number\x18\t \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x14swift_routing_number\x18\n \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x13\x62\x61nk_account_number\x18\x0b \x01(\tB\x10\xfa\x42\rr\x0b\x32\t^|\\w{14}$\"\x8e\x02\n\x1eUpdateDiscountProviderResponse\x12S\n\x06status\x18\x01 \x01(\x0e\x32\x43.discount.discountprovider.v1.UpdateDiscountProviderResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42l\n$io.mica.discount.discountprovider.v1B\x15\x44iscountProviderProtoZ&mica/proto/discount/discountproviderv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -73,18 +74,50 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n$io.mica.discount.discountprovider.v1B\025DiscountProviderProtoZ&mica/proto/discount/discountproviderv1\242\002\004MICA'
-  _DISCOUNTPROVIDER._serialized_start=135
-  _DISCOUNTPROVIDER._serialized_end=475
-  _GETDISCOUNTPROVIDERREQUEST._serialized_start=477
-  _GETDISCOUNTPROVIDERREQUEST._serialized_end=505
-  _GETDISCOUNTPROVIDERRESPONSE._serialized_start=508
-  _GETDISCOUNTPROVIDERRESPONSE._serialized_end=821
-  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=729
-  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=821
-  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_start=824
-  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_end=1146
-  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_start=1149
-  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_end=1410
-  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=729
-  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=821
+  _DISCOUNTPROVIDER.fields_by_name['discount_provider_key']._options = None
+  _DISCOUNTPROVIDER.fields_by_name['discount_provider_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _DISCOUNTPROVIDER.fields_by_name['version']._options = None
+  _DISCOUNTPROVIDER.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _DISCOUNTPROVIDER.fields_by_name['name']._options = None
+  _DISCOUNTPROVIDER.fields_by_name['name']._serialized_options = b'\372B\004r\002\030d'
+  _DISCOUNTPROVIDER.fields_by_name['domestic_ach_routing_number']._options = None
+  _DISCOUNTPROVIDER.fields_by_name['domestic_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _DISCOUNTPROVIDER.fields_by_name['international_ach_routing_number']._options = None
+  _DISCOUNTPROVIDER.fields_by_name['international_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _DISCOUNTPROVIDER.fields_by_name['wire_routing_number']._options = None
+  _DISCOUNTPROVIDER.fields_by_name['wire_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _DISCOUNTPROVIDER.fields_by_name['swift_routing_number']._options = None
+  _DISCOUNTPROVIDER.fields_by_name['swift_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _DISCOUNTPROVIDER.fields_by_name['bank_account_number']._options = None
+  _DISCOUNTPROVIDER.fields_by_name['bank_account_number']._serialized_options = b'\372B\rr\0132\t^|\\w{14}$'
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['version']._options = None
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['name']._options = None
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['name']._serialized_options = b'\372B\004r\002\030d'
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['domestic_ach_routing_number']._options = None
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['domestic_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['international_ach_routing_number']._options = None
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['international_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['wire_routing_number']._options = None
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['wire_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['swift_routing_number']._options = None
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['swift_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['bank_account_number']._options = None
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['bank_account_number']._serialized_options = b'\372B\rr\0132\t^|\\w{14}$'
+  _UPDATEDISCOUNTPROVIDERRESPONSE.fields_by_name['version']._options = None
+  _UPDATEDISCOUNTPROVIDERRESPONSE.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _DISCOUNTPROVIDER._serialized_start=160
+  _DISCOUNTPROVIDER._serialized_end=615
+  _GETDISCOUNTPROVIDERREQUEST._serialized_start=617
+  _GETDISCOUNTPROVIDERREQUEST._serialized_end=645
+  _GETDISCOUNTPROVIDERRESPONSE._serialized_start=648
+  _GETDISCOUNTPROVIDERRESPONSE._serialized_end=961
+  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=869
+  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=961
+  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_start=964
+  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_end=1390
+  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_start=1393
+  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_end=1663
+  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=869
+  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=961
 # @@protoc_insertion_point(module_scope)

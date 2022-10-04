@@ -20,9 +20,10 @@ _sym_db = _symbol_database.Default()
 
 
 from micadiscount.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
+from micadiscount.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,discount/productgroup/v1/product_group.proto\x12\x18\x64iscount.productgroup.v1\x1a\x15\x63ommon/v1/error.proto\"\x99\x01\n\x0cProductGroup\x12\x19\n\x11product_group_key\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x19\n\x11product_group_ref\x18\x04 \x01(\t\x12\x1d\n\x15product_match_filters\x18\x05 \x03(\t\x12\x15\n\rproduct_codes\x18\x06 \x03(\t\"z\n\x19\x43reateProductGroupRequest\x12\x19\n\x11product_group_ref\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1d\n\x15product_match_filters\x18\x03 \x03(\t\x12\x15\n\rproduct_codes\x18\x04 \x03(\t\"\x94\x02\n\x1a\x43reateProductGroupResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.discount.productgroup.v1.CreateProductGroupResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x19\n\x11product_group_key\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_DUPLICATE\x10\x03\"3\n\x16GetProductGroupRequest\x12\x19\n\x11product_group_ref\x18\x01 \x01(\t\"\xa1\x02\n\x17GetProductGroupResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.discount.productgroup.v1.GetProductGroupResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12=\n\rproduct_group\x18\x03 \x01(\x0b\x32&.discount.productgroup.v1.ProductGroup\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\x8b\x01\n\x19UpdateProductGroupRequest\x12\x19\n\x11product_group_ref\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x1d\n\x15product_match_filters\x18\x04 \x03(\t\x12\x15\n\rproduct_codes\x18\x05 \x03(\t\"\xf9\x01\n\x1aUpdateProductGroupResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.discount.productgroup.v1.UpdateProductGroupResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"6\n\x19RemoveProductGroupRequest\x12\x19\n\x11product_group_ref\x18\x01 \x01(\t\"\xe8\x01\n\x1aRemoveProductGroupResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.discount.productgroup.v1.RemoveProductGroupResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42[\n io.mica.discount.productgroup.v1B\x0cProductProtoZ\"mica/proto/discount/productgroupv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,discount/productgroup/v1/product_group.proto\x12\x18\x64iscount.productgroup.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x17validate/validate.proto\"\xd3\x01\n\x0cProductGroup\x12$\n\x11product_group_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12\x15\n\x04name\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\"\n\x11product_group_ref\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\'\n\x15product_match_filters\x18\x05 \x03(\tB\x08\xfa\x42\x05\x92\x01\x02\x10\x64\x12\x1f\n\rproduct_codes\x18\x06 \x03(\tB\x08\xfa\x42\x05\x92\x01\x02\x10\x64\"\xa0\x01\n\x19\x43reateProductGroupRequest\x12\"\n\x11product_group_ref\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x15\n\x04name\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\'\n\x15product_match_filters\x18\x03 \x03(\tB\x08\xfa\x42\x05\x92\x01\x02\x10\x64\x12\x1f\n\rproduct_codes\x18\x04 \x03(\tB\x08\xfa\x42\x05\x92\x01\x02\x10\x64\"\xa8\x02\n\x1a\x43reateProductGroupResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.discount.productgroup.v1.CreateProductGroupResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12$\n\x11product_group_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x04 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_DUPLICATE\x10\x03\"<\n\x16GetProductGroupRequest\x12\"\n\x11product_group_ref\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\"\xa1\x02\n\x17GetProductGroupResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.discount.productgroup.v1.GetProductGroupResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12=\n\rproduct_group\x18\x03 \x01(\x0b\x32&.discount.productgroup.v1.ProductGroup\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xba\x01\n\x19UpdateProductGroupRequest\x12\"\n\x11product_group_ref\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12\x15\n\x04name\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\'\n\x15product_match_filters\x18\x04 \x03(\tB\x08\xfa\x42\x05\x92\x01\x02\x10\x64\x12\x1f\n\rproduct_codes\x18\x05 \x03(\tB\x08\xfa\x42\x05\x92\x01\x02\x10\x64\"\x82\x02\n\x1aUpdateProductGroupResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.discount.productgroup.v1.UpdateProductGroupResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"A\n\x19RemoveProductGroupRequest\x12$\n\x11product_group_ref\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x32\"\xe8\x01\n\x1aRemoveProductGroupResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.discount.productgroup.v1.RemoveProductGroupResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42[\n io.mica.discount.productgroup.v1B\x0cProductProtoZ\"mica/proto/discount/productgroupv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -106,30 +107,70 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n io.mica.discount.productgroup.v1B\014ProductProtoZ\"mica/proto/discount/productgroupv1\242\002\004MICA'
-  _PRODUCTGROUP._serialized_start=98
-  _PRODUCTGROUP._serialized_end=251
-  _CREATEPRODUCTGROUPREQUEST._serialized_start=253
-  _CREATEPRODUCTGROUPREQUEST._serialized_end=375
-  _CREATEPRODUCTGROUPRESPONSE._serialized_start=378
-  _CREATEPRODUCTGROUPRESPONSE._serialized_end=654
-  _CREATEPRODUCTGROUPRESPONSE_STATUS._serialized_start=562
-  _CREATEPRODUCTGROUPRESPONSE_STATUS._serialized_end=654
-  _GETPRODUCTGROUPREQUEST._serialized_start=656
-  _GETPRODUCTGROUPREQUEST._serialized_end=707
-  _GETPRODUCTGROUPRESPONSE._serialized_start=710
-  _GETPRODUCTGROUPRESPONSE._serialized_end=999
-  _GETPRODUCTGROUPRESPONSE_STATUS._serialized_start=907
-  _GETPRODUCTGROUPRESPONSE_STATUS._serialized_end=999
-  _UPDATEPRODUCTGROUPREQUEST._serialized_start=1002
-  _UPDATEPRODUCTGROUPREQUEST._serialized_end=1141
-  _UPDATEPRODUCTGROUPRESPONSE._serialized_start=1144
-  _UPDATEPRODUCTGROUPRESPONSE._serialized_end=1393
-  _UPDATEPRODUCTGROUPRESPONSE_STATUS._serialized_start=907
-  _UPDATEPRODUCTGROUPRESPONSE_STATUS._serialized_end=999
-  _REMOVEPRODUCTGROUPREQUEST._serialized_start=1395
-  _REMOVEPRODUCTGROUPREQUEST._serialized_end=1449
-  _REMOVEPRODUCTGROUPRESPONSE._serialized_start=1452
-  _REMOVEPRODUCTGROUPRESPONSE._serialized_end=1684
-  _REMOVEPRODUCTGROUPRESPONSE_STATUS._serialized_start=907
-  _REMOVEPRODUCTGROUPRESPONSE_STATUS._serialized_end=999
+  _PRODUCTGROUP.fields_by_name['product_group_key']._options = None
+  _PRODUCTGROUP.fields_by_name['product_group_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _PRODUCTGROUP.fields_by_name['version']._options = None
+  _PRODUCTGROUP.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _PRODUCTGROUP.fields_by_name['name']._options = None
+  _PRODUCTGROUP.fields_by_name['name']._serialized_options = b'\372B\004r\002\030d'
+  _PRODUCTGROUP.fields_by_name['product_group_ref']._options = None
+  _PRODUCTGROUP.fields_by_name['product_group_ref']._serialized_options = b'\372B\004r\002\0302'
+  _PRODUCTGROUP.fields_by_name['product_match_filters']._options = None
+  _PRODUCTGROUP.fields_by_name['product_match_filters']._serialized_options = b'\372B\005\222\001\002\020d'
+  _PRODUCTGROUP.fields_by_name['product_codes']._options = None
+  _PRODUCTGROUP.fields_by_name['product_codes']._serialized_options = b'\372B\005\222\001\002\020d'
+  _CREATEPRODUCTGROUPREQUEST.fields_by_name['product_group_ref']._options = None
+  _CREATEPRODUCTGROUPREQUEST.fields_by_name['product_group_ref']._serialized_options = b'\372B\004r\002\0302'
+  _CREATEPRODUCTGROUPREQUEST.fields_by_name['name']._options = None
+  _CREATEPRODUCTGROUPREQUEST.fields_by_name['name']._serialized_options = b'\372B\004r\002\030d'
+  _CREATEPRODUCTGROUPREQUEST.fields_by_name['product_match_filters']._options = None
+  _CREATEPRODUCTGROUPREQUEST.fields_by_name['product_match_filters']._serialized_options = b'\372B\005\222\001\002\020d'
+  _CREATEPRODUCTGROUPREQUEST.fields_by_name['product_codes']._options = None
+  _CREATEPRODUCTGROUPREQUEST.fields_by_name['product_codes']._serialized_options = b'\372B\005\222\001\002\020d'
+  _CREATEPRODUCTGROUPRESPONSE.fields_by_name['product_group_key']._options = None
+  _CREATEPRODUCTGROUPRESPONSE.fields_by_name['product_group_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _CREATEPRODUCTGROUPRESPONSE.fields_by_name['version']._options = None
+  _CREATEPRODUCTGROUPRESPONSE.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _GETPRODUCTGROUPREQUEST.fields_by_name['product_group_ref']._options = None
+  _GETPRODUCTGROUPREQUEST.fields_by_name['product_group_ref']._serialized_options = b'\372B\004r\002\0302'
+  _UPDATEPRODUCTGROUPREQUEST.fields_by_name['product_group_ref']._options = None
+  _UPDATEPRODUCTGROUPREQUEST.fields_by_name['product_group_ref']._serialized_options = b'\372B\004r\002\0302'
+  _UPDATEPRODUCTGROUPREQUEST.fields_by_name['version']._options = None
+  _UPDATEPRODUCTGROUPREQUEST.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _UPDATEPRODUCTGROUPREQUEST.fields_by_name['name']._options = None
+  _UPDATEPRODUCTGROUPREQUEST.fields_by_name['name']._serialized_options = b'\372B\004r\002\030d'
+  _UPDATEPRODUCTGROUPREQUEST.fields_by_name['product_match_filters']._options = None
+  _UPDATEPRODUCTGROUPREQUEST.fields_by_name['product_match_filters']._serialized_options = b'\372B\005\222\001\002\020d'
+  _UPDATEPRODUCTGROUPREQUEST.fields_by_name['product_codes']._options = None
+  _UPDATEPRODUCTGROUPREQUEST.fields_by_name['product_codes']._serialized_options = b'\372B\005\222\001\002\020d'
+  _UPDATEPRODUCTGROUPRESPONSE.fields_by_name['version']._options = None
+  _UPDATEPRODUCTGROUPRESPONSE.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _REMOVEPRODUCTGROUPREQUEST.fields_by_name['product_group_ref']._options = None
+  _REMOVEPRODUCTGROUPREQUEST.fields_by_name['product_group_ref']._serialized_options = b'\372B\006r\004\020\001\0302'
+  _PRODUCTGROUP._serialized_start=123
+  _PRODUCTGROUP._serialized_end=334
+  _CREATEPRODUCTGROUPREQUEST._serialized_start=337
+  _CREATEPRODUCTGROUPREQUEST._serialized_end=497
+  _CREATEPRODUCTGROUPRESPONSE._serialized_start=500
+  _CREATEPRODUCTGROUPRESPONSE._serialized_end=796
+  _CREATEPRODUCTGROUPRESPONSE_STATUS._serialized_start=704
+  _CREATEPRODUCTGROUPRESPONSE_STATUS._serialized_end=796
+  _GETPRODUCTGROUPREQUEST._serialized_start=798
+  _GETPRODUCTGROUPREQUEST._serialized_end=858
+  _GETPRODUCTGROUPRESPONSE._serialized_start=861
+  _GETPRODUCTGROUPRESPONSE._serialized_end=1150
+  _GETPRODUCTGROUPRESPONSE_STATUS._serialized_start=1058
+  _GETPRODUCTGROUPRESPONSE_STATUS._serialized_end=1150
+  _UPDATEPRODUCTGROUPREQUEST._serialized_start=1153
+  _UPDATEPRODUCTGROUPREQUEST._serialized_end=1339
+  _UPDATEPRODUCTGROUPRESPONSE._serialized_start=1342
+  _UPDATEPRODUCTGROUPRESPONSE._serialized_end=1600
+  _UPDATEPRODUCTGROUPRESPONSE_STATUS._serialized_start=1058
+  _UPDATEPRODUCTGROUPRESPONSE_STATUS._serialized_end=1150
+  _REMOVEPRODUCTGROUPREQUEST._serialized_start=1602
+  _REMOVEPRODUCTGROUPREQUEST._serialized_end=1667
+  _REMOVEPRODUCTGROUPRESPONSE._serialized_start=1670
+  _REMOVEPRODUCTGROUPRESPONSE._serialized_end=1902
+  _REMOVEPRODUCTGROUPRESPONSE_STATUS._serialized_start=1058
+  _REMOVEPRODUCTGROUPRESPONSE_STATUS._serialized_end=1150
 # @@protoc_insertion_point(module_scope)

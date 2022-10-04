@@ -24,9 +24,10 @@ from micadiscount.common.enums.organizationcategory.v1 import organization_categ
 from micadiscount.common.v1 import address_pb2 as common_dot_v1_dot_address__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
+from micadiscount.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x63ommon/v1/organization.proto\x12\tcommon.v1\x1a\'common/enums/currency/v1/currency.proto\x1a@common/enums/organizationcategory/v1/organization_category.proto\x1a\x17\x63ommon/v1/address.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xc1\x03\n\x0cOrganization\x12\x18\n\x10organization_key\x18\x01 \x01(\t\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0bpartner_key\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x06 \x01(\t\x12N\n\ncategories\x18\x05 \x03(\x0e\x32:.common.enums.organizationcategory.v1.OrganizationCategory\x12#\n\x07\x61\x64\x64ress\x18\x08 \x01(\x0b\x32\x12.common.v1.Address\x12#\n\x1b\x64omestic_ach_routing_number\x18\t \x01(\t\x12(\n international_ach_routing_number\x18\n \x01(\t\x12\x1b\n\x13wire_routing_number\x18\x0b \x01(\t\x12\x1c\n\x14swift_routing_number\x18\x0c \x01(\t\x12\x1b\n\x13\x62\x61nk_account_number\x18\r \x01(\t\"\xf4\x03\n\x13LegacyConfiguration\x12<\n\x16interchange_percentage\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12=\n\x17\x64ispute_rate_percentage\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x34\n\x08\x63urrency\x18\x03 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x31\n\x0b\x64ispute_fee\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12=\n\x17\x64ispute_management_cost\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12<\n\x16network_membership_fee\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12=\n\x17network_transaction_fee\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12;\n\x15network_reporting_fee\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValueBL\n\x11io.mica.common.v1B\x11OrganizationProtoZ\x1dmica/proto/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x63ommon/v1/organization.proto\x12\tcommon.v1\x1a\'common/enums/currency/v1/currency.proto\x1a@common/enums/organizationcategory/v1/organization_category.proto\x1a\x17\x63ommon/v1/address.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x17validate/validate.proto\"\xad\x04\n\x0cOrganization\x12#\n\x10organization_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x0bpartner_key\x18\x04 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0c\n\x04name\x18\x06 \x01(\t\x12N\n\ncategories\x18\x05 \x03(\x0e\x32:.common.enums.organizationcategory.v1.OrganizationCategory\x12#\n\x07\x61\x64\x64ress\x18\x08 \x01(\x0b\x32\x12.common.v1.Address\x12\x34\n\x1b\x64omestic_ach_routing_number\x18\t \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12\x39\n international_ach_routing_number\x18\n \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12,\n\x13wire_routing_number\x18\x0b \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x14swift_routing_number\x18\x0c \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x13\x62\x61nk_account_number\x18\r \x01(\tB\x10\xfa\x42\rr\x0b\x32\t^|\\w{14}$\"\xf4\x03\n\x13LegacyConfiguration\x12<\n\x16interchange_percentage\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12=\n\x17\x64ispute_rate_percentage\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x34\n\x08\x63urrency\x18\x03 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x31\n\x0b\x64ispute_fee\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12=\n\x17\x64ispute_management_cost\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12<\n\x16network_membership_fee\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12=\n\x17network_transaction_fee\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12;\n\x15network_reporting_fee\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValueBL\n\x11io.mica.common.v1B\x11OrganizationProtoZ\x1dmica/proto/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -50,8 +51,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\021io.mica.common.v1B\021OrganizationProtoZ\035mica/proto/common/v1;commonv1\242\002\004MICA'
-  _ORGANIZATION._serialized_start=241
-  _ORGANIZATION._serialized_end=690
-  _LEGACYCONFIGURATION._serialized_start=693
-  _LEGACYCONFIGURATION._serialized_end=1193
+  _ORGANIZATION.fields_by_name['organization_key']._options = None
+  _ORGANIZATION.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _ORGANIZATION.fields_by_name['partner_key']._options = None
+  _ORGANIZATION.fields_by_name['partner_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _ORGANIZATION.fields_by_name['domestic_ach_routing_number']._options = None
+  _ORGANIZATION.fields_by_name['domestic_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _ORGANIZATION.fields_by_name['international_ach_routing_number']._options = None
+  _ORGANIZATION.fields_by_name['international_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _ORGANIZATION.fields_by_name['wire_routing_number']._options = None
+  _ORGANIZATION.fields_by_name['wire_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _ORGANIZATION.fields_by_name['swift_routing_number']._options = None
+  _ORGANIZATION.fields_by_name['swift_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _ORGANIZATION.fields_by_name['bank_account_number']._options = None
+  _ORGANIZATION.fields_by_name['bank_account_number']._serialized_options = b'\372B\rr\0132\t^|\\w{14}$'
+  _ORGANIZATION._serialized_start=266
+  _ORGANIZATION._serialized_end=823
+  _LEGACYCONFIGURATION._serialized_start=826
+  _LEGACYCONFIGURATION._serialized_end=1326
 # @@protoc_insertion_point(module_scope)
