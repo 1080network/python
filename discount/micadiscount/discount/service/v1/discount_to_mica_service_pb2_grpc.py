@@ -66,6 +66,16 @@ class DiscountToMicaServiceStub(object):
                 request_serializer=discount_dot_discount_dot_v1_dot_discount__pb2.GetDiscountRequest.SerializeToString,
                 response_deserializer=discount_dot_discount_dot_v1_dot_discount__pb2.GetDiscountResponse.FromString,
                 )
+        self.UpdateDiscount = channel.unary_unary(
+                '/discount.service.v1.DiscountToMicaService/UpdateDiscount',
+                request_serializer=discount_dot_discount_dot_v1_dot_discount__pb2.UpdateDiscountRequest.SerializeToString,
+                response_deserializer=discount_dot_discount_dot_v1_dot_discount__pb2.UpdateDiscountResponse.FromString,
+                )
+        self.RemoveDiscount = channel.unary_unary(
+                '/discount.service.v1.DiscountToMicaService/RemoveDiscount',
+                request_serializer=discount_dot_discount_dot_v1_dot_discount__pb2.RemoveDiscountRequest.SerializeToString,
+                response_deserializer=discount_dot_discount_dot_v1_dot_discount__pb2.RemoveDiscountResponse.FromString,
+                )
         self.CreateProductGroup = channel.unary_unary(
                 '/discount.service.v1.DiscountToMicaService/CreateProductGroup',
                 request_serializer=discount_dot_productgroup_dot_v1_dot_product__group__pb2.CreateProductGroupRequest.SerializeToString,
@@ -149,6 +159,18 @@ class DiscountToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetDiscount(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateDiscount(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveDiscount(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -239,6 +261,16 @@ def add_DiscountToMicaServiceServicer_to_server(servicer, server):
                     servicer.GetDiscount,
                     request_deserializer=discount_dot_discount_dot_v1_dot_discount__pb2.GetDiscountRequest.FromString,
                     response_serializer=discount_dot_discount_dot_v1_dot_discount__pb2.GetDiscountResponse.SerializeToString,
+            ),
+            'UpdateDiscount': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDiscount,
+                    request_deserializer=discount_dot_discount_dot_v1_dot_discount__pb2.UpdateDiscountRequest.FromString,
+                    response_serializer=discount_dot_discount_dot_v1_dot_discount__pb2.UpdateDiscountResponse.SerializeToString,
+            ),
+            'RemoveDiscount': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveDiscount,
+                    request_deserializer=discount_dot_discount_dot_v1_dot_discount__pb2.RemoveDiscountRequest.FromString,
+                    response_serializer=discount_dot_discount_dot_v1_dot_discount__pb2.RemoveDiscountResponse.SerializeToString,
             ),
             'CreateProductGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateProductGroup,
@@ -414,6 +446,40 @@ class DiscountToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountToMicaService/GetDiscount',
             discount_dot_discount_dot_v1_dot_discount__pb2.GetDiscountRequest.SerializeToString,
             discount_dot_discount_dot_v1_dot_discount__pb2.GetDiscountResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateDiscount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountToMicaService/UpdateDiscount',
+            discount_dot_discount_dot_v1_dot_discount__pb2.UpdateDiscountRequest.SerializeToString,
+            discount_dot_discount_dot_v1_dot_discount__pb2.UpdateDiscountResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveDiscount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountToMicaService/RemoveDiscount',
+            discount_dot_discount_dot_v1_dot_discount__pb2.RemoveDiscountRequest.SerializeToString,
+            discount_dot_discount_dot_v1_dot_discount__pb2.RemoveDiscountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

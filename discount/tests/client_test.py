@@ -2,18 +2,16 @@ from concurrent import futures
 
 import grpc
 
-import micadiscount
-from micadiscount.discount.service.v1.discount_service_to_mica_pb2_grpc import add_DiscountToMicaServiceServicer_to_server, DiscountToMicaService
+from micadiscount import discount_roles
+from micadiscount.discount.service.v1.discount_to_mica_service_pb2_grpc import add_DiscountToMicaServiceServicer_to_server, DiscountToMicaService
 import micadiscount.common.ping.v1.ping_pb2 as ping
-from micadiscount import build_test_discount_client
-
-import micautils
+from micadiscount import build_test_discount_client, get_test_jwt_token
 
 
 def test_discount_ping():
     server = get_discount_server()
     server.start()
-    client = build_test_discount_client(addr='[::]:50051')
+    client = build_test_discount_client(tenant='micatenant', addr='[::]:50051')
     response = client.Ping(ping.PingRequest())
     assert response.status == ping.PingResponse.STATUS_SUCCESS
     assert response.build_version == 'test version'
@@ -25,7 +23,7 @@ def test_discount_ping():
 
 
 def test_create_token():
-    token = micautils.create_test_jwt_token(jwt_roles=micadiscount.discount_roles)
+    token = get_test_jwt_token(tenant='micatenant')
     print(f"Your calling token is: \n {token}")
 
 

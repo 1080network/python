@@ -4,7 +4,7 @@ import grpc
 import jwt
 
 from datetime import datetime, timedelta, timezone
-from typing import List
+from typing import List, Dict
 
 
 class _ClientCallDetails(
@@ -17,11 +17,14 @@ class _ClientCallDetails(
 
 class MicaAuthNJWTInterceptor(grpc.UnaryUnaryClientInterceptor):
 
-    def __init__(self, roles: List[str], jwt_key: str):
+    def __init__(self, subject: str, audience: str, roles: List[str], jwt_key: str, extra_claims: Dict[str, str] = None):
+        self.subject = subject
+        self.audience = audience
         self.roles = roles
         self.jwt_key = jwt_key
         self.expiry = None
         self.authHeader = None
+        self.extra_claims = extra_claims
         self.__generate_token()
 
     def intercept_unary_unary(self, continuation, client_call_details, request):
@@ -42,6 +45,9 @@ class MicaAuthNJWTInterceptor(grpc.UnaryUnaryClientInterceptor):
 
     def __generate_token(self):
         self.expiry = datetime.now(tz=timezone.utc) + timedelta(hours=1)
-        claims = {"iss": "mica.io", "iat": datetime.now(tz=timezone.utc), "exp": self.expiry, "roles": self.roles}
+        claims = {"sub": self.subject, "aud": self.audience, "iss": "mica.io", "iat": datetime.now(tz=timezone.utc),
+                  "exp": self.expiry, "roles": self.roles}
+        for claim, value in self.extra_claims.items():
+            claims[claim] = value
         encoded = jwt.encode(claims, self.jwt_key, algorithm="HS256")
         self.authHeader = ('authorization', f'Bearer {encoded}')

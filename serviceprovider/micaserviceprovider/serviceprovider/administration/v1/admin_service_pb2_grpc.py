@@ -69,6 +69,21 @@ class ServiceProviderAdministrationServiceStub(object):
                 request_serializer=common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
                 response_deserializer=common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
                 )
+        self.GenerateClientMTLSCertificate = channel.unary_unary(
+                '/serviceprovider.administration.v1.ServiceProviderAdministrationService/GenerateClientMTLSCertificate',
+                request_serializer=common_dot_v1_dot_mtls__certificate__pb2.GenerateClientMTLSCertificateRequest.SerializeToString,
+                response_deserializer=common_dot_v1_dot_mtls__certificate__pb2.GenerateClientMTLSCertificateResponse.FromString,
+                )
+        self.UpdateClientMTLSCertificate = channel.unary_unary(
+                '/serviceprovider.administration.v1.ServiceProviderAdministrationService/UpdateClientMTLSCertificate',
+                request_serializer=common_dot_v1_dot_mtls__certificate__pb2.UpdateClientMTLSCertificateRequest.SerializeToString,
+                response_deserializer=common_dot_v1_dot_mtls__certificate__pb2.UpdateClientMTLSCertificateResponse.FromString,
+                )
+        self.SearchClientMTLSCertificate = channel.unary_unary(
+                '/serviceprovider.administration.v1.ServiceProviderAdministrationService/SearchClientMTLSCertificate',
+                request_serializer=common_dot_v1_dot_mtls__certificate__pb2.SearchClientMTLSCertificateRequest.SerializeToString,
+                response_deserializer=common_dot_v1_dot_mtls__certificate__pb2.SearchClientMTLSCertificateResponse.FromString,
+                )
 
 
 class ServiceProviderAdministrationServiceServicer(object):
@@ -132,6 +147,25 @@ class ServiceProviderAdministrationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateClientMTLSCertificate(self, request, context):
+        """Client certificates are used when mica needs to call out to a customers environment.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateClientMTLSCertificate(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SearchClientMTLSCertificate(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ServiceProviderAdministrationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -179,6 +213,21 @@ def add_ServiceProviderAdministrationServiceServicer_to_server(servicer, server)
                     servicer.PingExternal,
                     request_deserializer=common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
                     response_serializer=common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
+            ),
+            'GenerateClientMTLSCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateClientMTLSCertificate,
+                    request_deserializer=common_dot_v1_dot_mtls__certificate__pb2.GenerateClientMTLSCertificateRequest.FromString,
+                    response_serializer=common_dot_v1_dot_mtls__certificate__pb2.GenerateClientMTLSCertificateResponse.SerializeToString,
+            ),
+            'UpdateClientMTLSCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateClientMTLSCertificate,
+                    request_deserializer=common_dot_v1_dot_mtls__certificate__pb2.UpdateClientMTLSCertificateRequest.FromString,
+                    response_serializer=common_dot_v1_dot_mtls__certificate__pb2.UpdateClientMTLSCertificateResponse.SerializeToString,
+            ),
+            'SearchClientMTLSCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchClientMTLSCertificate,
+                    request_deserializer=common_dot_v1_dot_mtls__certificate__pb2.SearchClientMTLSCertificateRequest.FromString,
+                    response_serializer=common_dot_v1_dot_mtls__certificate__pb2.SearchClientMTLSCertificateResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -341,5 +390,56 @@ class ServiceProviderAdministrationService(object):
         return grpc.experimental.unary_unary(request, target, '/serviceprovider.administration.v1.ServiceProviderAdministrationService/PingExternal',
             common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
             common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GenerateClientMTLSCertificate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/serviceprovider.administration.v1.ServiceProviderAdministrationService/GenerateClientMTLSCertificate',
+            common_dot_v1_dot_mtls__certificate__pb2.GenerateClientMTLSCertificateRequest.SerializeToString,
+            common_dot_v1_dot_mtls__certificate__pb2.GenerateClientMTLSCertificateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateClientMTLSCertificate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/serviceprovider.administration.v1.ServiceProviderAdministrationService/UpdateClientMTLSCertificate',
+            common_dot_v1_dot_mtls__certificate__pb2.UpdateClientMTLSCertificateRequest.SerializeToString,
+            common_dot_v1_dot_mtls__certificate__pb2.UpdateClientMTLSCertificateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SearchClientMTLSCertificate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/serviceprovider.administration.v1.ServiceProviderAdministrationService/SearchClientMTLSCertificate',
+            common_dot_v1_dot_mtls__certificate__pb2.SearchClientMTLSCertificateRequest.SerializeToString,
+            common_dot_v1_dot_mtls__certificate__pb2.SearchClientMTLSCertificateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
