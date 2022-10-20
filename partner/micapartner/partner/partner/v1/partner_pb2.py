@@ -25,9 +25,10 @@ from micapartner.common.v1 import address_pb2 as common_dot_v1_dot_address__pb2
 from micapartner.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from micapartner.common.v1 import organization_pb2 as common_dot_v1_dot_organization__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n partner/partner/v1/partner.proto\x12\x12partner.partner.v1\x1a.common/enums/accounttype/v1/account_type.proto\x1a\'common/enums/currency/v1/currency.proto\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1c\x63ommon/v1/organization.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa3\x02\n\x0ePartnerAccount\x12\x1b\n\x13partner_account_key\x18\x01 \x01(\t\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x13\n\x0bpartner_key\x18\x05 \x01(\t\x12>\n\x0c\x61\x63\x63ount_type\x18\x06 \x01(\x0e\x32(.common.enums.accounttype.v1.AccountType\x12\x34\n\x08\x63urrency\x18\x07 \x01(\x0e\x32\".common.enums.currency.v1.Currency\"\xac\x02\n\x07Partner\x12\x13\n\x0bpartner_key\x18\x01 \x01(\t\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x16\n\x0etax_identifier\x18\x06 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x07 \x01(\x0b\x32\x12.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x08 \x01(\t\x12<\n\x10partner_accounts\x18\t \x03(\x0b\x32\".partner.partner.v1.PartnerAccount\"\x13\n\x11GetPartnerRequest\"\x80\x02\n\x12GetPartnerResponse\x12=\n\x06status\x18\x01 \x01(\x0e\x32-.partner.partner.v1.GetPartnerResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12,\n\x07partner\x18\x03 \x01(\x0b\x32\x1b.partner.partner.v1.Partner\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"&\n$GetPartnerLegacyConfigurationRequest\"\xbe\x02\n%GetPartnerLegacyConfigurationResponse\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.partner.partner.v1.GetPartnerLegacyConfigurationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x44\n\x1cpartner_legacy_configuration\x18\x03 \x01(\x0b\x32\x1e.common.v1.LegacyConfiguration\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"x\n\'UpdatePartnerLegacyConfigurationRequest\x12<\n\x14legacy_configuration\x18\x01 \x01(\x0b\x32\x1e.common.v1.LegacyConfiguration\x12\x0f\n\x07version\x18\x02 \x01(\x03\"\x8f\x02\n(UpdatePartnerLegacyConfigurationResponse\x12S\n\x06status\x18\x01 \x01(\x0e\x32\x43.partner.partner.v1.UpdatePartnerLegacyConfigurationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42O\n\x1aio.mica.partner.partner.v1B\x0cPartnerProtoZ\x1cmica/proto/partner/partnerv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n partner/partner/v1/partner.proto\x12\x12partner.partner.v1\x1a.common/enums/accounttype/v1/account_type.proto\x1a\'common/enums/currency/v1/currency.proto\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1c\x63ommon/v1/organization.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xb9\x02\n\x0ePartnerAccount\x12&\n\x13partner_account_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x1e\n\x0bpartner_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12>\n\x0c\x61\x63\x63ount_type\x18\x06 \x01(\x0e\x32(.common.enums.accounttype.v1.AccountType\x12\x34\n\x08\x63urrency\x18\x07 \x01(\x0e\x32\".common.enums.currency.v1.Currency\"\xb7\x02\n\x07Partner\x12\x1e\n\x0bpartner_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x16\n\x0etax_identifier\x18\x06 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x07 \x01(\x0b\x32\x12.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x08 \x01(\t\x12<\n\x10partner_accounts\x18\t \x03(\x0b\x32\".partner.partner.v1.PartnerAccount\"\x13\n\x11GetPartnerRequest\"\x80\x02\n\x12GetPartnerResponse\x12=\n\x06status\x18\x01 \x01(\x0e\x32-.partner.partner.v1.GetPartnerResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12,\n\x07partner\x18\x03 \x01(\x0b\x32\x1b.partner.partner.v1.Partner\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"&\n$GetPartnerLegacyConfigurationRequest\"\xbe\x02\n%GetPartnerLegacyConfigurationResponse\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.partner.partner.v1.GetPartnerLegacyConfigurationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x44\n\x1cpartner_legacy_configuration\x18\x03 \x01(\x0b\x32\x1e.common.v1.LegacyConfiguration\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"x\n\'UpdatePartnerLegacyConfigurationRequest\x12<\n\x14legacy_configuration\x18\x01 \x01(\x0b\x32\x1e.common.v1.LegacyConfiguration\x12\x0f\n\x07version\x18\x02 \x01(\x03\"\x8f\x02\n(UpdatePartnerLegacyConfigurationResponse\x12S\n\x06status\x18\x01 \x01(\x0e\x32\x43.partner.partner.v1.UpdatePartnerLegacyConfigurationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42O\n\x1aio.mica.partner.partner.v1B\x0cPartnerProtoZ\x1cmica/proto/partner/partnerv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -102,26 +103,32 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\032io.mica.partner.partner.v1B\014PartnerProtoZ\034mica/proto/partner/partnerv1\242\002\004MICA'
-  _PARTNERACCOUNT._serialized_start=257
-  _PARTNERACCOUNT._serialized_end=548
-  _PARTNER._serialized_start=551
-  _PARTNER._serialized_end=851
-  _GETPARTNERREQUEST._serialized_start=853
-  _GETPARTNERREQUEST._serialized_end=872
-  _GETPARTNERRESPONSE._serialized_start=875
-  _GETPARTNERRESPONSE._serialized_end=1131
-  _GETPARTNERRESPONSE_STATUS._serialized_start=1039
-  _GETPARTNERRESPONSE_STATUS._serialized_end=1131
-  _GETPARTNERLEGACYCONFIGURATIONREQUEST._serialized_start=1133
-  _GETPARTNERLEGACYCONFIGURATIONREQUEST._serialized_end=1171
-  _GETPARTNERLEGACYCONFIGURATIONRESPONSE._serialized_start=1174
-  _GETPARTNERLEGACYCONFIGURATIONRESPONSE._serialized_end=1492
-  _GETPARTNERLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_start=1039
-  _GETPARTNERLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_end=1131
-  _UPDATEPARTNERLEGACYCONFIGURATIONREQUEST._serialized_start=1494
-  _UPDATEPARTNERLEGACYCONFIGURATIONREQUEST._serialized_end=1614
-  _UPDATEPARTNERLEGACYCONFIGURATIONRESPONSE._serialized_start=1617
-  _UPDATEPARTNERLEGACYCONFIGURATIONRESPONSE._serialized_end=1888
-  _UPDATEPARTNERLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_start=1039
-  _UPDATEPARTNERLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_end=1131
+  _PARTNERACCOUNT.fields_by_name['partner_account_key']._options = None
+  _PARTNERACCOUNT.fields_by_name['partner_account_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _PARTNERACCOUNT.fields_by_name['partner_key']._options = None
+  _PARTNERACCOUNT.fields_by_name['partner_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _PARTNER.fields_by_name['partner_key']._options = None
+  _PARTNER.fields_by_name['partner_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _PARTNERACCOUNT._serialized_start=282
+  _PARTNERACCOUNT._serialized_end=595
+  _PARTNER._serialized_start=598
+  _PARTNER._serialized_end=909
+  _GETPARTNERREQUEST._serialized_start=911
+  _GETPARTNERREQUEST._serialized_end=930
+  _GETPARTNERRESPONSE._serialized_start=933
+  _GETPARTNERRESPONSE._serialized_end=1189
+  _GETPARTNERRESPONSE_STATUS._serialized_start=1097
+  _GETPARTNERRESPONSE_STATUS._serialized_end=1189
+  _GETPARTNERLEGACYCONFIGURATIONREQUEST._serialized_start=1191
+  _GETPARTNERLEGACYCONFIGURATIONREQUEST._serialized_end=1229
+  _GETPARTNERLEGACYCONFIGURATIONRESPONSE._serialized_start=1232
+  _GETPARTNERLEGACYCONFIGURATIONRESPONSE._serialized_end=1550
+  _GETPARTNERLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_start=1097
+  _GETPARTNERLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_end=1189
+  _UPDATEPARTNERLEGACYCONFIGURATIONREQUEST._serialized_start=1552
+  _UPDATEPARTNERLEGACYCONFIGURATIONREQUEST._serialized_end=1672
+  _UPDATEPARTNERLEGACYCONFIGURATIONRESPONSE._serialized_start=1675
+  _UPDATEPARTNERLEGACYCONFIGURATIONRESPONSE._serialized_end=1946
+  _UPDATEPARTNERLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_start=1097
+  _UPDATEPARTNERLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_end=1189
 # @@protoc_insertion_point(module_scope)

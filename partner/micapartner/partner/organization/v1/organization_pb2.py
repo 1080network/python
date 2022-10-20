@@ -23,9 +23,10 @@ from micapartner.common.enums.organizationcategory.v1 import organization_catego
 from micapartner.common.v1 import address_pb2 as common_dot_v1_dot_address__pb2
 from micapartner.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from micapartner.common.v1 import organization_pb2 as common_dot_v1_dot_organization__pb2
+from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*partner/organization/v1/organization.proto\x12\x17partner.organization.v1\x1a@common/enums/organizationcategory/v1/organization_category.proto\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1c\x63ommon/v1/organization.proto\"2\n\x16GetOrganizationRequest\x12\x18\n\x10organization_key\x18\x01 \x01(\t\"\xaf\x02\n\x17GetOrganizationResponse\x12G\n\x06status\x18\x01 \x01(\x0e\x32\x37.partner.organization.v1.GetOrganizationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12-\n\x0corganization\x18\x03 \x01(\x0b\x32\x17.common.v1.Organization\"{\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\"\xa0\x02\n\x19UpdateOrganizationRequest\x12\x18\n\x10organization_key\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x04 \x01(\x0b\x32\x12.common.v1.Address\x12#\n\x1b\x64omestic_ach_routing_number\x18\x05 \x01(\t\x12(\n international_ach_routing_number\x18\x06 \x01(\t\x12\x1b\n\x13wire_routing_number\x18\x07 \x01(\t\x12\x1c\n\x14swift_routing_number\x18\x08 \x01(\t\x12\x1b\n\x13\x62\x61nk_account_number\x18\t \x01(\t\"\x95\x02\n\x1aUpdateOrganizationResponse\x12J\n\x06status\x18\x01 \x01(\x0e\x32:.partner.organization.v1.UpdateOrganizationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x1b\n\x17STATUS_VERSION_MISMATCH\x10\x04\"w\n\x19SearchOrganizationRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12L\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32:.common.enums.organizationcategory.v1.OrganizationCategory\"\xa0\x02\n\x1aSearchOrganizationResponse\x12J\n\x06status\x18\x01 \x01(\x0e\x32:.partner.organization.v1.SearchOrganizationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12.\n\rorganizations\x18\x03 \x03(\x0b\x32\x17.common.v1.Organization\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\"E\n)GetOrganizationLegacyConfigurationRequest\x12\x18\n\x10organization_key\x18\x01 \x01(\t\"\xb7\x03\n*GetOrganizationLegacyConfigurationResponse\x12Z\n\x06status\x18\x01 \x01(\x0e\x32J.partner.organization.v1.GetOrganizationLegacyConfigurationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x44\n\x1cpartner_legacy_configuration\x18\x03 \x01(\x0b\x32\x1e.common.v1.LegacyConfiguration\x12I\n!organization_legacy_configuration\x18\x04 \x01(\x0b\x32\x1e.common.v1.LegacyConfiguration\"{\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\"\x97\x01\n,UpdateOrganizationLegacyConfigurationRequest\x12\x18\n\x10organization_key\x18\x01 \x01(\t\x12<\n\x14legacy_configuration\x18\x02 \x01(\x0b\x32\x1e.common.v1.LegacyConfiguration\x12\x0f\n\x07version\x18\x03 \x01(\x03\"\xbd\x02\n-UpdateOrganizationLegacyConfigurationResponse\x12]\n\x06status\x18\x01 \x01(\x0e\x32M.partner.organization.v1.UpdateOrganizationLegacyConfigurationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"{\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\x42^\n\x1fio.mica.partner.organization.v1B\x11OrganizationProtoZ!mica/proto/partner/organizationv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*partner/organization/v1/organization.proto\x12\x17partner.organization.v1\x1a@common/enums/organizationcategory/v1/organization_category.proto\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1c\x63ommon/v1/organization.proto\x1a\x17validate/validate.proto\"=\n\x16GetOrganizationRequest\x12#\n\x10organization_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xaf\x02\n\x17GetOrganizationResponse\x12G\n\x06status\x18\x01 \x01(\x0e\x32\x37.partner.organization.v1.GetOrganizationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12-\n\x0corganization\x18\x03 \x01(\x0b\x32\x17.common.v1.Organization\"{\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\"\x81\x03\n\x19UpdateOrganizationRequest\x12#\n\x10organization_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x0c\n\x04name\x18\x03 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x04 \x01(\x0b\x32\x12.common.v1.Address\x12\x34\n\x1b\x64omestic_ach_routing_number\x18\x05 \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12\x39\n international_ach_routing_number\x18\x06 \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12,\n\x13wire_routing_number\x18\x07 \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x14swift_routing_number\x18\x08 \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x13\x62\x61nk_account_number\x18\t \x01(\tB\x10\xfa\x42\rr\x0b\x32\t^|\\w{14}$\"\x95\x02\n\x1aUpdateOrganizationResponse\x12J\n\x06status\x18\x01 \x01(\x0e\x32:.partner.organization.v1.UpdateOrganizationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x1b\n\x17STATUS_VERSION_MISMATCH\x10\x04\"w\n\x19SearchOrganizationRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12L\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32:.common.enums.organizationcategory.v1.OrganizationCategory\"\xa0\x02\n\x1aSearchOrganizationResponse\x12J\n\x06status\x18\x01 \x01(\x0e\x32:.partner.organization.v1.SearchOrganizationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12.\n\rorganizations\x18\x03 \x03(\x0b\x32\x17.common.v1.Organization\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\"P\n)GetOrganizationLegacyConfigurationRequest\x12#\n\x10organization_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xb7\x03\n*GetOrganizationLegacyConfigurationResponse\x12Z\n\x06status\x18\x01 \x01(\x0e\x32J.partner.organization.v1.GetOrganizationLegacyConfigurationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x44\n\x1cpartner_legacy_configuration\x18\x03 \x01(\x0b\x32\x1e.common.v1.LegacyConfiguration\x12I\n!organization_legacy_configuration\x18\x04 \x01(\x0b\x32\x1e.common.v1.LegacyConfiguration\"{\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\"\xa2\x01\n,UpdateOrganizationLegacyConfigurationRequest\x12#\n\x10organization_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12<\n\x14legacy_configuration\x18\x02 \x01(\x0b\x32\x1e.common.v1.LegacyConfiguration\x12\x0f\n\x07version\x18\x03 \x01(\x03\"\xbd\x02\n-UpdateOrganizationLegacyConfigurationResponse\x12]\n\x06status\x18\x01 \x01(\x0e\x32M.partner.organization.v1.UpdateOrganizationLegacyConfigurationResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"{\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\x42^\n\x1fio.mica.partner.organization.v1B\x11OrganizationProtoZ!mica/proto/partner/organizationv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -118,34 +119,52 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\037io.mica.partner.organization.v1B\021OrganizationProtoZ!mica/proto/partner/organizationv1\242\002\004MICA'
-  _GETORGANIZATIONREQUEST._serialized_start=215
-  _GETORGANIZATIONREQUEST._serialized_end=265
-  _GETORGANIZATIONRESPONSE._serialized_start=268
-  _GETORGANIZATIONRESPONSE._serialized_end=571
-  _GETORGANIZATIONRESPONSE_STATUS._serialized_start=448
-  _GETORGANIZATIONRESPONSE_STATUS._serialized_end=571
-  _UPDATEORGANIZATIONREQUEST._serialized_start=574
-  _UPDATEORGANIZATIONREQUEST._serialized_end=862
-  _UPDATEORGANIZATIONRESPONSE._serialized_start=865
-  _UPDATEORGANIZATIONRESPONSE._serialized_end=1142
-  _UPDATEORGANIZATIONRESPONSE_STATUS._serialized_start=1021
-  _UPDATEORGANIZATIONRESPONSE_STATUS._serialized_end=1142
-  _SEARCHORGANIZATIONREQUEST._serialized_start=1144
-  _SEARCHORGANIZATIONREQUEST._serialized_end=1263
-  _SEARCHORGANIZATIONRESPONSE._serialized_start=1266
-  _SEARCHORGANIZATIONRESPONSE._serialized_end=1554
-  _SEARCHORGANIZATIONRESPONSE_STATUS._serialized_start=448
-  _SEARCHORGANIZATIONRESPONSE_STATUS._serialized_end=549
-  _GETORGANIZATIONLEGACYCONFIGURATIONREQUEST._serialized_start=1556
-  _GETORGANIZATIONLEGACYCONFIGURATIONREQUEST._serialized_end=1625
-  _GETORGANIZATIONLEGACYCONFIGURATIONRESPONSE._serialized_start=1628
-  _GETORGANIZATIONLEGACYCONFIGURATIONRESPONSE._serialized_end=2067
-  _GETORGANIZATIONLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_start=448
-  _GETORGANIZATIONLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_end=571
-  _UPDATEORGANIZATIONLEGACYCONFIGURATIONREQUEST._serialized_start=2070
-  _UPDATEORGANIZATIONLEGACYCONFIGURATIONREQUEST._serialized_end=2221
-  _UPDATEORGANIZATIONLEGACYCONFIGURATIONRESPONSE._serialized_start=2224
-  _UPDATEORGANIZATIONLEGACYCONFIGURATIONRESPONSE._serialized_end=2541
-  _UPDATEORGANIZATIONLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_start=448
-  _UPDATEORGANIZATIONLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_end=571
+  _GETORGANIZATIONREQUEST.fields_by_name['organization_key']._options = None
+  _GETORGANIZATIONREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['organization_key']._options = None
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['domestic_ach_routing_number']._options = None
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['domestic_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['international_ach_routing_number']._options = None
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['international_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['wire_routing_number']._options = None
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['wire_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['swift_routing_number']._options = None
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['swift_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['bank_account_number']._options = None
+  _UPDATEORGANIZATIONREQUEST.fields_by_name['bank_account_number']._serialized_options = b'\372B\rr\0132\t^|\\w{14}$'
+  _GETORGANIZATIONLEGACYCONFIGURATIONREQUEST.fields_by_name['organization_key']._options = None
+  _GETORGANIZATIONLEGACYCONFIGURATIONREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _UPDATEORGANIZATIONLEGACYCONFIGURATIONREQUEST.fields_by_name['organization_key']._options = None
+  _UPDATEORGANIZATIONLEGACYCONFIGURATIONREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _GETORGANIZATIONREQUEST._serialized_start=240
+  _GETORGANIZATIONREQUEST._serialized_end=301
+  _GETORGANIZATIONRESPONSE._serialized_start=304
+  _GETORGANIZATIONRESPONSE._serialized_end=607
+  _GETORGANIZATIONRESPONSE_STATUS._serialized_start=484
+  _GETORGANIZATIONRESPONSE_STATUS._serialized_end=607
+  _UPDATEORGANIZATIONREQUEST._serialized_start=610
+  _UPDATEORGANIZATIONREQUEST._serialized_end=995
+  _UPDATEORGANIZATIONRESPONSE._serialized_start=998
+  _UPDATEORGANIZATIONRESPONSE._serialized_end=1275
+  _UPDATEORGANIZATIONRESPONSE_STATUS._serialized_start=1154
+  _UPDATEORGANIZATIONRESPONSE_STATUS._serialized_end=1275
+  _SEARCHORGANIZATIONREQUEST._serialized_start=1277
+  _SEARCHORGANIZATIONREQUEST._serialized_end=1396
+  _SEARCHORGANIZATIONRESPONSE._serialized_start=1399
+  _SEARCHORGANIZATIONRESPONSE._serialized_end=1687
+  _SEARCHORGANIZATIONRESPONSE_STATUS._serialized_start=484
+  _SEARCHORGANIZATIONRESPONSE_STATUS._serialized_end=585
+  _GETORGANIZATIONLEGACYCONFIGURATIONREQUEST._serialized_start=1689
+  _GETORGANIZATIONLEGACYCONFIGURATIONREQUEST._serialized_end=1769
+  _GETORGANIZATIONLEGACYCONFIGURATIONRESPONSE._serialized_start=1772
+  _GETORGANIZATIONLEGACYCONFIGURATIONRESPONSE._serialized_end=2211
+  _GETORGANIZATIONLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_start=484
+  _GETORGANIZATIONLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_end=607
+  _UPDATEORGANIZATIONLEGACYCONFIGURATIONREQUEST._serialized_start=2214
+  _UPDATEORGANIZATIONLEGACYCONFIGURATIONREQUEST._serialized_end=2376
+  _UPDATEORGANIZATIONLEGACYCONFIGURATIONRESPONSE._serialized_start=2379
+  _UPDATEORGANIZATIONLEGACYCONFIGURATIONRESPONSE._serialized_end=2696
+  _UPDATEORGANIZATIONLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_start=484
+  _UPDATEORGANIZATIONLEGACYCONFIGURATIONRESPONSE_STATUS._serialized_end=607
 # @@protoc_insertion_point(module_scope)

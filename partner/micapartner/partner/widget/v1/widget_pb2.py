@@ -21,9 +21,10 @@ _sym_db = _symbol_database.Default()
 
 from micapartner.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from micapartner.common.v1 import user_pb2 as common_dot_v1_dot_user__pb2
+from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1epartner/widget/v1/widget.proto\x12\x11partner.widget.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x14\x63ommon/v1/user.proto\"O\n\x17InitializeWidgetRequest\x12\x34\n\x10user_demographic\x18\x03 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"\xdc\x01\n\x18InitializeWidgetResponse\x12\x42\n\x06status\x18\x01 \x01(\x0e\x32\x32.partner.widget.v1.InitializeWidgetResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x13\n\x0bsession_key\x18\x03 \x01(\t\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42T\n\x1dio.mica.partner.instrument.v1B\x0bWidgetProtoZ\x1fmica/proto/partner/instrumentv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1epartner/widget/v1/widget.proto\x12\x11partner.widget.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x14\x63ommon/v1/user.proto\x1a\x17validate/validate.proto\"O\n\x17InitializeWidgetRequest\x12\x34\n\x10user_demographic\x18\x03 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"\xe7\x01\n\x18InitializeWidgetResponse\x12\x42\n\x06status\x18\x01 \x01(\x0e\x32\x32.partner.widget.v1.InitializeWidgetResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x1e\n\x0bsession_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42T\n\x1dio.mica.partner.instrument.v1B\x0bWidgetProtoZ\x1fmica/proto/partner/instrumentv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -48,10 +49,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035io.mica.partner.instrument.v1B\013WidgetProtoZ\037mica/proto/partner/instrumentv1\242\002\004MICA'
-  _INITIALIZEWIDGETREQUEST._serialized_start=98
-  _INITIALIZEWIDGETREQUEST._serialized_end=177
-  _INITIALIZEWIDGETRESPONSE._serialized_start=180
-  _INITIALIZEWIDGETRESPONSE._serialized_end=400
-  _INITIALIZEWIDGETRESPONSE_STATUS._serialized_start=330
-  _INITIALIZEWIDGETRESPONSE_STATUS._serialized_end=400
+  _INITIALIZEWIDGETRESPONSE.fields_by_name['session_key']._options = None
+  _INITIALIZEWIDGETRESPONSE.fields_by_name['session_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _INITIALIZEWIDGETREQUEST._serialized_start=123
+  _INITIALIZEWIDGETREQUEST._serialized_end=202
+  _INITIALIZEWIDGETRESPONSE._serialized_start=205
+  _INITIALIZEWIDGETRESPONSE._serialized_end=436
+  _INITIALIZEWIDGETRESPONSE_STATUS._serialized_start=366
+  _INITIALIZEWIDGETRESPONSE_STATUS._serialized_end=436
 # @@protoc_insertion_point(module_scope)

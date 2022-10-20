@@ -23,9 +23,10 @@ from micaconnect.common.enums.currency.v1 import currency_pb2 as common_dot_enum
 from micaconnect.common.enums.instrumenttype.v1 import instrument_type_pb2 as common_dot_enums_dot_instrumenttype_dot_v1_dot_instrument__type__pb2
 from micaconnect.common.v1 import connect_pb2 as common_dot_v1_dot_connect__pb2
 from micaconnect.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
+from micaconnect.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&connect/instrument/v1/instrument.proto\x12\x15\x63onnect.instrument.v1\x1a\'common/enums/currency/v1/currency.proto\x1a\x34\x63ommon/enums/instrumenttype/v1/instrument_type.proto\x1a\x17\x63ommon/v1/connect.proto\x1a\x15\x63ommon/v1/error.proto\"\xbb\x02\n\'WidgetRegisterInstrumentInitiateRequest\x12\x13\n\x0bsession_key\x18\x01 \x01(\t\x12\x1c\n\x14service_provider_key\x18\x02 \x01(\t\x12\x45\n\x18\x62\x61nk_account_credentials\x18\x04 \x01(\x0b\x32!.common.v1.BankAccountCredentialsH\x00\x12;\n\x13\x62\x61nk_account_number\x18\x05 \x01(\x0b\x32\x1c.common.v1.BankAccountNumberH\x00\x12@\n\x0f\x63onnect_details\x18\x03 \x01(\x0b\x32%.connect.instrument.v1.ConnectDetailsH\x00\x42\x17\n\x15instrument_identifier\"\x10\n\x0e\x43onnectDetails\"\xcc\x02\n(WidgetRegisterInstrumentInitiateResponse\x12V\n\x06status\x18\x01 \x01(\x0e\x32\x46.connect.instrument.v1.WidgetRegisterInstrumentInitiateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x36\n\x0binstruments\x18\x03 \x03(\x0b\x32!.connect.instrument.v1.Instrument\"o\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\'\n#STATUS_UNSUPPORTED_SERVICE_PROVIDER\x10\x03\"\xaa\x01\n\nInstrument\x12G\n\x0finstrument_type\x18\x01 \x01(\x0e\x32..common.enums.instrumenttype.v1.InstrumentType\x12\x34\n\x08\x63urrency\x18\x03 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x1d\n\x15instrument_identifier\x18\x02 \x01(\t\"x\n*WidgetRegisterInstrumentWithAccountRequest\x12\x13\n\x0bsession_key\x18\x01 \x01(\t\x12\x35\n\ninstrument\x18\x03 \x01(\x0b\x32!.connect.instrument.v1.Instrument\"\x88\x02\n+WidgetRegisterInstrumentWithAccountResponse\x12Y\n\x06status\x18\x01 \x01(\x0e\x32I.connect.instrument.v1.WidgetRegisterInstrumentWithAccountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x15\n\rmatching_code\x18\x03 \x01(\t\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xad\x01\n\'WidgetRegisterInstrumentCompleteRequest\x12\x13\n\x0bsession_key\x18\x01 \x01(\t\x12\x31\n\x07\x63onnect\x18\x02 \x01(\x0b\x32\x1e.connect.instrument.v1.ConnectH\x00\x12/\n\x06ribbit\x18\x03 \x01(\x0b\x32\x1d.connect.instrument.v1.RibbitH\x00\x42\t\n\x07\x64\x65tails\" \n\x07\x43onnect\x12\x15\n\rmatching_code\x18\x01 \x01(\t\"\x1f\n\x06Ribbit\x12\x15\n\raccount_token\x18\x01 \x01(\t\"\xb6\x02\n(WidgetRegisterInstrumentCompleteResponse\x12V\n\x06status\x18\x01 \x01(\x0e\x32\x46.connect.instrument.v1.WidgetRegisterInstrumentCompleteResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\x90\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12!\n\x1dSTATUS_MATCHING_CODE_MISMATCH\x10\x03\x12%\n!STATUS_INVALID_REGISTRATION_STATE\x10\x04\"b\n-WidgetRibbitRegisterInstrumentInitiateRequest\x12\x13\n\x0bsession_key\x18\x01 \x01(\t\x12\x1c\n\x14service_provider_key\x18\x02 \x01(\t\"\xcf\x02\n.WidgetRibbitRegisterInstrumentInitiateResponse\x12\\\n\x06status\x18\x01 \x01(\x0e\x32L.connect.instrument.v1.WidgetRibbitRegisterInstrumentInitiateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0e\n\x06script\x18\x03 \x01(\t\x12\x1d\n\x15ribbit_institution_id\x18\x04 \x01(\x03\"o\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\'\n#STATUS_UNSUPPORTED_SERVICE_PROVIDER\x10\x03\x42X\n\x1dio.mica.connect.instrument.v1B\x0fInstrumentProtoZ\x1fmica/proto/connect/instrumentv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&connect/instrument/v1/instrument.proto\x12\x15\x63onnect.instrument.v1\x1a\'common/enums/currency/v1/currency.proto\x1a\x34\x63ommon/enums/instrumenttype/v1/instrument_type.proto\x1a\x17\x63ommon/v1/connect.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x17validate/validate.proto\"\xd1\x02\n\'WidgetRegisterInstrumentInitiateRequest\x12\x1e\n\x0bsession_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\'\n\x14service_provider_key\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x45\n\x18\x62\x61nk_account_credentials\x18\x04 \x01(\x0b\x32!.common.v1.BankAccountCredentialsH\x00\x12;\n\x13\x62\x61nk_account_number\x18\x05 \x01(\x0b\x32\x1c.common.v1.BankAccountNumberH\x00\x12@\n\x0f\x63onnect_details\x18\x03 \x01(\x0b\x32%.connect.instrument.v1.ConnectDetailsH\x00\x42\x17\n\x15instrument_identifier\"\x10\n\x0e\x43onnectDetails\"\xcc\x02\n(WidgetRegisterInstrumentInitiateResponse\x12V\n\x06status\x18\x01 \x01(\x0e\x32\x46.connect.instrument.v1.WidgetRegisterInstrumentInitiateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x36\n\x0binstruments\x18\x03 \x03(\x0b\x32!.connect.instrument.v1.Instrument\"o\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\'\n#STATUS_UNSUPPORTED_SERVICE_PROVIDER\x10\x03\"\xaa\x01\n\nInstrument\x12G\n\x0finstrument_type\x18\x01 \x01(\x0e\x32..common.enums.instrumenttype.v1.InstrumentType\x12\x34\n\x08\x63urrency\x18\x03 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x1d\n\x15instrument_identifier\x18\x02 \x01(\t\"\x83\x01\n*WidgetRegisterInstrumentWithAccountRequest\x12\x1e\n\x0bsession_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x35\n\ninstrument\x18\x03 \x01(\x0b\x32!.connect.instrument.v1.Instrument\"\x88\x02\n+WidgetRegisterInstrumentWithAccountResponse\x12Y\n\x06status\x18\x01 \x01(\x0e\x32I.connect.instrument.v1.WidgetRegisterInstrumentWithAccountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x15\n\rmatching_code\x18\x03 \x01(\t\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xb8\x01\n\'WidgetRegisterInstrumentCompleteRequest\x12\x1e\n\x0bsession_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x31\n\x07\x63onnect\x18\x02 \x01(\x0b\x32\x1e.connect.instrument.v1.ConnectH\x00\x12/\n\x06ribbit\x18\x03 \x01(\x0b\x32\x1d.connect.instrument.v1.RibbitH\x00\x42\t\n\x07\x64\x65tails\" \n\x07\x43onnect\x12\x15\n\rmatching_code\x18\x01 \x01(\t\"\x1f\n\x06Ribbit\x12\x15\n\raccount_token\x18\x01 \x01(\t\"\xb6\x02\n(WidgetRegisterInstrumentCompleteResponse\x12V\n\x06status\x18\x01 \x01(\x0e\x32\x46.connect.instrument.v1.WidgetRegisterInstrumentCompleteResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\x90\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12!\n\x1dSTATUS_MATCHING_CODE_MISMATCH\x10\x03\x12%\n!STATUS_INVALID_REGISTRATION_STATE\x10\x04\"x\n-WidgetRibbitRegisterInstrumentInitiateRequest\x12\x1e\n\x0bsession_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\'\n\x14service_provider_key\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xcf\x02\n.WidgetRibbitRegisterInstrumentInitiateResponse\x12\\\n\x06status\x18\x01 \x01(\x0e\x32L.connect.instrument.v1.WidgetRibbitRegisterInstrumentInitiateResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0e\n\x06script\x18\x03 \x01(\t\x12\x1d\n\x15ribbit_institution_id\x18\x04 \x01(\x03\"o\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\'\n#STATUS_UNSUPPORTED_SERVICE_PROVIDER\x10\x03\x42X\n\x1dio.mica.connect.instrument.v1B\x0fInstrumentProtoZ\x1fmica/proto/connect/instrumentv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -133,36 +134,48 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035io.mica.connect.instrument.v1B\017InstrumentProtoZ\037mica/proto/connect/instrumentv1\242\002\004MICA'
-  _WIDGETREGISTERINSTRUMENTINITIATEREQUEST._serialized_start=209
-  _WIDGETREGISTERINSTRUMENTINITIATEREQUEST._serialized_end=524
-  _CONNECTDETAILS._serialized_start=526
-  _CONNECTDETAILS._serialized_end=542
-  _WIDGETREGISTERINSTRUMENTINITIATERESPONSE._serialized_start=545
-  _WIDGETREGISTERINSTRUMENTINITIATERESPONSE._serialized_end=877
-  _WIDGETREGISTERINSTRUMENTINITIATERESPONSE_STATUS._serialized_start=766
-  _WIDGETREGISTERINSTRUMENTINITIATERESPONSE_STATUS._serialized_end=877
-  _INSTRUMENT._serialized_start=880
-  _INSTRUMENT._serialized_end=1050
-  _WIDGETREGISTERINSTRUMENTWITHACCOUNTREQUEST._serialized_start=1052
-  _WIDGETREGISTERINSTRUMENTWITHACCOUNTREQUEST._serialized_end=1172
-  _WIDGETREGISTERINSTRUMENTWITHACCOUNTRESPONSE._serialized_start=1175
-  _WIDGETREGISTERINSTRUMENTWITHACCOUNTRESPONSE._serialized_end=1439
-  _WIDGETREGISTERINSTRUMENTWITHACCOUNTRESPONSE_STATUS._serialized_start=766
-  _WIDGETREGISTERINSTRUMENTWITHACCOUNTRESPONSE_STATUS._serialized_end=836
-  _WIDGETREGISTERINSTRUMENTCOMPLETEREQUEST._serialized_start=1442
-  _WIDGETREGISTERINSTRUMENTCOMPLETEREQUEST._serialized_end=1615
-  _CONNECT._serialized_start=1617
-  _CONNECT._serialized_end=1649
-  _RIBBIT._serialized_start=1651
-  _RIBBIT._serialized_end=1682
-  _WIDGETREGISTERINSTRUMENTCOMPLETERESPONSE._serialized_start=1685
-  _WIDGETREGISTERINSTRUMENTCOMPLETERESPONSE._serialized_end=1995
-  _WIDGETREGISTERINSTRUMENTCOMPLETERESPONSE_STATUS._serialized_start=1851
-  _WIDGETREGISTERINSTRUMENTCOMPLETERESPONSE_STATUS._serialized_end=1995
-  _WIDGETRIBBITREGISTERINSTRUMENTINITIATEREQUEST._serialized_start=1997
-  _WIDGETRIBBITREGISTERINSTRUMENTINITIATEREQUEST._serialized_end=2095
-  _WIDGETRIBBITREGISTERINSTRUMENTINITIATERESPONSE._serialized_start=2098
-  _WIDGETRIBBITREGISTERINSTRUMENTINITIATERESPONSE._serialized_end=2433
-  _WIDGETRIBBITREGISTERINSTRUMENTINITIATERESPONSE_STATUS._serialized_start=766
-  _WIDGETRIBBITREGISTERINSTRUMENTINITIATERESPONSE_STATUS._serialized_end=877
+  _WIDGETREGISTERINSTRUMENTINITIATEREQUEST.fields_by_name['session_key']._options = None
+  _WIDGETREGISTERINSTRUMENTINITIATEREQUEST.fields_by_name['session_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _WIDGETREGISTERINSTRUMENTINITIATEREQUEST.fields_by_name['service_provider_key']._options = None
+  _WIDGETREGISTERINSTRUMENTINITIATEREQUEST.fields_by_name['service_provider_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _WIDGETREGISTERINSTRUMENTWITHACCOUNTREQUEST.fields_by_name['session_key']._options = None
+  _WIDGETREGISTERINSTRUMENTWITHACCOUNTREQUEST.fields_by_name['session_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _WIDGETREGISTERINSTRUMENTCOMPLETEREQUEST.fields_by_name['session_key']._options = None
+  _WIDGETREGISTERINSTRUMENTCOMPLETEREQUEST.fields_by_name['session_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _WIDGETRIBBITREGISTERINSTRUMENTINITIATEREQUEST.fields_by_name['session_key']._options = None
+  _WIDGETRIBBITREGISTERINSTRUMENTINITIATEREQUEST.fields_by_name['session_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _WIDGETRIBBITREGISTERINSTRUMENTINITIATEREQUEST.fields_by_name['service_provider_key']._options = None
+  _WIDGETRIBBITREGISTERINSTRUMENTINITIATEREQUEST.fields_by_name['service_provider_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _WIDGETREGISTERINSTRUMENTINITIATEREQUEST._serialized_start=234
+  _WIDGETREGISTERINSTRUMENTINITIATEREQUEST._serialized_end=571
+  _CONNECTDETAILS._serialized_start=573
+  _CONNECTDETAILS._serialized_end=589
+  _WIDGETREGISTERINSTRUMENTINITIATERESPONSE._serialized_start=592
+  _WIDGETREGISTERINSTRUMENTINITIATERESPONSE._serialized_end=924
+  _WIDGETREGISTERINSTRUMENTINITIATERESPONSE_STATUS._serialized_start=813
+  _WIDGETREGISTERINSTRUMENTINITIATERESPONSE_STATUS._serialized_end=924
+  _INSTRUMENT._serialized_start=927
+  _INSTRUMENT._serialized_end=1097
+  _WIDGETREGISTERINSTRUMENTWITHACCOUNTREQUEST._serialized_start=1100
+  _WIDGETREGISTERINSTRUMENTWITHACCOUNTREQUEST._serialized_end=1231
+  _WIDGETREGISTERINSTRUMENTWITHACCOUNTRESPONSE._serialized_start=1234
+  _WIDGETREGISTERINSTRUMENTWITHACCOUNTRESPONSE._serialized_end=1498
+  _WIDGETREGISTERINSTRUMENTWITHACCOUNTRESPONSE_STATUS._serialized_start=813
+  _WIDGETREGISTERINSTRUMENTWITHACCOUNTRESPONSE_STATUS._serialized_end=883
+  _WIDGETREGISTERINSTRUMENTCOMPLETEREQUEST._serialized_start=1501
+  _WIDGETREGISTERINSTRUMENTCOMPLETEREQUEST._serialized_end=1685
+  _CONNECT._serialized_start=1687
+  _CONNECT._serialized_end=1719
+  _RIBBIT._serialized_start=1721
+  _RIBBIT._serialized_end=1752
+  _WIDGETREGISTERINSTRUMENTCOMPLETERESPONSE._serialized_start=1755
+  _WIDGETREGISTERINSTRUMENTCOMPLETERESPONSE._serialized_end=2065
+  _WIDGETREGISTERINSTRUMENTCOMPLETERESPONSE_STATUS._serialized_start=1921
+  _WIDGETREGISTERINSTRUMENTCOMPLETERESPONSE_STATUS._serialized_end=2065
+  _WIDGETRIBBITREGISTERINSTRUMENTINITIATEREQUEST._serialized_start=2067
+  _WIDGETRIBBITREGISTERINSTRUMENTINITIATEREQUEST._serialized_end=2187
+  _WIDGETRIBBITREGISTERINSTRUMENTINITIATERESPONSE._serialized_start=2190
+  _WIDGETRIBBITREGISTERINSTRUMENTINITIATERESPONSE._serialized_end=2525
+  _WIDGETRIBBITREGISTERINSTRUMENTINITIATERESPONSE_STATUS._serialized_start=813
+  _WIDGETRIBBITREGISTERINSTRUMENTINITIATERESPONSE_STATUS._serialized_end=924
 # @@protoc_insertion_point(module_scope)

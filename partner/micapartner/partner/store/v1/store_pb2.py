@@ -22,9 +22,10 @@ _sym_db = _symbol_database.Default()
 from micapartner.common.v1 import address_pb2 as common_dot_v1_dot_address__pb2
 from micapartner.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from micapartner.common.v1 import store_pb2 as common_dot_v1_dot_store__pb2
+from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cpartner/store/v1/store.proto\x12\x10partner.store.v1\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x15\x63ommon/v1/store.proto\"|\n\x12\x43reateStoreRequest\x12\x18\n\x10organization_key\x18\x01 \x01(\t\x12\x11\n\tstore_ref\x18\x02 \x01(\t\x12\x14\n\x0cstore_number\x18\x03 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x04 \x01(\x0b\x32\x12.common.v1.Address\"\xb6\x02\n\x13\x43reateStoreResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.store.v1.CreateStoreResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x11\n\tstore_key\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\x03\"\x9b\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_DUPLICATE\x10\x03\x12\x1a\n\x16STATUS_INVALID_PARTNER\x10\x04\x12!\n\x1dSTATUS_ORGANIZATION_NOT_FOUND\x10\x05\"$\n\x0fGetStoreRequest\x12\x11\n\tstore_key\x18\x01 \x01(\t\"\x8c\x02\n\x10GetStoreResponse\x12\x39\n\x06status\x18\x01 \x01(\x0e\x32).partner.store.v1.GetStoreResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x1f\n\x05store\x18\x03 \x01(\x0b\x32\x10.common.v1.Store\"{\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\"W\n\x12SearchStoreRequest\x12\x18\n\x10organization_key\x18\x01 \x01(\t\x12\x11\n\tstore_ref\x18\x02 \x01(\t\x12\x14\n\x0cstore_number\x18\x03 \x01(\t\"\xfd\x01\n\x13SearchStoreResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.store.v1.SearchStoreResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12 \n\x06stores\x18\x03 \x03(\x0b\x32\x10.common.v1.Store\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\"7\n\x08StoreRef\x12\x18\n\x10organization_key\x18\x01 \x01(\t\x12\x11\n\tstore_ref\x18\x02 \x01(\t\"\xb2\x01\n\x12UpdateStoreRequest\x12/\n\tstore_ref\x18\x01 \x01(\x0b\x32\x1a.partner.store.v1.StoreRefH\x00\x12\x13\n\tstore_key\x18\x02 \x01(\tH\x00\x12\x0f\n\x07version\x18\x03 \x01(\x03\x12\x14\n\x0cstore_number\x18\x04 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x12.common.v1.AddressB\n\n\x08\x63riteria\"\x80\x02\n\x13UpdateStoreResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.store.v1.UpdateStoreResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x1b\n\x17STATUS_VERSION_MISMATCH\x10\x04\"f\n\x12RemoveStoreRequest\x12/\n\tstore_ref\x18\x01 \x01(\x0b\x32\x1a.partner.store.v1.StoreRefH\x00\x12\x13\n\tstore_key\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xd2\x01\n\x13RemoveStoreResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.store.v1.RemoveStoreResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42I\n\x18io.mica.partner.store.v1B\nStoreProtoZ\x1amica/proto/partner/storev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cpartner/store/v1/store.proto\x12\x10partner.store.v1\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x15\x63ommon/v1/store.proto\x1a\x17validate/validate.proto\"\x87\x01\n\x12\x43reateStoreRequest\x12#\n\x10organization_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x11\n\tstore_ref\x18\x02 \x01(\t\x12\x14\n\x0cstore_number\x18\x03 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x04 \x01(\x0b\x32\x12.common.v1.Address\"\xc1\x02\n\x13\x43reateStoreResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.store.v1.CreateStoreResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x1c\n\tstore_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x04 \x01(\x03\"\x9b\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_DUPLICATE\x10\x03\x12\x1a\n\x16STATUS_INVALID_PARTNER\x10\x04\x12!\n\x1dSTATUS_ORGANIZATION_NOT_FOUND\x10\x05\"/\n\x0fGetStoreRequest\x12\x1c\n\tstore_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\x8c\x02\n\x10GetStoreResponse\x12\x39\n\x06status\x18\x01 \x01(\x0e\x32).partner.store.v1.GetStoreResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x1f\n\x05store\x18\x03 \x01(\x0b\x32\x10.common.v1.Store\"{\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\"`\n\x12SearchStoreRequest\x12!\n\x10organization_key\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x11\n\tstore_ref\x18\x02 \x01(\t\x12\x14\n\x0cstore_number\x18\x03 \x01(\t\"\xfd\x01\n\x13SearchStoreResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.store.v1.SearchStoreResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12 \n\x06stores\x18\x03 \x03(\x0b\x32\x10.common.v1.Store\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\"B\n\x08StoreRef\x12#\n\x10organization_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x11\n\tstore_ref\x18\x02 \x01(\t\"\xbd\x01\n\x12UpdateStoreRequest\x12/\n\tstore_ref\x18\x01 \x01(\x0b\x32\x1a.partner.store.v1.StoreRefH\x00\x12\x1e\n\tstore_key\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12\x0f\n\x07version\x18\x03 \x01(\x03\x12\x14\n\x0cstore_number\x18\x04 \x01(\t\x12#\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x12.common.v1.AddressB\n\n\x08\x63riteria\"\x80\x02\n\x13UpdateStoreResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.store.v1.UpdateStoreResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x1b\n\x17STATUS_VERSION_MISMATCH\x10\x04\"q\n\x12RemoveStoreRequest\x12/\n\tstore_ref\x18\x01 \x01(\x0b\x32\x1a.partner.store.v1.StoreRefH\x00\x12\x1e\n\tstore_key\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x42\n\n\x08\x63riteria\"\xd2\x01\n\x13RemoveStoreResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.store.v1.RemoveStoreResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42I\n\x18io.mica.partner.store.v1B\nStoreProtoZ\x1amica/proto/partner/storev1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -125,36 +126,50 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\030io.mica.partner.store.v1B\nStoreProtoZ\032mica/proto/partner/storev1\242\002\004MICA'
-  _CREATESTOREREQUEST._serialized_start=121
-  _CREATESTOREREQUEST._serialized_end=245
-  _CREATESTORERESPONSE._serialized_start=248
-  _CREATESTORERESPONSE._serialized_end=558
-  _CREATESTORERESPONSE_STATUS._serialized_start=403
-  _CREATESTORERESPONSE_STATUS._serialized_end=558
-  _GETSTOREREQUEST._serialized_start=560
-  _GETSTOREREQUEST._serialized_end=596
-  _GETSTORERESPONSE._serialized_start=599
-  _GETSTORERESPONSE._serialized_end=867
-  _GETSTORERESPONSE_STATUS._serialized_start=744
-  _GETSTORERESPONSE_STATUS._serialized_end=867
-  _SEARCHSTOREREQUEST._serialized_start=869
-  _SEARCHSTOREREQUEST._serialized_end=956
-  _SEARCHSTORERESPONSE._serialized_start=959
-  _SEARCHSTORERESPONSE._serialized_end=1212
-  _SEARCHSTORERESPONSE_STATUS._serialized_start=744
-  _SEARCHSTORERESPONSE_STATUS._serialized_end=845
-  _STOREREF._serialized_start=1214
-  _STOREREF._serialized_end=1269
-  _UPDATESTOREREQUEST._serialized_start=1272
-  _UPDATESTOREREQUEST._serialized_end=1450
-  _UPDATESTORERESPONSE._serialized_start=1453
-  _UPDATESTORERESPONSE._serialized_end=1709
-  _UPDATESTORERESPONSE_STATUS._serialized_start=1588
-  _UPDATESTORERESPONSE_STATUS._serialized_end=1709
-  _REMOVESTOREREQUEST._serialized_start=1711
-  _REMOVESTOREREQUEST._serialized_end=1813
-  _REMOVESTORERESPONSE._serialized_start=1816
-  _REMOVESTORERESPONSE._serialized_end=2026
-  _REMOVESTORERESPONSE_STATUS._serialized_start=1588
-  _REMOVESTORERESPONSE_STATUS._serialized_end=1680
+  _CREATESTOREREQUEST.fields_by_name['organization_key']._options = None
+  _CREATESTOREREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _CREATESTORERESPONSE.fields_by_name['store_key']._options = None
+  _CREATESTORERESPONSE.fields_by_name['store_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _GETSTOREREQUEST.fields_by_name['store_key']._options = None
+  _GETSTOREREQUEST.fields_by_name['store_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SEARCHSTOREREQUEST.fields_by_name['organization_key']._options = None
+  _SEARCHSTOREREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\004r\002\0302'
+  _STOREREF.fields_by_name['organization_key']._options = None
+  _STOREREF.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _UPDATESTOREREQUEST.fields_by_name['store_key']._options = None
+  _UPDATESTOREREQUEST.fields_by_name['store_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _REMOVESTOREREQUEST.fields_by_name['store_key']._options = None
+  _REMOVESTOREREQUEST.fields_by_name['store_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _CREATESTOREREQUEST._serialized_start=147
+  _CREATESTOREREQUEST._serialized_end=282
+  _CREATESTORERESPONSE._serialized_start=285
+  _CREATESTORERESPONSE._serialized_end=606
+  _CREATESTORERESPONSE_STATUS._serialized_start=451
+  _CREATESTORERESPONSE_STATUS._serialized_end=606
+  _GETSTOREREQUEST._serialized_start=608
+  _GETSTOREREQUEST._serialized_end=655
+  _GETSTORERESPONSE._serialized_start=658
+  _GETSTORERESPONSE._serialized_end=926
+  _GETSTORERESPONSE_STATUS._serialized_start=803
+  _GETSTORERESPONSE_STATUS._serialized_end=926
+  _SEARCHSTOREREQUEST._serialized_start=928
+  _SEARCHSTOREREQUEST._serialized_end=1024
+  _SEARCHSTORERESPONSE._serialized_start=1027
+  _SEARCHSTORERESPONSE._serialized_end=1280
+  _SEARCHSTORERESPONSE_STATUS._serialized_start=803
+  _SEARCHSTORERESPONSE_STATUS._serialized_end=904
+  _STOREREF._serialized_start=1282
+  _STOREREF._serialized_end=1348
+  _UPDATESTOREREQUEST._serialized_start=1351
+  _UPDATESTOREREQUEST._serialized_end=1540
+  _UPDATESTORERESPONSE._serialized_start=1543
+  _UPDATESTORERESPONSE._serialized_end=1799
+  _UPDATESTORERESPONSE_STATUS._serialized_start=1678
+  _UPDATESTORERESPONSE_STATUS._serialized_end=1799
+  _REMOVESTOREREQUEST._serialized_start=1801
+  _REMOVESTOREREQUEST._serialized_end=1914
+  _REMOVESTORERESPONSE._serialized_start=1917
+  _REMOVESTORERESPONSE._serialized_end=2127
+  _REMOVESTORERESPONSE_STATUS._serialized_start=1678
+  _REMOVESTORERESPONSE_STATUS._serialized_end=1770
 # @@protoc_insertion_point(module_scope)

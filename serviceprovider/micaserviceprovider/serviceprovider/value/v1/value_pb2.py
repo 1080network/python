@@ -27,9 +27,10 @@ from micaserviceprovider.common.enums.organizationcategory.v1 import organizatio
 from micaserviceprovider.common.v1 import address_pb2 as common_dot_v1_dot_address__pb2
 from micaserviceprovider.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from micaserviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$serviceprovider/value/v1/value.proto\x12\x18serviceprovider.value.v1\x1a\x30\x63ommon/enums/approvaltype/v1/approval_type.proto\x1a%common/enums/channel/v1/channel.proto\x1a\'common/enums/currency/v1/currency.proto\x1a@common/enums/organizationcategory/v1/organization_category.proto\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf8\x04\n\x05Value\x12\x17\n\x0ftransaction_key\x18\x01 \x01(\t\x12\'\n\x1fservice_provider_instrument_key\x18\x02 \x01(\t\x12\'\n\x1fservice_provider_instrument_ref\x18\x03 \x01(\t\x12\x31\n\x07\x63hannel\x18\x04 \x01(\x0e\x32 .common.enums.channel.v1.Channel\x12\x34\n\x08\x63urrency\x18\x05 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x18\n\x10organization_key\x18\x06 \x01(\t\x12\x19\n\x11organization_name\x18\x07 \x01(\t\x12\x30\n\x14organization_address\x18\x08 \x01(\x0b\x32\x12.common.v1.Address\x12L\n\x08\x63\x61tegory\x18\t \x01(\x0e\x32:.common.enums.organizationcategory.v1.OrganizationCategory\x12\x11\n\tstore_key\x18\n \x01(\t\x12\x14\n\x0cstore_number\x18\x0b \x01(\t\x12)\n\rstore_address\x18\x0c \x01(\x0b\x32\x12.common.v1.Address\x12\x18\n\x10\x63lerk_identifier\x18\r \x01(\t\x12\x14\n\x0ctotal_amount\x18\x0e \x01(\t\x12\x17\n\x0f\x64iscount_amount\x18\x11 \x01(\t\x12\x19\n\x11ineligible_amount\x18\x12 \x01(\t\x12\x18\n\x10requested_amount\x18\x0f \x01(\t\x12\x14\n\x0corder_number\x18\x10 \x01(\t\"\x87\x01\n\x12ObtainValueRequest\x12\x41\n\rapproval_type\x18\x01 \x01(\x0e\x32*.common.enums.approvaltype.v1.ApprovalType\x12.\n\x05value\x18\x02 \x01(\x0b\x32\x1f.serviceprovider.value.v1.Value\"\xcd\x05\n\x13ObtainValueResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.serviceprovider.value.v1.ObtainValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x17\n\x0ftransaction_ref\x18\x03 \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x04 \x01(\t\"\x9c\x04\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14STATUS_FULL_APPROVAL\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1b\n\x17STATUS_PARTIAL_APPROVAL\x10\x03\x12\x1d\n\x19STATUS_INSUFFICIENT_VALUE\x10\x04\x12\x1e\n\x1aSTATUS_INELIGIBLE_PRODUCTS\x10\x05\x12\x14\n\x10STATUS_NOT_FOUND\x10\x06\x12\x1c\n\x18STATUS_INSTRUMENT_CLOSED\x10\x07\x12!\n\x1dSTATUS_TRANSACTION_RISK_FRAUD\x10\x08\x12\x1f\n\x1bSTATUS_BAD_ACTOR_RISK_FRAUD\x10\x10\x12\x1a\n\x16STATUS_USER_RISK_FRAUD\x10\x11\x12 \n\x1cSTATUS_INSTRUMENT_RISK_FRAUD\x10\x12\x12%\n!STATUS_USER_CALL_SERVICE_PROVIDER\x10\t\x12\x16\n\x12STATUS_UNSUPPORTED\x10\n\x12\'\n#STATUS_SERVICE_PROVIDER_UNAVAILABLE\x10\x0b\x12 \n\x1cSTATUS_INVALID_PAYMENT_TOKEN\x10\x0c\x12\x17\n\x13STATUS_PIN_REQUIRED\x10\r\x12\x19\n\x15STATUS_LIMIT_EXCEEDED\x10\x13\"D\n\x12ReturnValueRequest\x12.\n\x05value\x18\x01 \x01(\x0b\x32\x1f.serviceprovider.value.v1.Value\"\xfd\x04\n\x13ReturnValueResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.serviceprovider.value.v1.ReturnValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x17\n\x0ftransaction_ref\x18\x03 \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x04 \x01(\t\"\xcc\x03\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14STATUS_FULL_APPROVAL\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x06\x12\x1c\n\x18STATUS_INSTRUMENT_CLOSED\x10\x07\x12!\n\x1dSTATUS_TRANSACTION_RISK_FRAUD\x10\x08\x12\x1f\n\x1bSTATUS_BAD_ACTOR_RISK_FRAUD\x10\x10\x12\x1a\n\x16STATUS_USER_RISK_FRAUD\x10\x11\x12 \n\x1cSTATUS_INSTRUMENT_RISK_FRAUD\x10\x12\x12%\n!STATUS_USER_CALL_SERVICE_PROVIDER\x10\t\x12\x16\n\x12STATUS_UNSUPPORTED\x10\n\x12\'\n#STATUS_SERVICE_PROVIDER_UNAVAILABLE\x10\x0b\x12 \n\x1cSTATUS_INVALID_PAYMENT_TOKEN\x10\x0c\x12\x17\n\x13STATUS_PIN_REQUIRED\x10\r\x12\x19\n\x15STATUS_LIMIT_EXCEEDED\x10\x13\"\x04\x08\x03\x10\x03\"\x04\x08\x04\x10\x04\"r\n\x04\x46rom\x12\x15\n\rpayment_token\x18\x04 \x01(\t\x12\x12\n\nfirst_name\x18\x05 \x01(\t\x12\x11\n\tlast_name\x18\x06 \x01(\t\x12\r\n\x05\x65mail\x18\x07 \x01(\t\x12\x1d\n\x15service_provider_name\x18\x08 \x01(\t\"\xe1\x01\n\x13ReceiveValueRequest\x12*\n\"to_service_provider_instrument_key\x18\x01 \x01(\t\x12*\n\"to_service_provider_instrument_ref\x18\x02 \x01(\t\x12\x34\n\x08\x63urrency\x18\x03 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x0e\n\x06\x61mount\x18\x04 \x01(\t\x12,\n\x04\x66rom\x18\x05 \x01(\x0b\x32\x1e.serviceprovider.value.v1.From\"\xdf\x01\n\x14ReceiveValueResponse\x12\x45\n\x06status\x18\x01 \x01(\x0e\x32\x35.serviceprovider.value.v1.ReceiveValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x17\n\x0ftransaction_ref\x18\x03 \x01(\t\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xec\x01\n\x12SearchValueRequest\x12\x19\n\x0ftransaction_key\x18\x01 \x01(\tH\x00\x12(\n\x1eservice_provider_payment_token\x18\x02 \x01(\tH\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x03 \x01(\tH\x00\x12-\n\tdate_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\n\x08\x63riteria\"\xf4\x01\n\x13SearchValueResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.serviceprovider.value.v1.SearchValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12.\n\x05value\x18\x03 \x03(\x0b\x32\x1f.serviceprovider.value.v1.Value\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xc8\x01\n\x10SendValueRequest\x12&\n\x1e\x66rom_service_provider_user_key\x18\x01 \x01(\t\x12,\n$from_service_provider_instrument_key\x18\x02 \x01(\t\x12\x18\n\x10to_payment_token\x18\x03 \x01(\t\x12\x34\n\x08\x63urrency\x18\x04 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x0e\n\x06\x61mount\x18\x05 \x01(\t\"\xd9\x01\n\x11SendValueResponse\x12\x42\n\x06status\x18\x01 \x01(\x0e\x32\x32.serviceprovider.value.v1.SendValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x17\n\x0ftransaction_key\x18\x03 \x01(\t\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02*=\n\tPINStatus\x12\x1a\n\x16PIN_STATUS_UNSPECIFIED\x10\x00\x12\x14\n\x10PIN_STATUS_MATCH\x10\x01\x42Y\n io.mica.serviceprovider.value.v1B\nValueProtoZ\"mica/proto/serviceprovider/valuev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$serviceprovider/value/v1/value.proto\x12\x18serviceprovider.value.v1\x1a\x30\x63ommon/enums/approvaltype/v1/approval_type.proto\x1a%common/enums/channel/v1/channel.proto\x1a\'common/enums/currency/v1/currency.proto\x1a@common/enums/organizationcategory/v1/organization_category.proto\x1a\x17\x63ommon/v1/address.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xa2\x05\n\x05Value\x12\"\n\x0ftransaction_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x30\n\x1fservice_provider_instrument_key\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\'\n\x1fservice_provider_instrument_ref\x18\x03 \x01(\t\x12\x31\n\x07\x63hannel\x18\x04 \x01(\x0e\x32 .common.enums.channel.v1.Channel\x12\x34\n\x08\x63urrency\x18\x05 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12#\n\x10organization_key\x18\x06 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x19\n\x11organization_name\x18\x07 \x01(\t\x12\x30\n\x14organization_address\x18\x08 \x01(\x0b\x32\x12.common.v1.Address\x12L\n\x08\x63\x61tegory\x18\t \x01(\x0e\x32:.common.enums.organizationcategory.v1.OrganizationCategory\x12\x1c\n\tstore_key\x18\n \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x14\n\x0cstore_number\x18\x0b \x01(\t\x12)\n\rstore_address\x18\x0c \x01(\x0b\x32\x12.common.v1.Address\x12\x18\n\x10\x63lerk_identifier\x18\r \x01(\t\x12\x14\n\x0ctotal_amount\x18\x0e \x01(\t\x12\x17\n\x0f\x64iscount_amount\x18\x11 \x01(\t\x12\x19\n\x11ineligible_amount\x18\x12 \x01(\t\x12\x18\n\x10requested_amount\x18\x0f \x01(\t\x12\x14\n\x0corder_number\x18\x10 \x01(\t\"\x87\x01\n\x12ObtainValueRequest\x12\x41\n\rapproval_type\x18\x01 \x01(\x0e\x32*.common.enums.approvaltype.v1.ApprovalType\x12.\n\x05value\x18\x02 \x01(\x0b\x32\x1f.serviceprovider.value.v1.Value\"\xcd\x05\n\x13ObtainValueResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.serviceprovider.value.v1.ObtainValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x17\n\x0ftransaction_ref\x18\x03 \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x04 \x01(\t\"\x9c\x04\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14STATUS_FULL_APPROVAL\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1b\n\x17STATUS_PARTIAL_APPROVAL\x10\x03\x12\x1d\n\x19STATUS_INSUFFICIENT_VALUE\x10\x04\x12\x1e\n\x1aSTATUS_INELIGIBLE_PRODUCTS\x10\x05\x12\x14\n\x10STATUS_NOT_FOUND\x10\x06\x12\x1c\n\x18STATUS_INSTRUMENT_CLOSED\x10\x07\x12!\n\x1dSTATUS_TRANSACTION_RISK_FRAUD\x10\x08\x12\x1f\n\x1bSTATUS_BAD_ACTOR_RISK_FRAUD\x10\x10\x12\x1a\n\x16STATUS_USER_RISK_FRAUD\x10\x11\x12 \n\x1cSTATUS_INSTRUMENT_RISK_FRAUD\x10\x12\x12%\n!STATUS_USER_CALL_SERVICE_PROVIDER\x10\t\x12\x16\n\x12STATUS_UNSUPPORTED\x10\n\x12\'\n#STATUS_SERVICE_PROVIDER_UNAVAILABLE\x10\x0b\x12 \n\x1cSTATUS_INVALID_PAYMENT_TOKEN\x10\x0c\x12\x17\n\x13STATUS_PIN_REQUIRED\x10\r\x12\x19\n\x15STATUS_LIMIT_EXCEEDED\x10\x13\"D\n\x12ReturnValueRequest\x12.\n\x05value\x18\x01 \x01(\x0b\x32\x1f.serviceprovider.value.v1.Value\"\xfd\x04\n\x13ReturnValueResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.serviceprovider.value.v1.ReturnValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x17\n\x0ftransaction_ref\x18\x03 \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x04 \x01(\t\"\xcc\x03\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14STATUS_FULL_APPROVAL\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x06\x12\x1c\n\x18STATUS_INSTRUMENT_CLOSED\x10\x07\x12!\n\x1dSTATUS_TRANSACTION_RISK_FRAUD\x10\x08\x12\x1f\n\x1bSTATUS_BAD_ACTOR_RISK_FRAUD\x10\x10\x12\x1a\n\x16STATUS_USER_RISK_FRAUD\x10\x11\x12 \n\x1cSTATUS_INSTRUMENT_RISK_FRAUD\x10\x12\x12%\n!STATUS_USER_CALL_SERVICE_PROVIDER\x10\t\x12\x16\n\x12STATUS_UNSUPPORTED\x10\n\x12\'\n#STATUS_SERVICE_PROVIDER_UNAVAILABLE\x10\x0b\x12 \n\x1cSTATUS_INVALID_PAYMENT_TOKEN\x10\x0c\x12\x17\n\x13STATUS_PIN_REQUIRED\x10\r\x12\x19\n\x15STATUS_LIMIT_EXCEEDED\x10\x13\"\x04\x08\x03\x10\x03\"\x04\x08\x04\x10\x04\"r\n\x04\x46rom\x12\x15\n\rpayment_token\x18\x04 \x01(\t\x12\x12\n\nfirst_name\x18\x05 \x01(\t\x12\x11\n\tlast_name\x18\x06 \x01(\t\x12\r\n\x05\x65mail\x18\x07 \x01(\t\x12\x1d\n\x15service_provider_name\x18\x08 \x01(\t\"\xec\x01\n\x13ReceiveValueRequest\x12\x35\n\"to_service_provider_instrument_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12*\n\"to_service_provider_instrument_ref\x18\x02 \x01(\t\x12\x34\n\x08\x63urrency\x18\x03 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x0e\n\x06\x61mount\x18\x04 \x01(\t\x12,\n\x04\x66rom\x18\x05 \x01(\x0b\x32\x1e.serviceprovider.value.v1.From\"\xdf\x01\n\x14ReceiveValueResponse\x12\x45\n\x06status\x18\x01 \x01(\x0e\x32\x35.serviceprovider.value.v1.ReceiveValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x17\n\x0ftransaction_ref\x18\x03 \x01(\t\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xf7\x01\n\x12SearchValueRequest\x12$\n\x0ftransaction_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12(\n\x1eservice_provider_payment_token\x18\x02 \x01(\tH\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x03 \x01(\tH\x00\x12-\n\tdate_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\n\x08\x63riteria\"\xf4\x01\n\x13SearchValueResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.serviceprovider.value.v1.SearchValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12.\n\x05value\x18\x03 \x03(\x0b\x32\x1f.serviceprovider.value.v1.Value\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xde\x01\n\x10SendValueRequest\x12\x31\n\x1e\x66rom_service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x37\n$from_service_provider_instrument_key\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x10to_payment_token\x18\x03 \x01(\t\x12\x34\n\x08\x63urrency\x18\x04 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x0e\n\x06\x61mount\x18\x05 \x01(\t\"\xe4\x01\n\x11SendValueResponse\x12\x42\n\x06status\x18\x01 \x01(\x0e\x32\x32.serviceprovider.value.v1.SendValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\"\n\x0ftransaction_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02*=\n\tPINStatus\x12\x1a\n\x16PIN_STATUS_UNSPECIFIED\x10\x00\x12\x14\n\x10PIN_STATUS_MATCH\x10\x01\x42Y\n io.mica.serviceprovider.value.v1B\nValueProtoZ\"mica/proto/serviceprovider/valuev1\xa2\x02\x04MICAb\x06proto3')
 
 _PINSTATUS = DESCRIPTOR.enum_types_by_name['PINStatus']
 PINStatus = enum_type_wrapper.EnumTypeWrapper(_PINSTATUS)
@@ -142,40 +143,58 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n io.mica.serviceprovider.value.v1B\nValueProtoZ\"mica/proto/serviceprovider/valuev1\242\002\004MICA'
-  _PINSTATUS._serialized_start=4025
-  _PINSTATUS._serialized_end=4086
-  _VALUE._serialized_start=344
-  _VALUE._serialized_end=976
-  _OBTAINVALUEREQUEST._serialized_start=979
-  _OBTAINVALUEREQUEST._serialized_end=1114
-  _OBTAINVALUERESPONSE._serialized_start=1117
-  _OBTAINVALUERESPONSE._serialized_end=1834
-  _OBTAINVALUERESPONSE_STATUS._serialized_start=1294
-  _OBTAINVALUERESPONSE_STATUS._serialized_end=1834
-  _RETURNVALUEREQUEST._serialized_start=1836
-  _RETURNVALUEREQUEST._serialized_end=1904
-  _RETURNVALUERESPONSE._serialized_start=1907
-  _RETURNVALUERESPONSE._serialized_end=2544
-  _RETURNVALUERESPONSE_STATUS._serialized_start=2084
-  _RETURNVALUERESPONSE_STATUS._serialized_end=2544
-  _FROM._serialized_start=2546
-  _FROM._serialized_end=2660
-  _RECEIVEVALUEREQUEST._serialized_start=2663
-  _RECEIVEVALUEREQUEST._serialized_end=2888
-  _RECEIVEVALUERESPONSE._serialized_start=2891
-  _RECEIVEVALUERESPONSE._serialized_end=3114
-  _RECEIVEVALUERESPONSE_STATUS._serialized_start=3044
-  _RECEIVEVALUERESPONSE_STATUS._serialized_end=3114
-  _SEARCHVALUEREQUEST._serialized_start=3117
-  _SEARCHVALUEREQUEST._serialized_end=3353
-  _SEARCHVALUERESPONSE._serialized_start=3356
-  _SEARCHVALUERESPONSE._serialized_end=3600
-  _SEARCHVALUERESPONSE_STATUS._serialized_start=3044
-  _SEARCHVALUERESPONSE_STATUS._serialized_end=3114
-  _SENDVALUEREQUEST._serialized_start=3603
-  _SENDVALUEREQUEST._serialized_end=3803
-  _SENDVALUERESPONSE._serialized_start=3806
-  _SENDVALUERESPONSE._serialized_end=4023
-  _SENDVALUERESPONSE_STATUS._serialized_start=3044
-  _SENDVALUERESPONSE_STATUS._serialized_end=3114
+  _VALUE.fields_by_name['transaction_key']._options = None
+  _VALUE.fields_by_name['transaction_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _VALUE.fields_by_name['service_provider_instrument_key']._options = None
+  _VALUE.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\004r\002\0302'
+  _VALUE.fields_by_name['organization_key']._options = None
+  _VALUE.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _VALUE.fields_by_name['store_key']._options = None
+  _VALUE.fields_by_name['store_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _RECEIVEVALUEREQUEST.fields_by_name['to_service_provider_instrument_key']._options = None
+  _RECEIVEVALUEREQUEST.fields_by_name['to_service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SEARCHVALUEREQUEST.fields_by_name['transaction_key']._options = None
+  _SEARCHVALUEREQUEST.fields_by_name['transaction_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SENDVALUEREQUEST.fields_by_name['from_service_provider_user_key']._options = None
+  _SENDVALUEREQUEST.fields_by_name['from_service_provider_user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SENDVALUEREQUEST.fields_by_name['from_service_provider_instrument_key']._options = None
+  _SENDVALUEREQUEST.fields_by_name['from_service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SENDVALUERESPONSE.fields_by_name['transaction_key']._options = None
+  _SENDVALUERESPONSE.fields_by_name['transaction_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _PINSTATUS._serialized_start=4147
+  _PINSTATUS._serialized_end=4208
+  _VALUE._serialized_start=369
+  _VALUE._serialized_end=1043
+  _OBTAINVALUEREQUEST._serialized_start=1046
+  _OBTAINVALUEREQUEST._serialized_end=1181
+  _OBTAINVALUERESPONSE._serialized_start=1184
+  _OBTAINVALUERESPONSE._serialized_end=1901
+  _OBTAINVALUERESPONSE_STATUS._serialized_start=1361
+  _OBTAINVALUERESPONSE_STATUS._serialized_end=1901
+  _RETURNVALUEREQUEST._serialized_start=1903
+  _RETURNVALUEREQUEST._serialized_end=1971
+  _RETURNVALUERESPONSE._serialized_start=1974
+  _RETURNVALUERESPONSE._serialized_end=2611
+  _RETURNVALUERESPONSE_STATUS._serialized_start=2151
+  _RETURNVALUERESPONSE_STATUS._serialized_end=2611
+  _FROM._serialized_start=2613
+  _FROM._serialized_end=2727
+  _RECEIVEVALUEREQUEST._serialized_start=2730
+  _RECEIVEVALUEREQUEST._serialized_end=2966
+  _RECEIVEVALUERESPONSE._serialized_start=2969
+  _RECEIVEVALUERESPONSE._serialized_end=3192
+  _RECEIVEVALUERESPONSE_STATUS._serialized_start=3122
+  _RECEIVEVALUERESPONSE_STATUS._serialized_end=3192
+  _SEARCHVALUEREQUEST._serialized_start=3195
+  _SEARCHVALUEREQUEST._serialized_end=3442
+  _SEARCHVALUERESPONSE._serialized_start=3445
+  _SEARCHVALUERESPONSE._serialized_end=3689
+  _SEARCHVALUERESPONSE_STATUS._serialized_start=3122
+  _SEARCHVALUERESPONSE_STATUS._serialized_end=3192
+  _SENDVALUEREQUEST._serialized_start=3692
+  _SENDVALUEREQUEST._serialized_end=3914
+  _SENDVALUERESPONSE._serialized_start=3917
+  _SENDVALUERESPONSE._serialized_end=4145
+  _SENDVALUERESPONSE_STATUS._serialized_start=3122
+  _SENDVALUERESPONSE_STATUS._serialized_end=3192
 # @@protoc_insertion_point(module_scope)

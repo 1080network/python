@@ -21,9 +21,10 @@ _sym_db = _symbol_database.Default()
 
 from micaserviceprovider.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from micaserviceprovider.common.v1 import payment_token_pb2 as common_dot_v1_dot_payment__token__pb2
+from micaserviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3serviceprovider/paymenttoken/v1/payment_token.proto\x12\x1fserviceprovider.paymenttoken.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x1d\x63ommon/v1/payment_token.proto\"\xeb\x01\n\x1bServiceProviderPaymentToken\x12!\n\x19service_provider_user_key\x18\x01 \x01(\t\x12!\n\x19service_provider_user_ref\x18\x02 \x01(\t\x12\'\n\x1fservice_provider_instrument_key\x18\x03 \x01(\t\x12\'\n\x1fservice_provider_instrument_ref\x18\x04 \x01(\t\x12\x34\n\rpayment_token\x18\x05 \x01(\x0b\x32\x1d.common.v1.CommonPaymentToken\"\x8f\x01\n+ProvisionServiceProviderPaymentTokenRequest\x12)\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tH\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xc6\x02\n,ProvisionServiceProviderPaymentTokenResponse\x12\x64\n\x06status\x18\x01 \x01(\x0e\x32T.serviceprovider.paymenttoken.v1.ProvisionServiceProviderPaymentTokenResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12&\n\x1eservice_provider_payment_token\x18\x03 \x01(\t\"g\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1f\n\x1bSTATUS_INSTRUMENT_NOT_FOUND\x10\x03\"\xb6\x01\n(RemoveServiceProviderPaymentTokenRequest\x12)\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tH\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x12(\n\x1eservice_provider_payment_token\x18\x03 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xb6\x02\n)RemoveServiceProviderPaymentTokenResponse\x12\x61\n\x06status\x18\x01 \x01(\x0e\x32Q.serviceprovider.paymenttoken.v1.RemoveServiceProviderPaymentTokenResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\'\n\x1fservice_provider_payment_tokens\x18\x03 \x03(\t\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"v\n(SearchServiceProviderPaymentTokenRequest\x12!\n\x19service_provider_user_key\x18\x01 \x01(\t\x12\'\n\x1fservice_provider_instrument_key\x18\x02 \x01(\t\"\xde\x02\n)SearchServiceProviderPaymentTokenResponse\x12\x61\n\x06status\x18\x01 \x01(\x0e\x32Q.serviceprovider.paymenttoken.v1.SearchServiceProviderPaymentTokenResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x65\n\x1fservice_provider_payment_tokens\x18\x03 \x03(\x0b\x32<.serviceprovider.paymenttoken.v1.ServiceProviderPaymentToken\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42\x86\x01\n\'io.mica.serviceprovider.paymenttoken.v1B)ProvisionServiceProviderPaymentTokenProtoZ)mica/proto/serviceprovider/paymenttokenv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3serviceprovider/paymenttoken/v1/payment_token.proto\x12\x1fserviceprovider.paymenttoken.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x1d\x63ommon/v1/payment_token.proto\x1a\x17validate/validate.proto\"\x81\x02\n\x1bServiceProviderPaymentToken\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12!\n\x19service_provider_user_ref\x18\x02 \x01(\t\x12\x32\n\x1fservice_provider_instrument_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\'\n\x1fservice_provider_instrument_ref\x18\x04 \x01(\t\x12\x34\n\rpayment_token\x18\x05 \x01(\x0b\x32\x1d.common.v1.CommonPaymentToken\"\x9a\x01\n+ProvisionServiceProviderPaymentTokenRequest\x12\x34\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xc6\x02\n,ProvisionServiceProviderPaymentTokenResponse\x12\x64\n\x06status\x18\x01 \x01(\x0e\x32T.serviceprovider.paymenttoken.v1.ProvisionServiceProviderPaymentTokenResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12&\n\x1eservice_provider_payment_token\x18\x03 \x01(\t\"g\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1f\n\x1bSTATUS_INSTRUMENT_NOT_FOUND\x10\x03\"\xc1\x01\n(RemoveServiceProviderPaymentTokenRequest\x12\x34\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x12(\n\x1eservice_provider_payment_token\x18\x03 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xb6\x02\n)RemoveServiceProviderPaymentTokenResponse\x12\x61\n\x06status\x18\x01 \x01(\x0e\x32Q.serviceprovider.paymenttoken.v1.RemoveServiceProviderPaymentTokenResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\'\n\x1fservice_provider_payment_tokens\x18\x03 \x03(\t\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\x88\x01\n(SearchServiceProviderPaymentTokenRequest\x12*\n\x19service_provider_user_key\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x30\n\x1fservice_provider_instrument_key\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\"\xde\x02\n)SearchServiceProviderPaymentTokenResponse\x12\x61\n\x06status\x18\x01 \x01(\x0e\x32Q.serviceprovider.paymenttoken.v1.SearchServiceProviderPaymentTokenResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x65\n\x1fservice_provider_payment_tokens\x18\x03 \x03(\x0b\x32<.serviceprovider.paymenttoken.v1.ServiceProviderPaymentToken\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42\x86\x01\n\'io.mica.serviceprovider.paymenttoken.v1B)ProvisionServiceProviderPaymentTokenProtoZ)mica/proto/serviceprovider/paymenttokenv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -90,24 +91,36 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\'io.mica.serviceprovider.paymenttoken.v1B)ProvisionServiceProviderPaymentTokenProtoZ)mica/proto/serviceprovider/paymenttokenv1\242\002\004MICA'
-  _SERVICEPROVIDERPAYMENTTOKEN._serialized_start=143
-  _SERVICEPROVIDERPAYMENTTOKEN._serialized_end=378
-  _PROVISIONSERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_start=381
-  _PROVISIONSERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_end=524
-  _PROVISIONSERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_start=527
-  _PROVISIONSERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_end=853
-  _PROVISIONSERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_start=750
-  _PROVISIONSERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_end=853
-  _REMOVESERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_start=856
-  _REMOVESERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_end=1038
-  _REMOVESERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_start=1041
-  _REMOVESERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_end=1351
-  _REMOVESERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_start=1259
-  _REMOVESERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_end=1351
-  _SEARCHSERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_start=1353
-  _SEARCHSERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_end=1471
-  _SEARCHSERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_start=1474
-  _SEARCHSERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_end=1824
-  _SEARCHSERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_start=750
-  _SEARCHSERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_end=820
+  _SERVICEPROVIDERPAYMENTTOKEN.fields_by_name['service_provider_user_key']._options = None
+  _SERVICEPROVIDERPAYMENTTOKEN.fields_by_name['service_provider_user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SERVICEPROVIDERPAYMENTTOKEN.fields_by_name['service_provider_instrument_key']._options = None
+  _SERVICEPROVIDERPAYMENTTOKEN.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _PROVISIONSERVICEPROVIDERPAYMENTTOKENREQUEST.fields_by_name['service_provider_instrument_key']._options = None
+  _PROVISIONSERVICEPROVIDERPAYMENTTOKENREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _REMOVESERVICEPROVIDERPAYMENTTOKENREQUEST.fields_by_name['service_provider_instrument_key']._options = None
+  _REMOVESERVICEPROVIDERPAYMENTTOKENREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SEARCHSERVICEPROVIDERPAYMENTTOKENREQUEST.fields_by_name['service_provider_user_key']._options = None
+  _SEARCHSERVICEPROVIDERPAYMENTTOKENREQUEST.fields_by_name['service_provider_user_key']._serialized_options = b'\372B\004r\002\0302'
+  _SEARCHSERVICEPROVIDERPAYMENTTOKENREQUEST.fields_by_name['service_provider_instrument_key']._options = None
+  _SEARCHSERVICEPROVIDERPAYMENTTOKENREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\004r\002\0302'
+  _SERVICEPROVIDERPAYMENTTOKEN._serialized_start=168
+  _SERVICEPROVIDERPAYMENTTOKEN._serialized_end=425
+  _PROVISIONSERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_start=428
+  _PROVISIONSERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_end=582
+  _PROVISIONSERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_start=585
+  _PROVISIONSERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_end=911
+  _PROVISIONSERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_start=808
+  _PROVISIONSERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_end=911
+  _REMOVESERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_start=914
+  _REMOVESERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_end=1107
+  _REMOVESERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_start=1110
+  _REMOVESERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_end=1420
+  _REMOVESERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_start=1328
+  _REMOVESERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_end=1420
+  _SEARCHSERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_start=1423
+  _SEARCHSERVICEPROVIDERPAYMENTTOKENREQUEST._serialized_end=1559
+  _SEARCHSERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_start=1562
+  _SEARCHSERVICEPROVIDERPAYMENTTOKENRESPONSE._serialized_end=1912
+  _SEARCHSERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_start=808
+  _SEARCHSERVICEPROVIDERPAYMENTTOKENRESPONSE_STATUS._serialized_end=878
 # @@protoc_insertion_point(module_scope)

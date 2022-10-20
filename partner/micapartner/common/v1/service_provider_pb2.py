@@ -20,9 +20,10 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n common/v1/service_provider.proto\x12\tcommon.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x97\x01\n\x0fServiceProvider\x12\x1c\n\x14service_provider_key\x18\x01 \x01(\t\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\tBO\n\x11io.mica.common.v1B\x14ServiceProviderProtoZ\x1dmica/proto/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n common/v1/service_provider.proto\x12\tcommon.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xa2\x01\n\x0fServiceProvider\x12\'\n\x14service_provider_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\tBO\n\x11io.mica.common.v1B\x14ServiceProviderProtoZ\x1dmica/proto/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -38,6 +39,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\021io.mica.common.v1B\024ServiceProviderProtoZ\035mica/proto/common/v1;commonv1\242\002\004MICA'
-  _SERVICEPROVIDER._serialized_start=81
-  _SERVICEPROVIDER._serialized_end=232
+  _SERVICEPROVIDER.fields_by_name['service_provider_key']._options = None
+  _SERVICEPROVIDER.fields_by_name['service_provider_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SERVICEPROVIDER._serialized_start=106
+  _SERVICEPROVIDER._serialized_end=268
 # @@protoc_insertion_point(module_scope)

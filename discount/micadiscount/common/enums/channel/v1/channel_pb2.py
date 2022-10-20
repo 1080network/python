@@ -22,7 +22,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%common/enums/channel/v1/channel.proto\x12\x17\x63ommon.enums.channel.v1*\x92\x01\n\x07\x43hannel\x12\x17\n\x13\x43HANNEL_UNSPECIFIED\x10\x00\x12\x18\n\x14\x43HANNEL_DOMESTIC_ACH\x10\x01\x12\x1d\n\x19\x43HANNEL_INTERNATIONAL_ACH\x10\x02\x12\x19\n\x15\x43HANNEL_WIRE_TRANSFER\x10\x03\x12\x1a\n\x16\x43HANNEL_SWIFT_TRANSFER\x10\x04\x42U\n\x17io.mica.common.enums.v1B\x10\x43hannelEnumProtoZ!mica/proto/common/enums/channelv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%common/enums/channel/v1/channel.proto\x12\x17\x63ommon.enums.channel.v1*\xb2\x01\n\x07\x43hannel\x12\x17\n\x13\x43HANNEL_UNSPECIFIED\x10\x00\x12\x18\n\x14\x43HANNEL_DOMESTIC_ACH\x10\x01\x12\x1d\n\x19\x43HANNEL_INTERNATIONAL_ACH\x10\x02\x12\x19\n\x15\x43HANNEL_WIRE_TRANSFER\x10\x03\x12\x1a\n\x16\x43HANNEL_SWIFT_TRANSFER\x10\x04\x12\x1e\n\x1a\x43HANNEL_REAL_TIME_PAYMENTS\x10\x05\x42U\n\x17io.mica.common.enums.v1B\x10\x43hannelEnumProtoZ!mica/proto/common/enums/channelv1\xa2\x02\x04MICAb\x06proto3')
 
 _CHANNEL = DESCRIPTOR.enum_types_by_name['Channel']
 Channel = enum_type_wrapper.EnumTypeWrapper(_CHANNEL)
@@ -31,6 +31,7 @@ CHANNEL_DOMESTIC_ACH = 1
 CHANNEL_INTERNATIONAL_ACH = 2
 CHANNEL_WIRE_TRANSFER = 3
 CHANNEL_SWIFT_TRANSFER = 4
+CHANNEL_REAL_TIME_PAYMENTS = 5
 
 
 if _descriptor._USE_C_DESCRIPTORS == False:
@@ -38,5 +39,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027io.mica.common.enums.v1B\020ChannelEnumProtoZ!mica/proto/common/enums/channelv1\242\002\004MICA'
   _CHANNEL._serialized_start=67
-  _CHANNEL._serialized_end=213
+  _CHANNEL._serialized_end=245
 # @@protoc_insertion_point(module_scope)

@@ -23,9 +23,10 @@ _sym_db = _symbol_database.Default()
 from micaconnect.common.enums.serviceprovidertype.v1 import service_provider_type_pb2 as common_dot_enums_dot_serviceprovidertype_dot_v1_dot_service__provider__type__pb2
 from micaconnect.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from micaconnect.common.v1 import pagination_pb2 as common_dot_v1_dot_pagination__pb2
+from micaconnect.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1connect/serviceprovider/v1/service_provider.proto\x12\x1a\x63onnect.serviceprovider.v1\x1a?common/enums/serviceprovidertype/v1/service_provider_type.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1a\x63ommon/v1/pagination.proto\"f\n\x1cSearchServiceProviderRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x38\n\x12pagination_request\x18\x02 \x01(\x0b\x32\x1c.common.v1.PaginationRequest\"\xde\x02\n\x1dSearchServiceProviderResponse\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.connect.serviceprovider.v1.SearchServiceProviderResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x46\n\x11service_providers\x18\x03 \x03(\x0b\x32+.connect.serviceprovider.v1.ServiceProvider\x12:\n\x13pagination_response\x18\x04 \x01(\x0b\x32\x1d.common.v1.PaginationResponse\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xc6\x02\n\x0fServiceProvider\x12\x1c\n\x14service_provider_key\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x02 \x01(\x05\x12W\n\x15service_provider_type\x18\x03 \x01(\x0e\x32\x38.common.enums.serviceprovidertype.v1.ServiceProviderType\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x16\n\x0elogo_file_name\x18\x05 \x01(\t\x12\x15\n\rprimary_color\x18\x06 \x01(\t\x12\x17\n\x0fsecondary_color\x18\x07 \x01(\t\x12\x16\n\x0etertiary_color\x18\x08 \x01(\t\x12@\n\x06\x66ields\x18\t \x03(\x0b\x32\x30.connect.serviceprovider.v1.ServiceProviderField\"z\n\x14ServiceProviderField\x12\x10\n\x08sequence\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x42\n\x04type\x18\x03 \x01(\x0e\x32\x34.connect.serviceprovider.v1.ServiceProviderFieldType*\x9b\x01\n\x18ServiceProviderFieldType\x12+\n\'SERVICE_PROVIDER_FIELD_TYPE_UNSPECIFIED\x10\x00\x12(\n$SERVICE_PROVIDER_FIELD_TYPE_USERNAME\x10\x01\x12(\n$SERVICE_PROVIDER_FIELD_TYPE_PASSWORD\x10\x02\x42g\n\"io.mica.connect.serviceprovider.v1B\x14ServiceProviderProtoZ$mica/proto/connect/serviceproviderv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1connect/serviceprovider/v1/service_provider.proto\x12\x1a\x63onnect.serviceprovider.v1\x1a?common/enums/serviceprovidertype/v1/service_provider_type.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1a\x63ommon/v1/pagination.proto\x1a\x17validate/validate.proto\"f\n\x1cSearchServiceProviderRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x38\n\x12pagination_request\x18\x02 \x01(\x0b\x32\x1c.common.v1.PaginationRequest\"\xde\x02\n\x1dSearchServiceProviderResponse\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.connect.serviceprovider.v1.SearchServiceProviderResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x46\n\x11service_providers\x18\x03 \x03(\x0b\x32+.connect.serviceprovider.v1.ServiceProvider\x12:\n\x13pagination_response\x18\x04 \x01(\x0b\x32\x1d.common.v1.PaginationResponse\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xd1\x02\n\x0fServiceProvider\x12\'\n\x14service_provider_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0c\n\x04rank\x18\x02 \x01(\x05\x12W\n\x15service_provider_type\x18\x03 \x01(\x0e\x32\x38.common.enums.serviceprovidertype.v1.ServiceProviderType\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x16\n\x0elogo_file_name\x18\x05 \x01(\t\x12\x15\n\rprimary_color\x18\x06 \x01(\t\x12\x17\n\x0fsecondary_color\x18\x07 \x01(\t\x12\x16\n\x0etertiary_color\x18\x08 \x01(\t\x12@\n\x06\x66ields\x18\t \x03(\x0b\x32\x30.connect.serviceprovider.v1.ServiceProviderField\"z\n\x14ServiceProviderField\x12\x10\n\x08sequence\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x42\n\x04type\x18\x03 \x01(\x0e\x32\x34.connect.serviceprovider.v1.ServiceProviderFieldType*\x9b\x01\n\x18ServiceProviderFieldType\x12+\n\'SERVICE_PROVIDER_FIELD_TYPE_UNSPECIFIED\x10\x00\x12(\n$SERVICE_PROVIDER_FIELD_TYPE_USERNAME\x10\x01\x12(\n$SERVICE_PROVIDER_FIELD_TYPE_PASSWORD\x10\x02\x42g\n\"io.mica.connect.serviceprovider.v1B\x14ServiceProviderProtoZ$mica/proto/connect/serviceproviderv1\xa2\x02\x04MICAb\x06proto3')
 
 _SERVICEPROVIDERFIELDTYPE = DESCRIPTOR.enum_types_by_name['ServiceProviderFieldType']
 ServiceProviderFieldType = enum_type_wrapper.EnumTypeWrapper(_SERVICEPROVIDERFIELDTYPE)
@@ -71,16 +72,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\"io.mica.connect.serviceprovider.v1B\024ServiceProviderProtoZ$mica/proto/connect/serviceproviderv1\242\002\004MICA'
-  _SERVICEPROVIDERFIELDTYPE._serialized_start=1108
-  _SERVICEPROVIDERFIELDTYPE._serialized_end=1263
-  _SEARCHSERVICEPROVIDERREQUEST._serialized_start=197
-  _SEARCHSERVICEPROVIDERREQUEST._serialized_end=299
-  _SEARCHSERVICEPROVIDERRESPONSE._serialized_start=302
-  _SEARCHSERVICEPROVIDERRESPONSE._serialized_end=652
-  _SEARCHSERVICEPROVIDERRESPONSE_STATUS._serialized_start=582
-  _SEARCHSERVICEPROVIDERRESPONSE_STATUS._serialized_end=652
-  _SERVICEPROVIDER._serialized_start=655
-  _SERVICEPROVIDER._serialized_end=981
-  _SERVICEPROVIDERFIELD._serialized_start=983
-  _SERVICEPROVIDERFIELD._serialized_end=1105
+  _SERVICEPROVIDER.fields_by_name['service_provider_key']._options = None
+  _SERVICEPROVIDER.fields_by_name['service_provider_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SERVICEPROVIDERFIELDTYPE._serialized_start=1144
+  _SERVICEPROVIDERFIELDTYPE._serialized_end=1299
+  _SEARCHSERVICEPROVIDERREQUEST._serialized_start=222
+  _SEARCHSERVICEPROVIDERREQUEST._serialized_end=324
+  _SEARCHSERVICEPROVIDERRESPONSE._serialized_start=327
+  _SEARCHSERVICEPROVIDERRESPONSE._serialized_end=677
+  _SEARCHSERVICEPROVIDERRESPONSE_STATUS._serialized_start=607
+  _SEARCHSERVICEPROVIDERRESPONSE_STATUS._serialized_end=677
+  _SERVICEPROVIDER._serialized_start=680
+  _SERVICEPROVIDER._serialized_end=1017
+  _SERVICEPROVIDERFIELD._serialized_start=1019
+  _SERVICEPROVIDERFIELD._serialized_end=1141
 # @@protoc_insertion_point(module_scope)

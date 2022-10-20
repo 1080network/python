@@ -24,9 +24,10 @@ from micapartner.common.enums.currency.v1 import currency_pb2 as common_dot_enum
 from micapartner.common.enums.region.v1 import region_pb2 as common_dot_enums_dot_region_dot_v1_dot_region__pb2
 from micapartner.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(partner/transaction/v1/transaction.proto\x12\x16partner.transaction.v1\x1a\'common/enums/currency/v1/currency.proto\x1a#common/enums/region/v1/region.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc2\x02\n\x1cSearchTransactionDataRequest\x12-\n\tdate_from\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\rinterval_type\x18\x03 \x01(\x0e\x32$.partner.transaction.v1.IntervalType\x12\x34\n\x08\x63urrency\x18\x04 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x18\n\x10organization_key\x18\x05 \x01(\t\x12\x11\n\tstore_key\x18\x06 \x01(\t\x12\x12\n\nmin_amount\x18\x07 \x01(\t\x12\x12\n\nmax_amount\x18\x08 \x01(\t\"\xe9\x02\n\x0f\x43ountAmountItem\x12(\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x08\x63urrency\x18\x02 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x1d\n\x15obtain_approval_count\x18\x03 \x01(\x03\x12\x1e\n\x16obtain_approval_amount\x18\x04 \x01(\t\x12\x1c\n\x14obtain_decline_count\x18\x05 \x01(\x03\x12\x1d\n\x15obtain_decline_amount\x18\x06 \x01(\t\x12\x1d\n\x15return_approval_count\x18\x07 \x01(\x03\x12\x1e\n\x16return_approval_amount\x18\x08 \x01(\t\x12\x1c\n\x14return_decline_count\x18\t \x01(\x03\x12\x1d\n\x15return_decline_amount\x18\n \x01(\t\"\xa8\x02\n\x1dSearchTransactionDataResponse\x12L\n\x06status\x18\x01 \x01(\x0e\x32<.partner.transaction.v1.SearchTransactionDataResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0b\n\x03\x63id\x18\x03 \x01(\t\x12\x43\n\x12\x63ount_amount_items\x18\x04 \x03(\x0b\x32\'.partner.transaction.v1.CountAmountItem\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xb2\x02\n%SearchTransactionGeographyDataRequest\x12-\n\tdate_from\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\rinterval_type\x18\x03 \x01(\x0e\x32$.partner.transaction.v1.IntervalType\x12\x18\n\x10organization_key\x18\x05 \x01(\t\x12\x11\n\tstore_key\x18\x06 \x01(\t\x12.\n\x06region\x18\x07 \x01(\x0e\x32\x1e.common.enums.region.v1.Region\x12\x13\n\x0bpostal_code\x18\x08 \x01(\t\"\x8e\x01\n\"SearchTransactionGeographyDataItem\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\x12\x43\n\x12\x63ount_amount_items\x18\x03 \x03(\x0b\x32\'.partner.transaction.v1.CountAmountItem\"\xc0\x02\n&SearchTransactionGeographyDataResponse\x12U\n\x06status\x18\x01 \x01(\x0e\x32\x45.partner.transaction.v1.SearchTransactionGeographyDataResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0b\n\x03\x63id\x18\x03 \x01(\t\x12I\n\x05items\x18\x04 \x03(\x0b\x32:.partner.transaction.v1.SearchTransactionGeographyDataItem\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\x88\x02\n+SearchTransactionServiceProviderDataRequest\x12-\n\tdate_from\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05top_n\x18\x03 \x01(\x03\x12\x41\n\x10transaction_type\x18\x04 \x01(\x0e\x32\'.partner.transaction.v1.TransactionType\x12\x18\n\x10organization_key\x18\x05 \x01(\t\x12\x11\n\tstore_key\x18\x06 \x01(\t\"\xab\x01\n(SearchTransactionServiceProviderDataItem\x12\x1c\n\x14service_provider_key\x18\x01 \x01(\t\x12\x1d\n\x15service_provider_name\x18\x02 \x01(\t\x12\x42\n\x11\x63ount_amount_item\x18\x03 \x01(\x0b\x32\'.partner.transaction.v1.CountAmountItem\"\xd2\x02\n,SearchTransactionServiceProviderDataResponse\x12[\n\x06status\x18\x01 \x01(\x0e\x32K.partner.transaction.v1.SearchTransactionServiceProviderDataResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0b\n\x03\x63id\x18\x03 \x01(\t\x12O\n\x05items\x18\x04 \x03(\x0b\x32@.partner.transaction.v1.SearchTransactionServiceProviderDataItem\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02*\xa5\x01\n\x0cIntervalType\x12\x1d\n\x19INTERVAL_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12INTERVAL_TYPE_HOUR\x10\x01\x12\x15\n\x11INTERVAL_TYPE_DAY\x10\x02\x12\x16\n\x12INTERVAL_TYPE_WEEK\x10\x03\x12\x17\n\x13INTERVAL_TYPE_MONTH\x10\x04\x12\x16\n\x12INTERVAL_TYPE_YEAR\x10\x05*\xc9\x01\n\x0fTransactionType\x12 \n\x1cTRANSACTION_TYPE_UNSPECIFIED\x10\x00\x12$\n TRANSACTION_TYPE_OBTAIN_APPROVAL\x10\x01\x12#\n\x1fTRANSACTION_TYPE_OBTAIN_DECLINE\x10\x02\x12$\n TRANSACTION_TYPE_RETURN_APPROVAL\x10\x03\x12#\n\x1fTRANSACTION_TYPE_RETURN_DECLINE\x10\x04\x42[\n\x1eio.mica.partner.transaction.v1B\x10TransactionProtoZ mica/proto/partner/transactionv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(partner/transaction/v1/transaction.proto\x12\x16partner.transaction.v1\x1a\'common/enums/currency/v1/currency.proto\x1a#common/enums/region/v1/region.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xd4\x02\n\x1cSearchTransactionDataRequest\x12-\n\tdate_from\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\rinterval_type\x18\x03 \x01(\x0e\x32$.partner.transaction.v1.IntervalType\x12\x34\n\x08\x63urrency\x18\x04 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12!\n\x10organization_key\x18\x05 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x1a\n\tstore_key\x18\x06 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x12\n\nmin_amount\x18\x07 \x01(\t\x12\x12\n\nmax_amount\x18\x08 \x01(\t\"\xe9\x02\n\x0f\x43ountAmountItem\x12(\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x08\x63urrency\x18\x02 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x1d\n\x15obtain_approval_count\x18\x03 \x01(\x03\x12\x1e\n\x16obtain_approval_amount\x18\x04 \x01(\t\x12\x1c\n\x14obtain_decline_count\x18\x05 \x01(\x03\x12\x1d\n\x15obtain_decline_amount\x18\x06 \x01(\t\x12\x1d\n\x15return_approval_count\x18\x07 \x01(\x03\x12\x1e\n\x16return_approval_amount\x18\x08 \x01(\t\x12\x1c\n\x14return_decline_count\x18\t \x01(\x03\x12\x1d\n\x15return_decline_amount\x18\n \x01(\t\"\xa8\x02\n\x1dSearchTransactionDataResponse\x12L\n\x06status\x18\x01 \x01(\x0e\x32<.partner.transaction.v1.SearchTransactionDataResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0b\n\x03\x63id\x18\x03 \x01(\t\x12\x43\n\x12\x63ount_amount_items\x18\x04 \x03(\x0b\x32\'.partner.transaction.v1.CountAmountItem\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xc4\x02\n%SearchTransactionGeographyDataRequest\x12-\n\tdate_from\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\rinterval_type\x18\x03 \x01(\x0e\x32$.partner.transaction.v1.IntervalType\x12!\n\x10organization_key\x18\x05 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x1a\n\tstore_key\x18\x06 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12.\n\x06region\x18\x07 \x01(\x0e\x32\x1e.common.enums.region.v1.Region\x12\x13\n\x0bpostal_code\x18\x08 \x01(\t\"\x8e\x01\n\"SearchTransactionGeographyDataItem\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\x12\x43\n\x12\x63ount_amount_items\x18\x03 \x03(\x0b\x32\'.partner.transaction.v1.CountAmountItem\"\xc0\x02\n&SearchTransactionGeographyDataResponse\x12U\n\x06status\x18\x01 \x01(\x0e\x32\x45.partner.transaction.v1.SearchTransactionGeographyDataResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0b\n\x03\x63id\x18\x03 \x01(\t\x12I\n\x05items\x18\x04 \x03(\x0b\x32:.partner.transaction.v1.SearchTransactionGeographyDataItem\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\x9a\x02\n+SearchTransactionServiceProviderDataRequest\x12-\n\tdate_from\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05top_n\x18\x03 \x01(\x03\x12\x41\n\x10transaction_type\x18\x04 \x01(\x0e\x32\'.partner.transaction.v1.TransactionType\x12!\n\x10organization_key\x18\x05 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x1a\n\tstore_key\x18\x06 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\"\xb6\x01\n(SearchTransactionServiceProviderDataItem\x12\'\n\x14service_provider_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x1d\n\x15service_provider_name\x18\x02 \x01(\t\x12\x42\n\x11\x63ount_amount_item\x18\x03 \x01(\x0b\x32\'.partner.transaction.v1.CountAmountItem\"\xd2\x02\n,SearchTransactionServiceProviderDataResponse\x12[\n\x06status\x18\x01 \x01(\x0e\x32K.partner.transaction.v1.SearchTransactionServiceProviderDataResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0b\n\x03\x63id\x18\x03 \x01(\t\x12O\n\x05items\x18\x04 \x03(\x0b\x32@.partner.transaction.v1.SearchTransactionServiceProviderDataItem\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02*\xa5\x01\n\x0cIntervalType\x12\x1d\n\x19INTERVAL_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12INTERVAL_TYPE_HOUR\x10\x01\x12\x15\n\x11INTERVAL_TYPE_DAY\x10\x02\x12\x16\n\x12INTERVAL_TYPE_WEEK\x10\x03\x12\x17\n\x13INTERVAL_TYPE_MONTH\x10\x04\x12\x16\n\x12INTERVAL_TYPE_YEAR\x10\x05*\xc9\x01\n\x0fTransactionType\x12 \n\x1cTRANSACTION_TYPE_UNSPECIFIED\x10\x00\x12$\n TRANSACTION_TYPE_OBTAIN_APPROVAL\x10\x01\x12#\n\x1fTRANSACTION_TYPE_OBTAIN_DECLINE\x10\x02\x12$\n TRANSACTION_TYPE_RETURN_APPROVAL\x10\x03\x12#\n\x1fTRANSACTION_TYPE_RETURN_DECLINE\x10\x04\x42[\n\x1eio.mica.partner.transaction.v1B\x10TransactionProtoZ mica/proto/partner/transactionv1\xa2\x02\x04MICAb\x06proto3')
 
 _INTERVALTYPE = DESCRIPTOR.enum_types_by_name['IntervalType']
 IntervalType = enum_type_wrapper.EnumTypeWrapper(_INTERVALTYPE)
@@ -124,32 +125,46 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036io.mica.partner.transaction.v1B\020TransactionProtoZ mica/proto/partner/transactionv1\242\002\004MICA'
-  _INTERVALTYPE._serialized_start=2750
-  _INTERVALTYPE._serialized_end=2915
-  _TRANSACTIONTYPE._serialized_start=2918
-  _TRANSACTIONTYPE._serialized_end=3119
-  _SEARCHTRANSACTIONDATAREQUEST._serialized_start=203
-  _SEARCHTRANSACTIONDATAREQUEST._serialized_end=525
-  _COUNTAMOUNTITEM._serialized_start=528
-  _COUNTAMOUNTITEM._serialized_end=889
-  _SEARCHTRANSACTIONDATARESPONSE._serialized_start=892
-  _SEARCHTRANSACTIONDATARESPONSE._serialized_end=1188
-  _SEARCHTRANSACTIONDATARESPONSE_STATUS._serialized_start=1118
-  _SEARCHTRANSACTIONDATARESPONSE_STATUS._serialized_end=1188
-  _SEARCHTRANSACTIONGEOGRAPHYDATAREQUEST._serialized_start=1191
-  _SEARCHTRANSACTIONGEOGRAPHYDATAREQUEST._serialized_end=1497
-  _SEARCHTRANSACTIONGEOGRAPHYDATAITEM._serialized_start=1500
-  _SEARCHTRANSACTIONGEOGRAPHYDATAITEM._serialized_end=1642
-  _SEARCHTRANSACTIONGEOGRAPHYDATARESPONSE._serialized_start=1645
-  _SEARCHTRANSACTIONGEOGRAPHYDATARESPONSE._serialized_end=1965
-  _SEARCHTRANSACTIONGEOGRAPHYDATARESPONSE_STATUS._serialized_start=1118
-  _SEARCHTRANSACTIONGEOGRAPHYDATARESPONSE_STATUS._serialized_end=1188
-  _SEARCHTRANSACTIONSERVICEPROVIDERDATAREQUEST._serialized_start=1968
-  _SEARCHTRANSACTIONSERVICEPROVIDERDATAREQUEST._serialized_end=2232
-  _SEARCHTRANSACTIONSERVICEPROVIDERDATAITEM._serialized_start=2235
-  _SEARCHTRANSACTIONSERVICEPROVIDERDATAITEM._serialized_end=2406
-  _SEARCHTRANSACTIONSERVICEPROVIDERDATARESPONSE._serialized_start=2409
-  _SEARCHTRANSACTIONSERVICEPROVIDERDATARESPONSE._serialized_end=2747
-  _SEARCHTRANSACTIONSERVICEPROVIDERDATARESPONSE_STATUS._serialized_start=1118
-  _SEARCHTRANSACTIONSERVICEPROVIDERDATARESPONSE_STATUS._serialized_end=1188
+  _SEARCHTRANSACTIONDATAREQUEST.fields_by_name['organization_key']._options = None
+  _SEARCHTRANSACTIONDATAREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\004r\002\0302'
+  _SEARCHTRANSACTIONDATAREQUEST.fields_by_name['store_key']._options = None
+  _SEARCHTRANSACTIONDATAREQUEST.fields_by_name['store_key']._serialized_options = b'\372B\004r\002\0302'
+  _SEARCHTRANSACTIONGEOGRAPHYDATAREQUEST.fields_by_name['organization_key']._options = None
+  _SEARCHTRANSACTIONGEOGRAPHYDATAREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\004r\002\0302'
+  _SEARCHTRANSACTIONGEOGRAPHYDATAREQUEST.fields_by_name['store_key']._options = None
+  _SEARCHTRANSACTIONGEOGRAPHYDATAREQUEST.fields_by_name['store_key']._serialized_options = b'\372B\004r\002\0302'
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATAREQUEST.fields_by_name['organization_key']._options = None
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATAREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\004r\002\0302'
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATAREQUEST.fields_by_name['store_key']._options = None
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATAREQUEST.fields_by_name['store_key']._serialized_options = b'\372B\004r\002\0302'
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATAITEM.fields_by_name['service_provider_key']._options = None
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATAITEM.fields_by_name['service_provider_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _INTERVALTYPE._serialized_start=2840
+  _INTERVALTYPE._serialized_end=3005
+  _TRANSACTIONTYPE._serialized_start=3008
+  _TRANSACTIONTYPE._serialized_end=3209
+  _SEARCHTRANSACTIONDATAREQUEST._serialized_start=228
+  _SEARCHTRANSACTIONDATAREQUEST._serialized_end=568
+  _COUNTAMOUNTITEM._serialized_start=571
+  _COUNTAMOUNTITEM._serialized_end=932
+  _SEARCHTRANSACTIONDATARESPONSE._serialized_start=935
+  _SEARCHTRANSACTIONDATARESPONSE._serialized_end=1231
+  _SEARCHTRANSACTIONDATARESPONSE_STATUS._serialized_start=1161
+  _SEARCHTRANSACTIONDATARESPONSE_STATUS._serialized_end=1231
+  _SEARCHTRANSACTIONGEOGRAPHYDATAREQUEST._serialized_start=1234
+  _SEARCHTRANSACTIONGEOGRAPHYDATAREQUEST._serialized_end=1558
+  _SEARCHTRANSACTIONGEOGRAPHYDATAITEM._serialized_start=1561
+  _SEARCHTRANSACTIONGEOGRAPHYDATAITEM._serialized_end=1703
+  _SEARCHTRANSACTIONGEOGRAPHYDATARESPONSE._serialized_start=1706
+  _SEARCHTRANSACTIONGEOGRAPHYDATARESPONSE._serialized_end=2026
+  _SEARCHTRANSACTIONGEOGRAPHYDATARESPONSE_STATUS._serialized_start=1161
+  _SEARCHTRANSACTIONGEOGRAPHYDATARESPONSE_STATUS._serialized_end=1231
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATAREQUEST._serialized_start=2029
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATAREQUEST._serialized_end=2311
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATAITEM._serialized_start=2314
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATAITEM._serialized_end=2496
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATARESPONSE._serialized_start=2499
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATARESPONSE._serialized_end=2837
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATARESPONSE_STATUS._serialized_start=1161
+  _SEARCHTRANSACTIONSERVICEPROVIDERDATARESPONSE_STATUS._serialized_end=1231
 # @@protoc_insertion_point(module_scope)

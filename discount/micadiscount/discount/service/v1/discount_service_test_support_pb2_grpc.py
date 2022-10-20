@@ -31,6 +31,11 @@ class DiscountTestSupportServiceStub(object):
                 request_serializer=discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountRequest.SerializeToString,
                 response_deserializer=discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountResponse.FromString,
                 )
+        self.TestReleaseDiscount = channel.unary_unary(
+                '/discount.service.v1.DiscountTestSupportService/TestReleaseDiscount',
+                request_serializer=discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountRequest.SerializeToString,
+                response_deserializer=discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountResponse.FromString,
+                )
 
 
 class DiscountTestSupportServiceServicer(object):
@@ -44,8 +49,14 @@ class DiscountTestSupportServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def TestApplyDiscount(self, request, context):
-        """Apply the discount(s) that were applicable to this transaction
+        """Apply or release a given discount
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def TestReleaseDiscount(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -62,6 +73,11 @@ def add_DiscountTestSupportServiceServicer_to_server(servicer, server):
                     servicer.TestApplyDiscount,
                     request_deserializer=discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountRequest.FromString,
                     response_serializer=discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountResponse.SerializeToString,
+            ),
+            'TestReleaseDiscount': grpc.unary_unary_rpc_method_handler(
+                    servicer.TestReleaseDiscount,
+                    request_deserializer=discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountRequest.FromString,
+                    response_serializer=discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -104,5 +120,22 @@ class DiscountTestSupportService(object):
         return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountTestSupportService/TestApplyDiscount',
             discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountRequest.SerializeToString,
             discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def TestReleaseDiscount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/discount.service.v1.DiscountTestSupportService/TestReleaseDiscount',
+            discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountRequest.SerializeToString,
+            discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

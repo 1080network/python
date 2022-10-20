@@ -20,9 +20,10 @@ _sym_db = _symbol_database.Default()
 
 
 from micapartner.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
+from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&partner/instrument/v1/instrument.proto\x12\x15partner.instrument.v1\x1a\x15\x63ommon/v1/error.proto\"P\n\x19\x45xchangeSessionKeyRequest\x12\x13\n\x0bsession_key\x18\x01 \x01(\t\x12\x1e\n\x16partner_instrument_ref\x18\x02 \x01(\t\"\xa7\x02\n\x1a\x45xchangeSessionKeyResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.partner.instrument.v1.ExchangeSessionKeyResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x1d\n\x15partner_payment_token\x18\x03 \x01(\t\"\x7f\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12!\n\x1dSTATUS_MATCHING_CODE_MISMATCH\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\x42X\n\x1dio.mica.partner.instrument.v1B\x0fInstrumentProtoZ\x1fmica/proto/partner/instrumentv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&partner/instrument/v1/instrument.proto\x12\x15partner.instrument.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x17validate/validate.proto\"[\n\x19\x45xchangeSessionKeyRequest\x12\x1e\n\x0bsession_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x1e\n\x16partner_instrument_ref\x18\x02 \x01(\t\"\xa7\x02\n\x1a\x45xchangeSessionKeyResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.partner.instrument.v1.ExchangeSessionKeyResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x1d\n\x15partner_payment_token\x18\x03 \x01(\t\"\x7f\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12!\n\x1dSTATUS_MATCHING_CODE_MISMATCH\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\x42X\n\x1dio.mica.partner.instrument.v1B\x0fInstrumentProtoZ\x1fmica/proto/partner/instrumentv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -47,10 +48,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035io.mica.partner.instrument.v1B\017InstrumentProtoZ\037mica/proto/partner/instrumentv1\242\002\004MICA'
-  _EXCHANGESESSIONKEYREQUEST._serialized_start=88
-  _EXCHANGESESSIONKEYREQUEST._serialized_end=168
-  _EXCHANGESESSIONKEYRESPONSE._serialized_start=171
-  _EXCHANGESESSIONKEYRESPONSE._serialized_end=466
-  _EXCHANGESESSIONKEYRESPONSE_STATUS._serialized_start=339
-  _EXCHANGESESSIONKEYRESPONSE_STATUS._serialized_end=466
+  _EXCHANGESESSIONKEYREQUEST.fields_by_name['session_key']._options = None
+  _EXCHANGESESSIONKEYREQUEST.fields_by_name['session_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _EXCHANGESESSIONKEYREQUEST._serialized_start=113
+  _EXCHANGESESSIONKEYREQUEST._serialized_end=204
+  _EXCHANGESESSIONKEYRESPONSE._serialized_start=207
+  _EXCHANGESESSIONKEYRESPONSE._serialized_end=502
+  _EXCHANGESESSIONKEYRESPONSE_STATUS._serialized_start=375
+  _EXCHANGESESSIONKEYRESPONSE_STATUS._serialized_end=502
 # @@protoc_insertion_point(module_scope)

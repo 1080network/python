@@ -21,9 +21,10 @@ _sym_db = _symbol_database.Default()
 
 from micaconnect.common.enums.serviceprovidertype.v1 import service_provider_type_pb2 as common_dot_enums_dot_serviceprovidertype_dot_v1_dot_service__provider__type__pb2
 from micaconnect.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
+from micaconnect.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'connect/staticdata/v1/static_data.proto\x12\x15\x63onnect.staticdata.v1\x1a?common/enums/serviceprovidertype/v1/service_provider_type.proto\x1a\x15\x63ommon/v1/error.proto\"\x16\n\x14GetStaticDataRequest\"\xa1\x02\n\x15GetStaticDataResponse\x12\x43\n\x06status\x18\x01 \x01(\x0e\x32\x33.connect.staticdata.v1.GetStaticDataResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12Z\n\x1eservice_provider_type_metadata\x18\x03 \x03(\x0b\x32\x32.connect.staticdata.v1.ServiceProviderTypeMetadata\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\x8a\x01\n\x1bServiceProviderTypeMetadata\x12W\n\x15service_provider_type\x18\x01 \x01(\x0e\x32\x38.common.enums.serviceprovidertype.v1.ServiceProviderType\x12\x12\n\npublic_key\x18\x02 \x01(\tBX\n\x1dio.mica.connect.staticdata.v1B\x0fStaticDataProtoZ\x1fmica/proto/connect/staticdatav1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'connect/staticdata/v1/static_data.proto\x12\x15\x63onnect.staticdata.v1\x1a?common/enums/serviceprovidertype/v1/service_provider_type.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x17validate/validate.proto\"\x16\n\x14GetStaticDataRequest\"\xa1\x02\n\x15GetStaticDataResponse\x12\x43\n\x06status\x18\x01 \x01(\x0e\x32\x33.connect.staticdata.v1.GetStaticDataResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12Z\n\x1eservice_provider_type_metadata\x18\x03 \x03(\x0b\x32\x32.connect.staticdata.v1.ServiceProviderTypeMetadata\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\x95\x01\n\x1bServiceProviderTypeMetadata\x12W\n\x15service_provider_type\x18\x01 \x01(\x0e\x32\x38.common.enums.serviceprovidertype.v1.ServiceProviderType\x12\x1d\n\npublic_key\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x42X\n\x1dio.mica.connect.staticdata.v1B\x0fStaticDataProtoZ\x1fmica/proto/connect/staticdatav1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -56,12 +57,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035io.mica.connect.staticdata.v1B\017StaticDataProtoZ\037mica/proto/connect/staticdatav1\242\002\004MICA'
-  _GETSTATICDATAREQUEST._serialized_start=154
-  _GETSTATICDATAREQUEST._serialized_end=176
-  _GETSTATICDATARESPONSE._serialized_start=179
-  _GETSTATICDATARESPONSE._serialized_end=468
-  _GETSTATICDATARESPONSE_STATUS._serialized_start=398
-  _GETSTATICDATARESPONSE_STATUS._serialized_end=468
-  _SERVICEPROVIDERTYPEMETADATA._serialized_start=471
-  _SERVICEPROVIDERTYPEMETADATA._serialized_end=609
+  _SERVICEPROVIDERTYPEMETADATA.fields_by_name['public_key']._options = None
+  _SERVICEPROVIDERTYPEMETADATA.fields_by_name['public_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _GETSTATICDATAREQUEST._serialized_start=179
+  _GETSTATICDATAREQUEST._serialized_end=201
+  _GETSTATICDATARESPONSE._serialized_start=204
+  _GETSTATICDATARESPONSE._serialized_end=493
+  _GETSTATICDATARESPONSE_STATUS._serialized_start=423
+  _GETSTATICDATARESPONSE_STATUS._serialized_end=493
+  _SERVICEPROVIDERTYPEMETADATA._serialized_start=496
+  _SERVICEPROVIDERTYPEMETADATA._serialized_end=645
 # @@protoc_insertion_point(module_scope)

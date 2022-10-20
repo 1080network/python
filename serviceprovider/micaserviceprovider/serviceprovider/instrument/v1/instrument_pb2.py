@@ -23,9 +23,10 @@ from micaserviceprovider.common.enums.currency.v1 import currency_pb2 as common_
 from micaserviceprovider.common.enums.instrumenttype.v1 import instrument_type_pb2 as common_dot_enums_dot_instrumenttype_dot_v1_dot_instrument__type__pb2
 from micaserviceprovider.common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from micaserviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.serviceprovider/instrument/v1/instrument.proto\x12\x1dserviceprovider.instrument.v1\x1a\'common/enums/currency/v1/currency.proto\x1a\x34\x63ommon/enums/instrumenttype/v1/instrument_type.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc3\x02\n\x19RegisterInstrumentRequest\x12!\n\x19service_provider_user_key\x18\x01 \x01(\t\x12\'\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\t\x12G\n\x0finstrument_type\x18\x03 \x01(\x0e\x32..common.enums.instrumenttype.v1.InstrumentType\x12\x34\n\x08\x63urrency\x18\x04 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x11\n\tlast_four\x18\x05 \x01(\t\x12H\n\x14settled_transactions\x18\x06 \x03(\x0b\x32*.serviceprovider.instrument.v1.Transaction\"e\n\x0bTransaction\x12+\n\x07\x63reated\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06\x61mount\x18\x02 \x01(\t\x12\x19\n\x11organization_name\x18\x03 \x01(\t\"\xa7\x02\n\x1aRegisterInstrumentResponse\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.serviceprovider.instrument.v1.RegisterInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\'\n\x1fservice_provider_instrument_key\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_DUPLICATE\x10\x03\"x\n\x14GetInstrumentRequest\x12)\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tH\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xa1\x03\n\nInstrument\x12\'\n\x1fservice_provider_instrument_key\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x1fservice_provider_instrument_ref\x18\x05 \x01(\t\x12!\n\x19service_provider_user_key\x18\x06 \x01(\t\x12!\n\x19service_provider_user_ref\x18\x07 \x01(\t\x12G\n\x0finstrument_type\x18\x08 \x01(\x0e\x32..common.enums.instrumenttype.v1.InstrumentType\x12\x34\n\x08\x63urrency\x18\t \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x11\n\tlast_four\x18\n \x01(\t\"\xa2\x02\n\x15GetInstrumentResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.serviceprovider.instrument.v1.GetInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12=\n\ninstrument\x18\x03 \x01(\x0b\x32).serviceprovider.instrument.v1.Instrument\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"{\n\x17RemoveInstrumentRequest\x12)\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tH\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xe9\x01\n\x18RemoveInstrumentResponse\x12N\n\x06status\x18\x01 \x01(\x0e\x32>.serviceprovider.instrument.v1.RemoveInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"J\n\x17SearchInstrumentRequest\x12#\n\x19service_provider_user_key\x18\x01 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xa9\x02\n\x18SearchInstrumentResponse\x12N\n\x06status\x18\x01 \x01(\x0e\x32>.serviceprovider.instrument.v1.SearchInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12>\n\x0binstruments\x18\x03 \x03(\x0b\x32).serviceprovider.instrument.v1.Instrument\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"~\n\rSetPINRequest\x12)\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tH\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x12\x0b\n\x03pin\x18\x03 \x01(\tB\n\n\x08\x63riteria\"\xd5\x01\n\x0eSetPINResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.serviceprovider.instrument.v1.SetPINResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\x95\x01\n\x0fResetPINRequest\x12)\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tH\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x12\x0f\n\x07old_pin\x18\x03 \x01(\t\x12\x0f\n\x07new_pin\x18\x04 \x01(\tB\n\n\x08\x63riteria\"\xd9\x01\n\x10ResetPINResponse\x12\x46\n\x06status\x18\x01 \x01(\x0e\x32\x36.serviceprovider.instrument.v1.ResetPINResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"t\n\x10RemovePINRequest\x12)\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tH\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xdb\x01\n\x11RemovePINResponse\x12G\n\x06status\x18\x01 \x01(\x0e\x32\x37.serviceprovider.instrument.v1.RemovePINResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xa1\x01\n\x1aRetrieveTransactionRequest\x12\'\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\t\x12-\n\tdate_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xbc\x02\n\x1bRetrieveTransactionResponse\x12Q\n\x06status\x18\x01 \x01(\x0e\x32\x41.serviceprovider.instrument.v1.RetrieveTransactionResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12@\n\x0ctransactions\x18\x03 \x03(\x0b\x32*.serviceprovider.instrument.v1.Transaction\"g\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1f\n\x1bSTATUS_INSTRUMENT_NOT_FOUND\x10\x03\x42h\n%io.mica.serviceprovider.instrument.v1B\x0fInstrumentProtoZ\'mica/proto/serviceprovider/instrumentv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.serviceprovider/instrument/v1/instrument.proto\x12\x1dserviceprovider.instrument.v1\x1a\'common/enums/currency/v1/currency.proto\x1a\x34\x63ommon/enums/instrumenttype/v1/instrument_type.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xce\x02\n\x19RegisterInstrumentRequest\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\'\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\t\x12G\n\x0finstrument_type\x18\x03 \x01(\x0e\x32..common.enums.instrumenttype.v1.InstrumentType\x12\x34\n\x08\x63urrency\x18\x04 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x11\n\tlast_four\x18\x05 \x01(\t\x12H\n\x14settled_transactions\x18\x06 \x03(\x0b\x32*.serviceprovider.instrument.v1.Transaction\"e\n\x0bTransaction\x12+\n\x07\x63reated\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0e\n\x06\x61mount\x18\x02 \x01(\t\x12\x19\n\x11organization_name\x18\x03 \x01(\t\"\xb2\x02\n\x1aRegisterInstrumentResponse\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.serviceprovider.instrument.v1.RegisterInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x32\n\x1fservice_provider_instrument_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x04 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_DUPLICATE\x10\x03\"\x83\x01\n\x14GetInstrumentRequest\x12\x34\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xb7\x03\n\nInstrument\x12\x32\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x1fservice_provider_instrument_ref\x18\x05 \x01(\t\x12,\n\x19service_provider_user_key\x18\x06 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12!\n\x19service_provider_user_ref\x18\x07 \x01(\t\x12G\n\x0finstrument_type\x18\x08 \x01(\x0e\x32..common.enums.instrumenttype.v1.InstrumentType\x12\x34\n\x08\x63urrency\x18\t \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12\x11\n\tlast_four\x18\n \x01(\t\"\xa2\x02\n\x15GetInstrumentResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.serviceprovider.instrument.v1.GetInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12=\n\ninstrument\x18\x03 \x01(\x0b\x32).serviceprovider.instrument.v1.Instrument\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\x86\x01\n\x17RemoveInstrumentRequest\x12\x34\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xe9\x01\n\x18RemoveInstrumentResponse\x12N\n\x06status\x18\x01 \x01(\x0e\x32>.serviceprovider.instrument.v1.RemoveInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"U\n\x17SearchInstrumentRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x42\n\n\x08\x63riteria\"\xa9\x02\n\x18SearchInstrumentResponse\x12N\n\x06status\x18\x01 \x01(\x0e\x32>.serviceprovider.instrument.v1.SearchInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12>\n\x0binstruments\x18\x03 \x03(\x0b\x32).serviceprovider.instrument.v1.Instrument\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\x89\x01\n\rSetPINRequest\x12\x34\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x12\x0b\n\x03pin\x18\x03 \x01(\tB\n\n\x08\x63riteria\"\xd5\x01\n\x0eSetPINResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.serviceprovider.instrument.v1.SetPINResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xa0\x01\n\x0fResetPINRequest\x12\x34\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x12\x0f\n\x07old_pin\x18\x03 \x01(\t\x12\x0f\n\x07new_pin\x18\x04 \x01(\tB\n\n\x08\x63riteria\"\xd9\x01\n\x10ResetPINResponse\x12\x46\n\x06status\x18\x01 \x01(\x0e\x32\x36.serviceprovider.instrument.v1.ResetPINResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\x7f\n\x10RemovePINRequest\x12\x34\n\x1fservice_provider_instrument_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12)\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xdb\x01\n\x11RemovePINResponse\x12G\n\x06status\x18\x01 \x01(\x0e\x32\x37.serviceprovider.instrument.v1.RemovePINResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xa1\x01\n\x1aRetrieveTransactionRequest\x12\'\n\x1fservice_provider_instrument_ref\x18\x02 \x01(\t\x12-\n\tdate_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xbc\x02\n\x1bRetrieveTransactionResponse\x12Q\n\x06status\x18\x01 \x01(\x0e\x32\x41.serviceprovider.instrument.v1.RetrieveTransactionResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12@\n\x0ctransactions\x18\x03 \x03(\x0b\x32*.serviceprovider.instrument.v1.Transaction\"g\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1f\n\x1bSTATUS_INSTRUMENT_NOT_FOUND\x10\x03\x42h\n%io.mica.serviceprovider.instrument.v1B\x0fInstrumentProtoZ\'mica/proto/serviceprovider/instrumentv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -185,56 +186,76 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n%io.mica.serviceprovider.instrument.v1B\017InstrumentProtoZ\'mica/proto/serviceprovider/instrumentv1\242\002\004MICA'
-  _REGISTERINSTRUMENTREQUEST._serialized_start=233
-  _REGISTERINSTRUMENTREQUEST._serialized_end=556
-  _TRANSACTION._serialized_start=558
-  _TRANSACTION._serialized_end=659
-  _REGISTERINSTRUMENTRESPONSE._serialized_start=662
-  _REGISTERINSTRUMENTRESPONSE._serialized_end=957
-  _REGISTERINSTRUMENTRESPONSE_STATUS._serialized_start=865
-  _REGISTERINSTRUMENTRESPONSE_STATUS._serialized_end=957
-  _GETINSTRUMENTREQUEST._serialized_start=959
-  _GETINSTRUMENTREQUEST._serialized_end=1079
-  _INSTRUMENT._serialized_start=1082
-  _INSTRUMENT._serialized_end=1499
-  _GETINSTRUMENTRESPONSE._serialized_start=1502
-  _GETINSTRUMENTRESPONSE._serialized_end=1792
-  _GETINSTRUMENTRESPONSE_STATUS._serialized_start=1700
-  _GETINSTRUMENTRESPONSE_STATUS._serialized_end=1792
-  _REMOVEINSTRUMENTREQUEST._serialized_start=1794
-  _REMOVEINSTRUMENTREQUEST._serialized_end=1917
-  _REMOVEINSTRUMENTRESPONSE._serialized_start=1920
-  _REMOVEINSTRUMENTRESPONSE._serialized_end=2153
-  _REMOVEINSTRUMENTRESPONSE_STATUS._serialized_start=1700
-  _REMOVEINSTRUMENTRESPONSE_STATUS._serialized_end=1792
-  _SEARCHINSTRUMENTREQUEST._serialized_start=2155
-  _SEARCHINSTRUMENTREQUEST._serialized_end=2229
-  _SEARCHINSTRUMENTRESPONSE._serialized_start=2232
-  _SEARCHINSTRUMENTRESPONSE._serialized_end=2529
-  _SEARCHINSTRUMENTRESPONSE_STATUS._serialized_start=1700
-  _SEARCHINSTRUMENTRESPONSE_STATUS._serialized_end=1792
-  _SETPINREQUEST._serialized_start=2531
-  _SETPINREQUEST._serialized_end=2657
-  _SETPINRESPONSE._serialized_start=2660
-  _SETPINRESPONSE._serialized_end=2873
-  _SETPINRESPONSE_STATUS._serialized_start=1700
-  _SETPINRESPONSE_STATUS._serialized_end=1792
-  _RESETPINREQUEST._serialized_start=2876
-  _RESETPINREQUEST._serialized_end=3025
-  _RESETPINRESPONSE._serialized_start=3028
-  _RESETPINRESPONSE._serialized_end=3245
-  _RESETPINRESPONSE_STATUS._serialized_start=1700
-  _RESETPINRESPONSE_STATUS._serialized_end=1792
-  _REMOVEPINREQUEST._serialized_start=3247
-  _REMOVEPINREQUEST._serialized_end=3363
-  _REMOVEPINRESPONSE._serialized_start=3366
-  _REMOVEPINRESPONSE._serialized_end=3585
-  _REMOVEPINRESPONSE_STATUS._serialized_start=1700
-  _REMOVEPINRESPONSE_STATUS._serialized_end=1792
-  _RETRIEVETRANSACTIONREQUEST._serialized_start=3588
-  _RETRIEVETRANSACTIONREQUEST._serialized_end=3749
-  _RETRIEVETRANSACTIONRESPONSE._serialized_start=3752
-  _RETRIEVETRANSACTIONRESPONSE._serialized_end=4068
-  _RETRIEVETRANSACTIONRESPONSE_STATUS._serialized_start=3965
-  _RETRIEVETRANSACTIONRESPONSE_STATUS._serialized_end=4068
+  _REGISTERINSTRUMENTREQUEST.fields_by_name['service_provider_user_key']._options = None
+  _REGISTERINSTRUMENTREQUEST.fields_by_name['service_provider_user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _REGISTERINSTRUMENTRESPONSE.fields_by_name['service_provider_instrument_key']._options = None
+  _REGISTERINSTRUMENTRESPONSE.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _GETINSTRUMENTREQUEST.fields_by_name['service_provider_instrument_key']._options = None
+  _GETINSTRUMENTREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _INSTRUMENT.fields_by_name['service_provider_instrument_key']._options = None
+  _INSTRUMENT.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _INSTRUMENT.fields_by_name['service_provider_user_key']._options = None
+  _INSTRUMENT.fields_by_name['service_provider_user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _REMOVEINSTRUMENTREQUEST.fields_by_name['service_provider_instrument_key']._options = None
+  _REMOVEINSTRUMENTREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SEARCHINSTRUMENTREQUEST.fields_by_name['service_provider_user_key']._options = None
+  _SEARCHINSTRUMENTREQUEST.fields_by_name['service_provider_user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SETPINREQUEST.fields_by_name['service_provider_instrument_key']._options = None
+  _SETPINREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _RESETPINREQUEST.fields_by_name['service_provider_instrument_key']._options = None
+  _RESETPINREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _REMOVEPINREQUEST.fields_by_name['service_provider_instrument_key']._options = None
+  _REMOVEPINREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _REGISTERINSTRUMENTREQUEST._serialized_start=258
+  _REGISTERINSTRUMENTREQUEST._serialized_end=592
+  _TRANSACTION._serialized_start=594
+  _TRANSACTION._serialized_end=695
+  _REGISTERINSTRUMENTRESPONSE._serialized_start=698
+  _REGISTERINSTRUMENTRESPONSE._serialized_end=1004
+  _REGISTERINSTRUMENTRESPONSE_STATUS._serialized_start=912
+  _REGISTERINSTRUMENTRESPONSE_STATUS._serialized_end=1004
+  _GETINSTRUMENTREQUEST._serialized_start=1007
+  _GETINSTRUMENTREQUEST._serialized_end=1138
+  _INSTRUMENT._serialized_start=1141
+  _INSTRUMENT._serialized_end=1580
+  _GETINSTRUMENTRESPONSE._serialized_start=1583
+  _GETINSTRUMENTRESPONSE._serialized_end=1873
+  _GETINSTRUMENTRESPONSE_STATUS._serialized_start=1781
+  _GETINSTRUMENTRESPONSE_STATUS._serialized_end=1873
+  _REMOVEINSTRUMENTREQUEST._serialized_start=1876
+  _REMOVEINSTRUMENTREQUEST._serialized_end=2010
+  _REMOVEINSTRUMENTRESPONSE._serialized_start=2013
+  _REMOVEINSTRUMENTRESPONSE._serialized_end=2246
+  _REMOVEINSTRUMENTRESPONSE_STATUS._serialized_start=1781
+  _REMOVEINSTRUMENTRESPONSE_STATUS._serialized_end=1873
+  _SEARCHINSTRUMENTREQUEST._serialized_start=2248
+  _SEARCHINSTRUMENTREQUEST._serialized_end=2333
+  _SEARCHINSTRUMENTRESPONSE._serialized_start=2336
+  _SEARCHINSTRUMENTRESPONSE._serialized_end=2633
+  _SEARCHINSTRUMENTRESPONSE_STATUS._serialized_start=1781
+  _SEARCHINSTRUMENTRESPONSE_STATUS._serialized_end=1873
+  _SETPINREQUEST._serialized_start=2636
+  _SETPINREQUEST._serialized_end=2773
+  _SETPINRESPONSE._serialized_start=2776
+  _SETPINRESPONSE._serialized_end=2989
+  _SETPINRESPONSE_STATUS._serialized_start=1781
+  _SETPINRESPONSE_STATUS._serialized_end=1873
+  _RESETPINREQUEST._serialized_start=2992
+  _RESETPINREQUEST._serialized_end=3152
+  _RESETPINRESPONSE._serialized_start=3155
+  _RESETPINRESPONSE._serialized_end=3372
+  _RESETPINRESPONSE_STATUS._serialized_start=1781
+  _RESETPINRESPONSE_STATUS._serialized_end=1873
+  _REMOVEPINREQUEST._serialized_start=3374
+  _REMOVEPINREQUEST._serialized_end=3501
+  _REMOVEPINRESPONSE._serialized_start=3504
+  _REMOVEPINRESPONSE._serialized_end=3723
+  _REMOVEPINRESPONSE_STATUS._serialized_start=1781
+  _REMOVEPINRESPONSE_STATUS._serialized_end=1873
+  _RETRIEVETRANSACTIONREQUEST._serialized_start=3726
+  _RETRIEVETRANSACTIONREQUEST._serialized_end=3887
+  _RETRIEVETRANSACTIONRESPONSE._serialized_start=3890
+  _RETRIEVETRANSACTIONRESPONSE._serialized_end=4206
+  _RETRIEVETRANSACTIONRESPONSE_STATUS._serialized_start=4103
+  _RETRIEVETRANSACTIONRESPONSE_STATUS._serialized_end=4206
 # @@protoc_insertion_point(module_scope)
