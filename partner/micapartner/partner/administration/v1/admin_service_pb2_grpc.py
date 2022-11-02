@@ -12,6 +12,7 @@ import grpc
 from micapartner.common.ping.v1 import ping_pb2 as common_dot_ping_dot_v1_dot_ping__pb2
 from micapartner.common.v1 import console_user_pb2 as common_dot_v1_dot_console__user__pb2
 from micapartner.common.v1 import mtls_certificate_pb2 as common_dot_v1_dot_mtls__certificate__pb2
+from micapartner.partner.administration.v1 import admin_service_pb2 as partner_dot_administration_dot_v1_dot_admin__service__pb2
 
 
 class PartnerAdministrationServiceStub(object):
@@ -24,6 +25,16 @@ class PartnerAdministrationServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.GetSettings = channel.unary_unary(
+                '/partner.administration.v1.PartnerAdministrationService/GetSettings',
+                request_serializer=partner_dot_administration_dot_v1_dot_admin__service__pb2.GetSettingsRequest.SerializeToString,
+                response_deserializer=partner_dot_administration_dot_v1_dot_admin__service__pb2.GetSettingsResponse.FromString,
+                )
+        self.UpdateSettings = channel.unary_unary(
+                '/partner.administration.v1.PartnerAdministrationService/UpdateSettings',
+                request_serializer=partner_dot_administration_dot_v1_dot_admin__service__pb2.UpdateSettingsRequest.SerializeToString,
+                response_deserializer=partner_dot_administration_dot_v1_dot_admin__service__pb2.UpdateSettingsResponse.FromString,
+                )
         self.GenerateMTLSCertificate = channel.unary_unary(
                 '/partner.administration.v1.PartnerAdministrationService/GenerateMTLSCertificate',
                 request_serializer=common_dot_v1_dot_mtls__certificate__pb2.GenerateMTLSCertificateRequest.SerializeToString,
@@ -89,6 +100,18 @@ class PartnerAdministrationServiceStub(object):
 class PartnerAdministrationServiceServicer(object):
     """This is the administrative interface for a Partner member
     """
+
+    def GetSettings(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateSettings(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def GenerateMTLSCertificate(self, request, context):
         """Generate a new MTLS certificate.
@@ -169,6 +192,16 @@ class PartnerAdministrationServiceServicer(object):
 
 def add_PartnerAdministrationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'GetSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSettings,
+                    request_deserializer=partner_dot_administration_dot_v1_dot_admin__service__pb2.GetSettingsRequest.FromString,
+                    response_serializer=partner_dot_administration_dot_v1_dot_admin__service__pb2.GetSettingsResponse.SerializeToString,
+            ),
+            'UpdateSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateSettings,
+                    request_deserializer=partner_dot_administration_dot_v1_dot_admin__service__pb2.UpdateSettingsRequest.FromString,
+                    response_serializer=partner_dot_administration_dot_v1_dot_admin__service__pb2.UpdateSettingsResponse.SerializeToString,
+            ),
             'GenerateMTLSCertificate': grpc.unary_unary_rpc_method_handler(
                     servicer.GenerateMTLSCertificate,
                     request_deserializer=common_dot_v1_dot_mtls__certificate__pb2.GenerateMTLSCertificateRequest.FromString,
@@ -239,6 +272,40 @@ def add_PartnerAdministrationServiceServicer_to_server(servicer, server):
 class PartnerAdministrationService(object):
     """This is the administrative interface for a Partner member
     """
+
+    @staticmethod
+    def GetSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/partner.administration.v1.PartnerAdministrationService/GetSettings',
+            partner_dot_administration_dot_v1_dot_admin__service__pb2.GetSettingsRequest.SerializeToString,
+            partner_dot_administration_dot_v1_dot_admin__service__pb2.GetSettingsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/partner.administration.v1.PartnerAdministrationService/UpdateSettings',
+            partner_dot_administration_dot_v1_dot_admin__service__pb2.UpdateSettingsRequest.SerializeToString,
+            partner_dot_administration_dot_v1_dot_admin__service__pb2.UpdateSettingsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GenerateMTLSCertificate(request,

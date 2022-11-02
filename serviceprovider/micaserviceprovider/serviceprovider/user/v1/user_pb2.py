@@ -25,7 +25,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from micaserviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"serviceprovider/user/v1/user.proto\x12\x17serviceprovider.user.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x14\x63ommon/v1/user.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xf8\x01\n\x04User\x12\x0f\n\x07version\x18\x01 \x01(\x03\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x19service_provider_user_key\x18\x04 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12!\n\x19service_provider_user_ref\x18\x05 \x01(\t\x12\x34\n\x10user_demographic\x18\x06 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"n\n\x13RegisterUserRequest\x12!\n\x19service_provider_user_ref\x18\x08 \x01(\t\x12\x34\n\x10user_demographic\x18\x01 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"\x9a\x02\n\x14RegisterUserResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.serviceprovider.user.v1.RegisterUserResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12,\n\x19service_provider_user_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x04 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_DUPLICATE\x10\x03\"\x88\x01\n\x11UpdateUserRequest\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x34\n\x10user_demographic\x18\x03 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"\x85\x02\n\x12UpdateUserResponse\x12\x42\n\x06status\x18\x01 \x01(\x0e\x32\x32.serviceprovider.user.v1.UpdateUserResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x1b\n\x17STATUS_VERSION_MISMATCH\x10\x04\"A\n\x11RemoveUserRequest\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xd7\x01\n\x12RemoveUserResponse\x12\x42\n\x06status\x18\x01 \x01(\x0e\x32\x32.serviceprovider.user.v1.RemoveUserResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"q\n\x0eGetUserRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12#\n\x19service_provider_user_ref\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xfe\x01\n\x0fGetUserResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.serviceprovider.user.v1.GetUserResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12+\n\x04user\x18\x03 \x01(\x0b\x32\x1d.serviceprovider.user.v1.User\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"x\n\x11SearchUserRequest\x12*\n\x19service_provider_user_key\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x12\n\nfirst_name\x18\x02 \x01(\t\x12\x11\n\tlast_name\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\"\xef\x01\n\x12SearchUserResponse\x12\x42\n\x06status\x18\x01 \x01(\x0e\x32\x32.serviceprovider.user.v1.SearchUserResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12,\n\x05users\x18\x03 \x03(\x0b\x32\x1d.serviceprovider.user.v1.User\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xe2\x01\n\x1b\x45nrollUserInstrumentRequest\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12!\n\x19service_provider_user_ref\x18\x02 \x01(\t\x12\x32\n\x1fservice_provider_instrument_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\'\n\x1fservice_provider_instrument_ref\x18\x04 \x01(\t\x12\x15\n\rmatching_code\x18\x06 \x01(\t\"\x9b\x02\n\x1c\x45nrollUserInstrumentResponse\x12L\n\x06status\x18\x01 \x01(\x0e\x32<.serviceprovider.user.v1.EnrollUserInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\x8b\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x16\n\x12STATUS_USER_CLOSED\x10\x04\x12\x15\n\x11STATUS_RISK_FRAUD\x10\x05\x42V\n\x1fio.mica.serviceprovider.user.v1B\tUserProtoZ!mica/proto/serviceprovider/userv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"serviceprovider/user/v1/user.proto\x12\x17serviceprovider.user.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x14\x63ommon/v1/user.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\x94\x02\n\x04User\x12\x0f\n\x07version\x18\x01 \x01(\x03\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x19service_provider_user_key\x18\x04 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12!\n\x19service_provider_user_ref\x18\x05 \x01(\t\x12\x34\n\x10user_demographic\x18\x06 \x01(\x0b\x32\x1a.common.v1.UserDemographic\x12\x1a\n\x12\x66\x65\x64\x65rated_user_key\x18\x07 \x01(\t\"n\n\x13RegisterUserRequest\x12!\n\x19service_provider_user_ref\x18\x08 \x01(\t\x12\x34\n\x10user_demographic\x18\x01 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"\x9a\x02\n\x14RegisterUserResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.serviceprovider.user.v1.RegisterUserResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12,\n\x19service_provider_user_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x04 \x01(\x03\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_DUPLICATE\x10\x03\"\x88\x01\n\x11UpdateUserRequest\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x34\n\x10user_demographic\x18\x03 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"\x85\x02\n\x12UpdateUserResponse\x12\x42\n\x06status\x18\x01 \x01(\x0e\x32\x32.serviceprovider.user.v1.UpdateUserResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x1b\n\x17STATUS_VERSION_MISMATCH\x10\x04\"A\n\x11RemoveUserRequest\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xd7\x01\n\x12RemoveUserResponse\x12\x42\n\x06status\x18\x01 \x01(\x0e\x32\x32.serviceprovider.user.v1.RemoveUserResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"q\n\x0eGetUserRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12#\n\x19service_provider_user_ref\x18\x02 \x01(\tH\x00\x42\n\n\x08\x63riteria\"\xfe\x01\n\x0fGetUserResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.serviceprovider.user.v1.GetUserResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12+\n\x04user\x18\x03 \x01(\x0b\x32\x1d.serviceprovider.user.v1.User\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"x\n\x11SearchUserRequest\x12*\n\x19service_provider_user_key\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x12\n\nfirst_name\x18\x02 \x01(\t\x12\x11\n\tlast_name\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\"\xef\x01\n\x12SearchUserResponse\x12\x42\n\x06status\x18\x01 \x01(\x0e\x32\x32.serviceprovider.user.v1.SearchUserResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12,\n\x05users\x18\x03 \x03(\x0b\x32\x1d.serviceprovider.user.v1.User\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xe2\x01\n\x1b\x45nrollUserInstrumentRequest\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12!\n\x19service_provider_user_ref\x18\x02 \x01(\t\x12\x32\n\x1fservice_provider_instrument_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\'\n\x1fservice_provider_instrument_ref\x18\x04 \x01(\t\x12\x15\n\rmatching_code\x18\x06 \x01(\t\"\x9b\x02\n\x1c\x45nrollUserInstrumentResponse\x12L\n\x06status\x18\x01 \x01(\x0e\x32<.serviceprovider.user.v1.EnrollUserInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\"\x8b\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x16\n\x12STATUS_USER_CLOSED\x10\x04\x12\x15\n\x11STATUS_RISK_FRAUD\x10\x05\x42V\n\x1fio.mica.serviceprovider.user.v1B\tUserProtoZ!mica/proto/serviceprovider/userv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -160,41 +160,41 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ENROLLUSERINSTRUMENTREQUEST.fields_by_name['service_provider_instrument_key']._options = None
   _ENROLLUSERINSTRUMENTREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _USER._serialized_start=167
-  _USER._serialized_end=415
-  _REGISTERUSERREQUEST._serialized_start=417
-  _REGISTERUSERREQUEST._serialized_end=527
-  _REGISTERUSERRESPONSE._serialized_start=530
-  _REGISTERUSERRESPONSE._serialized_end=812
-  _REGISTERUSERRESPONSE_STATUS._serialized_start=720
-  _REGISTERUSERRESPONSE_STATUS._serialized_end=812
-  _UPDATEUSERREQUEST._serialized_start=815
-  _UPDATEUSERREQUEST._serialized_end=951
-  _UPDATEUSERRESPONSE._serialized_start=954
-  _UPDATEUSERRESPONSE._serialized_end=1215
-  _UPDATEUSERRESPONSE_STATUS._serialized_start=1094
-  _UPDATEUSERRESPONSE_STATUS._serialized_end=1215
-  _REMOVEUSERREQUEST._serialized_start=1217
-  _REMOVEUSERREQUEST._serialized_end=1282
-  _REMOVEUSERRESPONSE._serialized_start=1285
-  _REMOVEUSERRESPONSE._serialized_end=1500
-  _REMOVEUSERRESPONSE_STATUS._serialized_start=1094
-  _REMOVEUSERRESPONSE_STATUS._serialized_end=1186
-  _GETUSERREQUEST._serialized_start=1502
-  _GETUSERREQUEST._serialized_end=1615
-  _GETUSERRESPONSE._serialized_start=1618
-  _GETUSERRESPONSE._serialized_end=1872
-  _GETUSERRESPONSE_STATUS._serialized_start=1094
-  _GETUSERRESPONSE_STATUS._serialized_end=1186
-  _SEARCHUSERREQUEST._serialized_start=1874
-  _SEARCHUSERREQUEST._serialized_end=1994
-  _SEARCHUSERRESPONSE._serialized_start=1997
-  _SEARCHUSERRESPONSE._serialized_end=2236
-  _SEARCHUSERRESPONSE_STATUS._serialized_start=720
-  _SEARCHUSERRESPONSE_STATUS._serialized_end=790
-  _ENROLLUSERINSTRUMENTREQUEST._serialized_start=2239
-  _ENROLLUSERINSTRUMENTREQUEST._serialized_end=2465
-  _ENROLLUSERINSTRUMENTRESPONSE._serialized_start=2468
-  _ENROLLUSERINSTRUMENTRESPONSE._serialized_end=2751
-  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_start=2612
-  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_end=2751
+  _USER._serialized_end=443
+  _REGISTERUSERREQUEST._serialized_start=445
+  _REGISTERUSERREQUEST._serialized_end=555
+  _REGISTERUSERRESPONSE._serialized_start=558
+  _REGISTERUSERRESPONSE._serialized_end=840
+  _REGISTERUSERRESPONSE_STATUS._serialized_start=748
+  _REGISTERUSERRESPONSE_STATUS._serialized_end=840
+  _UPDATEUSERREQUEST._serialized_start=843
+  _UPDATEUSERREQUEST._serialized_end=979
+  _UPDATEUSERRESPONSE._serialized_start=982
+  _UPDATEUSERRESPONSE._serialized_end=1243
+  _UPDATEUSERRESPONSE_STATUS._serialized_start=1122
+  _UPDATEUSERRESPONSE_STATUS._serialized_end=1243
+  _REMOVEUSERREQUEST._serialized_start=1245
+  _REMOVEUSERREQUEST._serialized_end=1310
+  _REMOVEUSERRESPONSE._serialized_start=1313
+  _REMOVEUSERRESPONSE._serialized_end=1528
+  _REMOVEUSERRESPONSE_STATUS._serialized_start=1122
+  _REMOVEUSERRESPONSE_STATUS._serialized_end=1214
+  _GETUSERREQUEST._serialized_start=1530
+  _GETUSERREQUEST._serialized_end=1643
+  _GETUSERRESPONSE._serialized_start=1646
+  _GETUSERRESPONSE._serialized_end=1900
+  _GETUSERRESPONSE_STATUS._serialized_start=1122
+  _GETUSERRESPONSE_STATUS._serialized_end=1214
+  _SEARCHUSERREQUEST._serialized_start=1902
+  _SEARCHUSERREQUEST._serialized_end=2022
+  _SEARCHUSERRESPONSE._serialized_start=2025
+  _SEARCHUSERRESPONSE._serialized_end=2264
+  _SEARCHUSERRESPONSE_STATUS._serialized_start=748
+  _SEARCHUSERRESPONSE_STATUS._serialized_end=818
+  _ENROLLUSERINSTRUMENTREQUEST._serialized_start=2267
+  _ENROLLUSERINSTRUMENTREQUEST._serialized_end=2493
+  _ENROLLUSERINSTRUMENTRESPONSE._serialized_start=2496
+  _ENROLLUSERINSTRUMENTRESPONSE._serialized_end=2779
+  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_start=2640
+  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_end=2779
 # @@protoc_insertion_point(module_scope)
