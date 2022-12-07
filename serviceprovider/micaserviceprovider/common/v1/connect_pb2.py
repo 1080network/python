@@ -19,9 +19,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from micaserviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x63ommon/v1/connect.proto\x12\tcommon.v1\"<\n\x16\x42\x61nkAccountCredentials\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\"C\n\x11\x42\x61nkAccountNumber\x12\x16\n\x0erouting_number\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x02 \x01(\tBG\n\x11io.mica.common.v1B\x0c\x43onnectProtoZ\x1dmica/proto/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x63ommon/v1/connect.proto\x12\tcommon.v1\x1a\x17validate/validate.proto\"N\n\x16\x42\x61nkAccountCredentials\x12\x19\n\x08username\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x03\x12\x19\n\x08password\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x03\"C\n\x11\x42\x61nkAccountNumber\x12\x16\n\x0erouting_number\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x02 \x01(\tBG\n\x11io.mica.common.v1B\x0c\x43onnectProtoZ\x1dmica/proto/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -45,8 +46,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\021io.mica.common.v1B\014ConnectProtoZ\035mica/proto/common/v1;commonv1\242\002\004MICA'
-  _BANKACCOUNTCREDENTIALS._serialized_start=38
-  _BANKACCOUNTCREDENTIALS._serialized_end=98
-  _BANKACCOUNTNUMBER._serialized_start=100
-  _BANKACCOUNTNUMBER._serialized_end=167
+  _BANKACCOUNTCREDENTIALS.fields_by_name['username']._options = None
+  _BANKACCOUNTCREDENTIALS.fields_by_name['username']._serialized_options = b'\372B\004r\002\020\003'
+  _BANKACCOUNTCREDENTIALS.fields_by_name['password']._options = None
+  _BANKACCOUNTCREDENTIALS.fields_by_name['password']._serialized_options = b'\372B\004r\002\020\003'
+  _BANKACCOUNTCREDENTIALS._serialized_start=63
+  _BANKACCOUNTCREDENTIALS._serialized_end=141
+  _BANKACCOUNTNUMBER._serialized_start=143
+  _BANKACCOUNTNUMBER._serialized_end=210
 # @@protoc_insertion_point(module_scope)

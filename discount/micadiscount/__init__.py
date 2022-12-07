@@ -5,7 +5,7 @@ from micadiscount.discount.service.v1.discount_to_mica_service_pb2_grpc import D
 from micautils import create_test_channel, create_test_jwt_token
 
 
-discount_roles = ['RoleDiscountAdminServiceAccount']
+discount_roles = ['RoleDiscountExternalServiceAccount', 'AclCanDetermineDiscount']
 
 
 def get_test_jwt_token(tenant: str):

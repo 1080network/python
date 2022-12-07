@@ -17,13 +17,26 @@ class CertLoader:
     certificate_chain = None
 
     def __init__(self, root_certificate_pem_file: str = None, root_certificate_bytes: bytes = None,
-                 private_key_pem_file: str = None, private_key_bytes: bytes = None):
+                 private_key_pem_file: str = None, private_key_bytes: bytes = None,
+                 certificate_chain_pem_file: str = None, certificate_chain_bytes: bytes = None
+                 ):
         if root_certificate_pem_file is not None:
-            self.root_certificates = open(root_certificate_pem_file, 'rb').read()
+            self.root_certificates = bytes(open(root_certificate_pem_file, 'rb').read())
         else:
             self.root_certificates = root_certificate_bytes
         if private_key_pem_file is not None:
-            self.private_key
+            self.private_key = bytes(open(private_key_pem_file, "rb").read())
+        else:
+            self.private_key = private_key_bytes
+        if certificate_chain_pem_file is not None:
+            self.certificate_chain = bytes(open(certificate_chain_pem_file, "rb").read())
+        else:
+            self.certificate_chain = certificate_chain_bytes
+
+    def to_ssl_credentintials(self):
+        return grpc.ssl_channel_credentials(root_certificates=self.root_certificates,
+                                            private_key=self.private_key,
+                                            certificate_chain=self.certificate_chain)
 
 
 def create_test_channel(addr: str, jwt_subject: str = None, jwt_audience: str = None,
@@ -38,12 +51,7 @@ def create_test_channel(addr: str, jwt_subject: str = None, jwt_audience: str = 
     return grpc.intercept_channel(insecure, jwt_interceptor)
 
 
-def create_channel(addr: str, credentials: grpc.ChannelCredentials = None, certificates: CertLoader = None,
-                   options=None, compression=None):
-    if credentials is None:
-        credentials = grpc.ssl_channel_credentials(root_certificates=certificates.root_certificates,
-                                                   private_key=certificates.private_key,
-                                                   certificate_chain=certificates.certificate_chain)
+def create_channel(addr: str, credentials: grpc.ChannelCredentials = None, options=None, compression=None):
     return grpc.secure_channel(target=addr,
                                credentials=credentials,
                                options=options,
