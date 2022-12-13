@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from micaserviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nHserviceprovider/serviceprovideraccount/v1/service_provider_account.proto\x12)serviceprovider.serviceprovideraccount.v1\x1a.common/enums/accounttype/v1/account_type.proto\x1a\'common/enums/currency/v1/currency.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xd3\x02\n\x16ServiceProviderAccount\x12/\n\x1cservice_provider_account_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\'\n\x14service_provider_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12>\n\x0c\x61\x63\x63ount_type\x18\x06 \x01(\x0e\x32(.common.enums.accounttype.v1.AccountType\x12\x34\n\x08\x63urrency\x18\x07 \x01(\x0e\x32\".common.enums.currency.v1.Currency\"S\n GetServiceProviderAccountRequest\x12/\n\x1cservice_provider_account_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xec\x02\n!GetServiceProviderAccountResponse\x12\x63\n\x06status\x18\x01 \x01(\x0e\x32S.serviceprovider.serviceprovideraccount.v1.GetServiceProviderAccountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x63\n\x18service_provider_account\x18\x03 \x01(\x0b\x32\x41.serviceprovider.serviceprovideraccount.v1.ServiceProviderAccount\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xc4\x01\n#SearchServiceProviderAccountRequest\x12\'\n\x14service_provider_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12>\n\x0c\x61\x63\x63ount_type\x18\x02 \x01(\x0e\x32(.common.enums.accounttype.v1.AccountType\x12\x34\n\x08\x63urrency\x18\x03 \x01(\x0e\x32\".common.enums.currency.v1.Currency\"\xdd\x02\n$SearchServiceProviderAccountResponse\x12\x66\n\x06status\x18\x01 \x01(\x0e\x32V.serviceprovider.serviceprovideraccount.v1.SearchServiceProviderAccountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x64\n\x19service_provider_accounts\x18\x03 \x03(\x0b\x32\x41.serviceprovider.serviceprovideraccount.v1.ServiceProviderAccount\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42\x8c\x01\n1io.mica.serviceprovider.serviceprovideraccount.v1B\x1bServiceProviderAccountProtoZ3mica/proto/serviceprovider/serviceprovideraccountv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nHserviceprovider/serviceprovideraccount/v1/service_provider_account.proto\x12)serviceprovider.serviceprovideraccount.v1\x1a.common/enums/accounttype/v1/account_type.proto\x1a\'common/enums/currency/v1/currency.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xdc\x02\n\x16ServiceProviderAccount\x12/\n\x1cservice_provider_account_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\'\n\x14service_provider_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12>\n\x0c\x61\x63\x63ount_type\x18\x06 \x01(\x0e\x32(.common.enums.accounttype.v1.AccountType\x12\x34\n\x08\x63urrency\x18\x07 \x01(\x0e\x32\".common.enums.currency.v1.Currency\"S\n GetServiceProviderAccountRequest\x12/\n\x1cservice_provider_account_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xec\x02\n!GetServiceProviderAccountResponse\x12\x63\n\x06status\x18\x01 \x01(\x0e\x32S.serviceprovider.serviceprovideraccount.v1.GetServiceProviderAccountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x63\n\x18service_provider_account\x18\x03 \x01(\x0b\x32\x41.serviceprovider.serviceprovideraccount.v1.ServiceProviderAccount\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xc4\x01\n#SearchServiceProviderAccountRequest\x12\'\n\x14service_provider_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12>\n\x0c\x61\x63\x63ount_type\x18\x02 \x01(\x0e\x32(.common.enums.accounttype.v1.AccountType\x12\x34\n\x08\x63urrency\x18\x03 \x01(\x0e\x32\".common.enums.currency.v1.Currency\"\xdd\x02\n$SearchServiceProviderAccountResponse\x12\x66\n\x06status\x18\x01 \x01(\x0e\x32V.serviceprovider.serviceprovideraccount.v1.SearchServiceProviderAccountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x64\n\x19service_provider_accounts\x18\x03 \x03(\x0b\x32\x41.serviceprovider.serviceprovideraccount.v1.ServiceProviderAccount\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42\x8c\x01\n1io.mica.serviceprovider.serviceprovideraccount.v1B\x1bServiceProviderAccountProtoZ3mica/proto/serviceprovider/serviceprovideraccountv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -78,6 +78,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n1io.mica.serviceprovider.serviceprovideraccount.v1B\033ServiceProviderAccountProtoZ3mica/proto/serviceprovider/serviceprovideraccountv1\242\002\004MICA'
   _SERVICEPROVIDERACCOUNT.fields_by_name['service_provider_account_key']._options = None
   _SERVICEPROVIDERACCOUNT.fields_by_name['service_provider_account_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SERVICEPROVIDERACCOUNT.fields_by_name['version']._options = None
+  _SERVICEPROVIDERACCOUNT.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _SERVICEPROVIDERACCOUNT.fields_by_name['service_provider_key']._options = None
   _SERVICEPROVIDERACCOUNT.fields_by_name['service_provider_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _GETSERVICEPROVIDERACCOUNTREQUEST.fields_by_name['service_provider_account_key']._options = None
@@ -85,17 +87,17 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SEARCHSERVICEPROVIDERACCOUNTREQUEST.fields_by_name['service_provider_key']._options = None
   _SEARCHSERVICEPROVIDERACCOUNTREQUEST.fields_by_name['service_provider_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _SERVICEPROVIDERACCOUNT._serialized_start=290
-  _SERVICEPROVIDERACCOUNT._serialized_end=629
-  _GETSERVICEPROVIDERACCOUNTREQUEST._serialized_start=631
-  _GETSERVICEPROVIDERACCOUNTREQUEST._serialized_end=714
-  _GETSERVICEPROVIDERACCOUNTRESPONSE._serialized_start=717
-  _GETSERVICEPROVIDERACCOUNTRESPONSE._serialized_end=1081
-  _GETSERVICEPROVIDERACCOUNTRESPONSE_STATUS._serialized_start=989
-  _GETSERVICEPROVIDERACCOUNTRESPONSE_STATUS._serialized_end=1081
-  _SEARCHSERVICEPROVIDERACCOUNTREQUEST._serialized_start=1084
-  _SEARCHSERVICEPROVIDERACCOUNTREQUEST._serialized_end=1280
-  _SEARCHSERVICEPROVIDERACCOUNTRESPONSE._serialized_start=1283
-  _SEARCHSERVICEPROVIDERACCOUNTRESPONSE._serialized_end=1632
-  _SEARCHSERVICEPROVIDERACCOUNTRESPONSE_STATUS._serialized_start=989
-  _SEARCHSERVICEPROVIDERACCOUNTRESPONSE_STATUS._serialized_end=1059
+  _SERVICEPROVIDERACCOUNT._serialized_end=638
+  _GETSERVICEPROVIDERACCOUNTREQUEST._serialized_start=640
+  _GETSERVICEPROVIDERACCOUNTREQUEST._serialized_end=723
+  _GETSERVICEPROVIDERACCOUNTRESPONSE._serialized_start=726
+  _GETSERVICEPROVIDERACCOUNTRESPONSE._serialized_end=1090
+  _GETSERVICEPROVIDERACCOUNTRESPONSE_STATUS._serialized_start=998
+  _GETSERVICEPROVIDERACCOUNTRESPONSE_STATUS._serialized_end=1090
+  _SEARCHSERVICEPROVIDERACCOUNTREQUEST._serialized_start=1093
+  _SEARCHSERVICEPROVIDERACCOUNTREQUEST._serialized_end=1289
+  _SEARCHSERVICEPROVIDERACCOUNTRESPONSE._serialized_start=1292
+  _SEARCHSERVICEPROVIDERACCOUNTRESPONSE._serialized_end=1641
+  _SEARCHSERVICEPROVIDERACCOUNTRESPONSE_STATUS._serialized_start=998
+  _SEARCHSERVICEPROVIDERACCOUNTRESPONSE_STATUS._serialized_end=1068
 # @@protoc_insertion_point(module_scope)

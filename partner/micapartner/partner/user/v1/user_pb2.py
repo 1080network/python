@@ -25,7 +25,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1apartner/user/v1/user.proto\x12\x0fpartner.user.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x14\x63ommon/v1/user.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xc4\x01\n\x04User\x12\x1b\n\x08user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x34\n\x10user_demographic\x18\x05 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"r\n\x1b\x45nrollUserInstrumentRequest\x12\x1d\n\x15partner_payment_token\x18\x01 \x01(\t\x12\x34\n\x10user_demographic\x18\x02 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"\xe2\x02\n\x1c\x45nrollUserInstrumentResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.partner.user.v1.EnrollUserInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x1e\n\x16partner_instrument_ref\x18\x03 \x01(\t\"\xba\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1b\n\x17STATUS_PARTIAL_APPROVAL\x10\x03\x12\x1d\n\x19STATUS_INSUFFICIENT_VALUE\x10\x04\x12\x1e\n\x1aSTATUS_INELIGIBLE_PRODUCTS\x10\x05\x12\x16\n\x12STATUS_USER_CLOSED\x10\x06\x42\x46\n\x17io.mica.partner.user.v1B\tUserProtoZ\x19mica/proto/partner/userv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1apartner/user/v1/user.proto\x12\x0fpartner.user.v1\x1a\x15\x63ommon/v1/error.proto\x1a\x14\x63ommon/v1/user.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xcd\x01\n\x04User\x12\x1b\n\x08user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x10user_demographic\x18\x05 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"r\n\x1b\x45nrollUserInstrumentRequest\x12\x1d\n\x15partner_payment_token\x18\x01 \x01(\t\x12\x34\n\x10user_demographic\x18\x02 \x01(\x0b\x32\x1a.common.v1.UserDemographic\"\xe2\x02\n\x1c\x45nrollUserInstrumentResponse\x12\x44\n\x06status\x18\x01 \x01(\x0e\x32\x34.partner.user.v1.EnrollUserInstrumentResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x1e\n\x16partner_instrument_ref\x18\x03 \x01(\t\"\xba\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1b\n\x17STATUS_PARTIAL_APPROVAL\x10\x03\x12\x1d\n\x19STATUS_INSUFFICIENT_VALUE\x10\x04\x12\x1e\n\x1aSTATUS_INELIGIBLE_PRODUCTS\x10\x05\x12\x16\n\x12STATUS_USER_CLOSED\x10\x06\x42\x46\n\x17io.mica.partner.user.v1B\tUserProtoZ\x19mica/proto/partner/userv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -60,12 +60,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n\027io.mica.partner.user.v1B\tUserProtoZ\031mica/proto/partner/userv1\242\002\004MICA'
   _USER.fields_by_name['user_key']._options = None
   _USER.fields_by_name['user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _USER.fields_by_name['version']._options = None
+  _USER.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _USER._serialized_start=151
-  _USER._serialized_end=347
-  _ENROLLUSERINSTRUMENTREQUEST._serialized_start=349
-  _ENROLLUSERINSTRUMENTREQUEST._serialized_end=463
-  _ENROLLUSERINSTRUMENTRESPONSE._serialized_start=466
-  _ENROLLUSERINSTRUMENTRESPONSE._serialized_end=820
-  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_start=634
-  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_end=820
+  _USER._serialized_end=356
+  _ENROLLUSERINSTRUMENTREQUEST._serialized_start=358
+  _ENROLLUSERINSTRUMENTREQUEST._serialized_end=472
+  _ENROLLUSERINSTRUMENTRESPONSE._serialized_start=475
+  _ENROLLUSERINSTRUMENTRESPONSE._serialized_end=829
+  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_start=643
+  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_end=829
 # @@protoc_insertion_point(module_scope)

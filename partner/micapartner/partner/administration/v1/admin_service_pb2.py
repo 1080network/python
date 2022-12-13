@@ -27,7 +27,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-partner/administration/v1/admin_service.proto\x12\x19partner.administration.v1\x1a\x19\x63ommon/ping/v1/ping.proto\x1a\x1c\x63ommon/v1/console_user.proto\x1a\x15\x63ommon/v1/error.proto\x1a common/v1/mtls_certificate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xbc\x01\n\x08Settings\x12\x1f\n\x0csettings_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12$\n\x10\x63\x61llback_address\x18\x05 \x01(\tB\n\xfa\x42\x07r\x05\x10\x03\x18\xc8\x01\"\x14\n\x12GetSettingsRequest\"\xfc\x01\n\x13GetSettingsResponse\x12\x45\n\x06status\x18\x01 \x01(\x0e\x32\x35.partner.administration.v1.GetSettingsResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x35\n\x08settings\x18\x03 \x01(\x0b\x32#.partner.administration.v1.Settings\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"o\n\x15UpdateSettingsRequest\x12\x1f\n\x0csettings_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12$\n\x10\x63\x61llback_address\x18\x03 \x01(\tB\n\xfa\x42\x07r\x05\x10\x03\x18\xc8\x01\"\xdc\x01\n\x16UpdateSettingsResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.partner.administration.v1.UpdateSettingsResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x32\x9a\r\n\x1cPartnerAdministrationService\x12n\n\x0bGetSettings\x12-.partner.administration.v1.GetSettingsRequest\x1a..partner.administration.v1.GetSettingsResponse\"\x00\x12w\n\x0eUpdateSettings\x12\x30.partner.administration.v1.UpdateSettingsRequest\x1a\x31.partner.administration.v1.UpdateSettingsResponse\"\x00\x12r\n\x17GenerateMTLSCertificate\x12).common.v1.GenerateMTLSCertificateRequest\x1a*.common.v1.GenerateMTLSCertificateResponse\"\x00\x12l\n\x15UpdateMTLSCertificate\x12\'.common.v1.UpdateMTLSCertificateRequest\x1a(.common.v1.UpdateMTLSCertificateResponse\"\x00\x12l\n\x15SearchMTLSCertificate\x12\'.common.v1.SearchMTLSCertificateRequest\x1a(.common.v1.SearchMTLSCertificateResponse\"\x00\x12\x63\n\x12GetMTLSCertificate\x12$.common.v1.GetMTLSCertificateRequest\x1a%.common.v1.GetMTLSCertificateResponse\"\x00\x12\x84\x01\n\x1d\x43reateSingleSignOnConsoleUser\x12/.common.v1.CreateSingleSignOnConsoleUserRequest\x1a\x30.common.v1.CreateSingleSignOnConsoleUserResponse\"\x00\x12\x84\x01\n\x1dUpdateSingleSignOnConsoleUser\x12/.common.v1.UpdateSingleSignOnConsoleUserRequest\x1a\x30.common.v1.UpdateSingleSignOnConsoleUserResponse\"\x00\x12}\n\x16SearchSingleSignOnUser\x12/.common.v1.SearchSingleSignOnConsoleUserRequest\x1a\x30.common.v1.SearchSingleSignOnConsoleUserResponse\"\x00\x12{\n\x1aGetSingleSignOnConsoleUser\x12,.common.v1.GetSingleSignOnConsoleUserRequest\x1a-.common.v1.GetSingleSignOnConsoleUserResponse\"\x00\x12K\n\x0cPingExternal\x12\x1b.common.ping.v1.PingRequest\x1a\x1c.common.ping.v1.PingResponse\"\x00\x12\x84\x01\n\x1dGenerateClientMTLSCertificate\x12/.common.v1.GenerateClientMTLSCertificateRequest\x1a\x30.common.v1.GenerateClientMTLSCertificateResponse\"\x00\x12~\n\x1bUpdateClientMTLSCertificate\x12-.common.v1.UpdateClientMTLSCertificateRequest\x1a..common.v1.UpdateClientMTLSCertificateResponse\"\x00\x12~\n\x1bSearchClientMTLSCertificate\x12-.common.v1.SearchClientMTLSCertificateRequest\x1a..common.v1.SearchClientMTLSCertificateResponse\"\x00\x42\x66\n!io.mica.partner.administration.v1B\x15\x41\x64ministrationServiceZ#mica/proto/partner/administrationv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-partner/administration/v1/admin_service.proto\x12\x19partner.administration.v1\x1a\x19\x63ommon/ping/v1/ping.proto\x1a\x1c\x63ommon/v1/console_user.proto\x1a\x15\x63ommon/v1/error.proto\x1a common/v1/mtls_certificate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xc5\x01\n\x08Settings\x12\x1f\n\x0csettings_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12$\n\x10\x63\x61llback_address\x18\x05 \x01(\tB\n\xfa\x42\x07r\x05\x10\x03\x18\xc8\x01\"\x14\n\x12GetSettingsRequest\"\xfc\x01\n\x13GetSettingsResponse\x12\x45\n\x06status\x18\x01 \x01(\x0e\x32\x35.partner.administration.v1.GetSettingsResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x35\n\x08settings\x18\x03 \x01(\x0b\x32#.partner.administration.v1.Settings\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"o\n\x15UpdateSettingsRequest\x12\x1f\n\x0csettings_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12$\n\x10\x63\x61llback_address\x18\x03 \x01(\tB\n\xfa\x42\x07r\x05\x10\x03\x18\xc8\x01\"\xdc\x01\n\x16UpdateSettingsResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.partner.administration.v1.UpdateSettingsResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x32\x9a\r\n\x1cPartnerAdministrationService\x12n\n\x0bGetSettings\x12-.partner.administration.v1.GetSettingsRequest\x1a..partner.administration.v1.GetSettingsResponse\"\x00\x12w\n\x0eUpdateSettings\x12\x30.partner.administration.v1.UpdateSettingsRequest\x1a\x31.partner.administration.v1.UpdateSettingsResponse\"\x00\x12r\n\x17GenerateMTLSCertificate\x12).common.v1.GenerateMTLSCertificateRequest\x1a*.common.v1.GenerateMTLSCertificateResponse\"\x00\x12l\n\x15UpdateMTLSCertificate\x12\'.common.v1.UpdateMTLSCertificateRequest\x1a(.common.v1.UpdateMTLSCertificateResponse\"\x00\x12l\n\x15SearchMTLSCertificate\x12\'.common.v1.SearchMTLSCertificateRequest\x1a(.common.v1.SearchMTLSCertificateResponse\"\x00\x12\x63\n\x12GetMTLSCertificate\x12$.common.v1.GetMTLSCertificateRequest\x1a%.common.v1.GetMTLSCertificateResponse\"\x00\x12\x84\x01\n\x1d\x43reateSingleSignOnConsoleUser\x12/.common.v1.CreateSingleSignOnConsoleUserRequest\x1a\x30.common.v1.CreateSingleSignOnConsoleUserResponse\"\x00\x12\x84\x01\n\x1dUpdateSingleSignOnConsoleUser\x12/.common.v1.UpdateSingleSignOnConsoleUserRequest\x1a\x30.common.v1.UpdateSingleSignOnConsoleUserResponse\"\x00\x12}\n\x16SearchSingleSignOnUser\x12/.common.v1.SearchSingleSignOnConsoleUserRequest\x1a\x30.common.v1.SearchSingleSignOnConsoleUserResponse\"\x00\x12{\n\x1aGetSingleSignOnConsoleUser\x12,.common.v1.GetSingleSignOnConsoleUserRequest\x1a-.common.v1.GetSingleSignOnConsoleUserResponse\"\x00\x12K\n\x0cPingExternal\x12\x1b.common.ping.v1.PingRequest\x1a\x1c.common.ping.v1.PingResponse\"\x00\x12\x84\x01\n\x1dGenerateClientMTLSCertificate\x12/.common.v1.GenerateClientMTLSCertificateRequest\x1a\x30.common.v1.GenerateClientMTLSCertificateResponse\"\x00\x12~\n\x1bUpdateClientMTLSCertificate\x12-.common.v1.UpdateClientMTLSCertificateRequest\x1a..common.v1.UpdateClientMTLSCertificateResponse\"\x00\x12~\n\x1bSearchClientMTLSCertificate\x12-.common.v1.SearchClientMTLSCertificateRequest\x1a..common.v1.SearchClientMTLSCertificateResponse\"\x00\x42\x66\n!io.mica.partner.administration.v1B\x15\x41\x64ministrationServiceZ#mica/proto/partner/administrationv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -80,6 +80,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n!io.mica.partner.administration.v1B\025AdministrationServiceZ#mica/proto/partner/administrationv1\242\002\004MICA'
   _SETTINGS.fields_by_name['settings_key']._options = None
   _SETTINGS.fields_by_name['settings_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SETTINGS.fields_by_name['version']._options = None
+  _SETTINGS.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _SETTINGS.fields_by_name['callback_address']._options = None
   _SETTINGS.fields_by_name['callback_address']._serialized_options = b'\372B\007r\005\020\003\030\310\001'
   _UPDATESETTINGSREQUEST.fields_by_name['settings_key']._options = None
@@ -87,19 +89,19 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPDATESETTINGSREQUEST.fields_by_name['callback_address']._options = None
   _UPDATESETTINGSREQUEST.fields_by_name['callback_address']._serialized_options = b'\372B\007r\005\020\003\030\310\001'
   _SETTINGS._serialized_start=249
-  _SETTINGS._serialized_end=437
-  _GETSETTINGSREQUEST._serialized_start=439
-  _GETSETTINGSREQUEST._serialized_end=459
-  _GETSETTINGSRESPONSE._serialized_start=462
-  _GETSETTINGSRESPONSE._serialized_end=714
-  _GETSETTINGSRESPONSE_STATUS._serialized_start=644
-  _GETSETTINGSRESPONSE_STATUS._serialized_end=714
-  _UPDATESETTINGSREQUEST._serialized_start=716
-  _UPDATESETTINGSREQUEST._serialized_end=827
-  _UPDATESETTINGSRESPONSE._serialized_start=830
-  _UPDATESETTINGSRESPONSE._serialized_end=1050
-  _UPDATESETTINGSRESPONSE_STATUS._serialized_start=644
-  _UPDATESETTINGSRESPONSE_STATUS._serialized_end=714
-  _PARTNERADMINISTRATIONSERVICE._serialized_start=1053
-  _PARTNERADMINISTRATIONSERVICE._serialized_end=2743
+  _SETTINGS._serialized_end=446
+  _GETSETTINGSREQUEST._serialized_start=448
+  _GETSETTINGSREQUEST._serialized_end=468
+  _GETSETTINGSRESPONSE._serialized_start=471
+  _GETSETTINGSRESPONSE._serialized_end=723
+  _GETSETTINGSRESPONSE_STATUS._serialized_start=653
+  _GETSETTINGSRESPONSE_STATUS._serialized_end=723
+  _UPDATESETTINGSREQUEST._serialized_start=725
+  _UPDATESETTINGSREQUEST._serialized_end=836
+  _UPDATESETTINGSRESPONSE._serialized_start=839
+  _UPDATESETTINGSRESPONSE._serialized_end=1059
+  _UPDATESETTINGSRESPONSE_STATUS._serialized_start=653
+  _UPDATESETTINGSRESPONSE_STATUS._serialized_end=723
+  _PARTNERADMINISTRATIONSERVICE._serialized_start=1062
+  _PARTNERADMINISTRATIONSERVICE._serialized_end=2752
 # @@protoc_insertion_point(module_scope)

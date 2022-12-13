@@ -131,6 +131,11 @@ class PartnerToMicaServiceStub(object):
                 request_serializer=partner_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.SerializeToString,
                 response_deserializer=partner_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.FromString,
                 )
+        self.GetValue = channel.unary_unary(
+                '/partner.service.v1.PartnerToMicaService/GetValue',
+                request_serializer=partner_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
+                response_deserializer=partner_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
+                )
         self.Ping = channel.unary_unary(
                 '/partner.service.v1.PartnerToMicaService/Ping',
                 request_serializer=common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
@@ -317,6 +322,12 @@ class PartnerToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetValue(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Ping(self, request, context):
         """<editor-fold desc="Admin Operations">
 
@@ -462,6 +473,11 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     servicer.SearchValue,
                     request_deserializer=partner_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.FromString,
                     response_serializer=partner_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.SerializeToString,
+            ),
+            'GetValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetValue,
+                    request_deserializer=partner_dot_value_dot_v1_dot_value__pb2.GetValueRequest.FromString,
+                    response_serializer=partner_dot_value_dot_v1_dot_value__pb2.GetValueResponse.SerializeToString,
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
@@ -841,6 +857,23 @@ class PartnerToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/partner.service.v1.PartnerToMicaService/SearchValue',
             partner_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.SerializeToString,
             partner_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/partner.service.v1.PartnerToMicaService/GetValue',
+            partner_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
+            partner_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

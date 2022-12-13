@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/partner/partneraccount/v1/partner_account.proto\x12\x19partner.partneraccount.v1\x1a.common/enums/accounttype/v1/account_type.proto\x1a\'common/enums/currency/v1/currency.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xb9\x02\n\x0ePartnerAccount\x12&\n\x13partner_account_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x1e\n\x0bpartner_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12>\n\x0c\x61\x63\x63ount_type\x18\x06 \x01(\x0e\x32(.common.enums.accounttype.v1.AccountType\x12\x34\n\x08\x63urrency\x18\x07 \x01(\x0e\x32\".common.enums.currency.v1.Currency\"B\n\x18GetPartnerAccountRequest\x12&\n\x13partner_account_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xab\x02\n\x19GetPartnerAccountResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.partner.partneraccount.v1.GetPartnerAccountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x42\n\x0fpartner_account\x18\x03 \x01(\x0b\x32).partner.partneraccount.v1.PartnerAccount\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\x93\x01\n\x1bSearchPartnerAccountRequest\x12>\n\x0c\x61\x63\x63ount_type\x18\x01 \x01(\x0e\x32(.common.enums.accounttype.v1.AccountType\x12\x34\n\x08\x63urrency\x18\x02 \x01(\x0e\x32\".common.enums.currency.v1.Currency\"\x9c\x02\n\x1cSearchPartnerAccountResponse\x12N\n\x06status\x18\x01 \x01(\x0e\x32>.partner.partneraccount.v1.SearchPartnerAccountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x43\n\x10partner_accounts\x18\x03 \x03(\x0b\x32).partner.partneraccount.v1.PartnerAccount\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42\x64\n!io.mica.partner.partneraccount.v1B\x13PartnerAccountProtoZ#mica/proto/partner/partneraccountv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/partner/partneraccount/v1/partner_account.proto\x12\x19partner.partneraccount.v1\x1a.common/enums/accounttype/v1/account_type.proto\x1a\'common/enums/currency/v1/currency.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xc2\x02\n\x0ePartnerAccount\x12&\n\x13partner_account_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x0bpartner_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12>\n\x0c\x61\x63\x63ount_type\x18\x06 \x01(\x0e\x32(.common.enums.accounttype.v1.AccountType\x12\x34\n\x08\x63urrency\x18\x07 \x01(\x0e\x32\".common.enums.currency.v1.Currency\"B\n\x18GetPartnerAccountRequest\x12&\n\x13partner_account_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xab\x02\n\x19GetPartnerAccountResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.partner.partneraccount.v1.GetPartnerAccountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x42\n\x0fpartner_account\x18\x03 \x01(\x0b\x32).partner.partneraccount.v1.PartnerAccount\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\x93\x01\n\x1bSearchPartnerAccountRequest\x12>\n\x0c\x61\x63\x63ount_type\x18\x01 \x01(\x0e\x32(.common.enums.accounttype.v1.AccountType\x12\x34\n\x08\x63urrency\x18\x02 \x01(\x0e\x32\".common.enums.currency.v1.Currency\"\x9c\x02\n\x1cSearchPartnerAccountResponse\x12N\n\x06status\x18\x01 \x01(\x0e\x32>.partner.partneraccount.v1.SearchPartnerAccountResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\x43\n\x10partner_accounts\x18\x03 \x03(\x0b\x32).partner.partneraccount.v1.PartnerAccount\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42\x64\n!io.mica.partner.partneraccount.v1B\x13PartnerAccountProtoZ#mica/proto/partner/partneraccountv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -78,22 +78,24 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n!io.mica.partner.partneraccount.v1B\023PartnerAccountProtoZ#mica/proto/partner/partneraccountv1\242\002\004MICA'
   _PARTNERACCOUNT.fields_by_name['partner_account_key']._options = None
   _PARTNERACCOUNT.fields_by_name['partner_account_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _PARTNERACCOUNT.fields_by_name['version']._options = None
+  _PARTNERACCOUNT.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _PARTNERACCOUNT.fields_by_name['partner_key']._options = None
   _PARTNERACCOUNT.fields_by_name['partner_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _GETPARTNERACCOUNTREQUEST.fields_by_name['partner_account_key']._options = None
   _GETPARTNERACCOUNTREQUEST.fields_by_name['partner_account_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _PARTNERACCOUNT._serialized_start=249
-  _PARTNERACCOUNT._serialized_end=562
-  _GETPARTNERACCOUNTREQUEST._serialized_start=564
-  _GETPARTNERACCOUNTREQUEST._serialized_end=630
-  _GETPARTNERACCOUNTRESPONSE._serialized_start=633
-  _GETPARTNERACCOUNTRESPONSE._serialized_end=932
-  _GETPARTNERACCOUNTRESPONSE_STATUS._serialized_start=840
-  _GETPARTNERACCOUNTRESPONSE_STATUS._serialized_end=932
-  _SEARCHPARTNERACCOUNTREQUEST._serialized_start=935
-  _SEARCHPARTNERACCOUNTREQUEST._serialized_end=1082
-  _SEARCHPARTNERACCOUNTRESPONSE._serialized_start=1085
-  _SEARCHPARTNERACCOUNTRESPONSE._serialized_end=1369
-  _SEARCHPARTNERACCOUNTRESPONSE_STATUS._serialized_start=840
-  _SEARCHPARTNERACCOUNTRESPONSE_STATUS._serialized_end=910
+  _PARTNERACCOUNT._serialized_end=571
+  _GETPARTNERACCOUNTREQUEST._serialized_start=573
+  _GETPARTNERACCOUNTREQUEST._serialized_end=639
+  _GETPARTNERACCOUNTRESPONSE._serialized_start=642
+  _GETPARTNERACCOUNTRESPONSE._serialized_end=941
+  _GETPARTNERACCOUNTRESPONSE_STATUS._serialized_start=849
+  _GETPARTNERACCOUNTRESPONSE_STATUS._serialized_end=941
+  _SEARCHPARTNERACCOUNTREQUEST._serialized_start=944
+  _SEARCHPARTNERACCOUNTREQUEST._serialized_end=1091
+  _SEARCHPARTNERACCOUNTRESPONSE._serialized_start=1094
+  _SEARCHPARTNERACCOUNTRESPONSE._serialized_end=1378
+  _SEARCHPARTNERACCOUNTRESPONSE_STATUS._serialized_start=849
+  _SEARCHPARTNERACCOUNTRESPONSE_STATUS._serialized_end=919
 # @@protoc_insertion_point(module_scope)

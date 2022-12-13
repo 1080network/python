@@ -22,9 +22,10 @@ _sym_db = _symbol_database.Default()
 from micapartner.common.enums.currency.v1 import currency_pb2 as common_dot_enums_dot_currency_dot_v1_dot_currency__pb2
 from micapartner.common.enums.paymenttokentype.v1 import payment_token_type_pb2 as common_dot_enums_dot_paymenttokentype_dot_v1_dot_payment__token__type__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x63ommon/v1/payment_token.proto\x12\tcommon.v1\x1a\'common/enums/currency/v1/currency.proto\x1a\x39\x63ommon/enums/paymenttokentype/v1/payment_token_type.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd1\x02\n\x12\x43ommonPaymentToken\x12N\n\x12payment_token_type\x18\x01 \x01(\x0e\x32\x32.common.enums.paymenttokentype.v1.PaymentTokenType\x12\x15\n\rpayment_token\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\x03\x12+\n\x07\x63reated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\x0f\x65xpiration_date\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x08\x63urrency\x18\x08 \x01(\x0e\x32\".common.enums.currency.v1.CurrencyBL\n\x11io.mica.common.v1B\x11PaymentTokenProtoZ\x1dmica/proto/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x63ommon/v1/payment_token.proto\x12\tcommon.v1\x1a\'common/enums/currency/v1/currency.proto\x1a\x39\x63ommon/enums/paymenttokentype/v1/payment_token_type.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xdc\x02\n\x12\x43ommonPaymentToken\x12N\n\x12payment_token_type\x18\x01 \x01(\x0e\x32\x32.common.enums.paymenttokentype.v1.PaymentTokenType\x12 \n\rpayment_token\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x03 \x01(\x03\x12+\n\x07\x63reated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x33\n\x0f\x65xpiration_date\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x08\x63urrency\x18\x08 \x01(\x0e\x32\".common.enums.currency.v1.CurrencyBL\n\x11io.mica.common.v1B\x11PaymentTokenProtoZ\x1dmica/proto/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -40,6 +41,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\021io.mica.common.v1B\021PaymentTokenProtoZ\035mica/proto/common/v1;commonv1\242\002\004MICA'
-  _COMMONPAYMENTTOKEN._serialized_start=178
-  _COMMONPAYMENTTOKEN._serialized_end=515
+  _COMMONPAYMENTTOKEN.fields_by_name['payment_token']._options = None
+  _COMMONPAYMENTTOKEN.fields_by_name['payment_token']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _COMMONPAYMENTTOKEN._serialized_start=203
+  _COMMONPAYMENTTOKEN._serialized_end=551
 # @@protoc_insertion_point(module_scope)

@@ -30,7 +30,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from micapartner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cpartner/value/v1/value.proto\x12\x10partner.value.v1\x1a\x30\x63ommon/enums/approvaltype/v1/approval_type.proto\x1a%common/enums/channel/v1/channel.proto\x1a\'common/enums/currency/v1/currency.proto\x1a@common/enums/organizationcategory/v1/organization_category.proto\x1a=common/enums/valueoperationtype/v1/value_operation_type.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x19\x63ommon/v1/line_item.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xcf\x05\n\x05Value\x12\"\n\x0ftransaction_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12N\n\x0eoperation_type\x18\x05 \x01(\x0e\x32\x36.common.enums.valueoperationtype.v1.ValueOperationType\x12\x15\n\rpayment_token\x18\x06 \x01(\t\x12\x1f\n\x17partner_transaction_ref\x18\x07 \x01(\t\x12\x31\n\x07\x63hannel\x18\x08 \x01(\x0e\x32 .common.enums.channel.v1.Channel\x12\x34\n\x08\x63urrency\x18\t \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12#\n\x10organization_key\x18\n \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12L\n\x08\x63\x61tegory\x18\x0b \x01(\x0e\x32:.common.enums.organizationcategory.v1.OrganizationCategory\x12\x1c\n\tstore_key\x18\x0c \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x10\x63lerk_identifier\x18\r \x01(\t\x12\x14\n\x0ctotal_amount\x18\x0e \x01(\t\x12\x18\n\x10requested_amount\x18\x0f \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x10 \x01(\t\x12\x14\n\x0corder_number\x18\x11 \x01(\t\x12<\n\x16line_item_and_statuses\x18\x12 \x03(\x0b\x32\x1c.common.v1.LineItemAndStatus\"\xdb\x03\n\x0cValueRequest\x12\x15\n\rpayment_token\x18\x01 \x01(\t\x12\x1f\n\x17partner_transaction_ref\x18\x02 \x01(\t\x12\x31\n\x07\x63hannel\x18\x03 \x01(\x0e\x32 .common.enums.channel.v1.Channel\x12\x34\n\x08\x63urrency\x18\x04 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12#\n\x10organization_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12L\n\x08\x63\x61tegory\x18\x06 \x01(\x0e\x32:.common.enums.organizationcategory.v1.OrganizationCategory\x12\x1c\n\tstore_key\x18\x07 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x10\x63lerk_identifier\x18\x08 \x01(\t\x12\x14\n\x0ctotal_amount\x18\t \x01(\t\x12\x14\n\x0corder_number\x18\n \x01(\t\x12\'\n\nline_items\x18\x0b \x03(\x0b\x32\x13.common.v1.LineItem\x12*\n\x0b\x61\x64justments\x18\x0c \x03(\x0b\x32\x15.common.v1.Adjustment\"\x86\x01\n\x12ObtainValueRequest\x12\x41\n\rapproval_type\x18\x01 \x01(\x0e\x32*.common.enums.approvaltype.v1.ApprovalType\x12-\n\x05value\x18\x02 \x01(\x0b\x32\x1e.partner.value.v1.ValueRequest\"\xf0\x06\n\x13ObtainValueResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.value.v1.ObtainValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\"\n\x0ftransaction_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0b\n\x03\x63id\x18\x04 \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x05 \x01(\t\x12M\n\x1fline_item_sequence_and_statuses\x18\x06 \x03(\x0b\x32$.common.v1.LineItemSequenceAndStatus\"\xe0\x04\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14STATUS_FULL_APPROVAL\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1b\n\x17STATUS_PARTIAL_APPROVAL\x10\x03\x12\x1d\n\x19STATUS_INSUFFICIENT_VALUE\x10\x04\x12\x1e\n\x1aSTATUS_INELIGIBLE_PRODUCTS\x10\x05\x12\x14\n\x10STATUS_NOT_FOUND\x10\x06\x12\x1c\n\x18STATUS_INSTRUMENT_CLOSED\x10\x07\x12!\n\x1dSTATUS_TRANSACTION_RISK_FRAUD\x10\x08\x12\x1f\n\x1bSTATUS_BAD_ACTOR_RISK_FRAUD\x10\x10\x12\x1a\n\x16STATUS_USER_RISK_FRAUD\x10\x11\x12 \n\x1cSTATUS_INSTRUMENT_RISK_FRAUD\x10\x12\x12%\n!STATUS_USER_CALL_SERVICE_PROVIDER\x10\t\x12\x16\n\x12STATUS_UNSUPPORTED\x10\n\x12\'\n#STATUS_SERVICE_PROVIDER_UNAVAILABLE\x10\x0b\x12 \n\x1cSTATUS_INVALID_PAYMENT_TOKEN\x10\x0c\x12\x17\n\x13STATUS_PIN_REQUIRED\x10\r\x12\x1d\n\x19STATUS_MISSING_LINE_ITEMS\x10\x0e\x12#\n\x1fSTATUS_PARTIAL_APPROVAL_INVALID\x10\x0f\x12\x19\n\x15STATUS_LIMIT_EXCEEDED\x10\x13\"C\n\x12ReturnValueRequest\x12-\n\x05value\x18\x01 \x01(\x0b\x32\x1e.partner.value.v1.ValueRequest\"\xe8\x04\n\x13ReturnValueResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.value.v1.ReturnValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\"\n\x0ftransaction_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0b\n\x03\x63id\x18\x04 \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x05 \x01(\t\"\xa7\x03\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14STATUS_FULL_APPROVAL\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1c\n\x18STATUS_INSTRUMENT_CLOSED\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\x12!\n\x1dSTATUS_TRANSACTION_RISK_FRAUD\x10\x05\x12\x1f\n\x1bSTATUS_BAD_ACTOR_RISK_FRAUD\x10\x10\x12\x1a\n\x16STATUS_USER_RISK_FRAUD\x10\x11\x12 \n\x1cSTATUS_INSTRUMENT_RISK_FRAUD\x10\x12\x12%\n!STATUS_USER_CALL_SERVICE_PROVIDER\x10\x06\x12\x16\n\x12STATUS_UNSUPPORTED\x10\x07\x12\'\n#STATUS_SERVICE_PROVIDER_UNAVAILABLE\x10\x08\x12 \n\x1cSTATUS_INVALID_PAYMENT_TOKEN\x10\t\x12\x19\n\x15STATUS_LIMIT_EXCEEDED\x10\x13\"\x9e\x01\n\x12SearchValueRequest\x12\x15\n\rpayment_token\x18\x01 \x01(\t\x12\x1f\n\x17partner_transaction_ref\x18\x04 \x01(\t\x12(\n\x04\x66rom\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12&\n\x02to\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xe4\x01\n\x13SearchValueResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.value.v1.SearchValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12&\n\x05value\x18\x03 \x03(\x0b\x32\x17.partner.value.v1.Value\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42I\n\x18io.mica.partner.value.v1B\nValueProtoZ\x1amica/proto/partner/valuev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cpartner/value/v1/value.proto\x12\x10partner.value.v1\x1a\x30\x63ommon/enums/approvaltype/v1/approval_type.proto\x1a%common/enums/channel/v1/channel.proto\x1a\'common/enums/currency/v1/currency.proto\x1a@common/enums/organizationcategory/v1/organization_category.proto\x1a=common/enums/valueoperationtype/v1/value_operation_type.proto\x1a\x15\x63ommon/v1/error.proto\x1a\x19\x63ommon/v1/line_item.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xda\x05\n\x05Value\x12\"\n\x0ftransaction_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12N\n\x0eoperation_type\x18\x05 \x01(\x0e\x32\x36.common.enums.valueoperationtype.v1.ValueOperationType\x12 \n\rpayment_token\x18\x06 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x1f\n\x17partner_transaction_ref\x18\x07 \x01(\t\x12\x31\n\x07\x63hannel\x18\x08 \x01(\x0e\x32 .common.enums.channel.v1.Channel\x12\x34\n\x08\x63urrency\x18\t \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12#\n\x10organization_key\x18\n \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12L\n\x08\x63\x61tegory\x18\x0b \x01(\x0e\x32:.common.enums.organizationcategory.v1.OrganizationCategory\x12\x1c\n\tstore_key\x18\x0c \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x10\x63lerk_identifier\x18\r \x01(\t\x12\x14\n\x0ctotal_amount\x18\x0e \x01(\t\x12\x18\n\x10requested_amount\x18\x0f \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x10 \x01(\t\x12\x14\n\x0corder_number\x18\x11 \x01(\t\x12<\n\x16line_item_and_statuses\x18\x12 \x03(\x0b\x32\x1c.common.v1.LineItemAndStatus\"\xdb\x03\n\x0cValueRequest\x12\x15\n\rpayment_token\x18\x01 \x01(\t\x12\x1f\n\x17partner_transaction_ref\x18\x02 \x01(\t\x12\x31\n\x07\x63hannel\x18\x03 \x01(\x0e\x32 .common.enums.channel.v1.Channel\x12\x34\n\x08\x63urrency\x18\x04 \x01(\x0e\x32\".common.enums.currency.v1.Currency\x12#\n\x10organization_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12L\n\x08\x63\x61tegory\x18\x06 \x01(\x0e\x32:.common.enums.organizationcategory.v1.OrganizationCategory\x12\x1c\n\tstore_key\x18\x07 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x10\x63lerk_identifier\x18\x08 \x01(\t\x12\x14\n\x0ctotal_amount\x18\t \x01(\t\x12\x14\n\x0corder_number\x18\n \x01(\t\x12\'\n\nline_items\x18\x0b \x03(\x0b\x32\x13.common.v1.LineItem\x12*\n\x0b\x61\x64justments\x18\x0c \x03(\x0b\x32\x15.common.v1.Adjustment\"\x86\x01\n\x12ObtainValueRequest\x12\x41\n\rapproval_type\x18\x01 \x01(\x0e\x32*.common.enums.approvaltype.v1.ApprovalType\x12-\n\x05value\x18\x02 \x01(\x0b\x32\x1e.partner.value.v1.ValueRequest\"\xf0\x06\n\x13ObtainValueResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.value.v1.ObtainValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\"\n\x0ftransaction_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0b\n\x03\x63id\x18\x04 \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x05 \x01(\t\x12M\n\x1fline_item_sequence_and_statuses\x18\x06 \x03(\x0b\x32$.common.v1.LineItemSequenceAndStatus\"\xe0\x04\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14STATUS_FULL_APPROVAL\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1b\n\x17STATUS_PARTIAL_APPROVAL\x10\x03\x12\x1d\n\x19STATUS_INSUFFICIENT_VALUE\x10\x04\x12\x1e\n\x1aSTATUS_INELIGIBLE_PRODUCTS\x10\x05\x12\x14\n\x10STATUS_NOT_FOUND\x10\x06\x12\x1c\n\x18STATUS_INSTRUMENT_CLOSED\x10\x07\x12!\n\x1dSTATUS_TRANSACTION_RISK_FRAUD\x10\x08\x12\x1f\n\x1bSTATUS_BAD_ACTOR_RISK_FRAUD\x10\x10\x12\x1a\n\x16STATUS_USER_RISK_FRAUD\x10\x11\x12 \n\x1cSTATUS_INSTRUMENT_RISK_FRAUD\x10\x12\x12%\n!STATUS_USER_CALL_SERVICE_PROVIDER\x10\t\x12\x16\n\x12STATUS_UNSUPPORTED\x10\n\x12\'\n#STATUS_SERVICE_PROVIDER_UNAVAILABLE\x10\x0b\x12 \n\x1cSTATUS_INVALID_PAYMENT_TOKEN\x10\x0c\x12\x17\n\x13STATUS_PIN_REQUIRED\x10\r\x12\x1d\n\x19STATUS_MISSING_LINE_ITEMS\x10\x0e\x12#\n\x1fSTATUS_PARTIAL_APPROVAL_INVALID\x10\x0f\x12\x19\n\x15STATUS_LIMIT_EXCEEDED\x10\x13\"C\n\x12ReturnValueRequest\x12-\n\x05value\x18\x01 \x01(\x0b\x32\x1e.partner.value.v1.ValueRequest\"\xe8\x04\n\x13ReturnValueResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.value.v1.ReturnValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12\"\n\x0ftransaction_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0b\n\x03\x63id\x18\x04 \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x05 \x01(\t\"\xa7\x03\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x18\n\x14STATUS_FULL_APPROVAL\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1c\n\x18STATUS_INSTRUMENT_CLOSED\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\x12!\n\x1dSTATUS_TRANSACTION_RISK_FRAUD\x10\x05\x12\x1f\n\x1bSTATUS_BAD_ACTOR_RISK_FRAUD\x10\x10\x12\x1a\n\x16STATUS_USER_RISK_FRAUD\x10\x11\x12 \n\x1cSTATUS_INSTRUMENT_RISK_FRAUD\x10\x12\x12%\n!STATUS_USER_CALL_SERVICE_PROVIDER\x10\x06\x12\x16\n\x12STATUS_UNSUPPORTED\x10\x07\x12\'\n#STATUS_SERVICE_PROVIDER_UNAVAILABLE\x10\x08\x12 \n\x1cSTATUS_INVALID_PAYMENT_TOKEN\x10\t\x12\x19\n\x15STATUS_LIMIT_EXCEEDED\x10\x13\"]\n\x0fGetValueRequest\x12\x19\n\x0ftransaction_key\x18\x01 \x01(\tH\x00\x12!\n\x17partner_transaction_ref\x18\x02 \x01(\tH\x00\x42\x0c\n\nidentifier\"\xf4\x01\n\x10GetValueResponse\x12\x39\n\x06status\x18\x01 \x01(\x0e\x32).partner.value.v1.GetValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12&\n\x05value\x18\x03 \x01(\x0b\x32\x17.partner.value.v1.Value\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xa8\x01\n\x12SearchValueRequest\x12\x15\n\rpayment_token\x18\x01 \x01(\t\x12\x1f\n\x17partner_transaction_ref\x18\x04 \x01(\t\x12-\n\tdate_from\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07\x64\x61te_to\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xe4\x01\n\x13SearchValueResponse\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.partner.value.v1.SearchValueResponse.Status\x12\x1f\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x10.common.v1.Error\x12&\n\x05value\x18\x03 \x03(\x0b\x32\x17.partner.value.v1.Value\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42I\n\x18io.mica.partner.value.v1B\nValueProtoZ\x1amica/proto/partner/valuev1\xa2\x02\x04MICAb\x06proto3')
 
 
 
@@ -40,10 +40,13 @@ _OBTAINVALUEREQUEST = DESCRIPTOR.message_types_by_name['ObtainValueRequest']
 _OBTAINVALUERESPONSE = DESCRIPTOR.message_types_by_name['ObtainValueResponse']
 _RETURNVALUEREQUEST = DESCRIPTOR.message_types_by_name['ReturnValueRequest']
 _RETURNVALUERESPONSE = DESCRIPTOR.message_types_by_name['ReturnValueResponse']
+_GETVALUEREQUEST = DESCRIPTOR.message_types_by_name['GetValueRequest']
+_GETVALUERESPONSE = DESCRIPTOR.message_types_by_name['GetValueResponse']
 _SEARCHVALUEREQUEST = DESCRIPTOR.message_types_by_name['SearchValueRequest']
 _SEARCHVALUERESPONSE = DESCRIPTOR.message_types_by_name['SearchValueResponse']
 _OBTAINVALUERESPONSE_STATUS = _OBTAINVALUERESPONSE.enum_types_by_name['Status']
 _RETURNVALUERESPONSE_STATUS = _RETURNVALUERESPONSE.enum_types_by_name['Status']
+_GETVALUERESPONSE_STATUS = _GETVALUERESPONSE.enum_types_by_name['Status']
 _SEARCHVALUERESPONSE_STATUS = _SEARCHVALUERESPONSE.enum_types_by_name['Status']
 Value = _reflection.GeneratedProtocolMessageType('Value', (_message.Message,), {
   'DESCRIPTOR' : _VALUE,
@@ -87,6 +90,20 @@ ReturnValueResponse = _reflection.GeneratedProtocolMessageType('ReturnValueRespo
   })
 _sym_db.RegisterMessage(ReturnValueResponse)
 
+GetValueRequest = _reflection.GeneratedProtocolMessageType('GetValueRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETVALUEREQUEST,
+  '__module__' : 'partner.value.v1.value_pb2'
+  # @@protoc_insertion_point(class_scope:partner.value.v1.GetValueRequest)
+  })
+_sym_db.RegisterMessage(GetValueRequest)
+
+GetValueResponse = _reflection.GeneratedProtocolMessageType('GetValueResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETVALUERESPONSE,
+  '__module__' : 'partner.value.v1.value_pb2'
+  # @@protoc_insertion_point(class_scope:partner.value.v1.GetValueResponse)
+  })
+_sym_db.RegisterMessage(GetValueResponse)
+
 SearchValueRequest = _reflection.GeneratedProtocolMessageType('SearchValueRequest', (_message.Message,), {
   'DESCRIPTOR' : _SEARCHVALUEREQUEST,
   '__module__' : 'partner.value.v1.value_pb2'
@@ -107,6 +124,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n\030io.mica.partner.value.v1B\nValueProtoZ\032mica/proto/partner/valuev1\242\002\004MICA'
   _VALUE.fields_by_name['transaction_key']._options = None
   _VALUE.fields_by_name['transaction_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _VALUE.fields_by_name['payment_token']._options = None
+  _VALUE.fields_by_name['payment_token']._serialized_options = b'\372B\006r\004\020\036\0302'
   _VALUE.fields_by_name['organization_key']._options = None
   _VALUE.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _VALUE.fields_by_name['store_key']._options = None
@@ -120,25 +139,31 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _RETURNVALUERESPONSE.fields_by_name['transaction_key']._options = None
   _RETURNVALUERESPONSE.fields_by_name['transaction_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _VALUE._serialized_start=418
-  _VALUE._serialized_end=1137
-  _VALUEREQUEST._serialized_start=1140
-  _VALUEREQUEST._serialized_end=1615
-  _OBTAINVALUEREQUEST._serialized_start=1618
-  _OBTAINVALUEREQUEST._serialized_end=1752
-  _OBTAINVALUERESPONSE._serialized_start=1755
-  _OBTAINVALUERESPONSE._serialized_end=2635
-  _OBTAINVALUERESPONSE_STATUS._serialized_start=2027
-  _OBTAINVALUERESPONSE_STATUS._serialized_end=2635
-  _RETURNVALUEREQUEST._serialized_start=2637
-  _RETURNVALUEREQUEST._serialized_end=2704
-  _RETURNVALUERESPONSE._serialized_start=2707
-  _RETURNVALUERESPONSE._serialized_end=3323
-  _RETURNVALUERESPONSE_STATUS._serialized_start=2900
-  _RETURNVALUERESPONSE_STATUS._serialized_end=3323
-  _SEARCHVALUEREQUEST._serialized_start=3326
-  _SEARCHVALUEREQUEST._serialized_end=3484
-  _SEARCHVALUERESPONSE._serialized_start=3487
-  _SEARCHVALUERESPONSE._serialized_end=3715
-  _SEARCHVALUERESPONSE_STATUS._serialized_start=3645
-  _SEARCHVALUERESPONSE_STATUS._serialized_end=3715
+  _VALUE._serialized_end=1148
+  _VALUEREQUEST._serialized_start=1151
+  _VALUEREQUEST._serialized_end=1626
+  _OBTAINVALUEREQUEST._serialized_start=1629
+  _OBTAINVALUEREQUEST._serialized_end=1763
+  _OBTAINVALUERESPONSE._serialized_start=1766
+  _OBTAINVALUERESPONSE._serialized_end=2646
+  _OBTAINVALUERESPONSE_STATUS._serialized_start=2038
+  _OBTAINVALUERESPONSE_STATUS._serialized_end=2646
+  _RETURNVALUEREQUEST._serialized_start=2648
+  _RETURNVALUEREQUEST._serialized_end=2715
+  _RETURNVALUERESPONSE._serialized_start=2718
+  _RETURNVALUERESPONSE._serialized_end=3334
+  _RETURNVALUERESPONSE_STATUS._serialized_start=2911
+  _RETURNVALUERESPONSE_STATUS._serialized_end=3334
+  _GETVALUEREQUEST._serialized_start=3336
+  _GETVALUEREQUEST._serialized_end=3429
+  _GETVALUERESPONSE._serialized_start=3432
+  _GETVALUERESPONSE._serialized_end=3676
+  _GETVALUERESPONSE_STATUS._serialized_start=3584
+  _GETVALUERESPONSE_STATUS._serialized_end=3676
+  _SEARCHVALUEREQUEST._serialized_start=3679
+  _SEARCHVALUEREQUEST._serialized_end=3847
+  _SEARCHVALUERESPONSE._serialized_start=3850
+  _SEARCHVALUERESPONSE._serialized_end=4078
+  _SEARCHVALUERESPONSE_STATUS._serialized_start=3584
+  _SEARCHVALUERESPONSE_STATUS._serialized_end=3654
 # @@protoc_insertion_point(module_scope)

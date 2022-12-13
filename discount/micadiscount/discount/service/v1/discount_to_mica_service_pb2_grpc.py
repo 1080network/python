@@ -187,7 +187,9 @@ class DiscountToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateDiscountProviderAccount(self, request, context):
-        """<editor-fold desc="Product Group Operations">
+        """</editor-fold>
+
+        <editor-fold desc="Product Group Operations">
 
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

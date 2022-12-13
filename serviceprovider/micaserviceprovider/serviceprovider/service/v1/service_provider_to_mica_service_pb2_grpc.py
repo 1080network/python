@@ -127,6 +127,16 @@ class ServiceProviderToMicaServiceStub(object):
                 request_serializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.SerializeToString,
                 response_deserializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.FromString,
                 )
+        self.SearchValue = channel.unary_unary(
+                '/serviceprovider.service.v1.ServiceProviderToMicaService/SearchValue',
+                request_serializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.SerializeToString,
+                response_deserializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.FromString,
+                )
+        self.GetValue = channel.unary_unary(
+                '/serviceprovider.service.v1.ServiceProviderToMicaService/GetValue',
+                request_serializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
+                response_deserializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
+                )
         self.SearchTransactionData = channel.unary_unary(
                 '/serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionData',
                 request_serializer=serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataRequest.SerializeToString,
@@ -296,6 +306,19 @@ class ServiceProviderToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SearchValue(self, request, context):
+        """An operation to search for Value operations either Obtain or Return that the Partner has requested of mica.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetValue(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def SearchTransactionData(self, request, context):
         """<editor-fold desc="Dashboard Operations">
 
@@ -421,6 +444,16 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
                     servicer.SendValue,
                     request_deserializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.FromString,
                     response_serializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.SerializeToString,
+            ),
+            'SearchValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchValue,
+                    request_deserializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.FromString,
+                    response_serializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.SerializeToString,
+            ),
+            'GetValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetValue,
+                    request_deserializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.FromString,
+                    response_serializer=serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.SerializeToString,
             ),
             'SearchTransactionData': grpc.unary_unary_rpc_method_handler(
                     servicer.SearchTransactionData,
@@ -757,6 +790,40 @@ class ServiceProviderToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/serviceprovider.service.v1.ServiceProviderToMicaService/SendValue',
             serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.SerializeToString,
             serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SearchValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/serviceprovider.service.v1.ServiceProviderToMicaService/SearchValue',
+            serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.SerializeToString,
+            serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/serviceprovider.service.v1.ServiceProviderToMicaService/GetValue',
+            serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
+            serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
