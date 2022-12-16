@@ -22,7 +22,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0common/enums/discounttype/v1/discount_type.proto\x12\x1c\x63ommon.enums.discounttype.v1*\xa1\x01\n\x0c\x44iscountType\x12\x1d\n\x19\x44ISCOUNT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x44ISCOUNT_TYPE_CPG\x10\x01\x12\x1c\n\x18\x44ISCOUNT_TYPE_GOVERNMENT\x10\x02\x12\x19\n\x15\x44ISCOUNT_TYPE_PARTNER\x10\x03\x12\"\n\x1e\x44ISCOUNT_TYPE_SERVICE_PROVIDER\x10\x04\x42Z\n\x17io.mica.common.enums.v1B\x10\x43ountryEnumProtoZ&mica/proto/common/enums/discounttypev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0common/enums/discounttype/v1/discount_type.proto\x12\x1c\x63ommon.enums.discounttype.v1*\xa1\x01\n\x0c\x44iscountType\x12\x1d\n\x19\x44ISCOUNT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x44ISCOUNT_TYPE_CPG\x10\x01\x12\x1c\n\x18\x44ISCOUNT_TYPE_GOVERNMENT\x10\x02\x12\x19\n\x15\x44ISCOUNT_TYPE_PARTNER\x10\x03\x12\"\n\x1e\x44ISCOUNT_TYPE_SERVICE_PROVIDER\x10\x04\x42_\n\x17io.mica.common.enums.v1B\x15\x44iscountTypeEnumProtoZ&mica/proto/common/enums/discounttypev1\xa2\x02\x04MICAb\x06proto3')
 
 _DISCOUNTTYPE = DESCRIPTOR.enum_types_by_name['DiscountType']
 DiscountType = enum_type_wrapper.EnumTypeWrapper(_DISCOUNTTYPE)
@@ -36,7 +36,7 @@ DISCOUNT_TYPE_SERVICE_PROVIDER = 4
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\027io.mica.common.enums.v1B\020CountryEnumProtoZ&mica/proto/common/enums/discounttypev1\242\002\004MICA'
+  DESCRIPTOR._serialized_options = b'\n\027io.mica.common.enums.v1B\025DiscountTypeEnumProtoZ&mica/proto/common/enums/discounttypev1\242\002\004MICA'
   _DISCOUNTTYPE._serialized_start=83
   _DISCOUNTTYPE._serialized_end=244
 # @@protoc_insertion_point(module_scope)
