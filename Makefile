@@ -1,4 +1,4 @@
-SUBDIRS := micacommon connect discount partner serviceprovider
+SUBDIRS := micasdk
 TOPTARGETS := clean build test package publish
 
 $(TOPTARGETS): $(SUBDIRS)
@@ -7,6 +7,11 @@ $(SUBDIRS):
 
 .PHONY: $(TOPTARGETS) $(SUBDIRS)
 
-.PHONY: setup_common
-setup_common:
-	@make -C micacommon local_install
+.PHONY: setup_sdk
+## Setup the micacommon library
+setup_sdk: venv
+	@make -C micasdk local_install
+
+WORKDIR=.
+VENVDIR=$(WORKDIR)/venv
+include Makefile.venv.mk
