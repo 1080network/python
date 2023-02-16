@@ -4,10 +4,10 @@ import grpc
 import pytest
 from protoc_gen_validate.validator import validate, ValidationFailed
 
-from micadiscount.discount.service.v1.discount_to_mica_service_pb2_grpc import add_DiscountToMicaServiceServicer_to_server, DiscountToMicaService
-import micadiscount.common.ping.v1.ping_pb2 as ping
-import micadiscount.discount.discount.v1.discount_pb2 as discount_pb
-from micadiscount import build_test_discount_client, get_test_jwt_token
+from discount.mica.discount.service.v1.discount_to_mica_service_pb2_grpc import add_DiscountToMicaServiceServicer_to_server, DiscountToMicaService
+import discount.micashared.common.ping.v1.ping_pb2 as ping
+import discount.mica.discount.discount.v1.discount_pb2 as discount_pb
+from discount import build_test_discount_client, get_test_jwt_token
 
 
 def test_discount_ping():

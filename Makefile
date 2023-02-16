@@ -10,3 +10,7 @@ $(SUBDIRS):
 .PHONY: setup_common
 setup_common:
 	@make -C micacommon local_install
+
+.PHONY: generate
+generate:
+	./generate.sh
