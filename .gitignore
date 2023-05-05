@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+# our generation stuff
+gen/
+connect/proto
+discount/proto
+partner/proto
+serviceprovider/proto
+
 # Distribution / packaging
 .Python
 build/

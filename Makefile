@@ -1,5 +1,5 @@
 SUBDIRS := micacommon connect discount partner serviceprovider
-TOPTARGETS := clean build test package publish
+TOPTARGETS := clean build test publish
 
 $(TOPTARGETS): $(SUBDIRS)
 $(SUBDIRS):

@@ -9,6 +9,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from serviceprovider.mica.serviceprovider.discount.v1 import discount_pb2 as mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2
 from serviceprovider.mica.serviceprovider.instrument.v1 import instrument_pb2 as mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2
 from serviceprovider.mica.serviceprovider.paymenttoken.v1 import payment_token_pb2 as mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2
 from serviceprovider.mica.serviceprovider.serviceprovider.v1 import service_provider_pb2 as mica_dot_serviceprovider_dot_serviceprovider_dot_v1_dot_service__provider__pb2
@@ -151,6 +152,11 @@ class ServiceProviderToMicaServiceStub(object):
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionPartnerData',
                 request_serializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataResponse.FromString,
+                )
+        self.SearchUserDiscount = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchUserDiscount',
+                request_serializer=mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountResponse.FromString,
                 )
         self.GetReceipt = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetReceipt',
@@ -339,6 +345,12 @@ class ServiceProviderToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SearchUserDiscount(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetReceipt(self, request, context):
         """<editor-fold desc="Transaction Operations">
 
@@ -469,6 +481,11 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
                     servicer.SearchTransactionPartnerData,
                     request_deserializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataResponse.SerializeToString,
+            ),
+            'SearchUserDiscount': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchUserDiscount,
+                    request_deserializer=mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountResponse.SerializeToString,
             ),
             'GetReceipt': grpc.unary_unary_rpc_method_handler(
                     servicer.GetReceipt,
@@ -875,6 +892,23 @@ class ServiceProviderToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionPartnerData',
             mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataRequest.SerializeToString,
             mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SearchUserDiscount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchUserDiscount',
+            mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

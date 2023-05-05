@@ -23,13 +23,17 @@ for sdk in $PUBLICSDKS ; do
     SDK_LIBRARY=$PWD/$sdk/$sdk
     SDK_PROTO=$SDK_DIR/proto
     SDK_GEN=$SDK_DIR/gen
+    echo "*************************** GENERATING FOR $sdk ***************************"
     mkdir -p $SDK_PROTO
     mkdir -p $SDK_PROTO/mica
     mkdir -p $SDK_GEN
     #Prepare the proto files to generate only for the sdk that was requested
     cp -r proto/micashared $SDK_PROTO/.
     cp -r proto/mica/$sdk $SDK_PROTO/mica
-    echo "Generation files for SDK $sdk"
+    #Mega hack, right now the service provider depends on the discount definition 
+    if [[ $sdk == "serviceprovider" ]]; then
+        cp -r proto/mica/discount $SDK_PROTO/mica
+    fi
     docker run --rm -it -v $SDK_PROTO:/defs/proto -v $SDK_GEN:/defs/out namely/protoc-all -d /defs/proto -l python -o /defs/out
     if [[ $? -ne 0 ]]; then
         echo "Your docker trick for python broke bro.."

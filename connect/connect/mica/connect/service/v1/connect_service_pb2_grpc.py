@@ -11,13 +11,13 @@ import grpc
 
 from connect.mica.connect.instrument.v1 import instrument_pb2 as mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2
 from connect.mica.connect.serviceprovider.v1 import service_provider_pb2 as mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2
-from connect.mica.connect.staticdata.v1 import static_data_pb2 as mica_dot_connect_dot_staticdata_dot_v1_dot_static__data__pb2
 from connect.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 
 
 class ConnectServiceStub(object):
     """The Connect Service implements both Legacy Connect and Connect. It is used to enroll user's financial accounts on the
     Mica network.
+    <editor-fold desc="Service Provider Operations">
     """
 
     def __init__(self, channel):
@@ -26,11 +26,6 @@ class ConnectServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetStaticData = channel.unary_unary(
-                '/mica.connect.service.v1.ConnectService/GetStaticData',
-                request_serializer=mica_dot_connect_dot_staticdata_dot_v1_dot_static__data__pb2.GetStaticDataRequest.SerializeToString,
-                response_deserializer=mica_dot_connect_dot_staticdata_dot_v1_dot_static__data__pb2.GetStaticDataResponse.FromString,
-                )
         self.SearchServiceProvider = channel.unary_unary(
                 '/mica.connect.service.v1.ConnectService/SearchServiceProvider',
                 request_serializer=mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.SerializeToString,
@@ -51,11 +46,6 @@ class ConnectServiceStub(object):
                 request_serializer=mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRegisterInstrumentCompleteRequest.SerializeToString,
                 response_deserializer=mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRegisterInstrumentCompleteResponse.FromString,
                 )
-        self.WidgetRibbitRegisterInstrumentInitiate = channel.unary_unary(
-                '/mica.connect.service.v1.ConnectService/WidgetRibbitRegisterInstrumentInitiate',
-                request_serializer=mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRibbitRegisterInstrumentInitiateRequest.SerializeToString,
-                response_deserializer=mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRibbitRegisterInstrumentInitiateResponse.FromString,
-                )
         self.Ping = channel.unary_unary(
                 '/mica.connect.service.v1.ConnectService/Ping',
                 request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
@@ -66,20 +56,11 @@ class ConnectServiceStub(object):
 class ConnectServiceServicer(object):
     """The Connect Service implements both Legacy Connect and Connect. It is used to enroll user's financial accounts on the
     Mica network.
+    <editor-fold desc="Service Provider Operations">
     """
 
-    def GetStaticData(self, request, context):
-        """Retrieve systems static data which is used to drive UI behavior. This includes the public keys for the various
-        service provider types. Called from Widget.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def SearchServiceProvider(self, request, context):
-        """<editor-fold desc="Service Provider Operations">
-
-        Find Service Providers that match a given name. This includes pagination. Called by the mica Widget to populate
+        """Find Service Providers that match a given name. This includes pagination. Called by the mica Widget to populate
         the list of Service Providers the user can choose from. Called from Widget.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -107,15 +88,7 @@ class ConnectServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def WidgetRegisterInstrumentComplete(self, request, context):
-        """The final call the Widget makes for either the mica Matching Code or Ribbit's Account Token. Called from Widget.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def WidgetRibbitRegisterInstrumentInitiate(self, request, context):
-        """When a user chooses a Ribbit Service Provider, this call is used to initialize the Ribbit Widget. It returns the
-        JavaScript script along with the Ribbit Institution ID. Called from Widget.
+        """The final call the Widget makes for either the mica Matching Code. Called from Widget.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -133,11 +106,6 @@ class ConnectServiceServicer(object):
 
 def add_ConnectServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetStaticData': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetStaticData,
-                    request_deserializer=mica_dot_connect_dot_staticdata_dot_v1_dot_static__data__pb2.GetStaticDataRequest.FromString,
-                    response_serializer=mica_dot_connect_dot_staticdata_dot_v1_dot_static__data__pb2.GetStaticDataResponse.SerializeToString,
-            ),
             'SearchServiceProvider': grpc.unary_unary_rpc_method_handler(
                     servicer.SearchServiceProvider,
                     request_deserializer=mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.FromString,
@@ -158,11 +126,6 @@ def add_ConnectServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRegisterInstrumentCompleteRequest.FromString,
                     response_serializer=mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRegisterInstrumentCompleteResponse.SerializeToString,
             ),
-            'WidgetRibbitRegisterInstrumentInitiate': grpc.unary_unary_rpc_method_handler(
-                    servicer.WidgetRibbitRegisterInstrumentInitiate,
-                    request_deserializer=mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRibbitRegisterInstrumentInitiateRequest.FromString,
-                    response_serializer=mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRibbitRegisterInstrumentInitiateResponse.SerializeToString,
-            ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
                     request_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
@@ -178,24 +141,8 @@ def add_ConnectServiceServicer_to_server(servicer, server):
 class ConnectService(object):
     """The Connect Service implements both Legacy Connect and Connect. It is used to enroll user's financial accounts on the
     Mica network.
+    <editor-fold desc="Service Provider Operations">
     """
-
-    @staticmethod
-    def GetStaticData(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.connect.service.v1.ConnectService/GetStaticData',
-            mica_dot_connect_dot_staticdata_dot_v1_dot_static__data__pb2.GetStaticDataRequest.SerializeToString,
-            mica_dot_connect_dot_staticdata_dot_v1_dot_static__data__pb2.GetStaticDataResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def SearchServiceProvider(request,
@@ -262,23 +209,6 @@ class ConnectService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.connect.service.v1.ConnectService/WidgetRegisterInstrumentComplete',
             mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRegisterInstrumentCompleteRequest.SerializeToString,
             mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRegisterInstrumentCompleteResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def WidgetRibbitRegisterInstrumentInitiate(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.connect.service.v1.ConnectService/WidgetRibbitRegisterInstrumentInitiate',
-            mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRibbitRegisterInstrumentInitiateRequest.SerializeToString,
-            mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2.WidgetRibbitRegisterInstrumentInitiateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

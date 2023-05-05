@@ -4,6 +4,7 @@ build: clean
 
 .PHONY: clean
 clean:
+	rm -rf proto gen
 	rm -rf build dist *.egg-info .pytest_cache
 
 .PHONY: test
