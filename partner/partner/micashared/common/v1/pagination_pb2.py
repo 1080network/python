@@ -18,9 +18,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from partner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%micashared/common/v1/pagination.proto\x12\x14micashared.common.v1\":\n\x11PaginationRequest\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\x0c\"B\n\x12PaginationResponse\x12\x13\n\x0btotal_count\x18\x04 \x01(\x03\x12\x17\n\x0fnext_page_token\x18\x05 \x01(\x0c\x42P\n\x17io.micashared.common.v1B\x0fPaginationProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%micashared/common/v1/pagination.proto\x12\x14micashared.common.v1\x1a\x17validate/validate.proto\"r\n\nPagination\x12\x1b\n\tpage_size\x18\x01 \x01(\x05\x42\x08\xfa\x42\x05\x1a\x03\x18\x90N\x12 \n\x0bpage_number\x18\x02 \x01(\x05\x42\x0b\xfa\x42\x08\x1a\x06\x18\xc0\x84=(\x00\x12%\n\x0btotal_count\x18\x03 \x01(\x03\x42\x10\xfa\x42\r\"\x0b(\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x42P\n\x17io.micashared.common.v1B\x0fPaginationProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.pagination_pb2', globals())
@@ -28,8 +29,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027io.micashared.common.v1B\017PaginationProtoZ\035micashared/common/v1;commonv1\242\002\004MICA'
-  _PAGINATIONREQUEST._serialized_start=63
-  _PAGINATIONREQUEST._serialized_end=121
-  _PAGINATIONRESPONSE._serialized_start=123
-  _PAGINATIONRESPONSE._serialized_end=189
+  _PAGINATION.fields_by_name['page_size']._options = None
+  _PAGINATION.fields_by_name['page_size']._serialized_options = b'\372B\005\032\003\030\220N'
+  _PAGINATION.fields_by_name['page_number']._options = None
+  _PAGINATION.fields_by_name['page_number']._serialized_options = b'\372B\010\032\006\030\300\204=(\000'
+  _PAGINATION.fields_by_name['total_count']._options = None
+  _PAGINATION.fields_by_name['total_count']._serialized_options = b'\372B\r\"\013(\377\377\377\377\377\377\377\377\377\001'
+  _PAGINATION._serialized_start=88
+  _PAGINATION._serialized_end=202
 # @@protoc_insertion_point(module_scope)

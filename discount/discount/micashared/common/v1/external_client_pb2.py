@@ -23,7 +23,7 @@ from discount.micashared.common.v1 import error_pb2 as micashared_dot_common_dot
 from discount.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*micashared/common/v1/external_client.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a micashared/common/v1/error.proto\x1a\x17validate/validate.proto\"\x8e\x02\n\x16\x45xternalClientSettings\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12$\n\x10\x63\x61llback_address\x18\x04 \x01(\tB\n\xfa\x42\x07r\x05\x10\x03\x18\xc8\x01\x12Z\n\x1e\x63lient_authentication_settings\x18\x05 \x01(\x0b\x32\x32.micashared.common.v1.ClientAuthenticationSettings\"\xd1\x01\n\x1c\x43lientAuthenticationSettings\x12\\\n$suported_client_authentication_types\x18\x01 \x03(\x0e\x32..micashared.common.v1.ClientAuthenticationType\x12S\n\x1b\x63urrent_authentication_type\x18\x02 \x01(\x0e\x32..micashared.common.v1.ClientAuthenticationType\"\"\n GetExternalClientSettingsRequest\"\xa7\x02\n!GetExternalClientSettingsResponse\x12N\n\x06status\x18\x01 \x01(\x0e\x32>.micashared.common.v1.GetExternalClientSettingsResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12>\n\x08settings\x18\x03 \x01(\x0b\x32,.micashared.common.v1.ExternalClientSettings\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"l\n*UpdateExternalClientCallBackAddressRequest\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12$\n\x10\x63\x61llback_address\x18\x02 \x01(\tB\n\xfa\x42\x07r\x05\x10\x03\x18\xc8\x01\"\x95\x02\n+UpdateExternalClientCallBackAddressResponse\x12X\n\x06status\x18\x01 \x01(\x0e\x32H.micashared.common.v1.UpdateExternalClientCallBackAddressResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xa0\x01\n-UpdateExternalClientAuthenticationTypeRequest\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12U\n\x13\x61uthentication_type\x18\x03 \x01(\x0e\x32..micashared.common.v1.ClientAuthenticationTypeB\x08\xfa\x42\x05\x82\x01\x02 \x00\"\x9b\x02\n.UpdateExternalClientAuthenticationTypeResponse\x12[\n\x06status\x18\x01 \x01(\x0e\x32K.micashared.common.v1.UpdateExternalClientAuthenticationTypeResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02*\xa3\x01\n\x18\x43lientAuthenticationType\x12*\n&CLIENT_AUTHENTICATION_TYPE_UNSPECIFIED\x10\x00\x12\x31\n-CLIENT_AUTHENTICATION_TYPE_CLIENT_CERTIFICATE\x10\x01\x12(\n$CLIENT_AUTHENTICATION_TYPE_API_TOKEN\x10\x02\x42O\n\x17io.micashared.common.v1B\x0e\x45xternalClientZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*micashared/common/v1/external_client.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a micashared/common/v1/error.proto\x1a\x17validate/validate.proto\"\x8e\x02\n\x16\x45xternalClientSettings\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12$\n\x10\x63\x61llback_address\x18\x04 \x01(\tB\n\xfa\x42\x07r\x05\x10\x03\x18\xc8\x01\x12Z\n\x1e\x63lient_authentication_settings\x18\x05 \x01(\x0b\x32\x32.micashared.common.v1.ClientAuthenticationSettings\"\xd1\x01\n\x1c\x43lientAuthenticationSettings\x12\\\n$suported_client_authentication_types\x18\x01 \x03(\x0e\x32..micashared.common.v1.ClientAuthenticationType\x12S\n\x1b\x63urrent_authentication_type\x18\x02 \x01(\x0e\x32..micashared.common.v1.ClientAuthenticationType\"\"\n GetExternalClientSettingsRequest\"\xa7\x02\n!GetExternalClientSettingsResponse\x12N\n\x06status\x18\x01 \x01(\x0e\x32>.micashared.common.v1.GetExternalClientSettingsResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12>\n\x08settings\x18\x03 \x01(\x0b\x32,.micashared.common.v1.ExternalClientSettings\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"x\n*UpdateExternalClientCallBackAddressRequest\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12\x30\n\x10\x63\x61llback_address\x18\x02 \x01(\tB\x16\xfa\x42\x13r\x11\x32\x0f^[^/]+:\\d{3,6}$\"\x95\x02\n+UpdateExternalClientCallBackAddressResponse\x12X\n\x06status\x18\x01 \x01(\x0e\x32H.micashared.common.v1.UpdateExternalClientCallBackAddressResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xa0\x01\n-UpdateExternalClientAuthenticationTypeRequest\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12U\n\x13\x61uthentication_type\x18\x03 \x01(\x0e\x32..micashared.common.v1.ClientAuthenticationTypeB\x08\xfa\x42\x05\x82\x01\x02 \x00\"\x9b\x02\n.UpdateExternalClientAuthenticationTypeResponse\x12[\n\x06status\x18\x01 \x01(\x0e\x32K.micashared.common.v1.UpdateExternalClientAuthenticationTypeResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02*\xa3\x01\n\x18\x43lientAuthenticationType\x12*\n&CLIENT_AUTHENTICATION_TYPE_UNSPECIFIED\x10\x00\x12\x31\n-CLIENT_AUTHENTICATION_TYPE_CLIENT_CERTIFICATE\x10\x01\x12(\n$CLIENT_AUTHENTICATION_TYPE_API_TOKEN\x10\x02\x42O\n\x17io.micashared.common.v1B\x0e\x45xternalClientZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.external_client_pb2', globals())
@@ -38,7 +38,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPDATEEXTERNALCLIENTCALLBACKADDRESSREQUEST.fields_by_name['version']._options = None
   _UPDATEEXTERNALCLIENTCALLBACKADDRESSREQUEST.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _UPDATEEXTERNALCLIENTCALLBACKADDRESSREQUEST.fields_by_name['callback_address']._options = None
-  _UPDATEEXTERNALCLIENTCALLBACKADDRESSREQUEST.fields_by_name['callback_address']._serialized_options = b'\372B\007r\005\020\003\030\310\001'
+  _UPDATEEXTERNALCLIENTCALLBACKADDRESSREQUEST.fields_by_name['callback_address']._serialized_options = b'\372B\023r\0212\017^[^/]+:\\d{3,6}$'
   _UPDATEEXTERNALCLIENTCALLBACKADDRESSRESPONSE.fields_by_name['version']._options = None
   _UPDATEEXTERNALCLIENTCALLBACKADDRESSRESPONSE.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPEREQUEST.fields_by_name['version']._options = None
@@ -47,8 +47,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPEREQUEST.fields_by_name['authentication_type']._serialized_options = b'\372B\005\202\001\002 \000'
   _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPERESPONSE.fields_by_name['version']._options = None
   _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPERESPONSE.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
-  _CLIENTAUTHENTICATIONTYPE._serialized_start=1819
-  _CLIENTAUTHENTICATIONTYPE._serialized_end=1982
+  _CLIENTAUTHENTICATIONTYPE._serialized_start=1831
+  _CLIENTAUTHENTICATIONTYPE._serialized_end=1994
   _EXTERNALCLIENTSETTINGS._serialized_start=161
   _EXTERNALCLIENTSETTINGS._serialized_end=431
   _CLIENTAUTHENTICATIONSETTINGS._serialized_start=434
@@ -60,15 +60,15 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _GETEXTERNALCLIENTSETTINGSRESPONSE_STATUS._serialized_start=907
   _GETEXTERNALCLIENTSETTINGSRESPONSE_STATUS._serialized_end=977
   _UPDATEEXTERNALCLIENTCALLBACKADDRESSREQUEST._serialized_start=979
-  _UPDATEEXTERNALCLIENTCALLBACKADDRESSREQUEST._serialized_end=1087
-  _UPDATEEXTERNALCLIENTCALLBACKADDRESSRESPONSE._serialized_start=1090
-  _UPDATEEXTERNALCLIENTCALLBACKADDRESSRESPONSE._serialized_end=1367
+  _UPDATEEXTERNALCLIENTCALLBACKADDRESSREQUEST._serialized_end=1099
+  _UPDATEEXTERNALCLIENTCALLBACKADDRESSRESPONSE._serialized_start=1102
+  _UPDATEEXTERNALCLIENTCALLBACKADDRESSRESPONSE._serialized_end=1379
   _UPDATEEXTERNALCLIENTCALLBACKADDRESSRESPONSE_STATUS._serialized_start=907
   _UPDATEEXTERNALCLIENTCALLBACKADDRESSRESPONSE_STATUS._serialized_end=977
-  _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPEREQUEST._serialized_start=1370
-  _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPEREQUEST._serialized_end=1530
-  _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPERESPONSE._serialized_start=1533
-  _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPERESPONSE._serialized_end=1816
+  _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPEREQUEST._serialized_start=1382
+  _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPEREQUEST._serialized_end=1542
+  _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPERESPONSE._serialized_start=1545
+  _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPERESPONSE._serialized_end=1828
   _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPERESPONSE_STATUS._serialized_start=907
   _UPDATEEXTERNALCLIENTAUTHENTICATIONTYPERESPONSE_STATUS._serialized_end=977
 # @@protoc_insertion_point(module_scope)

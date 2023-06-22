@@ -12,10 +12,10 @@ import grpc
 from partner.mica.partner.instrument.v1 import instrument_pb2 as mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2
 from partner.mica.partner.organization.v1 import organization_pb2 as mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2
 from partner.mica.partner.partner.v1 import partner_pb2 as mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2
-from partner.mica.partner.paymenttoken.v1 import payment_token_pb2 as mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2
 from partner.mica.partner.serviceprovider.v1 import service_provider_pb2 as mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2
 from partner.mica.partner.store.v1 import store_pb2 as mica_dot_partner_dot_store_dot_v1_dot_store__pb2
 from partner.mica.partner.transaction.v1 import transaction_pb2 as mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2
+from partner.mica.partner.uuek.v1 import uuek_pb2 as mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2
 from partner.mica.partner.value.v1 import value_pb2 as mica_dot_partner_dot_value_dot_v1_dot_value__pb2
 from partner.mica.partner.widget.v1 import widget_pb2 as mica_dot_partner_dot_widget_dot_v1_dot_widget__pb2
 from partner.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
@@ -101,20 +101,20 @@ class PartnerToMicaServiceStub(object):
                 request_serializer=mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderResponse.FromString,
                 )
-        self.RemovePaymentToken = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/RemovePaymentToken',
-                request_serializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenResponse.FromString,
+        self.RemoveUUEK = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/RemoveUUEK',
+                request_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKResponse.FromString,
                 )
-        self.ExchangePaymentToken = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/ExchangePaymentToken',
-                request_serializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenResponse.FromString,
+        self.ExchangeUUEK = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/ExchangeUUEK',
+                request_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKResponse.FromString,
                 )
-        self.SearchPaymentToken = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/SearchPaymentToken',
-                request_serializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchPaymentTokenRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchPaymentTokenResponse.FromString,
+        self.SearchUUEK = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/SearchUUEK',
+                request_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKResponse.FromString,
                 )
         self.ObtainValue = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/ObtainValue',
@@ -276,24 +276,24 @@ class PartnerToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def RemovePaymentToken(self, request, context):
-        """<editor-fold desc="Payment Token Operations">
+    def RemoveUUEK(self, request, context):
+        """<editor-fold desc="UUEK Operations">
 
-        When a user no longer wishes to use their payment tokens this operation can remove them from mica.
+        When a user no longer wishes to use their UUEKs this operation can remove them from mica.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ExchangePaymentToken(self, request, context):
-        """A Partner can proactively replace a payment token with a new one for future use.
+    def ExchangeUUEK(self, request, context):
+        """A Partner can proactively replace a UUEK with a new one for future use.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SearchPaymentToken(self, request, context):
-        """Search for Payment Tokens that the Partner has created.
+    def SearchUUEK(self, request, context):
+        """Search for UUEKs that the Partner has created.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -444,20 +444,20 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.FromString,
                     response_serializer=mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderResponse.SerializeToString,
             ),
-            'RemovePaymentToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemovePaymentToken,
-                    request_deserializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenResponse.SerializeToString,
+            'RemoveUUEK': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveUUEK,
+                    request_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKResponse.SerializeToString,
             ),
-            'ExchangePaymentToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.ExchangePaymentToken,
-                    request_deserializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenResponse.SerializeToString,
+            'ExchangeUUEK': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExchangeUUEK,
+                    request_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKResponse.SerializeToString,
             ),
-            'SearchPaymentToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchPaymentToken,
-                    request_deserializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchPaymentTokenRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchPaymentTokenResponse.SerializeToString,
+            'SearchUUEK': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchUUEK,
+                    request_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKResponse.SerializeToString,
             ),
             'ObtainValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ObtainValue,
@@ -759,7 +759,7 @@ class PartnerToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def RemovePaymentToken(request,
+    def RemoveUUEK(request,
             target,
             options=(),
             channel_credentials=None,
@@ -769,14 +769,14 @@ class PartnerToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/RemovePaymentToken',
-            mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenRequest.SerializeToString,
-            mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemovePaymentTokenResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/RemoveUUEK',
+            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKRequest.SerializeToString,
+            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ExchangePaymentToken(request,
+    def ExchangeUUEK(request,
             target,
             options=(),
             channel_credentials=None,
@@ -786,14 +786,14 @@ class PartnerToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ExchangePaymentToken',
-            mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenRequest.SerializeToString,
-            mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ExchangePaymentTokenResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ExchangeUUEK',
+            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKRequest.SerializeToString,
+            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def SearchPaymentToken(request,
+    def SearchUUEK(request,
             target,
             options=(),
             channel_credentials=None,
@@ -803,9 +803,9 @@ class PartnerToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/SearchPaymentToken',
-            mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchPaymentTokenRequest.SerializeToString,
-            mica_dot_partner_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchPaymentTokenResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/SearchUUEK',
+            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKRequest.SerializeToString,
+            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

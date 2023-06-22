@@ -11,10 +11,10 @@ import grpc
 
 from serviceprovider.mica.serviceprovider.discount.v1 import discount_pb2 as mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2
 from serviceprovider.mica.serviceprovider.instrument.v1 import instrument_pb2 as mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2
-from serviceprovider.mica.serviceprovider.paymenttoken.v1 import payment_token_pb2 as mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2
 from serviceprovider.mica.serviceprovider.serviceprovider.v1 import service_provider_pb2 as mica_dot_serviceprovider_dot_serviceprovider_dot_v1_dot_service__provider__pb2
 from serviceprovider.mica.serviceprovider.transaction.v1 import transaction_pb2 as mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2
 from serviceprovider.mica.serviceprovider.user.v1 import user_pb2 as mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2
+from serviceprovider.mica.serviceprovider.uuek.v1 import uuek_pb2 as mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2
 from serviceprovider.mica.serviceprovider.value.v1 import value_pb2 as mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2
 from serviceprovider.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 from serviceprovider.micashared.common.v1 import receipt_pb2 as micashared_dot_common_dot_v1_dot_receipt__pb2
@@ -25,7 +25,7 @@ class ServiceProviderToMicaServiceStub(object):
     the user's instruments (accounts).  In addition there are operations to update, retrieve, search
     and delete those users and instruments. The SP can retrieve/search Organizations to retrieve
     information about them that is not passed via ValueObtain or ValueReturn. Finally the SP can
-    provision it's own Payment Tokens which it can distribute to it's own users.
+    provision it's own UUEKs which it can distribute to it's own users.
     The SP starts by authenticating themselves after which they can call the other operations in
     this service. At a minimum, the SP will need to call RegisterUser and RegisterInstrument for
     each user and instrument they want to make available for their users at mica. For both Users and
@@ -108,20 +108,20 @@ class ServiceProviderToMicaServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemovePINRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemovePINResponse.FromString,
                 )
-        self.ProvisionServiceProviderPaymentToken = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ProvisionServiceProviderPaymentToken',
-                request_serializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ProvisionServiceProviderPaymentTokenRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ProvisionServiceProviderPaymentTokenResponse.FromString,
+        self.ProvisionServiceProviderUUEK = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ProvisionServiceProviderUUEK',
+                request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKResponse.FromString,
                 )
-        self.RemoveServiceProviderPaymentToken = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveServiceProviderPaymentToken',
-                request_serializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemoveServiceProviderPaymentTokenRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemoveServiceProviderPaymentTokenResponse.FromString,
+        self.RemoveServiceProviderUUEK = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveServiceProviderUUEK',
+                request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKResponse.FromString,
                 )
-        self.SearchServiceProviderPaymentToken = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchServiceProviderPaymentToken',
-                request_serializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchServiceProviderPaymentTokenRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchServiceProviderPaymentTokenResponse.FromString,
+        self.SearchServiceProviderUUEK = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchServiceProviderUUEK',
+                request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.FromString,
                 )
         self.SendValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SendValue',
@@ -175,7 +175,7 @@ class ServiceProviderToMicaServiceServicer(object):
     the user's instruments (accounts).  In addition there are operations to update, retrieve, search
     and delete those users and instruments. The SP can retrieve/search Organizations to retrieve
     information about them that is not passed via ValueObtain or ValueReturn. Finally the SP can
-    provision it's own Payment Tokens which it can distribute to it's own users.
+    provision it's own UUEKs which it can distribute to it's own users.
     The SP starts by authenticating themselves after which they can call the other operations in
     this service. At a minimum, the SP will need to call RegisterUser and RegisterInstrument for
     each user and instrument they want to make available for their users at mica. For both Users and
@@ -248,7 +248,7 @@ class ServiceProviderToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def RemoveInstrument(self, request, context):
-        """Remove an instrument (and any SP or Partner Payment Tokens) from mica. This renders any existing Payment Tokens as inoperative.
+        """Remove an instrument (and any SP or Partner UUEKs) from mica. This renders any existing UUEKs as inoperative.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -281,24 +281,24 @@ class ServiceProviderToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ProvisionServiceProviderPaymentToken(self, request, context):
-        """<editor-fold desc="Payment Token Operations">
+    def ProvisionServiceProviderUUEK(self, request, context):
+        """<editor-fold desc="UUEK Operations">
 
-        Used to create a payment token that can be given to the SP's users in order to transact at Partners (merhants) that support mica.
+        Used to create a UUEK that can be given to the SP's users in order to transact at Partners (merhants) that support mica.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def RemoveServiceProviderPaymentToken(self, request, context):
-        """Used to remove an existing Payment Token from mica rendering it inoperable.
+    def RemoveServiceProviderUUEK(self, request, context):
+        """Used to remove an existing UUEK from mica rendering it inoperable.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SearchServiceProviderPaymentToken(self, request, context):
-        """Searches for Payment Tokens by criteria.
+    def SearchServiceProviderUUEK(self, request, context):
+        """Searches for UUEKs by criteria.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -437,20 +437,20 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemovePINRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemovePINResponse.SerializeToString,
             ),
-            'ProvisionServiceProviderPaymentToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.ProvisionServiceProviderPaymentToken,
-                    request_deserializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ProvisionServiceProviderPaymentTokenRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ProvisionServiceProviderPaymentTokenResponse.SerializeToString,
+            'ProvisionServiceProviderUUEK': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProvisionServiceProviderUUEK,
+                    request_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKResponse.SerializeToString,
             ),
-            'RemoveServiceProviderPaymentToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemoveServiceProviderPaymentToken,
-                    request_deserializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemoveServiceProviderPaymentTokenRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemoveServiceProviderPaymentTokenResponse.SerializeToString,
+            'RemoveServiceProviderUUEK': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveServiceProviderUUEK,
+                    request_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKResponse.SerializeToString,
             ),
-            'SearchServiceProviderPaymentToken': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchServiceProviderPaymentToken,
-                    request_deserializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchServiceProviderPaymentTokenRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchServiceProviderPaymentTokenResponse.SerializeToString,
+            'SearchServiceProviderUUEK': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchServiceProviderUUEK,
+                    request_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.SerializeToString,
             ),
             'SendValue': grpc.unary_unary_rpc_method_handler(
                     servicer.SendValue,
@@ -509,7 +509,7 @@ class ServiceProviderToMicaService(object):
     the user's instruments (accounts).  In addition there are operations to update, retrieve, search
     and delete those users and instruments. The SP can retrieve/search Organizations to retrieve
     information about them that is not passed via ValueObtain or ValueReturn. Finally the SP can
-    provision it's own Payment Tokens which it can distribute to it's own users.
+    provision it's own UUEKs which it can distribute to it's own users.
     The SP starts by authenticating themselves after which they can call the other operations in
     this service. At a minimum, the SP will need to call RegisterUser and RegisterInstrument for
     each user and instrument they want to make available for their users at mica. For both Users and
@@ -743,7 +743,7 @@ class ServiceProviderToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ProvisionServiceProviderPaymentToken(request,
+    def ProvisionServiceProviderUUEK(request,
             target,
             options=(),
             channel_credentials=None,
@@ -753,14 +753,14 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ProvisionServiceProviderPaymentToken',
-            mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ProvisionServiceProviderPaymentTokenRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.ProvisionServiceProviderPaymentTokenResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ProvisionServiceProviderUUEK',
+            mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def RemoveServiceProviderPaymentToken(request,
+    def RemoveServiceProviderUUEK(request,
             target,
             options=(),
             channel_credentials=None,
@@ -770,14 +770,14 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveServiceProviderPaymentToken',
-            mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemoveServiceProviderPaymentTokenRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.RemoveServiceProviderPaymentTokenResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveServiceProviderUUEK',
+            mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def SearchServiceProviderPaymentToken(request,
+    def SearchServiceProviderUUEK(request,
             target,
             options=(),
             channel_credentials=None,
@@ -787,9 +787,9 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchServiceProviderPaymentToken',
-            mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchServiceProviderPaymentTokenRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_paymenttoken_dot_v1_dot_payment__token__pb2.SearchServiceProviderPaymentTokenResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchServiceProviderUUEK',
+            mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

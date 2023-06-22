@@ -20,7 +20,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1micashared/common/enums/ebttype/v1/ebt_type.proto\x12\"micashared.common.enums.ebttype.v1*[\n\x07\x45\x62tType\x12\x18\n\x14\x45\x42T_TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rEBT_TYPE_SNAP\x10\x01\x12\x11\n\rEBT_TYPE_TANF\x10\x02\x12\x10\n\x0c\x45\x42T_TYPE_WIC\x10\x03\x42[\n\x1dio.micashared.common.enums.v1B\x10\x45\x62tTypeEnumProtoZ!micashared/common/enums/ebttypev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1micashared/common/enums/ebttype/v1/ebt_type.proto\x12\"micashared.common.enums.ebttype.v1*q\n\x07\x45\x62tType\x12\x18\n\x14\x45\x42T_TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rEBT_TYPE_SNAP\x10\x01\x12\x11\n\rEBT_TYPE_TANF\x10\x02\x12\x10\n\x0c\x45\x42T_TYPE_WIC\x10\x03\x12\x14\n\x10\x45\x42T_TYPE_NYCLOOP\x10\x04\x42[\n\x1dio.micashared.common.enums.v1B\x10\x45\x62tTypeEnumProtoZ!micashared/common/enums/ebttypev1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.enums.ebttype.v1.ebt_type_pb2', globals())
@@ -29,5 +29,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035io.micashared.common.enums.v1B\020EbtTypeEnumProtoZ!micashared/common/enums/ebttypev1\242\002\004MICA'
   _EBTTYPE._serialized_start=89
-  _EBTTYPE._serialized_end=180
+  _EBTTYPE._serialized_end=202
 # @@protoc_insertion_point(module_scope)
