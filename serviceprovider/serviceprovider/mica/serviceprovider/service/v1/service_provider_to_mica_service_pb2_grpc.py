@@ -12,7 +12,6 @@ import grpc
 from serviceprovider.mica.serviceprovider.discount.v1 import discount_pb2 as mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2
 from serviceprovider.mica.serviceprovider.instrument.v1 import instrument_pb2 as mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2
 from serviceprovider.mica.serviceprovider.serviceprovider.v1 import service_provider_pb2 as mica_dot_serviceprovider_dot_serviceprovider_dot_v1_dot_service__provider__pb2
-from serviceprovider.mica.serviceprovider.transaction.v1 import transaction_pb2 as mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2
 from serviceprovider.mica.serviceprovider.user.v1 import user_pb2 as mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2
 from serviceprovider.mica.serviceprovider.uuek.v1 import uuek_pb2 as mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2
 from serviceprovider.mica.serviceprovider.value.v1 import value_pb2 as mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2
@@ -137,21 +136,6 @@ class ServiceProviderToMicaServiceStub(object):
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
-                )
-        self.SearchTransactionData = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionData',
-                request_serializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataResponse.FromString,
-                )
-        self.SearchTransactionGeographyData = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionGeographyData',
-                request_serializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataResponse.FromString,
-                )
-        self.SearchTransactionPartnerData = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionPartnerData',
-                request_serializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataResponse.FromString,
                 )
         self.SearchUserDiscount = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchUserDiscount',
@@ -325,26 +309,6 @@ class ServiceProviderToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SearchTransactionData(self, request, context):
-        """<editor-fold desc="Dashboard Operations">
-
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SearchTransactionGeographyData(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SearchTransactionPartnerData(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def SearchUserDiscount(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -354,7 +318,7 @@ class ServiceProviderToMicaServiceServicer(object):
     def GetReceipt(self, request, context):
         """<editor-fold desc="Transaction Operations">
 
-        Retrieve a transaction based on it's key.
+        Retrieve a receipt based on the transaction key.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -466,21 +430,6 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
                     servicer.GetValue,
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.SerializeToString,
-            ),
-            'SearchTransactionData': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchTransactionData,
-                    request_deserializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataResponse.SerializeToString,
-            ),
-            'SearchTransactionGeographyData': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchTransactionGeographyData,
-                    request_deserializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataResponse.SerializeToString,
-            ),
-            'SearchTransactionPartnerData': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchTransactionPartnerData,
-                    request_deserializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataResponse.SerializeToString,
             ),
             'SearchUserDiscount': grpc.unary_unary_rpc_method_handler(
                     servicer.SearchUserDiscount,
@@ -841,57 +790,6 @@ class ServiceProviderToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchTransactionData(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionData',
-            mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchTransactionGeographyData(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionGeographyData',
-            mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchTransactionPartnerData(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchTransactionPartnerData',
-            mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionPartnerDataResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

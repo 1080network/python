@@ -21,9 +21,12 @@ _sym_db = _symbol_database.Default()
 from connect.mica.connect.instrument.v1 import instrument_pb2 as mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2
 from connect.mica.connect.serviceprovider.v1 import service_provider_pb2 as mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2
 from connect.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
+from connect.micashared.common.v1 import error_pb2 as micashared_dot_common_dot_v1_dot_error__pb2
+from connect.micashared.common.v1 import user_pb2 as micashared_dot_common_dot_v1_dot_user__pb2
+from connect.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-mica/connect/service/v1/connect_service.proto\x12\x17mica.connect.service.v1\x1a+mica/connect/instrument/v1/instrument.proto\x1a\x36mica/connect/serviceprovider/v1/service_provider.proto\x1a$micashared/common/ping/v1/ping.proto2\xa5\x06\n\x0e\x43onnectService\x12\x98\x01\n\x15SearchServiceProvider\x12=.mica.connect.serviceprovider.v1.SearchServiceProviderRequest\x1a>.mica.connect.serviceprovider.v1.SearchServiceProviderResponse\"\x00\x12\xaf\x01\n WidgetRegisterInstrumentInitiate\x12\x43.mica.connect.instrument.v1.WidgetRegisterInstrumentInitiateRequest\x1a\x44.mica.connect.instrument.v1.WidgetRegisterInstrumentInitiateResponse\"\x00\x12\xb8\x01\n#WidgetRegisterInstrumentWithAccount\x12\x46.mica.connect.instrument.v1.WidgetRegisterInstrumentWithAccountRequest\x1aG.mica.connect.instrument.v1.WidgetRegisterInstrumentWithAccountResponse\"\x00\x12\xaf\x01\n WidgetRegisterInstrumentComplete\x12\x43.mica.connect.instrument.v1.WidgetRegisterInstrumentCompleteRequest\x1a\x44.mica.connect.instrument.v1.WidgetRegisterInstrumentCompleteResponse\"\x00\x12Y\n\x04Ping\x12&.micashared.common.ping.v1.PingRequest\x1a\'.micashared.common.ping.v1.PingResponse\"\x00\x42P\n\x1aio.mica.connect.service.v1B\x13\x43onnectServiceProtoZ\x16mica/connect/servicev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-mica/connect/service/v1/connect_service.proto\x12\x17mica.connect.service.v1\x1a+mica/connect/instrument/v1/instrument.proto\x1a\x36mica/connect/serviceprovider/v1/service_provider.proto\x1a$micashared/common/ping/v1/ping.proto\x1a micashared/common/v1/error.proto\x1a\x1fmicashared/common/v1/user.proto\x1a\x17validate/validate.proto\"{\n3WidgetRegisterInstrumentWithVerificationCodeRequest\x12\x1e\n\x0bsession_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1b\x18\x32\x12$\n\x11verification_code\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x32\"\xd8\x02\n4WidgetRegisterInstrumentWithVerificationCodeResponse\x12\x64\n\x06status\x18\x01 \x01(\x0e\x32T.mica.connect.service.v1.WidgetRegisterInstrumentWithVerificationCodeResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x46\n\x17shared_user_information\x18\x03 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x32\xf5\x07\n\x0e\x43onnectService\x12\x98\x01\n\x15SearchServiceProvider\x12=.mica.connect.serviceprovider.v1.SearchServiceProviderRequest\x1a>.mica.connect.serviceprovider.v1.SearchServiceProviderResponse\"\x00\x12\xcd\x01\n,WidgetRegisterInstrumentWithVerificationCode\x12L.mica.connect.service.v1.WidgetRegisterInstrumentWithVerificationCodeRequest\x1aM.mica.connect.service.v1.WidgetRegisterInstrumentWithVerificationCodeResponse\"\x00\x12\xaf\x01\n WidgetRegisterInstrumentInitiate\x12\x43.mica.connect.instrument.v1.WidgetRegisterInstrumentInitiateRequest\x1a\x44.mica.connect.instrument.v1.WidgetRegisterInstrumentInitiateResponse\"\x00\x12\xb8\x01\n#WidgetRegisterInstrumentWithAccount\x12\x46.mica.connect.instrument.v1.WidgetRegisterInstrumentWithAccountRequest\x1aG.mica.connect.instrument.v1.WidgetRegisterInstrumentWithAccountResponse\"\x00\x12\xaf\x01\n WidgetRegisterInstrumentComplete\x12\x43.mica.connect.instrument.v1.WidgetRegisterInstrumentCompleteRequest\x1a\x44.mica.connect.instrument.v1.WidgetRegisterInstrumentCompleteResponse\"\x00\x12Y\n\x04Ping\x12&.micashared.common.ping.v1.PingRequest\x1a\'.micashared.common.ping.v1.PingResponse\"\x00\x42P\n\x1aio.mica.connect.service.v1B\x13\x43onnectServiceProtoZ\x16mica/connect/servicev1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.connect.service.v1.connect_service_pb2', globals())
@@ -31,6 +34,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\032io.mica.connect.service.v1B\023ConnectServiceProtoZ\026mica/connect/servicev1\242\002\004MICA'
-  _CONNECTSERVICE._serialized_start=214
-  _CONNECTSERVICE._serialized_end=1019
+  _WIDGETREGISTERINSTRUMENTWITHVERIFICATIONCODEREQUEST.fields_by_name['session_key']._options = None
+  _WIDGETREGISTERINSTRUMENTWITHVERIFICATIONCODEREQUEST.fields_by_name['session_key']._serialized_options = b'\372B\006r\004\020\033\0302'
+  _WIDGETREGISTERINSTRUMENTWITHVERIFICATIONCODEREQUEST.fields_by_name['verification_code']._options = None
+  _WIDGETREGISTERINSTRUMENTWITHVERIFICATIONCODEREQUEST.fields_by_name['verification_code']._serialized_options = b'\372B\006r\004\020\001\0302'
+  _WIDGETREGISTERINSTRUMENTWITHVERIFICATIONCODEREQUEST._serialized_start=305
+  _WIDGETREGISTERINSTRUMENTWITHVERIFICATIONCODEREQUEST._serialized_end=428
+  _WIDGETREGISTERINSTRUMENTWITHVERIFICATIONCODERESPONSE._serialized_start=431
+  _WIDGETREGISTERINSTRUMENTWITHVERIFICATIONCODERESPONSE._serialized_end=775
+  _WIDGETREGISTERINSTRUMENTWITHVERIFICATIONCODERESPONSE_STATUS._serialized_start=705
+  _WIDGETREGISTERINSTRUMENTWITHVERIFICATIONCODERESPONSE_STATUS._serialized_end=775
+  _CONNECTSERVICE._serialized_start=778
+  _CONNECTSERVICE._serialized_end=1791
 # @@protoc_insertion_point(module_scope)

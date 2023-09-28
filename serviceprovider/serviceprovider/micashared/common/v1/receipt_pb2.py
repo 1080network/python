@@ -18,19 +18,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from serviceprovider.micashared.common.enums.channel.v1 import channel_pb2 as micashared_dot_common_dot_enums_dot_channel_dot_v1_dot_channel__pb2
-from serviceprovider.micashared.common.enums.currency.v1 import currency_pb2 as micashared_dot_common_dot_enums_dot_currency_dot_v1_dot_currency__pb2
-from serviceprovider.micashared.common.enums.organizationcategory.v1 import organization_category_pb2 as micashared_dot_common_dot_enums_dot_organizationcategory_dot_v1_dot_organization__category__pb2
-from serviceprovider.micashared.common.enums.valueoperationtype.v1 import value_operation_type_pb2 as micashared_dot_common_dot_enums_dot_valueoperationtype_dot_v1_dot_value__operation__type__pb2
-from serviceprovider.micashared.common.v1 import address_pb2 as micashared_dot_common_dot_v1_dot_address__pb2
-from serviceprovider.micashared.common.v1 import discount_pb2 as micashared_dot_common_dot_v1_dot_discount__pb2
 from serviceprovider.micashared.common.v1 import error_pb2 as micashared_dot_common_dot_v1_dot_error__pb2
-from serviceprovider.micashared.common.v1 import line_item_pb2 as micashared_dot_common_dot_v1_dot_line__item__pb2
 from serviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"micashared/common/v1/receipt.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x30micashared/common/enums/channel/v1/channel.proto\x1a\x32micashared/common/enums/currency/v1/currency.proto\x1aKmicashared/common/enums/organizationcategory/v1/organization_category.proto\x1aHmicashared/common/enums/valueoperationtype/v1/value_operation_type.proto\x1a\"micashared/common/v1/address.proto\x1a#micashared/common/v1/discount.proto\x1a micashared/common/v1/error.proto\x1a$micashared/common/v1/line_item.proto\x1a\x17validate/validate.proto\"\xeb\x08\n\x07Receipt\x12\"\n\x0ftransaction_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12Y\n\x0eoperation_type\x18\x05 \x01(\x0e\x32\x41.micashared.common.enums.valueoperationtype.v1.ValueOperationType\x12\x1f\n\x17partner_transaction_ref\x18\x06 \x01(\t\x12\x32\n\x1fservice_provider_instrument_key\x18\x07 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\'\n\x1fservice_provider_instrument_ref\x18\x08 \x01(\t\x12<\n\x07\x63hannel\x18\t \x01(\x0e\x32+.micashared.common.enums.channel.v1.Channel\x12?\n\x08\x63urrency\x18\n \x01(\x0e\x32-.micashared.common.enums.currency.v1.Currency\x12#\n\x10organization_key\x18\x0b \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x19\n\x11organization_name\x18\x0c \x01(\t\x12;\n\x14organization_address\x18\r \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12W\n\x08\x63\x61tegory\x18\x0e \x01(\x0e\x32\x45.micashared.common.enums.organizationcategory.v1.OrganizationCategory\x12\x1c\n\tstore_key\x18\x0f \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x14\n\x0cstore_number\x18\x10 \x01(\t\x12\x34\n\rstore_address\x18\x11 \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12\x18\n\x10\x63lerk_identifier\x18\x12 \x01(\t\x12\x14\n\x0ctotal_amount\x18\x13 \x01(\t\x12\x18\n\x10requested_amount\x18\x14 \x01(\t\x12\x17\n\x0f\x61pproved_amount\x18\x15 \x01(\t\x12\x14\n\x0corder_number\x18\x16 \x01(\t\x12G\n\x16line_item_and_statuses\x18\x17 \x03(\x0b\x32\'.micashared.common.v1.LineItemAndStatus\x12@\n\x11\x61pplied_discounts\x18\x18 \x03(\x0b\x32%.micashared.common.v1.AppliedDiscount\x12\x35\n\x0b\x61\x64justments\x18\x19 \x03(\x0b\x32 .micashared.common.v1.Adjustment\"7\n\x11GetReceiptRequest\x12\"\n\x0ftransaction_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\x8f\x02\n\x12GetReceiptResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.micashared.common.v1.GetReceiptResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12.\n\x07receipt\x18\x03 \x01(\x0b\x32\x1d.micashared.common.v1.Receipt\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42M\n\x17io.micashared.common.v1B\x0cReceiptProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"micashared/common/v1/receipt.proto\x12\x14micashared.common.v1\x1a micashared/common/v1/error.proto\x1a\x17validate/validate.proto\"F\n\x07Receipt\x12\x0e\n\x04\x64\x61ta\x18\x1d \x01(\x0cH\x00\x12\r\n\x03url\x18\x1e \x01(\tH\x00\x12\x13\n\x0bsource_data\x18\x1f \x01(\x0c\x42\x07\n\x05image\"7\n\x11GetReceiptRequest\x12\"\n\x0ftransaction_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\x8f\x02\n\x12GetReceiptResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.micashared.common.v1.GetReceiptResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12.\n\x07receipt\x18\x03 \x01(\x0b\x32\x1d.micashared.common.v1.Receipt\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\".\n\x16ReceiptTransactionData\x12\x14\n\x0c\x62\x61rcode_text\x18\x01 \x01(\tBM\n\x17io.micashared.common.v1B\x0cReceiptProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.receipt_pb2', globals())
@@ -38,22 +30,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027io.micashared.common.v1B\014ReceiptProtoZ\035micashared/common/v1;commonv1\242\002\004MICA'
-  _RECEIPT.fields_by_name['transaction_key']._options = None
-  _RECEIPT.fields_by_name['transaction_key']._serialized_options = b'\372B\006r\004\020\036\0302'
-  _RECEIPT.fields_by_name['service_provider_instrument_key']._options = None
-  _RECEIPT.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
-  _RECEIPT.fields_by_name['organization_key']._options = None
-  _RECEIPT.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
-  _RECEIPT.fields_by_name['store_key']._options = None
-  _RECEIPT.fields_by_name['store_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _GETRECEIPTREQUEST.fields_by_name['transaction_key']._options = None
   _GETRECEIPTREQUEST.fields_by_name['transaction_key']._serialized_options = b'\372B\006r\004\020\036\0302'
-  _RECEIPT._serialized_start=517
-  _RECEIPT._serialized_end=1648
-  _GETRECEIPTREQUEST._serialized_start=1650
-  _GETRECEIPTREQUEST._serialized_end=1705
-  _GETRECEIPTRESPONSE._serialized_start=1708
-  _GETRECEIPTRESPONSE._serialized_end=1979
-  _GETRECEIPTRESPONSE_STATUS._serialized_start=1887
-  _GETRECEIPTRESPONSE_STATUS._serialized_end=1979
+  _RECEIPT._serialized_start=119
+  _RECEIPT._serialized_end=189
+  _GETRECEIPTREQUEST._serialized_start=191
+  _GETRECEIPTREQUEST._serialized_end=246
+  _GETRECEIPTRESPONSE._serialized_start=249
+  _GETRECEIPTRESPONSE._serialized_end=520
+  _GETRECEIPTRESPONSE_STATUS._serialized_start=428
+  _GETRECEIPTRESPONSE_STATUS._serialized_end=520
+  _RECEIPTTRANSACTIONDATA._serialized_start=522
+  _RECEIPTTRANSACTIONDATA._serialized_end=568
 # @@protoc_insertion_point(module_scope)

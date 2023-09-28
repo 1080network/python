@@ -36,16 +36,6 @@ class PartnerToMicaServiceStub(object):
                 request_serializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerResponse.FromString,
                 )
-        self.GetPartnerLegacyConfiguration = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/GetPartnerLegacyConfiguration',
-                request_serializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerLegacyConfigurationRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerLegacyConfigurationResponse.FromString,
-                )
-        self.UpdatePartnerLegacyConfiguration = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/UpdatePartnerLegacyConfiguration',
-                request_serializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.UpdatePartnerLegacyConfigurationRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.UpdatePartnerLegacyConfigurationResponse.FromString,
-                )
         self.GetOrganization = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/GetOrganization',
                 request_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.GetOrganizationRequest.SerializeToString,
@@ -60,16 +50,6 @@ class PartnerToMicaServiceStub(object):
                 '/mica.partner.service.v1.PartnerToMicaService/SearchOrganization',
                 request_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.SearchOrganizationRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.SearchOrganizationResponse.FromString,
-                )
-        self.GetOrganizationLegacyConfiguration = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/GetOrganizationLegacyConfiguration',
-                request_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.GetOrganizationLegacyConfigurationRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.GetOrganizationLegacyConfigurationResponse.FromString,
-                )
-        self.UpdateOrganizationLegacyConfiguration = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/UpdateOrganizationLegacyConfiguration',
-                request_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationLegacyConfigurationRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationLegacyConfigurationResponse.FromString,
                 )
         self.CreateStore = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/CreateStore',
@@ -121,10 +101,20 @@ class PartnerToMicaServiceStub(object):
                 request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainValueRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainValueResponse.FromString,
                 )
+        self.ReverseObtainValue = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/ReverseObtainValue',
+                request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueResponse.FromString,
+                )
         self.ReturnValue = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/ReturnValue',
                 request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReturnValueRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReturnValueResponse.FromString,
+                )
+        self.ReverseReturnValue = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/ReverseReturnValue',
+                request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.FromString,
                 )
         self.SearchValue = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/SearchValue',
@@ -179,20 +169,6 @@ class PartnerToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetPartnerLegacyConfiguration(self, request, context):
-        """Retrieve an partner's legacy configuration based on it's key.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdatePartnerLegacyConfiguration(self, request, context):
-        """Update a given partner's legacy configuration.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def GetOrganization(self, request, context):
         """<editor-fold desc="Organization Operations">
 
@@ -211,20 +187,6 @@ class PartnerToMicaServiceServicer(object):
 
     def SearchOrganization(self, request, context):
         """Like GetOrganization, can be used to retrieve Organizations based on the criteria in the request.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetOrganizationLegacyConfiguration(self, request, context):
-        """Retrieve an organization's legacy configuration based on it's key.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdateOrganizationLegacyConfiguration(self, request, context):
-        """Update a given organization's legacy configuration.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -308,8 +270,22 @@ class PartnerToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ReverseObtainValue(self, request, context):
+        """An operation to reverse obtain value, including transaction fees and discounts for a given transaction
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ReturnValue(self, request, context):
         """An operation to return value to a user in order to refund them for goods or services.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReverseReturnValue(self, request, context):
+        """An operation to reverse return value for a given transaction
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -379,16 +355,6 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerRequest.FromString,
                     response_serializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerResponse.SerializeToString,
             ),
-            'GetPartnerLegacyConfiguration': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetPartnerLegacyConfiguration,
-                    request_deserializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerLegacyConfigurationRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerLegacyConfigurationResponse.SerializeToString,
-            ),
-            'UpdatePartnerLegacyConfiguration': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdatePartnerLegacyConfiguration,
-                    request_deserializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.UpdatePartnerLegacyConfigurationRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.UpdatePartnerLegacyConfigurationResponse.SerializeToString,
-            ),
             'GetOrganization': grpc.unary_unary_rpc_method_handler(
                     servicer.GetOrganization,
                     request_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.GetOrganizationRequest.FromString,
@@ -403,16 +369,6 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     servicer.SearchOrganization,
                     request_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.SearchOrganizationRequest.FromString,
                     response_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.SearchOrganizationResponse.SerializeToString,
-            ),
-            'GetOrganizationLegacyConfiguration': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetOrganizationLegacyConfiguration,
-                    request_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.GetOrganizationLegacyConfigurationRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.GetOrganizationLegacyConfigurationResponse.SerializeToString,
-            ),
-            'UpdateOrganizationLegacyConfiguration': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateOrganizationLegacyConfiguration,
-                    request_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationLegacyConfigurationRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationLegacyConfigurationResponse.SerializeToString,
             ),
             'CreateStore': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateStore,
@@ -464,10 +420,20 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainValueRequest.FromString,
                     response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainValueResponse.SerializeToString,
             ),
+            'ReverseObtainValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReverseObtainValue,
+                    request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueResponse.SerializeToString,
+            ),
             'ReturnValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ReturnValue,
                     request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReturnValueRequest.FromString,
                     response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReturnValueResponse.SerializeToString,
+            ),
+            'ReverseReturnValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReverseReturnValue,
+                    request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.SerializeToString,
             ),
             'SearchValue': grpc.unary_unary_rpc_method_handler(
                     servicer.SearchValue,
@@ -538,40 +504,6 @@ class PartnerToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetPartnerLegacyConfiguration(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/GetPartnerLegacyConfiguration',
-            mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerLegacyConfigurationRequest.SerializeToString,
-            mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerLegacyConfigurationResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdatePartnerLegacyConfiguration(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/UpdatePartnerLegacyConfiguration',
-            mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.UpdatePartnerLegacyConfigurationRequest.SerializeToString,
-            mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.UpdatePartnerLegacyConfigurationResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def GetOrganization(request,
             target,
             options=(),
@@ -619,40 +551,6 @@ class PartnerToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/SearchOrganization',
             mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.SearchOrganizationRequest.SerializeToString,
             mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.SearchOrganizationResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetOrganizationLegacyConfiguration(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/GetOrganizationLegacyConfiguration',
-            mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.GetOrganizationLegacyConfigurationRequest.SerializeToString,
-            mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.GetOrganizationLegacyConfigurationResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateOrganizationLegacyConfiguration(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/UpdateOrganizationLegacyConfiguration',
-            mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationLegacyConfigurationRequest.SerializeToString,
-            mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationLegacyConfigurationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -827,6 +725,23 @@ class PartnerToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def ReverseObtainValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ReverseObtainValue',
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def ReturnValue(request,
             target,
             options=(),
@@ -840,6 +755,23 @@ class PartnerToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ReturnValue',
             mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReturnValueRequest.SerializeToString,
             mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReturnValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReverseReturnValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ReverseReturnValue',
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

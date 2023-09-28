@@ -48,10 +48,20 @@ class ServiceProviderFromMicaServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainValueResponse.FromString,
                 )
+        self.ReverseObtainValue = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseObtainValue',
+                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
+                )
         self.ReturnValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReturnValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReturnValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReturnValueResponse.FromString,
+                )
+        self.ReverseReturnValue = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseReturnValue',
+                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
                 )
         self.ReceiveValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReceiveValue',
@@ -104,8 +114,22 @@ class ServiceProviderFromMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ReverseObtainValue(self, request, context):
+        """Reverse a ObtainValue transaction
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ReturnValue(self, request, context):
         """Operation to return value to a given instrument.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReverseReturnValue(self, request, context):
+        """Reverse a ReturnValue transaction
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -144,10 +168,20 @@ def add_ServiceProviderFromMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainValueRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainValueResponse.SerializeToString,
             ),
+            'ReverseObtainValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReverseObtainValue,
+                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.SerializeToString,
+            ),
             'ReturnValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ReturnValue,
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReturnValueRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReturnValueResponse.SerializeToString,
+            ),
+            'ReverseReturnValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReverseReturnValue,
+                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.SerializeToString,
             ),
             'ReceiveValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ReceiveValue,
@@ -230,6 +264,23 @@ class ServiceProviderFromMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def ReverseObtainValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseObtainValue',
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def ReturnValue(request,
             target,
             options=(),
@@ -243,6 +294,23 @@ class ServiceProviderFromMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReturnValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReturnValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReturnValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReverseReturnValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseReturnValue',
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

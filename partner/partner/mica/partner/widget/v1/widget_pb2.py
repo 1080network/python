@@ -23,7 +23,7 @@ from partner.micashared.common.v1 import user_pb2 as micashared_dot_common_dot_v
 from partner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#mica/partner/widget/v1/widget.proto\x12\x16mica.partner.widget.v1\x1a micashared/common/v1/error.proto\x1a\x1fmicashared/common/v1/user.proto\x1a\x17validate/validate.proto\"Z\n\x17InitializeWidgetRequest\x12?\n\x10user_demographic\x18\x03 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\"\xf7\x01\n\x18InitializeWidgetResponse\x12G\n\x06status\x18\x01 \x01(\x0e\x32\x37.mica.partner.widget.v1.InitializeWidgetResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x1e\n\x0bsession_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42N\n\x1dio.mica.partner.instrument.v1B\x0bWidgetProtoZ\x19mica/partner/instrumentv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#mica/partner/widget/v1/widget.proto\x12\x16mica.partner.widget.v1\x1a micashared/common/v1/error.proto\x1a\x1fmicashared/common/v1/user.proto\x1a\x17validate/validate.proto\"Z\n\x17InitializeWidgetRequest\x12?\n\x10user_demographic\x18\x03 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\"\xf7\x01\n\x18InitializeWidgetResponse\x12G\n\x06status\x18\x01 \x01(\x0e\x32\x37.mica.partner.widget.v1.InitializeWidgetResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x1e\n\x0bsession_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1b\x18\x32\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42N\n\x1dio.mica.partner.instrument.v1B\x0bWidgetProtoZ\x19mica/partner/instrumentv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.partner.widget.v1.widget_pb2', globals())
@@ -32,7 +32,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035io.mica.partner.instrument.v1B\013WidgetProtoZ\031mica/partner/instrumentv1\242\002\004MICA'
   _INITIALIZEWIDGETRESPONSE.fields_by_name['session_key']._options = None
-  _INITIALIZEWIDGETRESPONSE.fields_by_name['session_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _INITIALIZEWIDGETRESPONSE.fields_by_name['session_key']._serialized_options = b'\372B\006r\004\020\033\0302'
   _INITIALIZEWIDGETREQUEST._serialized_start=155
   _INITIALIZEWIDGETREQUEST._serialized_end=245
   _INITIALIZEWIDGETRESPONSE._serialized_start=248

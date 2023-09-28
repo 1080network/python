@@ -18,12 +18,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from discount.micashared.common.enums.discounttype.v1 import discount_type_pb2 as micashared_dot_common_dot_enums_dot_discounttype_dot_v1_dot_discount__type__pb2
-from discount.micashared.common.enums.unit.v1 import unit_pb2 as micashared_dot_common_dot_enums_dot_unit_dot_v1_dot_unit__pb2
 from discount.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#micashared/common/v1/discount.proto\x12\x14micashared.common.v1\x1a;micashared/common/enums/discounttype/v1/discount_type.proto\x1a*micashared/common/enums/unit/v1/unit.proto\x1a\x17validate/validate.proto\"k\n\x10\x44iscountLineItem\x12\x10\n\x08sequence\x18\x01 \x01(\x05\x12\x10\n\x08quantity\x18\x02 \x01(\t\x12\x33\n\x04unit\x18\x03 \x01(\x0e\x32%.micashared.common.enums.unit.v1.Unit\"\x98\x02\n\x0f\x41ppliedDiscount\x12\x1f\n\x0c\x64iscount_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x1b\n\x13receipt_description\x18\x02 \x01(\t\x12L\n\rdiscount_type\x18\x03 \x01(\x0e\x32\x35.micashared.common.enums.discounttype.v1.DiscountType\x12\x17\n\x0f\x64iscount_amount\x18\x04 \x01(\t\x12\x1b\n\x13\x64iscount_tax_amount\x18\x05 \x01(\t\x12\x43\n\x13\x64iscount_line_items\x18\x06 \x03(\x0b\x32&.micashared.common.v1.DiscountLineItemBN\n\x17io.micashared.common.v1B\rDiscountProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#micashared/common/v1/discount.proto\x12\x14micashared.common.v1\x1a\x17validate/validate.proto\"N\n\x0f\x44iscountSummary\x12\x17\n\x0f\x64iscount_amount\x18\x01 \x01(\t\x12\"\n\x11\x64iscounts_applied\x18\x02 \x01(\x05\x42\x07\xfa\x42\x04\x1a\x02(\x00\x42N\n\x17io.micashared.common.v1B\rDiscountProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.discount_pb2', globals())
@@ -31,10 +29,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027io.micashared.common.v1B\rDiscountProtoZ\035micashared/common/v1;commonv1\242\002\004MICA'
-  _APPLIEDDISCOUNT.fields_by_name['discount_key']._options = None
-  _APPLIEDDISCOUNT.fields_by_name['discount_key']._serialized_options = b'\372B\006r\004\020\036\0302'
-  _DISCOUNTLINEITEM._serialized_start=191
-  _DISCOUNTLINEITEM._serialized_end=298
-  _APPLIEDDISCOUNT._serialized_start=301
-  _APPLIEDDISCOUNT._serialized_end=581
+  _DISCOUNTSUMMARY.fields_by_name['discounts_applied']._options = None
+  _DISCOUNTSUMMARY.fields_by_name['discounts_applied']._serialized_options = b'\372B\004\032\002(\000'
+  _DISCOUNTSUMMARY._serialized_start=86
+  _DISCOUNTSUMMARY._serialized_end=164
 # @@protoc_insertion_point(module_scope)

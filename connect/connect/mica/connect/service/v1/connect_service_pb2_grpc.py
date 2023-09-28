@@ -10,6 +10,7 @@
 import grpc
 
 from connect.mica.connect.instrument.v1 import instrument_pb2 as mica_dot_connect_dot_instrument_dot_v1_dot_instrument__pb2
+from connect.mica.connect.service.v1 import connect_service_pb2 as mica_dot_connect_dot_service_dot_v1_dot_connect__service__pb2
 from connect.mica.connect.serviceprovider.v1 import service_provider_pb2 as mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2
 from connect.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 
@@ -30,6 +31,11 @@ class ConnectServiceStub(object):
                 '/mica.connect.service.v1.ConnectService/SearchServiceProvider',
                 request_serializer=mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.SerializeToString,
                 response_deserializer=mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderResponse.FromString,
+                )
+        self.WidgetRegisterInstrumentWithVerificationCode = channel.unary_unary(
+                '/mica.connect.service.v1.ConnectService/WidgetRegisterInstrumentWithVerificationCode',
+                request_serializer=mica_dot_connect_dot_service_dot_v1_dot_connect__service__pb2.WidgetRegisterInstrumentWithVerificationCodeRequest.SerializeToString,
+                response_deserializer=mica_dot_connect_dot_service_dot_v1_dot_connect__service__pb2.WidgetRegisterInstrumentWithVerificationCodeResponse.FromString,
                 )
         self.WidgetRegisterInstrumentInitiate = channel.unary_unary(
                 '/mica.connect.service.v1.ConnectService/WidgetRegisterInstrumentInitiate',
@@ -67,10 +73,17 @@ class ConnectServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def WidgetRegisterInstrumentInitiate(self, request, context):
+    def WidgetRegisterInstrumentWithVerificationCode(self, request, context):
         """<editor-fold desc="Instrument Operations">
 
-        Following the call from Partner to InitializeWidget, this call is the first one that the Widget makes after the
+        Initiate an enrollemt where the user has already obtained a verification code  
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def WidgetRegisterInstrumentInitiate(self, request, context):
+        """Following the call from Partner to InitializeWidget, this call is the first one that the Widget makes after the
         user has provided the necessary details to determine their identity. It returns a list of instruments that the
         user has. Called from Widget.
         """
@@ -110,6 +123,11 @@ def add_ConnectServiceServicer_to_server(servicer, server):
                     servicer.SearchServiceProvider,
                     request_deserializer=mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.FromString,
                     response_serializer=mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderResponse.SerializeToString,
+            ),
+            'WidgetRegisterInstrumentWithVerificationCode': grpc.unary_unary_rpc_method_handler(
+                    servicer.WidgetRegisterInstrumentWithVerificationCode,
+                    request_deserializer=mica_dot_connect_dot_service_dot_v1_dot_connect__service__pb2.WidgetRegisterInstrumentWithVerificationCodeRequest.FromString,
+                    response_serializer=mica_dot_connect_dot_service_dot_v1_dot_connect__service__pb2.WidgetRegisterInstrumentWithVerificationCodeResponse.SerializeToString,
             ),
             'WidgetRegisterInstrumentInitiate': grpc.unary_unary_rpc_method_handler(
                     servicer.WidgetRegisterInstrumentInitiate,
@@ -158,6 +176,23 @@ class ConnectService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.connect.service.v1.ConnectService/SearchServiceProvider',
             mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.SerializeToString,
             mica_dot_connect_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def WidgetRegisterInstrumentWithVerificationCode(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.connect.service.v1.ConnectService/WidgetRegisterInstrumentWithVerificationCode',
+            mica_dot_connect_dot_service_dot_v1_dot_connect__service__pb2.WidgetRegisterInstrumentWithVerificationCodeRequest.SerializeToString,
+            mica_dot_connect_dot_service_dot_v1_dot_connect__service__pb2.WidgetRegisterInstrumentWithVerificationCodeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

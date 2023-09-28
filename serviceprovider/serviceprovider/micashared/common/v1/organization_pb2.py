@@ -19,14 +19,15 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
-from serviceprovider.micashared.common.enums.currency.v1 import currency_pb2 as micashared_dot_common_dot_enums_dot_currency_dot_v1_dot_currency__pb2
+from serviceprovider.micashared.common.enums.barcodelocation.v1 import barcode_location_pb2 as micashared_dot_common_dot_enums_dot_barcodelocation_dot_v1_dot_barcode__location__pb2
+from serviceprovider.micashared.common.enums.barcodetype.v1 import barcode_type_pb2 as micashared_dot_common_dot_enums_dot_barcodetype_dot_v1_dot_barcode__type__pb2
 from serviceprovider.micashared.common.enums.organizationcategory.v1 import organization_category_pb2 as micashared_dot_common_dot_enums_dot_organizationcategory_dot_v1_dot_organization__category__pb2
 from serviceprovider.micashared.common.v1 import address_pb2 as micashared_dot_common_dot_v1_dot_address__pb2
+from serviceprovider.micashared.common.v1 import bank_account_detail_pb2 as micashared_dot_common_dot_v1_dot_bank__account__detail__pb2
 from serviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'micashared/common/v1/organization.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x32micashared/common/enums/currency/v1/currency.proto\x1aKmicashared/common/enums/organizationcategory/v1/organization_category.proto\x1a\"micashared/common/v1/address.proto\x1a\x17validate/validate.proto\"\xd4\x04\n\x0cOrganization\x12#\n\x10organization_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x0bpartner_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0c\n\x04name\x18\x07 \x01(\t\x12Y\n\ncategories\x18\x06 \x03(\x0e\x32\x45.micashared.common.enums.organizationcategory.v1.OrganizationCategory\x12.\n\x07\x61\x64\x64ress\x18\t \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12\x34\n\x1b\x64omestic_ach_routing_number\x18\n \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12\x39\n international_ach_routing_number\x18\x0b \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12,\n\x13wire_routing_number\x18\x0c \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x14swift_routing_number\x18\r \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x13\x62\x61nk_account_number\x18\x0e \x01(\tB\x10\xfa\x42\rr\x0b\x32\t^|\\w{14}$\"\xff\x03\n\x13LegacyConfiguration\x12<\n\x16interchange_percentage\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12=\n\x17\x64ispute_rate_percentage\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12?\n\x08\x63urrency\x18\x03 \x01(\x0e\x32-.micashared.common.enums.currency.v1.Currency\x12\x31\n\x0b\x64ispute_fee\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12=\n\x17\x64ispute_management_cost\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12<\n\x16network_membership_fee\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12=\n\x17network_transaction_fee\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12;\n\x15network_reporting_fee\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValueBR\n\x17io.micashared.common.v1B\x11OrganizationProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'micashared/common/v1/organization.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x41micashared/common/enums/barcodelocation/v1/barcode_location.proto\x1a\x39micashared/common/enums/barcodetype/v1/barcode_type.proto\x1aKmicashared/common/enums/organizationcategory/v1/organization_category.proto\x1a\"micashared/common/v1/address.proto\x1a.micashared/common/v1/bank_account_detail.proto\x1a\x17validate/validate.proto\"\x93\x05\n\x0cOrganization\x12#\n\x10organization_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x0bpartner_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0c\n\x04name\x18\x07 \x01(\t\x12Y\n\ncategories\x18\x06 \x03(\x0e\x32\x45.micashared.common.enums.organizationcategory.v1.OrganizationCategory\x12.\n\x07\x61\x64\x64ress\x18\t \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12\x42\n\x11operating_account\x18\x0f \x01(\x0b\x32\'.micashared.common.v1.BankAccountDetail\x12@\n\x0frevenue_account\x18\x10 \x01(\x0b\x32\'.micashared.common.v1.BankAccountDetail\x12S\n\x0c\x62\x61rcode_type\x18\x11 \x01(\x0e\x32\x33.micashared.common.enums.barcodetype.v1.BarcodeTypeB\x08\xfa\x42\x05\x82\x01\x02 \x00\x12_\n\x10\x62\x61rcode_location\x18\x12 \x01(\x0e\x32;.micashared.common.enums.barcodelocation.v1.BarcodeLocationB\x08\xfa\x42\x05\x82\x01\x02 \x00\x42R\n\x17io.micashared.common.v1B\x11OrganizationProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.organization_pb2', globals())
@@ -38,18 +39,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ORGANIZATION.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _ORGANIZATION.fields_by_name['partner_key']._options = None
   _ORGANIZATION.fields_by_name['partner_key']._serialized_options = b'\372B\006r\004\020\036\0302'
-  _ORGANIZATION.fields_by_name['domestic_ach_routing_number']._options = None
-  _ORGANIZATION.fields_by_name['domestic_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
-  _ORGANIZATION.fields_by_name['international_ach_routing_number']._options = None
-  _ORGANIZATION.fields_by_name['international_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
-  _ORGANIZATION.fields_by_name['wire_routing_number']._options = None
-  _ORGANIZATION.fields_by_name['wire_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
-  _ORGANIZATION.fields_by_name['swift_routing_number']._options = None
-  _ORGANIZATION.fields_by_name['swift_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
-  _ORGANIZATION.fields_by_name['bank_account_number']._options = None
-  _ORGANIZATION.fields_by_name['bank_account_number']._serialized_options = b'\372B\rr\0132\t^|\\w{14}$'
-  _ORGANIZATION._serialized_start=321
-  _ORGANIZATION._serialized_end=917
-  _LEGACYCONFIGURATION._serialized_start=920
-  _LEGACYCONFIGURATION._serialized_end=1431
+  _ORGANIZATION.fields_by_name['barcode_type']._options = None
+  _ORGANIZATION.fields_by_name['barcode_type']._serialized_options = b'\372B\005\202\001\002 \000'
+  _ORGANIZATION.fields_by_name['barcode_location']._options = None
+  _ORGANIZATION.fields_by_name['barcode_location']._serialized_options = b'\372B\005\202\001\002 \000'
+  _ORGANIZATION._serialized_start=411
+  _ORGANIZATION._serialized_end=1070
 # @@protoc_insertion_point(module_scope)

@@ -9,6 +9,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from serviceprovider.mica.serviceprovider.administration.v1 import admin_service_pb2 as mica_dot_serviceprovider_dot_administration_dot_v1_dot_admin__service__pb2
 from serviceprovider.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 from serviceprovider.micashared.common.v1 import console_user_pb2 as micashared_dot_common_dot_v1_dot_console__user__pb2
 from serviceprovider.micashared.common.v1 import external_client_pb2 as micashared_dot_common_dot_v1_dot_external__client__pb2
@@ -94,6 +95,11 @@ class ServiceProviderAdministrationServiceStub(object):
                 '/mica.serviceprovider.administration.v1.ServiceProviderAdministrationService/PingExternal',
                 request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
                 response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+                )
+        self.PingExternalWithCertificate = channel.unary_unary(
+                '/mica.serviceprovider.administration.v1.ServiceProviderAdministrationService/PingExternalWithCertificate',
+                request_serializer=mica_dot_serviceprovider_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalWithCertificateRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalWithCertificateResponse.FromString,
                 )
 
 
@@ -191,6 +197,12 @@ class ServiceProviderAdministrationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PingExternalWithCertificate(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ServiceProviderAdministrationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -263,6 +275,11 @@ def add_ServiceProviderAdministrationServiceServicer_to_server(servicer, server)
                     servicer.PingExternal,
                     request_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
                     response_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
+            ),
+            'PingExternalWithCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.PingExternalWithCertificate,
+                    request_deserializer=mica_dot_serviceprovider_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalWithCertificateRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalWithCertificateResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -510,5 +527,22 @@ class ServiceProviderAdministrationService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.administration.v1.ServiceProviderAdministrationService/PingExternal',
             micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
             micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PingExternalWithCertificate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.administration.v1.ServiceProviderAdministrationService/PingExternalWithCertificate',
+            mica_dot_serviceprovider_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalWithCertificateRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalWithCertificateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

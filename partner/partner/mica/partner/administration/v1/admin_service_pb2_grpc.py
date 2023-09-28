@@ -11,6 +11,7 @@ import grpc
 
 from partner.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 from partner.micashared.common.v1 import console_user_pb2 as micashared_dot_common_dot_v1_dot_console__user__pb2
+from partner.micashared.common.v1 import data_extraction_pb2 as micashared_dot_common_dot_v1_dot_data__extraction__pb2
 from partner.micashared.common.v1 import external_client_pb2 as micashared_dot_common_dot_v1_dot_external__client__pb2
 from partner.micashared.common.v1 import mtls_certificate_pb2 as micashared_dot_common_dot_v1_dot_mtls__certificate__pb2
 
@@ -89,6 +90,11 @@ class PartnerAdministrationServiceStub(object):
                 '/mica.partner.administration.v1.PartnerAdministrationService/SearchExternalClientMTLSCertificate',
                 request_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateRequest.SerializeToString,
                 response_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateResponse.FromString,
+                )
+        self.SearchDataExtractionStatistics = channel.unary_unary(
+                '/mica.partner.administration.v1.PartnerAdministrationService/SearchDataExtractionStatistics',
+                request_serializer=micashared_dot_common_dot_v1_dot_data__extraction__pb2.SearchDataExtractionRequest.SerializeToString,
+                response_deserializer=micashared_dot_common_dot_v1_dot_data__extraction__pb2.SearchDataExtractionResponse.FromString,
                 )
         self.PingExternal = channel.unary_unary(
                 '/mica.partner.administration.v1.PartnerAdministrationService/PingExternal',
@@ -184,6 +190,12 @@ class PartnerAdministrationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SearchDataExtractionStatistics(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def PingExternal(self, request, context):
         """tests the external call to verify proper configuration and connectivity
         """
@@ -258,6 +270,11 @@ def add_PartnerAdministrationServiceServicer_to_server(servicer, server):
                     servicer.SearchExternalClientMTLSCertificate,
                     request_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateRequest.FromString,
                     response_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateResponse.SerializeToString,
+            ),
+            'SearchDataExtractionStatistics': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchDataExtractionStatistics,
+                    request_deserializer=micashared_dot_common_dot_v1_dot_data__extraction__pb2.SearchDataExtractionRequest.FromString,
+                    response_serializer=micashared_dot_common_dot_v1_dot_data__extraction__pb2.SearchDataExtractionResponse.SerializeToString,
             ),
             'PingExternal': grpc.unary_unary_rpc_method_handler(
                     servicer.PingExternal,
@@ -493,6 +510,23 @@ class PartnerAdministrationService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.administration.v1.PartnerAdministrationService/SearchExternalClientMTLSCertificate',
             micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateRequest.SerializeToString,
             micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SearchDataExtractionStatistics(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.administration.v1.PartnerAdministrationService/SearchDataExtractionStatistics',
+            micashared_dot_common_dot_v1_dot_data__extraction__pb2.SearchDataExtractionRequest.SerializeToString,
+            micashared_dot_common_dot_v1_dot_data__extraction__pb2.SearchDataExtractionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

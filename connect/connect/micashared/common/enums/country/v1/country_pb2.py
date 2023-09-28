@@ -20,7 +20,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0micashared/common/enums/country/v1/country.proto\x12\"micashared.common.enums.country.v1*2\n\x07\x43ountry\x12\x17\n\x13\x43OUNTRY_UNSPECIFIED\x10\x00\x12\x0e\n\nCOUNTRY_US\x10\x01\x42[\n\x1dio.micashared.common.enums.v1B\x10\x43ountryEnumProtoZ!micashared/common/enums/countryv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0micashared/common/enums/country/v1/country.proto\x12\"micashared.common.enums.country.v1*B\n\x07\x43ountry\x12\x17\n\x13\x43OUNTRY_UNSPECIFIED\x10\x00\x12\x0e\n\nCOUNTRY_US\x10\x01\x12\x0e\n\nCOUNTRY_JM\x10\x02\x42[\n\x1dio.micashared.common.enums.v1B\x10\x43ountryEnumProtoZ!micashared/common/enums/countryv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.enums.country.v1.country_pb2', globals())
@@ -29,5 +29,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035io.micashared.common.enums.v1B\020CountryEnumProtoZ!micashared/common/enums/countryv1\242\002\004MICA'
   _COUNTRY._serialized_start=88
-  _COUNTRY._serialized_end=138
+  _COUNTRY._serialized_end=154
 # @@protoc_insertion_point(module_scope)

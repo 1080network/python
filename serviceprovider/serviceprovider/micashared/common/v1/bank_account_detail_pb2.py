@@ -18,10 +18,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from serviceprovider.micashared.common.enums.custodialbank.v1 import custodial_bank_pb2 as micashared_dot_common_dot_enums_dot_custodialbank_dot_v1_dot_custodial__bank__pb2
 from serviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.micashared/common/v1/bank_account_detail.proto\x12\x14micashared.common.v1\x1a\x17validate/validate.proto\"\x90\x02\n\x11\x42\x61nkAccountDetail\x12\x34\n\x1b\x64omestic_ach_routing_number\x18\x01 \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12\x39\n international_ach_routing_number\x18\x02 \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12,\n\x13wire_routing_number\x18\x03 \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x14swift_routing_number\x18\x04 \x01(\tB\x0f\xfa\x42\x0cr\n2\x08^|\\w{9}$\x12-\n\x13\x62\x61nk_account_number\x18\x05 \x01(\tB\x10\xfa\x42\rr\x0b\x32\t^|\\w{14}$BW\n\x17io.micashared.common.v1B\x16\x42\x61nkAccountDetailProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.micashared/common/v1/bank_account_detail.proto\x12\x14micashared.common.v1\x1a=micashared/common/enums/custodialbank/v1/custodial_bank.proto\x1a\x17validate/validate.proto\"\x9d\x01\n\x11\x42\x61nkAccountDetail\x12O\n\x0e\x63ustodial_bank\x18\x06 \x01(\x0e\x32\x37.micashared.common.enums.custodialbank.v1.CustodialBank\x12\x17\n\x04\x62\x61nk\x18\x08 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\x12\x1e\n\x0b\x61\x63\x63ount_ref\x18\x07 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x32\"\x8d\x01\n\x17\x42\x61nkAccountDetailSearch\x12O\n\x0e\x63ustodial_bank\x18\x01 \x01(\x0e\x32\x37.micashared.common.enums.custodialbank.v1.CustodialBank\x12\x0c\n\x04\x62\x61nk\x18\x02 \x01(\t\x12\x13\n\x0b\x61\x63\x63ount_ref\x18\x03 \x01(\tBW\n\x17io.micashared.common.v1B\x16\x42\x61nkAccountDetailProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.bank_account_detail_pb2', globals())
@@ -29,16 +30,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027io.micashared.common.v1B\026BankAccountDetailProtoZ\035micashared/common/v1;commonv1\242\002\004MICA'
-  _BANKACCOUNTDETAIL.fields_by_name['domestic_ach_routing_number']._options = None
-  _BANKACCOUNTDETAIL.fields_by_name['domestic_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
-  _BANKACCOUNTDETAIL.fields_by_name['international_ach_routing_number']._options = None
-  _BANKACCOUNTDETAIL.fields_by_name['international_ach_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
-  _BANKACCOUNTDETAIL.fields_by_name['wire_routing_number']._options = None
-  _BANKACCOUNTDETAIL.fields_by_name['wire_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
-  _BANKACCOUNTDETAIL.fields_by_name['swift_routing_number']._options = None
-  _BANKACCOUNTDETAIL.fields_by_name['swift_routing_number']._serialized_options = b'\372B\014r\n2\010^|\\w{9}$'
-  _BANKACCOUNTDETAIL.fields_by_name['bank_account_number']._options = None
-  _BANKACCOUNTDETAIL.fields_by_name['bank_account_number']._serialized_options = b'\372B\rr\0132\t^|\\w{14}$'
-  _BANKACCOUNTDETAIL._serialized_start=98
-  _BANKACCOUNTDETAIL._serialized_end=370
+  _BANKACCOUNTDETAIL.fields_by_name['bank']._options = None
+  _BANKACCOUNTDETAIL.fields_by_name['bank']._serialized_options = b'\372B\006r\004\020\001\030d'
+  _BANKACCOUNTDETAIL.fields_by_name['account_ref']._options = None
+  _BANKACCOUNTDETAIL.fields_by_name['account_ref']._serialized_options = b'\372B\006r\004\020\001\0302'
+  _BANKACCOUNTDETAIL._serialized_start=161
+  _BANKACCOUNTDETAIL._serialized_end=318
+  _BANKACCOUNTDETAILSEARCH._serialized_start=321
+  _BANKACCOUNTDETAILSEARCH._serialized_end=462
 # @@protoc_insertion_point(module_scope)
