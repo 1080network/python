@@ -19,11 +19,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from serviceprovider.micashared.common.enums.ageband.v1 import age_band_pb2 as micashared_dot_common_dot_enums_dot_ageband_dot_v1_dot_age__band__pb2
 from serviceprovider.micashared.common.v1 import address_pb2 as micashared_dot_common_dot_v1_dot_address__pb2
-from serviceprovider.micashared.common.v1 import date_pb2 as micashared_dot_common_dot_v1_dot_date__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fmicashared/common/v1/user.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\"micashared/common/v1/address.proto\x1a\x1fmicashared/common/v1/date.proto\"\xb4\x01\n\x0fUserDemographic\x12\x12\n\nfirst_name\x18\x01 \x01(\t\x12\x11\n\tlast_name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12.\n\x07\x61\x64\x64ress\x18\x04 \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12,\n\x08\x62irthday\x18\x05 \x01(\x0b\x32\x1a.micashared.common.v1.Date\x12\r\n\x05phone\x18\x06 \x01(\t\"\xb2\x01\n\x04User\x12\x0f\n\x07version\x18\x01 \x01(\x03\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12?\n\x10user_demographic\x18\x04 \x01(\x0b\x32%.micashared.common.v1.UserDemographicBJ\n\x17io.micashared.common.v1B\tUserProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fmicashared/common/v1/user.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x31micashared/common/enums/ageband/v1/age_band.proto\x1a\"micashared/common/v1/address.proto\"\xc5\x01\n\x0fUserDemographic\x12\x12\n\nfirst_name\x18\x01 \x01(\t\x12\x11\n\tlast_name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12.\n\x07\x61\x64\x64ress\x18\x04 \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12=\n\x08\x61ge_band\x18\x07 \x01(\x0e\x32+.micashared.common.enums.ageband.v1.AgeBand\x12\r\n\x05phone\x18\x06 \x01(\t\"\xb2\x01\n\x04User\x12\x0f\n\x07version\x18\x01 \x01(\x03\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12?\n\x10user_demographic\x18\x04 \x01(\x0b\x32%.micashared.common.v1.UserDemographicBJ\n\x17io.micashared.common.v1B\tUserProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.user_pb2', globals())
@@ -31,8 +31,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027io.micashared.common.v1B\tUserProtoZ\035micashared/common/v1;commonv1\242\002\004MICA'
-  _USERDEMOGRAPHIC._serialized_start=160
-  _USERDEMOGRAPHIC._serialized_end=340
-  _USER._serialized_start=343
-  _USER._serialized_end=521
+  _USERDEMOGRAPHIC._serialized_start=178
+  _USERDEMOGRAPHIC._serialized_end=375
+  _USER._serialized_start=378
+  _USER._serialized_end=556
 # @@protoc_insertion_point(module_scope)
