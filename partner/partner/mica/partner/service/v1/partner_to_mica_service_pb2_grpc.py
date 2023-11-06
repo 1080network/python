@@ -14,7 +14,6 @@ from partner.mica.partner.organization.v1 import organization_pb2 as mica_dot_pa
 from partner.mica.partner.partner.v1 import partner_pb2 as mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2
 from partner.mica.partner.serviceprovider.v1 import service_provider_pb2 as mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2
 from partner.mica.partner.store.v1 import store_pb2 as mica_dot_partner_dot_store_dot_v1_dot_store__pb2
-from partner.mica.partner.transaction.v1 import transaction_pb2 as mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2
 from partner.mica.partner.uuek.v1 import uuek_pb2 as mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2
 from partner.mica.partner.value.v1 import value_pb2 as mica_dot_partner_dot_value_dot_v1_dot_value__pb2
 from partner.mica.partner.widget.v1 import widget_pb2 as mica_dot_partner_dot_widget_dot_v1_dot_widget__pb2
@@ -35,6 +34,11 @@ class PartnerToMicaServiceStub(object):
                 '/mica.partner.service.v1.PartnerToMicaService/GetPartner',
                 request_serializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerResponse.FromString,
+                )
+        self.CreateOrganization = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/CreateOrganization',
+                request_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.CreateOrganizationRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.CreateOrganizationResponse.FromString,
                 )
         self.GetOrganization = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/GetOrganization',
@@ -141,21 +145,6 @@ class PartnerToMicaServiceStub(object):
                 request_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyResponse.FromString,
                 )
-        self.SearchTransactionData = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/SearchTransactionData',
-                request_serializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataResponse.FromString,
-                )
-        self.SearchTransactionGeographyData = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/SearchTransactionGeographyData',
-                request_serializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataResponse.FromString,
-                )
-        self.SearchTransactionServiceProviderData = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/SearchTransactionServiceProviderData',
-                request_serializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionServiceProviderDataRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionServiceProviderDataResponse.FromString,
-                )
 
 
 class PartnerToMicaServiceServicer(object):
@@ -169,11 +158,17 @@ class PartnerToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetOrganization(self, request, context):
+    def CreateOrganization(self, request, context):
         """<editor-fold desc="Organization Operations">
 
         Retrieve an organization based on it's key.
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetOrganization(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -327,26 +322,6 @@ class PartnerToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SearchTransactionData(self, request, context):
-        """<editor-fold desc="Dashboard Operations">
-
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SearchTransactionGeographyData(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SearchTransactionServiceProviderData(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_PartnerToMicaServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -354,6 +329,11 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     servicer.GetPartner,
                     request_deserializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerRequest.FromString,
                     response_serializer=mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerResponse.SerializeToString,
+            ),
+            'CreateOrganization': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateOrganization,
+                    request_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.CreateOrganizationRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.CreateOrganizationResponse.SerializeToString,
             ),
             'GetOrganization': grpc.unary_unary_rpc_method_handler(
                     servicer.GetOrganization,
@@ -460,21 +440,6 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyRequest.FromString,
                     response_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyResponse.SerializeToString,
             ),
-            'SearchTransactionData': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchTransactionData,
-                    request_deserializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataResponse.SerializeToString,
-            ),
-            'SearchTransactionGeographyData': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchTransactionGeographyData,
-                    request_deserializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataResponse.SerializeToString,
-            ),
-            'SearchTransactionServiceProviderData': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchTransactionServiceProviderData,
-                    request_deserializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionServiceProviderDataRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionServiceProviderDataResponse.SerializeToString,
-            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'mica.partner.service.v1.PartnerToMicaService', rpc_method_handlers)
@@ -500,6 +465,23 @@ class PartnerToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/GetPartner',
             mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerRequest.SerializeToString,
             mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2.GetPartnerResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateOrganization(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/CreateOrganization',
+            mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.CreateOrganizationRequest.SerializeToString,
+            mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.CreateOrganizationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -857,56 +839,5 @@ class PartnerToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ExchangeSessionKey',
             mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyRequest.SerializeToString,
             mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchTransactionData(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/SearchTransactionData',
-            mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataRequest.SerializeToString,
-            mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionDataResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchTransactionGeographyData(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/SearchTransactionGeographyData',
-            mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataRequest.SerializeToString,
-            mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionGeographyDataResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchTransactionServiceProviderData(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/SearchTransactionServiceProviderData',
-            mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionServiceProviderDataRequest.SerializeToString,
-            mica_dot_partner_dot_transaction_dot_v1_dot_transaction__pb2.SearchTransactionServiceProviderDataResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

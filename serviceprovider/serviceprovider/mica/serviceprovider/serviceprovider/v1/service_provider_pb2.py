@@ -24,7 +24,7 @@ from serviceprovider.micashared.common.v1 import error_pb2 as micashared_dot_com
 from serviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n>mica/serviceprovider/serviceprovider/v1/service_provider.proto\x12\'mica.serviceprovider.serviceprovider.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.micashared/common/v1/bank_account_detail.proto\x1a micashared/common/v1/error.proto\x1a\x17validate/validate.proto\"\xe0\x02\n\x0fServiceProvider\x12\'\n\x14service_provider_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x1c\n\x14service_provider_url\x18\x06 \x01(\t\x12\x42\n\x11operating_account\x18\x08 \x01(\x0b\x32\'.micashared.common.v1.BankAccountDetail\x12@\n\x0frevenue_account\x18\t \x01(\x0b\x32\'.micashared.common.v1.BankAccountDetail\"\x1b\n\x19GetServiceProviderRequest\"\xd6\x02\n\x1aGetServiceProviderResponse\x12Z\n\x06status\x18\x01 \x01(\x0e\x32J.mica.serviceprovider.serviceprovider.v1.GetServiceProviderResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12R\n\x10service_provider\x18\x03 \x01(\x0b\x32\x38.mica.serviceprovider.serviceprovider.v1.ServiceProvider\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42q\n*io.mica.serviceprovider.serviceprovider.v1B\x14ServiceProviderProtoZ&mica/serviceprovider/serviceproviderv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n>mica/serviceprovider/serviceprovider/v1/service_provider.proto\x12\'mica.serviceprovider.serviceprovider.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.micashared/common/v1/bank_account_detail.proto\x1a micashared/common/v1/error.proto\x1a\x17validate/validate.proto\"\x82\x03\n\x0fServiceProvider\x12\'\n\x14service_provider_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x1c\n\x14service_provider_url\x18\x06 \x01(\t\x12\x42\n\x11operating_account\x18\x08 \x01(\x0b\x32\'.micashared.common.v1.BankAccountDetail\x12@\n\x0frevenue_account\x18\t \x01(\x0b\x32\'.micashared.common.v1.BankAccountDetail\x12 \n\x18mica_infra_notify_emails\x18\n \x01(\t\"\x1b\n\x19GetServiceProviderRequest\"\xd6\x02\n\x1aGetServiceProviderResponse\x12Z\n\x06status\x18\x01 \x01(\x0e\x32J.mica.serviceprovider.serviceprovider.v1.GetServiceProviderResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12R\n\x10service_provider\x18\x03 \x01(\x0b\x32\x38.mica.serviceprovider.serviceprovider.v1.ServiceProvider\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42q\n*io.mica.serviceprovider.serviceprovider.v1B\x14ServiceProviderProtoZ&mica/serviceprovider/serviceproviderv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.serviceprovider.serviceprovider.v1.service_provider_pb2', globals())
@@ -37,11 +37,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SERVICEPROVIDER.fields_by_name['version']._options = None
   _SERVICEPROVIDER.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _SERVICEPROVIDER._serialized_start=248
-  _SERVICEPROVIDER._serialized_end=600
-  _GETSERVICEPROVIDERREQUEST._serialized_start=602
-  _GETSERVICEPROVIDERREQUEST._serialized_end=629
-  _GETSERVICEPROVIDERRESPONSE._serialized_start=632
-  _GETSERVICEPROVIDERRESPONSE._serialized_end=974
-  _GETSERVICEPROVIDERRESPONSE_STATUS._serialized_start=882
-  _GETSERVICEPROVIDERRESPONSE_STATUS._serialized_end=974
+  _SERVICEPROVIDER._serialized_end=634
+  _GETSERVICEPROVIDERREQUEST._serialized_start=636
+  _GETSERVICEPROVIDERREQUEST._serialized_end=663
+  _GETSERVICEPROVIDERRESPONSE._serialized_start=666
+  _GETSERVICEPROVIDERRESPONSE._serialized_end=1008
+  _GETSERVICEPROVIDERRESPONSE_STATUS._serialized_start=916
+  _GETSERVICEPROVIDERRESPONSE_STATUS._serialized_end=1008
 # @@protoc_insertion_point(module_scope)

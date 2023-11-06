@@ -24,7 +24,7 @@ from discount.micashared.common.v1 import error_pb2 as micashared_dot_common_dot
 from discount.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n9mica/discount/discountprovider/v1/discount_provider.proto\x12!mica.discount.discountprovider.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\"micashared/common/v1/address.proto\x1a micashared/common/v1/error.proto\x1a\x17validate/validate.proto\"\xaf\x02\n\x10\x44iscountProvider\x12(\n\x15\x64iscount_provider_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1b\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\x04name\x18\x05 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12.\n\x07\x61\x64\x64ress\x18\x07 \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x08 \x01(\t\x12\r\n\x05\x65mail\x18\t \x01(\t\x12\r\n\x05phone\x18\n \x01(\t\"\x1c\n\x1aGetDiscountProviderRequest\"\xce\x02\n\x1bGetDiscountProviderResponse\x12U\n\x06status\x18\x01 \x01(\x0e\x32\x45.mica.discount.discountprovider.v1.GetDiscountProviderResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12N\n\x11\x64iscount_provider\x18\x03 \x01(\x0b\x32\x33.mica.discount.discountprovider.v1.DiscountProvider\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xb8\x01\n\x1dUpdateDiscountProviderRequest\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12\x15\n\x04name\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12.\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12\r\n\x05phone\x18\x06 \x01(\t\"\x9e\x02\n\x1eUpdateDiscountProviderResponse\x12X\n\x06status\x18\x01 \x01(\x0e\x32H.mica.discount.discountprovider.v1.UpdateDiscountProviderResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42\x66\n$io.mica.discount.discountprovider.v1B\x15\x44iscountProviderProtoZ mica/discount/discountproviderv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n9mica/discount/discountprovider/v1/discount_provider.proto\x12!mica.discount.discountprovider.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\"micashared/common/v1/address.proto\x1a micashared/common/v1/error.proto\x1a\x17validate/validate.proto\"\xcd\x02\n\x10\x44iscountProvider\x12(\n\x15\x64iscount_provider_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1b\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\x04name\x18\x05 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12.\n\x07\x61\x64\x64ress\x18\x07 \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x08 \x01(\t\x12\r\n\x05\x65mail\x18\t \x01(\t\x12+\n\x05phone\x18\n \x01(\tB\x1c\xfa\x42\x19r\x17\x32\x15^$|^\\+[1-9]\\d{10,14}$\"\x1c\n\x1aGetDiscountProviderRequest\"\xce\x02\n\x1bGetDiscountProviderResponse\x12U\n\x06status\x18\x01 \x01(\x0e\x32\x45.mica.discount.discountprovider.v1.GetDiscountProviderResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12N\n\x11\x64iscount_provider\x18\x03 \x01(\x0b\x32\x33.mica.discount.discountprovider.v1.DiscountProvider\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xd6\x01\n\x1dUpdateDiscountProviderRequest\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12\x15\n\x04name\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12.\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12\x18\n\x10\x63\x61llback_address\x18\x04 \x01(\t\x12\r\n\x05\x65mail\x18\x05 \x01(\t\x12+\n\x05phone\x18\x06 \x01(\tB\x1c\xfa\x42\x19r\x17\x32\x15^$|^\\+[1-9]\\d{10,14}$\"\x9e\x02\n\x1eUpdateDiscountProviderResponse\x12X\n\x06status\x18\x01 \x01(\x0e\x32H.mica.discount.discountprovider.v1.UpdateDiscountProviderResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42\x66\n$io.mica.discount.discountprovider.v1B\x15\x44iscountProviderProtoZ mica/discount/discountproviderv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.discount.discountprovider.v1.discount_provider_pb2', globals())
@@ -38,24 +38,28 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DISCOUNTPROVIDER.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _DISCOUNTPROVIDER.fields_by_name['name']._options = None
   _DISCOUNTPROVIDER.fields_by_name['name']._serialized_options = b'\372B\004r\002\030d'
+  _DISCOUNTPROVIDER.fields_by_name['phone']._options = None
+  _DISCOUNTPROVIDER.fields_by_name['phone']._serialized_options = b'\372B\031r\0272\025^$|^\\+[1-9]\\d{10,14}$'
   _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['version']._options = None
   _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['name']._options = None
   _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['name']._serialized_options = b'\372B\004r\002\030d'
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['phone']._options = None
+  _UPDATEDISCOUNTPROVIDERREQUEST.fields_by_name['phone']._serialized_options = b'\372B\031r\0272\025^$|^\\+[1-9]\\d{10,14}$'
   _UPDATEDISCOUNTPROVIDERRESPONSE.fields_by_name['version']._options = None
   _UPDATEDISCOUNTPROVIDERRESPONSE.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _DISCOUNTPROVIDER._serialized_start=225
-  _DISCOUNTPROVIDER._serialized_end=528
-  _GETDISCOUNTPROVIDERREQUEST._serialized_start=530
-  _GETDISCOUNTPROVIDERREQUEST._serialized_end=558
-  _GETDISCOUNTPROVIDERRESPONSE._serialized_start=561
-  _GETDISCOUNTPROVIDERRESPONSE._serialized_end=895
-  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=803
-  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=895
-  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_start=898
-  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_end=1082
-  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_start=1085
-  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_end=1371
-  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=803
-  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=895
+  _DISCOUNTPROVIDER._serialized_end=558
+  _GETDISCOUNTPROVIDERREQUEST._serialized_start=560
+  _GETDISCOUNTPROVIDERREQUEST._serialized_end=588
+  _GETDISCOUNTPROVIDERRESPONSE._serialized_start=591
+  _GETDISCOUNTPROVIDERRESPONSE._serialized_end=925
+  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=833
+  _GETDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=925
+  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_start=928
+  _UPDATEDISCOUNTPROVIDERREQUEST._serialized_end=1142
+  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_start=1145
+  _UPDATEDISCOUNTPROVIDERRESPONSE._serialized_end=1431
+  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_start=833
+  _UPDATEDISCOUNTPROVIDERRESPONSE_STATUS._serialized_end=925
 # @@protoc_insertion_point(module_scope)

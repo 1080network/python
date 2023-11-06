@@ -24,7 +24,7 @@ from partner.micashared.common.v1 import user_pb2 as micashared_dot_common_dot_v
 from partner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fmica/partner/user/v1/user.proto\x12\x14mica.partner.user.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a micashared/common/v1/error.proto\x1a\x1fmicashared/common/v1/user.proto\x1a\x17validate/validate.proto\"\xd8\x01\n\x04User\x12\x1b\n\x08user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12?\n\x10user_demographic\x18\x05 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\"\x7f\n\x1b\x45nrollUserInstrumentRequest\x12\x1f\n\x0cpartner_uuek\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12?\n\x10user_demographic\x18\x02 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\"\xf2\x02\n\x1c\x45nrollUserInstrumentResponse\x12I\n\x06status\x18\x01 \x01(\x0e\x32\x39.mica.partner.user.v1.EnrollUserInstrumentResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x1e\n\x16partner_instrument_ref\x18\x03 \x01(\t\"\xba\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1b\n\x17STATUS_PARTIAL_APPROVAL\x10\x03\x12\x1d\n\x19STATUS_INSUFFICIENT_VALUE\x10\x04\x12\x1e\n\x1aSTATUS_INELIGIBLE_PRODUCTS\x10\x05\x12\x16\n\x12STATUS_USER_CLOSED\x10\x06\x42@\n\x17io.mica.partner.user.v1B\tUserProtoZ\x13mica/partner/userv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fmica/partner/user/v1/user.proto\x12\x14mica.partner.user.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a micashared/common/v1/error.proto\x1a\x1fmicashared/common/v1/user.proto\x1a\x17validate/validate.proto\"\xd8\x01\n\x04User\x12\x1b\n\x08user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x18\n\x07version\x18\x02 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12?\n\x10user_demographic\x18\x05 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\"\x7f\n\x1b\x45nrollUserInstrumentRequest\x12\x1f\n\x0cpartner_uuek\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12?\n\x10user_demographic\x18\x02 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\"\xc1\x03\n\x1c\x45nrollUserInstrumentResponse\x12I\n\x06status\x18\x01 \x01(\x0e\x32\x39.mica.partner.user.v1.EnrollUserInstrumentResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12!\n\x10partner_user_ref\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\'\n\x16partner_instrument_ref\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12!\n\x10partner_uuek_ref\x18\x05 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\"\xba\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1b\n\x17STATUS_PARTIAL_APPROVAL\x10\x03\x12\x1d\n\x19STATUS_INSUFFICIENT_VALUE\x10\x04\x12\x1e\n\x1aSTATUS_INELIGIBLE_PRODUCTS\x10\x05\x12\x16\n\x12STATUS_USER_CLOSED\x10\x06\x42@\n\x17io.mica.partner.user.v1B\tUserProtoZ\x13mica/partner/userv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.partner.user.v1.user_pb2', globals())
@@ -38,12 +38,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _USER.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
   _ENROLLUSERINSTRUMENTREQUEST.fields_by_name['partner_uuek']._options = None
   _ENROLLUSERINSTRUMENTREQUEST.fields_by_name['partner_uuek']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _ENROLLUSERINSTRUMENTRESPONSE.fields_by_name['partner_user_ref']._options = None
+  _ENROLLUSERINSTRUMENTRESPONSE.fields_by_name['partner_user_ref']._serialized_options = b'\372B\004r\002\030d'
+  _ENROLLUSERINSTRUMENTRESPONSE.fields_by_name['partner_instrument_ref']._options = None
+  _ENROLLUSERINSTRUMENTRESPONSE.fields_by_name['partner_instrument_ref']._serialized_options = b'\372B\004r\002\030d'
+  _ENROLLUSERINSTRUMENTRESPONSE.fields_by_name['partner_uuek_ref']._options = None
+  _ENROLLUSERINSTRUMENTRESPONSE.fields_by_name['partner_uuek_ref']._serialized_options = b'\372B\004r\002\030d'
   _USER._serialized_start=183
   _USER._serialized_end=399
   _ENROLLUSERINSTRUMENTREQUEST._serialized_start=401
   _ENROLLUSERINSTRUMENTREQUEST._serialized_end=528
   _ENROLLUSERINSTRUMENTRESPONSE._serialized_start=531
-  _ENROLLUSERINSTRUMENTRESPONSE._serialized_end=901
-  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_start=715
-  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_end=901
+  _ENROLLUSERINSTRUMENTRESPONSE._serialized_end=980
+  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_start=794
+  _ENROLLUSERINSTRUMENTRESPONSE_STATUS._serialized_end=980
 # @@protoc_insertion_point(module_scope)

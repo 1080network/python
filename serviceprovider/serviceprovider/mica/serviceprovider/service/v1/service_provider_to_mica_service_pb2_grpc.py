@@ -97,6 +97,11 @@ class ServiceProviderToMicaServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINResponse.FromString,
                 )
+        self.ValidatePIN = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ValidatePIN',
+                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINResponse.FromString,
+                )
         self.ResetPIN = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ResetPIN',
                 request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ResetPINRequest.SerializeToString,
@@ -253,6 +258,12 @@ class ServiceProviderToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ValidatePIN(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ResetPIN(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -390,6 +401,11 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
                     servicer.SetPIN,
                     request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINResponse.SerializeToString,
+            ),
+            'ValidatePIN': grpc.unary_unary_rpc_method_handler(
+                    servicer.ValidatePIN,
+                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINResponse.SerializeToString,
             ),
             'ResetPIN': grpc.unary_unary_rpc_method_handler(
                     servicer.ResetPIN,
@@ -654,6 +670,23 @@ class ServiceProviderToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SetPIN',
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINRequest.SerializeToString,
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ValidatePIN(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ValidatePIN',
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

@@ -23,7 +23,7 @@ from serviceprovider.micashared.common.v1 import address_pb2 as micashared_dot_c
 from serviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n micashared/common/v1/store.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\"micashared/common/v1/address.proto\x1a\x17validate/validate.proto\"\xd3\x02\n\x05Store\x12\x1c\n\tstore_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x0bpartner_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12#\n\x10organization_key\x18\x06 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x11\n\tstore_ref\x18\x07 \x01(\t\x12\x14\n\x0cstore_number\x18\x08 \x01(\t\x12.\n\x07\x61\x64\x64ress\x18\t \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12\x10\n\x08latitude\x18\n \x01(\x01\x12\x11\n\tlongitude\x18\x0b \x01(\x01\x42K\n\x17io.micashared.common.v1B\nStoreProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n micashared/common/v1/store.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\"micashared/common/v1/address.proto\x1a\x17validate/validate.proto\"\x83\x03\n\x05Store\x12\x1c\n\tstore_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12+\n\x07\x63reated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\x0bpartner_key\x18\x05 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12#\n\x10organization_key\x18\x06 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12#\n\x10organization_ref\x18\x0c \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\x12\x1c\n\tstore_ref\x18\x07 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\x12\x14\n\x0cstore_number\x18\x08 \x01(\t\x12.\n\x07\x61\x64\x64ress\x18\t \x01(\x0b\x32\x1d.micashared.common.v1.Address\x12\x10\n\x08latitude\x18\n \x01(\x01\x12\x11\n\tlongitude\x18\x0b \x01(\x01\x42K\n\x17io.micashared.common.v1B\nStoreProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.store_pb2', globals())
@@ -37,6 +37,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _STORE.fields_by_name['partner_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _STORE.fields_by_name['organization_key']._options = None
   _STORE.fields_by_name['organization_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _STORE.fields_by_name['organization_ref']._options = None
+  _STORE.fields_by_name['organization_ref']._serialized_options = b'\372B\006r\004\020\001\030d'
+  _STORE.fields_by_name['store_ref']._options = None
+  _STORE.fields_by_name['store_ref']._serialized_options = b'\372B\006r\004\020\001\030d'
   _STORE._serialized_start=153
-  _STORE._serialized_end=492
+  _STORE._serialized_end=540
 # @@protoc_insertion_point(module_scope)
