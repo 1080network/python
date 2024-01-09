@@ -38,6 +38,26 @@ class ServiceProviderToMicaWIPServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKResponse.FromString,
                 )
+        self.SetPIN = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SetPIN',
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINResponse.FromString,
+                )
+        self.ValidatePIN = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ValidatePIN',
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ValidatePINRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ValidatePINResponse.FromString,
+                )
+        self.ResetPIN = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ResetPIN',
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ResetPINRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ResetPINResponse.FromString,
+                )
+        self.RemovePIN = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/RemovePIN',
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINResponse.FromString,
+                )
         self.ProvisionEnrollmentValidationCode = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ProvisionEnrollmentValidationCode',
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeRequest.SerializeToString,
@@ -69,8 +89,34 @@ class ServiceProviderToMicaWIPServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetPIN(self, request, context):
+        """<editor-fold desc="PIN Operations">
+
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ValidatePIN(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResetPIN(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemovePIN(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ProvisionEnrollmentValidationCode(self, request, context):
-        """<editor-fold desc="Service Provider intiated enrollment authentication">
+        """<editor-fold desc="Service Provider initiated enrollment authentication">
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -93,6 +139,26 @@ def add_ServiceProviderToMicaWIPServiceServicer_to_server(servicer, server):
                     servicer.GetServiceProviderUUEK,
                     request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKResponse.SerializeToString,
+            ),
+            'SetPIN': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetPIN,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINResponse.SerializeToString,
+            ),
+            'ValidatePIN': grpc.unary_unary_rpc_method_handler(
+                    servicer.ValidatePIN,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ValidatePINRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ValidatePINResponse.SerializeToString,
+            ),
+            'ResetPIN': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResetPIN,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ResetPINRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ResetPINResponse.SerializeToString,
+            ),
+            'RemovePIN': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemovePIN,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINResponse.SerializeToString,
             ),
             'ProvisionEnrollmentValidationCode': grpc.unary_unary_rpc_method_handler(
                     servicer.ProvisionEnrollmentValidationCode,
@@ -159,6 +225,74 @@ class ServiceProviderToMicaWIPService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/GetServiceProviderUUEK',
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKRequest.SerializeToString,
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetPIN(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SetPIN',
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ValidatePIN(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ValidatePIN',
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ValidatePINRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ValidatePINResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ResetPIN(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ResetPIN',
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ResetPINRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ResetPINResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemovePIN(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/RemovePIN',
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

@@ -120,15 +120,25 @@ class PartnerToMicaServiceStub(object):
                 request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.FromString,
                 )
-        self.SearchValue = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/SearchValue',
-                request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.FromString,
-                )
         self.GetValue = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/GetValue',
                 request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
+                )
+        self.HoldValue = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/HoldValue',
+                request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.FromString,
+                )
+        self.ReleaseHoldValue = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/ReleaseHoldValue',
+                request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueResponse.FromString,
+                )
+        self.ObtainHoldValue = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/ObtainHoldValue',
+                request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.FromString,
                 )
         self.Ping = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/Ping',
@@ -161,14 +171,15 @@ class PartnerToMicaServiceServicer(object):
     def CreateOrganization(self, request, context):
         """<editor-fold desc="Organization Operations">
 
-        Retrieve an organization based on it's key.
+        A method to create an organization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetOrganization(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve an organization based on it's key or ref.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -236,7 +247,7 @@ class PartnerToMicaServiceServicer(object):
     def RemoveUUEK(self, request, context):
         """<editor-fold desc="UUEK Operations">
 
-        When a user no longer wishes to use their UUEKs this operation can remove them from mica.
+        When a user no longer wishes to use their UUEKs this method can remove them from mica.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -259,42 +270,57 @@ class PartnerToMicaServiceServicer(object):
     def ObtainValue(self, request, context):
         """<editor-fold desc="Value Operations">
 
-        An operation to obtain value from a user in order to pay for goods or services rendered to the user.
+        A method to obtain value from a user in order to pay for goods or services rendered to the user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ReverseObtainValue(self, request, context):
-        """An operation to reverse obtain value, including transaction fees and discounts for a given transaction
+        """A method to reverse obtain value, including transaction fees and discounts for a given transaction
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ReturnValue(self, request, context):
-        """An operation to return value to a user in order to refund them for goods or services.
+        """A method to return value to a user in order to refund them for goods or services.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ReverseReturnValue(self, request, context):
-        """An operation to reverse return value for a given transaction
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SearchValue(self, request, context):
-        """An operation to search for Value operations either Obtain or Return that the Partner has requested of mica.
+        """A method to reverse return value for a given transaction
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetValue(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """A method to retrieve a value transaction
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def HoldValue(self, request, context):
+        """A method to hold some value to be obtained at a later date via ObtainHoldValue
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReleaseHoldValue(self, request, context):
+        """A method to release previously held value
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ObtainHoldValue(self, request, context):
+        """A method to obtain value that was previously held
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -302,7 +328,7 @@ class PartnerToMicaServiceServicer(object):
     def Ping(self, request, context):
         """<editor-fold desc="Admin Operations">
 
-        An operation to ping the server to ensure it's up and running and that the connection is good.
+        A method to ping the server to ensure it's up and running and that the connection is good.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -415,15 +441,25 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.FromString,
                     response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.SerializeToString,
             ),
-            'SearchValue': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchValue,
-                    request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.SerializeToString,
-            ),
             'GetValue': grpc.unary_unary_rpc_method_handler(
                     servicer.GetValue,
                     request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.GetValueRequest.FromString,
                     response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.GetValueResponse.SerializeToString,
+            ),
+            'HoldValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.HoldValue,
+                    request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.SerializeToString,
+            ),
+            'ReleaseHoldValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReleaseHoldValue,
+                    request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueResponse.SerializeToString,
+            ),
+            'ObtainHoldValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.ObtainHoldValue,
+                    request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.SerializeToString,
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
@@ -758,23 +794,6 @@ class PartnerToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def SearchValue(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/SearchValue',
-            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.SerializeToString,
-            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def GetValue(request,
             target,
             options=(),
@@ -788,6 +807,57 @@ class PartnerToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/GetValue',
             mica_dot_partner_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
             mica_dot_partner_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def HoldValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/HoldValue',
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.SerializeToString,
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReleaseHoldValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ReleaseHoldValue',
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueRequest.SerializeToString,
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ObtainHoldValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ObtainHoldValue',
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.SerializeToString,
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

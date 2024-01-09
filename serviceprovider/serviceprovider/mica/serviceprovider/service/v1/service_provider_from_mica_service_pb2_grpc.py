@@ -23,7 +23,7 @@ class ServiceProviderFromMicaServiceStub(object):
     The two Value operations, Obtain and Return, have basically the same structure and content.
     They primarily differ in the status codes they return. The main Value type includes information
     about the instrument being used, the amount of the transaction (requested and total amounts),
-    the currency, the organization and store the transation occured in and optionally a list of
+    the currency, the organization and store the transaction occurred in and optionally a list of
     items the user is purchasing or returning.
     """
 
@@ -63,10 +63,30 @@ class ServiceProviderFromMicaServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
                 )
+        self.HoldValue = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/HoldValue',
+                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.FromString,
+                )
+        self.ReleaseHoldValue = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReleaseHoldValue',
+                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueResponse.FromString,
+                )
+        self.ObtainHoldValue = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ObtainHoldValue',
+                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.FromString,
+                )
         self.ReceiveValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReceiveValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueResponse.FromString,
+                )
+        self.ValueAdvice = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ValueAdvice',
+                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceResponse.FromString,
                 )
         self.Ping = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/Ping',
@@ -83,7 +103,7 @@ class ServiceProviderFromMicaServiceServicer(object):
     The two Value operations, Obtain and Return, have basically the same structure and content.
     They primarily differ in the status codes they return. The main Value type includes information
     about the instrument being used, the amount of the transaction (requested and total amounts),
-    the currency, the organization and store the transation occured in and optionally a list of
+    the currency, the organization and store the transaction occurred in and optionally a list of
     items the user is purchasing or returning.
     """
 
@@ -135,7 +155,34 @@ class ServiceProviderFromMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def HoldValue(self, request, context):
+        """Hold a value for a given instrument to be used at a later time
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReleaseHoldValue(self, request, context):
+        """Release a value that was previously held
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ObtainHoldValue(self, request, context):
+        """Obtain a value that was previously held
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ReceiveValue(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ValueAdvice(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -183,10 +230,30 @@ def add_ServiceProviderFromMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.SerializeToString,
             ),
+            'HoldValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.HoldValue,
+                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.SerializeToString,
+            ),
+            'ReleaseHoldValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReleaseHoldValue,
+                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueResponse.SerializeToString,
+            ),
+            'ObtainHoldValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.ObtainHoldValue,
+                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.SerializeToString,
+            ),
             'ReceiveValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ReceiveValue,
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueResponse.SerializeToString,
+            ),
+            'ValueAdvice': grpc.unary_unary_rpc_method_handler(
+                    servicer.ValueAdvice,
+                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceResponse.SerializeToString,
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
@@ -208,7 +275,7 @@ class ServiceProviderFromMicaService(object):
     The two Value operations, Obtain and Return, have basically the same structure and content.
     They primarily differ in the status codes they return. The main Value type includes information
     about the instrument being used, the amount of the transaction (requested and total amounts),
-    the currency, the organization and store the transation occured in and optionally a list of
+    the currency, the organization and store the transaction occurred in and optionally a list of
     items the user is purchasing or returning.
     """
 
@@ -315,6 +382,57 @@ class ServiceProviderFromMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def HoldValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/HoldValue',
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReleaseHoldValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReleaseHoldValue',
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ObtainHoldValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ObtainHoldValue',
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def ReceiveValue(request,
             target,
             options=(),
@@ -328,6 +446,23 @@ class ServiceProviderFromMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReceiveValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ValueAdvice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ValueAdvice',
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

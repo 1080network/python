@@ -92,26 +92,6 @@ class ServiceProviderToMicaServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentResponse.FromString,
                 )
-        self.SetPIN = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SetPIN',
-                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINResponse.FromString,
-                )
-        self.ValidatePIN = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ValidatePIN',
-                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINResponse.FromString,
-                )
-        self.ResetPIN = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ResetPIN',
-                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ResetPINRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ResetPINResponse.FromString,
-                )
-        self.RemovePIN = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemovePIN',
-                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemovePINRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemovePINResponse.FromString,
-                )
         self.ProvisionServiceProviderUUEK = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ProvisionServiceProviderUUEK',
                 request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKRequest.SerializeToString,
@@ -131,11 +111,6 @@ class ServiceProviderToMicaServiceStub(object):
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SendValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.FromString,
-                )
-        self.SearchValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchValue',
-                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.FromString,
                 )
         self.GetValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetValue',
@@ -250,32 +225,6 @@ class ServiceProviderToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SetPIN(self, request, context):
-        """<editor-fold desc="PIN Operations">
-
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ValidatePIN(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ResetPIN(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RemovePIN(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ProvisionServiceProviderUUEK(self, request, context):
         """<editor-fold desc="UUEK Operations">
 
@@ -302,13 +251,6 @@ class ServiceProviderToMicaServiceServicer(object):
     def SendValue(self, request, context):
         """<editor-fold desc="Person to Person Operations">
 
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SearchValue(self, request, context):
-        """An operation to search for Value operations either Obtain or Return that the Partner has requested of mica.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -397,26 +339,6 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentResponse.SerializeToString,
             ),
-            'SetPIN': grpc.unary_unary_rpc_method_handler(
-                    servicer.SetPIN,
-                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINResponse.SerializeToString,
-            ),
-            'ValidatePIN': grpc.unary_unary_rpc_method_handler(
-                    servicer.ValidatePIN,
-                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINResponse.SerializeToString,
-            ),
-            'ResetPIN': grpc.unary_unary_rpc_method_handler(
-                    servicer.ResetPIN,
-                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ResetPINRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ResetPINResponse.SerializeToString,
-            ),
-            'RemovePIN': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemovePIN,
-                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemovePINRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemovePINResponse.SerializeToString,
-            ),
             'ProvisionServiceProviderUUEK': grpc.unary_unary_rpc_method_handler(
                     servicer.ProvisionServiceProviderUUEK,
                     request_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKRequest.FromString,
@@ -436,11 +358,6 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
                     servicer.SendValue,
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.SerializeToString,
-            ),
-            'SearchValue': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchValue,
-                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.SerializeToString,
             ),
             'GetValue': grpc.unary_unary_rpc_method_handler(
                     servicer.GetValue,
@@ -657,74 +574,6 @@ class ServiceProviderToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def SetPIN(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SetPIN',
-            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SetPINResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ValidatePIN(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ValidatePIN',
-            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ValidatePINResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ResetPIN(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ResetPIN',
-            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ResetPINRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ResetPINResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RemovePIN(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemovePIN',
-            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemovePINRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemovePINResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def ProvisionServiceProviderUUEK(request,
             target,
             options=(),
@@ -789,23 +638,6 @@ class ServiceProviderToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SendValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchValue(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchValue',
-            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SearchValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

@@ -19,13 +19,12 @@ _sym_db = _symbol_database.Default()
 
 
 from partner.micashared.common.v1 import address_pb2 as micashared_dot_common_dot_v1_dot_address__pb2
-from partner.micashared.common.v1 import area_pb2 as micashared_dot_common_dot_v1_dot_area__pb2
 from partner.micashared.common.v1 import error_pb2 as micashared_dot_common_dot_v1_dot_error__pb2
 from partner.micashared.common.v1 import store_pb2 as micashared_dot_common_dot_v1_dot_store__pb2
 from partner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!mica/partner/store/v1/store.proto\x12\x15mica.partner.store.v1\x1a\"micashared/common/v1/address.proto\x1a\x1fmicashared/common/v1/area.proto\x1a micashared/common/v1/error.proto\x1a micashared/common/v1/store.proto\x1a\x17validate/validate.proto\"\x80\x02\n\x12\x43reateStoreRequest\x12,\n\x19obsolete_organization_key\x18\x01 \x01(\tB\t\x18\x01\xfa\x42\x04r\x02\x18\x32\x12#\n\x10organization_key\x18\x05 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x12#\n\x10organization_ref\x18\x06 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x11\n\tstore_ref\x18\x02 \x01(\t\x12\x14\n\x0cstore_number\x18\x03 \x01(\t\x12.\n\x07\x61\x64\x64ress\x18\x04 \x01(\x0b\x32\x1d.micashared.common.v1.AddressB\x19\n\x17organization_identifier\"\xd1\x02\n\x13\x43reateStoreResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.mica.partner.store.v1.CreateStoreResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x1c\n\tstore_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x04 \x01(\x03\"\x9b\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_DUPLICATE\x10\x03\x12\x1a\n\x16STATUS_INVALID_PARTNER\x10\x04\x12!\n\x1dSTATUS_ORGANIZATION_NOT_FOUND\x10\x05\"\xa0\x01\n\x0fGetStoreRequest\x12%\n\x12obsolete_store_key\x18\x01 \x01(\tB\t\x18\x01\xfa\x42\x04r\x02\x18\x32\x12\x1c\n\tstore_key\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x12\x34\n\tstore_ref\x18\x02 \x01(\x0b\x32\x1f.mica.partner.store.v1.StoreRefH\x00\x42\x12\n\x10store_identifier\"\xa7\x02\n\x10GetStoreResponse\x12>\n\x06status\x18\x01 \x01(\x0e\x32..mica.partner.store.v1.GetStoreResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12*\n\x05store\x18\x03 \x01(\x0b\x32\x1b.micashared.common.v1.Store\"{\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\"\xc4\x01\n\x12SearchStoreRequest\x12!\n\x10organization_key\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12!\n\x10organization_ref\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\x11\n\tstore_key\x18\x05 \x01(\t\x12\x11\n\tstore_ref\x18\x02 \x01(\t\x12\x14\n\x0cstore_number\x18\x03 \x01(\t\x12,\n\x06\x63ircle\x18\n \x01(\x0b\x32\x1c.micashared.common.v1.Circle\"\x98\x02\n\x13SearchStoreResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.mica.partner.store.v1.SearchStoreResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12+\n\x06stores\x18\x03 \x03(\x0b\x32\x1b.micashared.common.v1.Store\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\"\xb0\x01\n\x08StoreRef\x12,\n\x19obsolete_organization_key\x18\x01 \x01(\tB\t\x18\x01\xfa\x42\x04r\x02\x18\x32\x12#\n\x10organization_key\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x12#\n\x10organization_ref\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x11\n\tstore_ref\x18\x02 \x01(\tB\x19\n\x17organization_identifier\"\xd3\x01\n\x12UpdateStoreRequest\x12\x34\n\tstore_ref\x18\x01 \x01(\x0b\x32\x1f.mica.partner.store.v1.StoreRefH\x00\x12\x1c\n\tstore_key\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x12\x0f\n\x07version\x18\x03 \x01(\x03\x12\x14\n\x0cstore_number\x18\x04 \x01(\t\x12.\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x1d.micashared.common.v1.AddressB\x12\n\x10store_identifier\"\x90\x02\n\x13UpdateStoreResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.mica.partner.store.v1.UpdateStoreResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x1b\n\x17STATUS_VERSION_MISMATCH\x10\x04\"|\n\x12RemoveStoreRequest\x12\x34\n\tstore_ref\x18\x01 \x01(\x0b\x32\x1f.mica.partner.store.v1.StoreRefH\x00\x12\x1c\n\tstore_key\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x42\x12\n\x10store_identifier\"\xe2\x01\n\x13RemoveStoreResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.mica.partner.store.v1.RemoveStoreResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42\x43\n\x18io.mica.partner.store.v1B\nStoreProtoZ\x14mica/partner/storev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!mica/partner/store/v1/store.proto\x12\x15mica.partner.store.v1\x1a\"micashared/common/v1/address.proto\x1a micashared/common/v1/error.proto\x1a micashared/common/v1/store.proto\x1a\x17validate/validate.proto\"\x89\x02\n\x12\x43reateStoreRequest\x12,\n\x19obsolete_organization_key\x18\x01 \x01(\tB\t\x18\x01\xfa\x42\x04r\x02\x18\x32\x12#\n\x10organization_key\x18\x05 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x12#\n\x10organization_ref\x18\x06 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x1a\n\tstore_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\x14\n\x0cstore_number\x18\x03 \x01(\t\x12.\n\x07\x61\x64\x64ress\x18\x04 \x01(\x0b\x32\x1d.micashared.common.v1.AddressB\x19\n\x17organization_identifier\"\xd1\x02\n\x13\x43reateStoreResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.mica.partner.store.v1.CreateStoreResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x1c\n\tstore_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x0f\n\x07version\x18\x04 \x01(\x03\"\x9b\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_DUPLICATE\x10\x03\x12\x1a\n\x16STATUS_INVALID_PARTNER\x10\x04\x12!\n\x1dSTATUS_ORGANIZATION_NOT_FOUND\x10\x05\"\xa0\x01\n\x0fGetStoreRequest\x12%\n\x12obsolete_store_key\x18\x01 \x01(\tB\t\x18\x01\xfa\x42\x04r\x02\x18\x32\x12\x1c\n\tstore_key\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x12\x34\n\tstore_ref\x18\x02 \x01(\x0b\x32\x1f.mica.partner.store.v1.StoreRefH\x00\x42\x12\n\x10store_identifier\"\xa7\x02\n\x10GetStoreResponse\x12>\n\x06status\x18\x01 \x01(\x0e\x32..mica.partner.store.v1.GetStoreResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12*\n\x05store\x18\x03 \x01(\x0b\x32\x1b.micashared.common.v1.Store\"{\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\"\x9f\x01\n\x12SearchStoreRequest\x12!\n\x10organization_key\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12!\n\x10organization_ref\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\x11\n\tstore_key\x18\x05 \x01(\t\x12\x1a\n\tstore_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\x14\n\x0cstore_number\x18\x03 \x01(\t\"\x98\x02\n\x13SearchStoreResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.mica.partner.store.v1.SearchStoreResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12+\n\x06stores\x18\x03 \x03(\x0b\x32\x1b.micashared.common.v1.Store\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1d\n\x19STATUS_INVALID_PARTNER_ID\x10\x03\"\xb9\x01\n\x08StoreRef\x12,\n\x19obsolete_organization_key\x18\x01 \x01(\tB\t\x18\x01\xfa\x42\x04r\x02\x18\x32\x12#\n\x10organization_key\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x12#\n\x10organization_ref\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x1a\n\tstore_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x42\x19\n\x17organization_identifier\"\xd8\x01\n\x12UpdateStoreRequest\x12\x34\n\tstore_ref\x18\x01 \x01(\x0b\x32\x1f.mica.partner.store.v1.StoreRefH\x00\x12\x1c\n\tstore_key\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x12\x0f\n\x07version\x18\x03 \x01(\x03\x12\x14\n\x0cstore_number\x18\x04 \x01(\t\x12.\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x1d.micashared.common.v1.AddressB\x17\n\x10store_identifier\x12\x03\xf8\x42\x01\"\x90\x02\n\x13UpdateStoreResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.mica.partner.store.v1.UpdateStoreResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x0f\n\x07version\x18\x03 \x01(\x03\"y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x1b\n\x17STATUS_VERSION_MISMATCH\x10\x04\"\x81\x01\n\x12RemoveStoreRequest\x12\x34\n\tstore_ref\x18\x01 \x01(\x0b\x32\x1f.mica.partner.store.v1.StoreRefH\x00\x12\x1c\n\tstore_key\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x42\x17\n\x10store_identifier\x12\x03\xf8\x42\x01\"\xe2\x01\n\x13RemoveStoreResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.mica.partner.store.v1.RemoveStoreResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42\x43\n\x18io.mica.partner.store.v1B\nStoreProtoZ\x14mica/partner/storev1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.partner.store.v1.store_pb2', globals())
@@ -39,6 +38,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATESTOREREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\004r\002\0302'
   _CREATESTOREREQUEST.fields_by_name['organization_ref']._options = None
   _CREATESTOREREQUEST.fields_by_name['organization_ref']._serialized_options = b'\372B\004r\002\030d'
+  _CREATESTOREREQUEST.fields_by_name['store_ref']._options = None
+  _CREATESTOREREQUEST.fields_by_name['store_ref']._serialized_options = b'\372B\004r\002\030d'
   _CREATESTORERESPONSE.fields_by_name['store_key']._options = None
   _CREATESTORERESPONSE.fields_by_name['store_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _GETSTOREREQUEST.fields_by_name['obsolete_store_key']._options = None
@@ -49,46 +50,54 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SEARCHSTOREREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\004r\002\0302'
   _SEARCHSTOREREQUEST.fields_by_name['organization_ref']._options = None
   _SEARCHSTOREREQUEST.fields_by_name['organization_ref']._serialized_options = b'\372B\004r\002\030d'
+  _SEARCHSTOREREQUEST.fields_by_name['store_ref']._options = None
+  _SEARCHSTOREREQUEST.fields_by_name['store_ref']._serialized_options = b'\372B\004r\002\030d'
   _STOREREF.fields_by_name['obsolete_organization_key']._options = None
   _STOREREF.fields_by_name['obsolete_organization_key']._serialized_options = b'\030\001\372B\004r\002\0302'
   _STOREREF.fields_by_name['organization_key']._options = None
   _STOREREF.fields_by_name['organization_key']._serialized_options = b'\372B\004r\002\0302'
   _STOREREF.fields_by_name['organization_ref']._options = None
   _STOREREF.fields_by_name['organization_ref']._serialized_options = b'\372B\004r\002\030d'
+  _STOREREF.fields_by_name['store_ref']._options = None
+  _STOREREF.fields_by_name['store_ref']._serialized_options = b'\372B\004r\002\030d'
+  _UPDATESTOREREQUEST.oneofs_by_name['store_identifier']._options = None
+  _UPDATESTOREREQUEST.oneofs_by_name['store_identifier']._serialized_options = b'\370B\001'
   _UPDATESTOREREQUEST.fields_by_name['store_key']._options = None
   _UPDATESTOREREQUEST.fields_by_name['store_key']._serialized_options = b'\372B\004r\002\0302'
+  _REMOVESTOREREQUEST.oneofs_by_name['store_identifier']._options = None
+  _REMOVESTOREREQUEST.oneofs_by_name['store_identifier']._serialized_options = b'\370B\001'
   _REMOVESTOREREQUEST.fields_by_name['store_key']._options = None
   _REMOVESTOREREQUEST.fields_by_name['store_key']._serialized_options = b'\372B\004r\002\0302'
-  _CREATESTOREREQUEST._serialized_start=223
-  _CREATESTOREREQUEST._serialized_end=479
-  _CREATESTORERESPONSE._serialized_start=482
-  _CREATESTORERESPONSE._serialized_end=819
-  _CREATESTORERESPONSE_STATUS._serialized_start=664
-  _CREATESTORERESPONSE_STATUS._serialized_end=819
-  _GETSTOREREQUEST._serialized_start=822
-  _GETSTOREREQUEST._serialized_end=982
-  _GETSTORERESPONSE._serialized_start=985
-  _GETSTORERESPONSE._serialized_end=1280
-  _GETSTORERESPONSE_STATUS._serialized_start=1157
-  _GETSTORERESPONSE_STATUS._serialized_end=1280
-  _SEARCHSTOREREQUEST._serialized_start=1283
-  _SEARCHSTOREREQUEST._serialized_end=1479
-  _SEARCHSTORERESPONSE._serialized_start=1482
-  _SEARCHSTORERESPONSE._serialized_end=1762
-  _SEARCHSTORERESPONSE_STATUS._serialized_start=1157
-  _SEARCHSTORERESPONSE_STATUS._serialized_end=1258
-  _STOREREF._serialized_start=1765
-  _STOREREF._serialized_end=1941
-  _UPDATESTOREREQUEST._serialized_start=1944
-  _UPDATESTOREREQUEST._serialized_end=2155
-  _UPDATESTORERESPONSE._serialized_start=2158
-  _UPDATESTORERESPONSE._serialized_end=2430
-  _UPDATESTORERESPONSE_STATUS._serialized_start=2309
-  _UPDATESTORERESPONSE_STATUS._serialized_end=2430
-  _REMOVESTOREREQUEST._serialized_start=2432
-  _REMOVESTOREREQUEST._serialized_end=2556
-  _REMOVESTORERESPONSE._serialized_start=2559
-  _REMOVESTORERESPONSE._serialized_end=2785
-  _REMOVESTORERESPONSE_STATUS._serialized_start=2309
-  _REMOVESTORERESPONSE_STATUS._serialized_end=2401
+  _CREATESTOREREQUEST._serialized_start=190
+  _CREATESTOREREQUEST._serialized_end=455
+  _CREATESTORERESPONSE._serialized_start=458
+  _CREATESTORERESPONSE._serialized_end=795
+  _CREATESTORERESPONSE_STATUS._serialized_start=640
+  _CREATESTORERESPONSE_STATUS._serialized_end=795
+  _GETSTOREREQUEST._serialized_start=798
+  _GETSTOREREQUEST._serialized_end=958
+  _GETSTORERESPONSE._serialized_start=961
+  _GETSTORERESPONSE._serialized_end=1256
+  _GETSTORERESPONSE_STATUS._serialized_start=1133
+  _GETSTORERESPONSE_STATUS._serialized_end=1256
+  _SEARCHSTOREREQUEST._serialized_start=1259
+  _SEARCHSTOREREQUEST._serialized_end=1418
+  _SEARCHSTORERESPONSE._serialized_start=1421
+  _SEARCHSTORERESPONSE._serialized_end=1701
+  _SEARCHSTORERESPONSE_STATUS._serialized_start=1133
+  _SEARCHSTORERESPONSE_STATUS._serialized_end=1234
+  _STOREREF._serialized_start=1704
+  _STOREREF._serialized_end=1889
+  _UPDATESTOREREQUEST._serialized_start=1892
+  _UPDATESTOREREQUEST._serialized_end=2108
+  _UPDATESTORERESPONSE._serialized_start=2111
+  _UPDATESTORERESPONSE._serialized_end=2383
+  _UPDATESTORERESPONSE_STATUS._serialized_start=2262
+  _UPDATESTORERESPONSE_STATUS._serialized_end=2383
+  _REMOVESTOREREQUEST._serialized_start=2386
+  _REMOVESTOREREQUEST._serialized_end=2515
+  _REMOVESTORERESPONSE._serialized_start=2518
+  _REMOVESTORERESPONSE._serialized_end=2744
+  _REMOVESTORERESPONSE_STATUS._serialized_start=2262
+  _REMOVESTORERESPONSE_STATUS._serialized_end=2354
 # @@protoc_insertion_point(module_scope)

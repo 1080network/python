@@ -20,7 +20,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n=micashared/common/enums/custodialbank/v1/custodial_bank.proto\x12(micashared.common.enums.custodialbank.v1*y\n\rCustodialBank\x12\x1e\n\x1a\x43USTODIAL_BANK_UNSPECIFIED\x10\x00\x12\x1c\n\x18\x43USTODIAL_BANK_TEST_BANK\x10\x01\x12*\n&CUSTODIAL_BANK_BANK_OF_NEW_YORK_MELLON\x10\x02\x42g\n\x1dio.micashared.common.enums.v1B\x16\x43ustodialBankEnumProtoZ\'micashared/common/enums/custodialbankv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n=micashared/common/enums/custodialbank/v1/custodial_bank.proto\x12(micashared.common.enums.custodialbank.v1*q\n\rCustodialBank\x12\x1e\n\x1a\x43USTODIAL_BANK_UNSPECIFIED\x10\x00\x12\x1c\n\x18\x43USTODIAL_BANK_TEST_BANK\x10\x01\x12\"\n\x1e\x43USTODIAL_BANK_MAINSTREET_BANK\x10\x02\x42g\n\x1dio.micashared.common.enums.v1B\x16\x43ustodialBankEnumProtoZ\'micashared/common/enums/custodialbankv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.enums.custodialbank.v1.custodial_bank_pb2', globals())
@@ -29,5 +29,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035io.micashared.common.enums.v1B\026CustodialBankEnumProtoZ\'micashared/common/enums/custodialbankv1\242\002\004MICA'
   _CUSTODIALBANK._serialized_start=107
-  _CUSTODIALBANK._serialized_end=228
+  _CUSTODIALBANK._serialized_end=220
 # @@protoc_insertion_point(module_scope)

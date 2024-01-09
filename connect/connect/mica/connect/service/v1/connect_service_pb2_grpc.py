@@ -76,7 +76,7 @@ class ConnectServiceServicer(object):
     def WidgetRegisterInstrumentWithVerificationCode(self, request, context):
         """<editor-fold desc="Instrument Operations">
 
-        Initiate an enrollemt where the user has already obtained a verification code  
+        Initiate an enrollment where the user has already obtained a verification code
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

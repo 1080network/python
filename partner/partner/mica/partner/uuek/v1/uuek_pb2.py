@@ -23,7 +23,7 @@ from partner.micashared.common.v1 import uuek_pb2 as micashared_dot_common_dot_v
 from partner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fmica/partner/uuek/v1/uuek.proto\x12\x14mica.partner.uuek.v1\x1a micashared/common/v1/error.proto\x1a\x1fmicashared/common/v1/uuek.proto\x1a\x17validate/validate.proto\"\xab\x01\n\x04UUEK\x12#\n\x10partner_user_ref\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\x12)\n\x16partner_instrument_ref\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\x12#\n\x10partner_uuek_ref\x18\x04 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\x12.\n\x04uuek\x18\x02 \x01(\x0b\x32 .micashared.common.v1.CommonUUEK\"4\n\x11RemoveUUEKRequest\x12\x1f\n\x0cpartner_uuek\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xdf\x01\n\x12RemoveUUEKResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.mica.partner.uuek.v1.RemoveUUEKResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"t\n\x13\x45xchangeUUEKRequest\x12\x1f\n\x0cpartner_uuek\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x17\n\x0fremove_existing\x18\x02 \x01(\x08\x12#\n\x10partner_uuek_ref\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\"\x84\x02\n\x14\x45xchangeUUEKResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.mica.partner.uuek.v1.ExchangeUUEKResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x1f\n\x0cpartner_uuek\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"g\n\x11SearchUUEKRequest\x12\x18\n\x10partner_user_ref\x18\x03 \x01(\t\x12\x1e\n\x16partner_instrument_ref\x18\x01 \x01(\t\x12\x18\n\x10partner_uuek_ref\x18\x04 \x01(\t\"\xf4\x01\n\x12SearchUUEKResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.mica.partner.uuek.v1.SearchUUEKResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12)\n\x05uueks\x18\x03 \x03(\x0b\x32\x1a.mica.partner.uuek.v1.UUEK\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42@\n\x17io.mica.partner.uuek.v1B\tUUEKProtoZ\x13mica/partner/uuekv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fmica/partner/uuek/v1/uuek.proto\x12\x14mica.partner.uuek.v1\x1a micashared/common/v1/error.proto\x1a\x1fmicashared/common/v1/uuek.proto\x1a\x17validate/validate.proto\"\xab\x01\n\x04UUEK\x12#\n\x10partner_user_ref\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\x12)\n\x16partner_instrument_ref\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\x12#\n\x10partner_uuek_ref\x18\x04 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\x12.\n\x04uuek\x18\x02 \x01(\x0b\x32 .micashared.common.v1.CommonUUEK\"4\n\x11RemoveUUEKRequest\x12\x1f\n\x0cpartner_uuek\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\xdf\x01\n\x12RemoveUUEKResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.mica.partner.uuek.v1.RemoveUUEKResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"t\n\x13\x45xchangeUUEKRequest\x12\x1f\n\x0cpartner_uuek\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x17\n\x0fremove_existing\x18\x02 \x01(\x08\x12#\n\x10partner_uuek_ref\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x01\x18\x64\"\x84\x02\n\x14\x45xchangeUUEKResponse\x12\x41\n\x06status\x18\x01 \x01(\x0e\x32\x31.mica.partner.uuek.v1.ExchangeUUEKResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x1f\n\x0cpartner_uuek\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\x82\x01\n\x11SearchUUEKRequest\x12!\n\x10partner_user_ref\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\'\n\x16partner_instrument_ref\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12!\n\x10partner_uuek_ref\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\"\xf4\x01\n\x12SearchUUEKResponse\x12?\n\x06status\x18\x01 \x01(\x0e\x32/.mica.partner.uuek.v1.SearchUUEKResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12)\n\x05uueks\x18\x03 \x03(\x0b\x32\x1a.mica.partner.uuek.v1.UUEK\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42@\n\x17io.mica.partner.uuek.v1B\tUUEKProtoZ\x13mica/partner/uuekv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.partner.uuek.v1.uuek_pb2', globals())
@@ -45,6 +45,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _EXCHANGEUUEKREQUEST.fields_by_name['partner_uuek_ref']._serialized_options = b'\372B\006r\004\020\001\030d'
   _EXCHANGEUUEKRESPONSE.fields_by_name['partner_uuek']._options = None
   _EXCHANGEUUEKRESPONSE.fields_by_name['partner_uuek']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SEARCHUUEKREQUEST.fields_by_name['partner_user_ref']._options = None
+  _SEARCHUUEKREQUEST.fields_by_name['partner_user_ref']._serialized_options = b'\372B\004r\002\030d'
+  _SEARCHUUEKREQUEST.fields_by_name['partner_instrument_ref']._options = None
+  _SEARCHUUEKREQUEST.fields_by_name['partner_instrument_ref']._serialized_options = b'\372B\004r\002\030d'
+  _SEARCHUUEKREQUEST.fields_by_name['partner_uuek_ref']._options = None
+  _SEARCHUUEKREQUEST.fields_by_name['partner_uuek_ref']._serialized_options = b'\372B\004r\002\030d'
   _UUEK._serialized_start=150
   _UUEK._serialized_end=321
   _REMOVEUUEKREQUEST._serialized_start=323
@@ -59,10 +65,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _EXCHANGEUUEKRESPONSE._serialized_end=982
   _EXCHANGEUUEKRESPONSE_STATUS._serialized_start=509
   _EXCHANGEUUEKRESPONSE_STATUS._serialized_end=601
-  _SEARCHUUEKREQUEST._serialized_start=984
-  _SEARCHUUEKREQUEST._serialized_end=1087
-  _SEARCHUUEKRESPONSE._serialized_start=1090
-  _SEARCHUUEKRESPONSE._serialized_end=1334
+  _SEARCHUUEKREQUEST._serialized_start=985
+  _SEARCHUUEKREQUEST._serialized_end=1115
+  _SEARCHUUEKRESPONSE._serialized_start=1118
+  _SEARCHUUEKRESPONSE._serialized_end=1362
   _SEARCHUUEKRESPONSE_STATUS._serialized_start=509
   _SEARCHUUEKRESPONSE_STATUS._serialized_end=579
 # @@protoc_insertion_point(module_scope)
