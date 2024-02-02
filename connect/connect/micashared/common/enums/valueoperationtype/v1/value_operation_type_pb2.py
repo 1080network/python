@@ -20,7 +20,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nHmicashared/common/enums/valueoperationtype/v1/value_operation_type.proto\x12-micashared.common.enums.valueoperationtype.v1*|\n\x12ValueOperationType\x12$\n VALUE_OPERATION_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n\x1bVALUE_OPERATION_TYPE_OBTAIN\x10\x01\x12\x1f\n\x1bVALUE_OPERATION_TYPE_RETURN\x10\x02\x42q\n\x1dio.micashared.common.enums.v1B\x1bValueOperationTypeEnumProtoZ,micashared/common/enums/valueoperationtypev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nHmicashared/common/enums/valueoperationtype/v1/value_operation_type.proto\x12-micashared.common.enums.valueoperationtype.v1*\xd3\x02\n\x12ValueOperationType\x12$\n VALUE_OPERATION_TYPE_UNSPECIFIED\x10\x00\x12\x1f\n\x1bVALUE_OPERATION_TYPE_OBTAIN\x10\x01\x12\x1f\n\x1bVALUE_OPERATION_TYPE_RETURN\x10\x02\x12\'\n#VALUE_OPERATION_TYPE_REVERSE_OBTAIN\x10\x03\x12\'\n#VALUE_OPERATION_TYPE_REVERSE_RETURN\x10\x04\x12\x1c\n\x18VALUE_OPERATION_TYPE_P2P\x10\x05\x12\x1d\n\x19VALUE_OPERATION_TYPE_HOLD\x10\x06\x12 \n\x1cVALUE_OPERATION_TYPE_RELEASE\x10\x07\x12$\n VALUE_OPERATION_TYPE_OBTAIN_HOLD\x10\x08\x42q\n\x1dio.micashared.common.enums.v1B\x1bValueOperationTypeEnumProtoZ,micashared/common/enums/valueoperationtypev1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.enums.valueoperationtype.v1.value_operation_type_pb2', globals())
@@ -28,6 +28,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035io.micashared.common.enums.v1B\033ValueOperationTypeEnumProtoZ,micashared/common/enums/valueoperationtypev1\242\002\004MICA'
-  _VALUEOPERATIONTYPE._serialized_start=123
-  _VALUEOPERATIONTYPE._serialized_end=247
+  _VALUEOPERATIONTYPE._serialized_start=124
+  _VALUEOPERATIONTYPE._serialized_end=463
 # @@protoc_insertion_point(module_scope)
