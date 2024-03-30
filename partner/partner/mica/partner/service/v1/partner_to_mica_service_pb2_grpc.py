@@ -50,6 +50,16 @@ class PartnerToMicaServiceStub(object):
                 request_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationResponse.FromString,
                 )
+        self.ActivateOrganization = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/ActivateOrganization',
+                request_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.ActivateOrganizationRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.ActivateOrganizationResponse.FromString,
+                )
+        self.DeactivateOrganization = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/DeactivateOrganization',
+                request_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.DeactivateOrganizationRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.DeactivateOrganizationResponse.FromString,
+                )
         self.SearchOrganization = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/SearchOrganization',
                 request_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.SearchOrganizationRequest.SerializeToString,
@@ -186,6 +196,20 @@ class PartnerToMicaServiceServicer(object):
 
     def UpdateOrganization(self, request, context):
         """Update a given organization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ActivateOrganization(self, request, context):
+        """Activate an organization that is currently inactive assuming the preconditions are met.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeactivateOrganization(self, request, context):
+        """Deactivate an organization that is currently active.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -371,6 +395,16 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationRequest.FromString,
                     response_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationResponse.SerializeToString,
             ),
+            'ActivateOrganization': grpc.unary_unary_rpc_method_handler(
+                    servicer.ActivateOrganization,
+                    request_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.ActivateOrganizationRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.ActivateOrganizationResponse.SerializeToString,
+            ),
+            'DeactivateOrganization': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeactivateOrganization,
+                    request_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.DeactivateOrganizationRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.DeactivateOrganizationResponse.SerializeToString,
+            ),
             'SearchOrganization': grpc.unary_unary_rpc_method_handler(
                     servicer.SearchOrganization,
                     request_deserializer=mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.SearchOrganizationRequest.FromString,
@@ -552,6 +586,40 @@ class PartnerToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/UpdateOrganization',
             mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationRequest.SerializeToString,
             mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.UpdateOrganizationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ActivateOrganization(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ActivateOrganization',
+            mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.ActivateOrganizationRequest.SerializeToString,
+            mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.ActivateOrganizationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeactivateOrganization(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/DeactivateOrganization',
+            mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.DeactivateOrganizationRequest.SerializeToString,
+            mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2.DeactivateOrganizationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

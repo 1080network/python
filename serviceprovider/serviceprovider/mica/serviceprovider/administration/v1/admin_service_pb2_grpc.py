@@ -92,6 +92,11 @@ class ServiceProviderAdministrationServiceStub(object):
                 request_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateRequest.SerializeToString,
                 response_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateResponse.FromString,
                 )
+        self.GenerateQuickstartPackageZip = channel.unary_unary(
+                '/mica.serviceprovider.administration.v1.ServiceProviderAdministrationService/GenerateQuickstartPackageZip',
+                request_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateQuickstartPackageZipRequest.SerializeToString,
+                response_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateQuickstartPackageZipResponse.FromString,
+                )
         self.SearchDataExtractionStatistics = channel.unary_unary(
                 '/mica.serviceprovider.administration.v1.ServiceProviderAdministrationService/SearchDataExtractionStatistics',
                 request_serializer=micashared_dot_common_dot_v1_dot_data__extraction__pb2.SearchDataExtractionRequest.SerializeToString,
@@ -119,7 +124,7 @@ class ServiceProviderAdministrationServiceServicer(object):
     """
 
     def GenerateMTLSCertificate(self, request, context):
-        """Generate a new MTLS certificate.
+        """Generate a new mTLS certificate.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -196,6 +201,12 @@ class ServiceProviderAdministrationServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SearchExternalClientMTLSCertificate(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GenerateQuickstartPackageZip(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -293,6 +304,11 @@ def add_ServiceProviderAdministrationServiceServicer_to_server(servicer, server)
                     servicer.SearchExternalClientMTLSCertificate,
                     request_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateRequest.FromString,
                     response_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateResponse.SerializeToString,
+            ),
+            'GenerateQuickstartPackageZip': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateQuickstartPackageZip,
+                    request_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateQuickstartPackageZipRequest.FromString,
+                    response_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateQuickstartPackageZipResponse.SerializeToString,
             ),
             'SearchDataExtractionStatistics': grpc.unary_unary_rpc_method_handler(
                     servicer.SearchDataExtractionStatistics,
@@ -543,6 +559,23 @@ class ServiceProviderAdministrationService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.administration.v1.ServiceProviderAdministrationService/SearchExternalClientMTLSCertificate',
             micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateRequest.SerializeToString,
             micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GenerateQuickstartPackageZip(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.administration.v1.ServiceProviderAdministrationService/GenerateQuickstartPackageZip',
+            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateQuickstartPackageZipRequest.SerializeToString,
+            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateQuickstartPackageZipResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

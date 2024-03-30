@@ -21,7 +21,7 @@ _sym_db = _symbol_database.Default()
 from partner.micashared.common.enums.custodialbank.v1 import custodial_bank_pb2 as micashared_dot_common_dot_enums_dot_custodialbank_dot_v1_dot_custodial__bank__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.micashared/common/v1/bank_account_detail.proto\x12\x14micashared.common.v1\x1a=micashared/common/enums/custodialbank/v1/custodial_bank.proto\"\x87\x01\n\x11\x42\x61nkAccountDetail\x12O\n\x0e\x63ustodial_bank\x18\x06 \x01(\x0e\x32\x37.micashared.common.enums.custodialbank.v1.CustodialBank\x12\x0c\n\x04\x62\x61nk\x18\x08 \x01(\t\x12\x13\n\x0b\x61\x63\x63ount_ref\x18\x07 \x01(\t\"\x8d\x01\n\x17\x42\x61nkAccountDetailSearch\x12O\n\x0e\x63ustodial_bank\x18\x01 \x01(\x0e\x32\x37.micashared.common.enums.custodialbank.v1.CustodialBank\x12\x0c\n\x04\x62\x61nk\x18\x02 \x01(\t\x12\x13\n\x0b\x61\x63\x63ount_ref\x18\x03 \x01(\tBW\n\x17io.micashared.common.v1B\x16\x42\x61nkAccountDetailProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.micashared/common/v1/bank_account_detail.proto\x12\x14micashared.common.v1\x1a=micashared/common/enums/custodialbank/v1/custodial_bank.proto\"P\n\x10\x41\x42\x41\x41\x63\x63ountNumber\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x16\n\x0erouting_number\x18\x02 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x03 \x01(\t\"\x87\x01\n\x11\x42\x61nkAccountDetail\x12O\n\x0e\x63ustodial_bank\x18\x06 \x01(\x0e\x32\x37.micashared.common.enums.custodialbank.v1.CustodialBank\x12\x0c\n\x04\x62\x61nk\x18\x08 \x01(\t\x12\x13\n\x0b\x61\x63\x63ount_ref\x18\x07 \x01(\t\"\x8d\x01\n\x17\x42\x61nkAccountDetailSearch\x12O\n\x0e\x63ustodial_bank\x18\x01 \x01(\x0e\x32\x37.micashared.common.enums.custodialbank.v1.CustodialBank\x12\x0c\n\x04\x62\x61nk\x18\x02 \x01(\t\x12\x13\n\x0b\x61\x63\x63ount_ref\x18\x03 \x01(\tBW\n\x17io.micashared.common.v1B\x16\x42\x61nkAccountDetailProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.bank_account_detail_pb2', globals())
@@ -29,8 +29,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027io.micashared.common.v1B\026BankAccountDetailProtoZ\035micashared/common/v1;commonv1\242\002\004MICA'
-  _BANKACCOUNTDETAIL._serialized_start=136
-  _BANKACCOUNTDETAIL._serialized_end=271
-  _BANKACCOUNTDETAILSEARCH._serialized_start=274
-  _BANKACCOUNTDETAILSEARCH._serialized_end=415
+  _ABAACCOUNTNUMBER._serialized_start=135
+  _ABAACCOUNTNUMBER._serialized_end=215
+  _BANKACCOUNTDETAIL._serialized_start=218
+  _BANKACCOUNTDETAIL._serialized_end=353
+  _BANKACCOUNTDETAILSEARCH._serialized_start=356
+  _BANKACCOUNTDETAILSEARCH._serialized_end=497
 # @@protoc_insertion_point(module_scope)
