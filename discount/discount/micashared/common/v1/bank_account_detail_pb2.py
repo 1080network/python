@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#  Copyright (c) 2023 Mica. All rights reserved. All software, including, without limitation, all source
+#  Copyright (c) 2024 Mica. All rights reserved. All software, including, without limitation, all source
 #  code and object code, is the intellectual property of Mica, Inc. and is protected by copyright, trademark and
 #  other intellectual property laws (collective "Mica Software"). You may not use, copy, reproduce, download, store,
 #  post, broadcast, transmit, modify, sell or make available to the public content from the Mica Software without a
@@ -21,7 +21,7 @@ _sym_db = _symbol_database.Default()
 from discount.micashared.common.enums.custodialbank.v1 import custodial_bank_pb2 as micashared_dot_common_dot_enums_dot_custodialbank_dot_v1_dot_custodial__bank__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.micashared/common/v1/bank_account_detail.proto\x12\x14micashared.common.v1\x1a=micashared/common/enums/custodialbank/v1/custodial_bank.proto\"P\n\x10\x41\x42\x41\x41\x63\x63ountNumber\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x16\n\x0erouting_number\x18\x02 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x03 \x01(\t\"\x87\x01\n\x11\x42\x61nkAccountDetail\x12O\n\x0e\x63ustodial_bank\x18\x06 \x01(\x0e\x32\x37.micashared.common.enums.custodialbank.v1.CustodialBank\x12\x0c\n\x04\x62\x61nk\x18\x08 \x01(\t\x12\x13\n\x0b\x61\x63\x63ount_ref\x18\x07 \x01(\t\"\x8d\x01\n\x17\x42\x61nkAccountDetailSearch\x12O\n\x0e\x63ustodial_bank\x18\x01 \x01(\x0e\x32\x37.micashared.common.enums.custodialbank.v1.CustodialBank\x12\x0c\n\x04\x62\x61nk\x18\x02 \x01(\t\x12\x13\n\x0b\x61\x63\x63ount_ref\x18\x03 \x01(\tBW\n\x17io.micashared.common.v1B\x16\x42\x61nkAccountDetailProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.micashared/common/v1/bank_account_detail.proto\x12\x14micashared.common.v1\x1a=micashared/common/enums/custodialbank/v1/custodial_bank.proto\"P\n\x10\x41\x42\x41\x41\x63\x63ountNumber\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x16\n\x0erouting_number\x18\x02 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x03 \x01(\t\"\x87\x01\n\x11\x42\x61nkAccountDetail\x12O\n\x0e\x63ustodial_bank\x18\x06 \x01(\x0e\x32\x37.micashared.common.enums.custodialbank.v1.CustodialBank\x12\x0c\n\x04\x62\x61nk\x18\x08 \x01(\t\x12\x13\n\x0b\x61\x63\x63ount_ref\x18\x07 \x01(\t\"\x8d\x01\n\x17\x42\x61nkAccountDetailSearch\x12O\n\x0e\x63ustodial_bank\x18\x01 \x01(\x0e\x32\x37.micashared.common.enums.custodialbank.v1.CustodialBank\x12\x0c\n\x04\x62\x61nk\x18\x02 \x01(\t\x12\x13\n\x0b\x61\x63\x63ount_ref\x18\x03 \x01(\t\"\x80\x01\n\x0f\x41\x42\x41\x41\x63\x63ountEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\x12>\n\x0e\x61\x63\x63ount_detail\x18\x04 \x01(\x0b\x32&.micashared.common.v1.ABAAccountNumberBW\n\x17io.micashared.common.v1B\x16\x42\x61nkAccountDetailProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.bank_account_detail_pb2', globals())
@@ -35,4 +35,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _BANKACCOUNTDETAIL._serialized_end=353
   _BANKACCOUNTDETAILSEARCH._serialized_start=356
   _BANKACCOUNTDETAILSEARCH._serialized_end=497
+  _ABAACCOUNTENTRY._serialized_start=500
+  _ABAACCOUNTENTRY._serialized_end=628
 # @@protoc_insertion_point(module_scope)
