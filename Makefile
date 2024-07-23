@@ -1,4 +1,4 @@
-SUBDIRS := micacommon connect discount partner serviceprovider
+SUBDIRS := networksdk micacommon discount partner serviceprovider
 TOPTARGETS := clean build test publish
 
 $(TOPTARGETS): $(SUBDIRS)

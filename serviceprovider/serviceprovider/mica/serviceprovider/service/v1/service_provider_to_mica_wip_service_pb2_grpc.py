@@ -24,42 +24,42 @@ class ServiceProviderToMicaWIPServiceStub(object):
             channel: A grpc.Channel.
         """
         self.SetVisibilityStatus = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SetVisibilityStatus',
+                '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/SetVisibilityStatus',
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetVisibilityStatusRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetVisibilityStatusResponse.FromString,
                 )
         self.DiscoverUser = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/DiscoverUser',
+                '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/DiscoverUser',
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.DiscoverUserRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.DiscoverUserResponse.FromString,
                 )
         self.GetServiceProviderUUEK = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/GetServiceProviderUUEK',
+                '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/GetServiceProviderUUEK',
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKResponse.FromString,
                 )
         self.SetPIN = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SetPIN',
+                '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/SetPIN',
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINResponse.FromString,
                 )
         self.ValidatePIN = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ValidatePIN',
+                '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/ValidatePIN',
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ValidatePINRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ValidatePINResponse.FromString,
                 )
         self.ResetPIN = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ResetPIN',
+                '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/ResetPIN',
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ResetPINRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ResetPINResponse.FromString,
                 )
         self.RemovePIN = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/RemovePIN',
+                '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/RemovePIN',
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINResponse.FromString,
                 )
         self.ProvisionEnrollmentValidationCode = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ProvisionEnrollmentValidationCode',
+                '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/ProvisionEnrollmentValidationCode',
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeResponse.FromString,
                 )
@@ -167,7 +167,7 @@ def add_ServiceProviderToMicaWIPServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService', rpc_method_handlers)
+            'mica.sdk.service.v1.ServiceProviderToMicaWIPService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -188,7 +188,7 @@ class ServiceProviderToMicaWIPService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SetVisibilityStatus',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/SetVisibilityStatus',
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetVisibilityStatusRequest.SerializeToString,
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetVisibilityStatusResponse.FromString,
             options, channel_credentials,
@@ -205,7 +205,7 @@ class ServiceProviderToMicaWIPService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/DiscoverUser',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/DiscoverUser',
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.DiscoverUserRequest.SerializeToString,
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.DiscoverUserResponse.FromString,
             options, channel_credentials,
@@ -222,7 +222,7 @@ class ServiceProviderToMicaWIPService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/GetServiceProviderUUEK',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/GetServiceProviderUUEK',
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKRequest.SerializeToString,
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKResponse.FromString,
             options, channel_credentials,
@@ -239,7 +239,7 @@ class ServiceProviderToMicaWIPService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SetPIN',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/SetPIN',
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINRequest.SerializeToString,
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINResponse.FromString,
             options, channel_credentials,
@@ -256,7 +256,7 @@ class ServiceProviderToMicaWIPService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ValidatePIN',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/ValidatePIN',
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ValidatePINRequest.SerializeToString,
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ValidatePINResponse.FromString,
             options, channel_credentials,
@@ -273,7 +273,7 @@ class ServiceProviderToMicaWIPService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ResetPIN',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/ResetPIN',
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ResetPINRequest.SerializeToString,
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ResetPINResponse.FromString,
             options, channel_credentials,
@@ -290,7 +290,7 @@ class ServiceProviderToMicaWIPService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/RemovePIN',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/RemovePIN',
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINRequest.SerializeToString,
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINResponse.FromString,
             options, channel_credentials,
@@ -307,7 +307,7 @@ class ServiceProviderToMicaWIPService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ProvisionEnrollmentValidationCode',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaWIPService/ProvisionEnrollmentValidationCode',
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeRequest.SerializeToString,
             mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeResponse.FromString,
             options, channel_credentials,

@@ -34,62 +34,62 @@ class ServiceProviderFromMicaServiceStub(object):
             channel: A grpc.Channel.
         """
         self.EnrollUserInstrument = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/EnrollUserInstrument',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/EnrollUserInstrument',
                 request_serializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentResponse.FromString,
                 )
         self.RetrieveTransaction = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/RetrieveTransaction',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/RetrieveTransaction',
                 request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RetrieveTransactionRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RetrieveTransactionResponse.FromString,
                 )
         self.ObtainValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ObtainValue',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/ObtainValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainValueResponse.FromString,
                 )
         self.ReverseObtainValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseObtainValue',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/ReverseObtainValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
                 )
         self.ReturnValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReturnValue',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/ReturnValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReturnValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReturnValueResponse.FromString,
                 )
         self.ReverseReturnValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseReturnValue',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/ReverseReturnValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
                 )
         self.HoldValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/HoldValue',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/HoldValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.FromString,
                 )
         self.ReleaseHoldValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReleaseHoldValue',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/ReleaseHoldValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueResponse.FromString,
                 )
         self.ObtainHoldValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ObtainHoldValue',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/ObtainHoldValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.FromString,
                 )
         self.ReceiveValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReceiveValue',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/ReceiveValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueResponse.FromString,
                 )
         self.ValueAdvice = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ValueAdvice',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/ValueAdvice',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceResponse.FromString,
                 )
         self.Ping = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/Ping',
+                '/mica.sdk.service.v1.ServiceProviderFromMicaService/Ping',
                 request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
                 response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
                 )
@@ -262,7 +262,7 @@ def add_ServiceProviderFromMicaServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'mica.serviceprovider.service.v1.ServiceProviderFromMicaService', rpc_method_handlers)
+            'mica.sdk.service.v1.ServiceProviderFromMicaService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -290,7 +290,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/EnrollUserInstrument',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/EnrollUserInstrument',
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentRequest.SerializeToString,
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentResponse.FromString,
             options, channel_credentials,
@@ -307,7 +307,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/RetrieveTransaction',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/RetrieveTransaction',
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RetrieveTransactionRequest.SerializeToString,
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RetrieveTransactionResponse.FromString,
             options, channel_credentials,
@@ -324,7 +324,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ObtainValue',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/ObtainValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainValueResponse.FromString,
             options, channel_credentials,
@@ -341,7 +341,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseObtainValue',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/ReverseObtainValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
             options, channel_credentials,
@@ -358,7 +358,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReturnValue',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/ReturnValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReturnValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReturnValueResponse.FromString,
             options, channel_credentials,
@@ -375,7 +375,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseReturnValue',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/ReverseReturnValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
             options, channel_credentials,
@@ -392,7 +392,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/HoldValue',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/HoldValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.FromString,
             options, channel_credentials,
@@ -409,7 +409,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReleaseHoldValue',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/ReleaseHoldValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueResponse.FromString,
             options, channel_credentials,
@@ -426,7 +426,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ObtainHoldValue',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/ObtainHoldValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.FromString,
             options, channel_credentials,
@@ -443,7 +443,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReceiveValue',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/ReceiveValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueResponse.FromString,
             options, channel_credentials,
@@ -460,7 +460,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ValueAdvice',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/ValueAdvice',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceResponse.FromString,
             options, channel_credentials,
@@ -477,7 +477,7 @@ class ServiceProviderFromMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/Ping',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderFromMicaService/Ping',
             micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
             micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
             options, channel_credentials,

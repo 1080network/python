@@ -15,9 +15,8 @@ function python_copyright() {
     fi
 }
 
-#Generate protos in a way that we can publish them as individual SDKs
-PUBLICSDKS="partner serviceprovider connect discount"
-for sdk in $PUBLICSDKS ; do
+function generate_sdk(){
+    sdk=$1
     SDK_PACKAGE=$sdk
     SDK_DIR=$PWD/$sdk
     SDK_LIBRARY=$PWD/$sdk/$sdk
@@ -30,14 +29,14 @@ for sdk in $PUBLICSDKS ; do
     #Prepare the proto files to generate only for the sdk that was requested
     cp -r proto/micashared $SDK_PROTO/.
     cp -r proto/mica/$sdk $SDK_PROTO/mica
-    #Mega hack, right now the service provider depends on the discount definition 
+    #Mega hack, right now the service provider depends on the discount definition
     if [[ $sdk == "serviceprovider" ]]; then
         cp -r proto/mica/discount $SDK_PROTO/mica
     fi
     docker run --rm -it -v $SDK_PROTO:/defs/proto -v $SDK_GEN:/defs/out namely/protoc-all -d /defs/proto -l python -o /defs/out
     if [[ $? -ne 0 ]]; then
         echo "Your docker trick for python broke bro.."
-        exit $?
+        exit 1
     fi
     #Now we need to fix the imports for all the generated code so it can live in the SDK, there are plugins and other things to do this
     #but sed is good for now
@@ -61,6 +60,60 @@ for sdk in $PUBLICSDKS ; do
     echo "cleaning intermediate files for $sdk at $SDK_PROTO and $SDK_GEN"
     rm -rf $SDK_PROTO
     rm -rf $SDK_GEN
+}
+
+function generate_full_sdk(){
+    sdk=networksdk
+    SDK_PACKAGE=sdk
+    SDK_DIR=$PWD/$sdk
+    SDK_LIBRARY=$PWD/$sdk/sdk
+    SDK_PROTO=$SDK_DIR/proto
+    SDK_GEN=$SDK_DIR/gen
+    echo "*************************** GENERATING FOR Full SDK ***************************"
+    mkdir -p $SDK_PROTO
+    mkdir -p $SDK_PROTO/mica
+    mkdir -p $SDK_GEN
+    #Prepare the proto files to generate only for the sdk that was requested
+    cp -r proto/micashared $SDK_PROTO/.
+    cp -r proto/mica/partner $SDK_PROTO/mica/.
+    cp -r proto/mica/serviceprovider $SDK_PROTO/mica/.
+    cp -r proto/mica/discount $SDK_PROTO/mica/.
+
+    docker run --rm -it -v $SDK_PROTO:/defs/proto -v $SDK_GEN:/defs/out namely/protoc-all -d /defs/proto -l python -o /defs/out
+    if [[ $? -ne 0 ]]; then
+        echo "Your docker trick for python broke bro.."
+        exit 1
+    fi
+    #Now we need to fix the imports for all the generated code so it can live in the SDK, there are plugins and other things to do this
+    #but sed is good for now
+    pushd $SDK_GEN
+    echo "fixing packages for $sdk folder in $SDK_GEN"
+    for pythonfile in `find . -name "*.py"` ; do
+      sed -i.bak "s/^from micashared\./from ${SDK_PACKAGE}.micashared./g" $pythonfile
+      sed -i.bak "s/^from mica\./from ${SDK_PACKAGE}.mica./g" $pythonfile
+      sed -i.bak "s/^from validate/from ${SDK_PACKAGE}.validate/g" $pythonfile
+      python_copyright "$pythonfile"
+    done
+    for file in `find . -name "*.bak"` ; do
+        rm $file
+    done
+    echo "moving generated code to the actual library"
+    rm -rf $SDK_LIBRARY/micashared $SDK_LIBRARY/mica
+    cp -r micashared $SDK_LIBRARY/.
+    cp -r mica $SDK_LIBRARY/.
+    popd
+    #clean up the protos
+    echo "cleaning intermediate files for $sdk at $SDK_PROTO and $SDK_GEN"
+    rm -rf $SDK_PROTO
+    rm -rf $SDK_GEN
+}
+
+generate_full_sdk
+exit 1
+#Generate protos in a way that we can publish them as individual SDKs
+PUBLICSDKS="partner serviceprovider discount"
+for sdk in $PUBLICSDKS ; do
+  generate_sdk $sdk
 done
 
 echo "done with python"

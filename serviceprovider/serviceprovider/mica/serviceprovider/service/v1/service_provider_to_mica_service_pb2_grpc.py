@@ -43,92 +43,92 @@ class ServiceProviderToMicaServiceStub(object):
             channel: A grpc.Channel.
         """
         self.GetServiceProvider = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetServiceProvider',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/GetServiceProvider',
                 request_serializer=mica_dot_serviceprovider_dot_serviceprovider_dot_v1_dot_service__provider__pb2.GetServiceProviderRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_serviceprovider_dot_v1_dot_service__provider__pb2.GetServiceProviderResponse.FromString,
                 )
         self.RegisterUser = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RegisterUser',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/RegisterUser',
                 request_serializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.RegisterUserRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.RegisterUserResponse.FromString,
                 )
         self.GetUser = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetUser',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/GetUser',
                 request_serializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.GetUserRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.GetUserResponse.FromString,
                 )
         self.UpdateUser = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/UpdateUser',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/UpdateUser',
                 request_serializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.UpdateUserRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.UpdateUserResponse.FromString,
                 )
         self.RemoveUser = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveUser',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/RemoveUser',
                 request_serializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.RemoveUserRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.RemoveUserResponse.FromString,
                 )
         self.SearchUser = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchUser',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/SearchUser',
                 request_serializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.SearchUserRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.SearchUserResponse.FromString,
                 )
         self.RegisterInstrument = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RegisterInstrument',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/RegisterInstrument',
                 request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RegisterInstrumentRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RegisterInstrumentResponse.FromString,
                 )
         self.GetInstrument = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetInstrument',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/GetInstrument',
                 request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.GetInstrumentRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.GetInstrumentResponse.FromString,
                 )
         self.RemoveInstrument = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveInstrument',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/RemoveInstrument',
                 request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentResponse.FromString,
                 )
         self.SearchInstrument = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchInstrument',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/SearchInstrument',
                 request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentResponse.FromString,
                 )
         self.ProvisionServiceProviderUUEK = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ProvisionServiceProviderUUEK',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/ProvisionServiceProviderUUEK',
                 request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKResponse.FromString,
                 )
         self.RemoveServiceProviderUUEK = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveServiceProviderUUEK',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/RemoveServiceProviderUUEK',
                 request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKResponse.FromString,
                 )
         self.SearchServiceProviderUUEK = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchServiceProviderUUEK',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/SearchServiceProviderUUEK',
                 request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.FromString,
                 )
         self.SendValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SendValue',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/SendValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.FromString,
                 )
         self.GetValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetValue',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/GetValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
                 )
         self.SearchUserDiscount = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchUserDiscount',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/SearchUserDiscount',
                 request_serializer=mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountResponse.FromString,
                 )
         self.GetReceipt = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetReceipt',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/GetReceipt',
                 request_serializer=micashared_dot_common_dot_v1_dot_receipt__pb2.GetReceiptRequest.SerializeToString,
                 response_deserializer=micashared_dot_common_dot_v1_dot_receipt__pb2.GetReceiptResponse.FromString,
                 )
         self.Ping = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/Ping',
+                '/mica.sdk.service.v1.ServiceProviderToMicaService/Ping',
                 request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
                 response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
                 )
@@ -381,7 +381,7 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'mica.serviceprovider.service.v1.ServiceProviderToMicaService', rpc_method_handlers)
+            'mica.sdk.service.v1.ServiceProviderToMicaService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -414,7 +414,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetServiceProvider',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/GetServiceProvider',
             mica_dot_serviceprovider_dot_serviceprovider_dot_v1_dot_service__provider__pb2.GetServiceProviderRequest.SerializeToString,
             mica_dot_serviceprovider_dot_serviceprovider_dot_v1_dot_service__provider__pb2.GetServiceProviderResponse.FromString,
             options, channel_credentials,
@@ -431,7 +431,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RegisterUser',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/RegisterUser',
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.RegisterUserRequest.SerializeToString,
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.RegisterUserResponse.FromString,
             options, channel_credentials,
@@ -448,7 +448,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetUser',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/GetUser',
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.GetUserRequest.SerializeToString,
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.GetUserResponse.FromString,
             options, channel_credentials,
@@ -465,7 +465,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/UpdateUser',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/UpdateUser',
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.UpdateUserRequest.SerializeToString,
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.UpdateUserResponse.FromString,
             options, channel_credentials,
@@ -482,7 +482,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveUser',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/RemoveUser',
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.RemoveUserRequest.SerializeToString,
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.RemoveUserResponse.FromString,
             options, channel_credentials,
@@ -499,7 +499,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchUser',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/SearchUser',
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.SearchUserRequest.SerializeToString,
             mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.SearchUserResponse.FromString,
             options, channel_credentials,
@@ -516,7 +516,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RegisterInstrument',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/RegisterInstrument',
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RegisterInstrumentRequest.SerializeToString,
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RegisterInstrumentResponse.FromString,
             options, channel_credentials,
@@ -533,7 +533,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetInstrument',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/GetInstrument',
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.GetInstrumentRequest.SerializeToString,
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.GetInstrumentResponse.FromString,
             options, channel_credentials,
@@ -550,7 +550,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveInstrument',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/RemoveInstrument',
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentRequest.SerializeToString,
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentResponse.FromString,
             options, channel_credentials,
@@ -567,7 +567,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchInstrument',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/SearchInstrument',
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentRequest.SerializeToString,
             mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentResponse.FromString,
             options, channel_credentials,
@@ -584,7 +584,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ProvisionServiceProviderUUEK',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/ProvisionServiceProviderUUEK',
             mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKRequest.SerializeToString,
             mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKResponse.FromString,
             options, channel_credentials,
@@ -601,7 +601,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveServiceProviderUUEK',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/RemoveServiceProviderUUEK',
             mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKRequest.SerializeToString,
             mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKResponse.FromString,
             options, channel_credentials,
@@ -618,7 +618,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchServiceProviderUUEK',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/SearchServiceProviderUUEK',
             mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.SerializeToString,
             mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.FromString,
             options, channel_credentials,
@@ -635,7 +635,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SendValue',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/SendValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.FromString,
             options, channel_credentials,
@@ -652,7 +652,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetValue',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/GetValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
             options, channel_credentials,
@@ -669,7 +669,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchUserDiscount',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/SearchUserDiscount',
             mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountRequest.SerializeToString,
             mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountResponse.FromString,
             options, channel_credentials,
@@ -686,7 +686,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetReceipt',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/GetReceipt',
             micashared_dot_common_dot_v1_dot_receipt__pb2.GetReceiptRequest.SerializeToString,
             micashared_dot_common_dot_v1_dot_receipt__pb2.GetReceiptResponse.FromString,
             options, channel_credentials,
@@ -703,7 +703,7 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/Ping',
+        return grpc.experimental.unary_unary(request, target, '/mica.sdk.service.v1.ServiceProviderToMicaService/Ping',
             micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
             micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
             options, channel_credentials,
