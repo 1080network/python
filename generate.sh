@@ -109,7 +109,6 @@ function generate_full_sdk(){
 }
 
 generate_full_sdk
-exit 1
 #Generate protos in a way that we can publish them as individual SDKs
 PUBLICSDKS="partner serviceprovider discount"
 for sdk in $PUBLICSDKS ; do
