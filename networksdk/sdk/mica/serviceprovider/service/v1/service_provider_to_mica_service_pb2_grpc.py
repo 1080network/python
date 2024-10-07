@@ -107,6 +107,11 @@ class ServiceProviderToMicaServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.FromString,
                 )
+        self.ProvisionInstrumentLinkingCode = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ProvisionInstrumentLinkingCode',
+                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionInstrumentLinkingCodeRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionInstrumentLinkingCodeResponse.FromString,
+                )
         self.SendValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SendValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.SerializeToString,
@@ -248,6 +253,13 @@ class ServiceProviderToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ProvisionInstrumentLinkingCode(self, request, context):
+        """<editor-fold desc="Account linking operations">
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def SendValue(self, request, context):
         """<editor-fold desc="Person to Person Operations">
 
@@ -353,6 +365,11 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
                     servicer.SearchServiceProviderUUEK,
                     request_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.SerializeToString,
+            ),
+            'ProvisionInstrumentLinkingCode': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProvisionInstrumentLinkingCode,
+                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionInstrumentLinkingCodeRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionInstrumentLinkingCodeResponse.SerializeToString,
             ),
             'SendValue': grpc.unary_unary_rpc_method_handler(
                     servicer.SendValue,
@@ -621,6 +638,23 @@ class ServiceProviderToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchServiceProviderUUEK',
             mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.SerializeToString,
             mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ProvisionInstrumentLinkingCode(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ProvisionInstrumentLinkingCode',
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionInstrumentLinkingCodeRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionInstrumentLinkingCodeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

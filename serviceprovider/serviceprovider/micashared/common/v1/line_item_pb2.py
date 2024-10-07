@@ -18,11 +18,12 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from serviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 from serviceprovider.micashared.common.enums.lineitemstatus.v1 import line_item_status_pb2 as micashared_dot_common_dot_enums_dot_lineitemstatus_dot_v1_dot_line__item__status__pb2
 from serviceprovider.micashared.common.enums.unit.v1 import unit_pb2 as micashared_dot_common_dot_enums_dot_unit_dot_v1_dot_unit__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$micashared/common/v1/line_item.proto\x12\x14micashared.common.v1\x1a@micashared/common/enums/lineitemstatus/v1/line_item_status.proto\x1a*micashared/common/enums/unit/v1/unit.proto\"\x83\x02\n\x08LineItem\x12\x10\n\x08sequence\x18\x01 \x01(\x05\x12\x17\n\x0fline_item_group\x18\x02 \x01(\t\x12\x14\n\x0cproduct_code\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x10\n\x08quantity\x18\x05 \x01(\t\x12\x33\n\x04unit\x18\x06 \x01(\x0e\x32%.micashared.common.enums.unit.v1.Unit\x12\x13\n\x0bunit_amount\x18\x07 \x01(\t\x12\x17\n\x0funit_tax_amount\x18\x08 \x01(\t\x12\x13\n\x0bline_amount\x18\t \x01(\t\x12\x17\n\x0fline_tax_amount\x18\n \x01(\t\"E\n\x0fLineItemWrapper\x12\x32\n\nline_items\x18\x01 \x03(\x0b\x32\x1e.micashared.common.v1.LineItem\"\xab\x02\n\nAdjustment\x12\x10\n\x08sequence\x18\x01 \x01(\x05\x12=\n\x0f\x61\x64justment_type\x18\x02 \x01(\x0e\x32$.micashared.common.v1.AdjustmentType\x12\x14\n\x0cproduct_code\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x10\n\x08quantity\x18\x05 \x01(\t\x12\x33\n\x04unit\x18\x06 \x01(\x0e\x32%.micashared.common.enums.unit.v1.Unit\x12\x13\n\x0bunit_amount\x18\x07 \x01(\t\x12\x17\n\x0funit_tax_amount\x18\x08 \x01(\t\x12\x13\n\x0bline_amount\x18\t \x01(\t\x12\x17\n\x0fline_tax_amount\x18\n \x01(\t\"x\n\x19LineItemSequenceAndStatus\x12\x10\n\x08sequence\x18\x01 \x01(\x05\x12I\n\x06status\x18\x02 \x01(\x0e\x32\x39.micashared.common.enums.lineitemstatus.v1.LineItemStatus\"z\n\x1eLineItemSequenceAndStatusValue\x12X\n\x1fline_item_sequence_and_statuses\x18\x01 \x03(\x0b\x32/.micashared.common.v1.LineItemSequenceAndStatus\"\x91\x01\n\x11LineItemAndStatus\x12\x31\n\tline_item\x18\x01 \x01(\x0b\x32\x1e.micashared.common.v1.LineItem\x12I\n\x06status\x18\x02 \x01(\x0e\x32\x39.micashared.common.enums.lineitemstatus.v1.LineItemStatus\"`\n\x15LineItemResponseValue\x12G\n\x16line_item_and_statuses\x18\x01 \x03(\x0b\x32\'.micashared.common.v1.LineItemAndStatus*\x88\x02\n\x0e\x41\x64justmentType\x12\x1f\n\x1b\x41\x44JUSTMENT_TYPE_UNSPECIFIED\x10\x00\x12)\n%ADJUSTMENT_TYPE_MANUFACTURER_DISCOUNT\x10\x01\x12\"\n\x1e\x41\x44JUSTMENT_TYPE_STORE_DISCOUNT\x10\x02\x12\x1a\n\x16\x41\x44JUSTMENT_TYPE_RETURN\x10\x03\x12 \n\x1c\x41\x44JUSTMENT_TYPE_PAYMENT_CASH\x10\x04\x12%\n!ADJUSTMENT_TYPE_PAYMENT_GIFT_CARD\x10\x05\x12!\n\x1d\x41\x44JUSTMENT_TYPE_PAYMENT_OTHER\x10\x06\x42N\n\x17io.micashared.common.v1B\rLineItemProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$micashared/common/v1/line_item.proto\x12\x14micashared.common.v1\x1a\x17validate/validate.proto\x1a@micashared/common/enums/lineitemstatus/v1/line_item_status.proto\x1a*micashared/common/enums/unit/v1/unit.proto\"\x83\x02\n\x08LineItem\x12\x10\n\x08sequence\x18\x01 \x01(\x05\x12\x17\n\x0fline_item_group\x18\x02 \x01(\t\x12\x14\n\x0cproduct_code\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x10\n\x08quantity\x18\x05 \x01(\t\x12\x33\n\x04unit\x18\x06 \x01(\x0e\x32%.micashared.common.enums.unit.v1.Unit\x12\x13\n\x0bunit_amount\x18\x07 \x01(\t\x12\x17\n\x0funit_tax_amount\x18\x08 \x01(\t\x12\x13\n\x0bline_amount\x18\t \x01(\t\x12\x17\n\x0fline_tax_amount\x18\n \x01(\t\"E\n\x0fLineItemWrapper\x12\x32\n\nline_items\x18\x01 \x03(\x0b\x32\x1e.micashared.common.v1.LineItem\"\xab\x02\n\nAdjustment\x12\x10\n\x08sequence\x18\x01 \x01(\x05\x12=\n\x0f\x61\x64justment_type\x18\x02 \x01(\x0e\x32$.micashared.common.v1.AdjustmentType\x12\x14\n\x0cproduct_code\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x10\n\x08quantity\x18\x05 \x01(\t\x12\x33\n\x04unit\x18\x06 \x01(\x0e\x32%.micashared.common.enums.unit.v1.Unit\x12\x13\n\x0bunit_amount\x18\x07 \x01(\t\x12\x17\n\x0funit_tax_amount\x18\x08 \x01(\t\x12\x13\n\x0bline_amount\x18\t \x01(\t\x12\x17\n\x0fline_tax_amount\x18\n \x01(\t\"x\n\x19LineItemSequenceAndStatus\x12\x10\n\x08sequence\x18\x01 \x01(\x05\x12I\n\x06status\x18\x02 \x01(\x0e\x32\x39.micashared.common.enums.lineitemstatus.v1.LineItemStatus\"z\n\x1eLineItemSequenceAndStatusValue\x12X\n\x1fline_item_sequence_and_statuses\x18\x01 \x03(\x0b\x32/.micashared.common.v1.LineItemSequenceAndStatus\"\x91\x01\n\x11LineItemAndStatus\x12\x31\n\tline_item\x18\x01 \x01(\x0b\x32\x1e.micashared.common.v1.LineItem\x12I\n\x06status\x18\x02 \x01(\x0e\x32\x39.micashared.common.enums.lineitemstatus.v1.LineItemStatus\"`\n\x15LineItemResponseValue\x12G\n\x16line_item_and_statuses\x18\x01 \x03(\x0b\x32\'.micashared.common.v1.LineItemAndStatus\"Q\n\tSurcharge\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12/\n\x06\x61mount\x18\x02 \x01(\tB\x1f\xfa\x42\x1cr\x1a\x10\x01\x18\x32\x32\x14^([0-9]*[.])?[0-9]+$*\x88\x02\n\x0e\x41\x64justmentType\x12\x1f\n\x1b\x41\x44JUSTMENT_TYPE_UNSPECIFIED\x10\x00\x12)\n%ADJUSTMENT_TYPE_MANUFACTURER_DISCOUNT\x10\x01\x12\"\n\x1e\x41\x44JUSTMENT_TYPE_STORE_DISCOUNT\x10\x02\x12\x1a\n\x16\x41\x44JUSTMENT_TYPE_RETURN\x10\x03\x12 \n\x1c\x41\x44JUSTMENT_TYPE_PAYMENT_CASH\x10\x04\x12%\n!ADJUSTMENT_TYPE_PAYMENT_GIFT_CARD\x10\x05\x12!\n\x1d\x41\x44JUSTMENT_TYPE_PAYMENT_OTHER\x10\x06\x42N\n\x17io.micashared.common.v1B\rLineItemProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.line_item_pb2', globals())
@@ -30,20 +31,24 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027io.micashared.common.v1B\rLineItemProtoZ\035micashared/common/v1;commonv1\242\002\004MICA'
-  _ADJUSTMENTTYPE._serialized_start=1300
-  _ADJUSTMENTTYPE._serialized_end=1564
-  _LINEITEM._serialized_start=173
-  _LINEITEM._serialized_end=432
-  _LINEITEMWRAPPER._serialized_start=434
-  _LINEITEMWRAPPER._serialized_end=503
-  _ADJUSTMENT._serialized_start=506
-  _ADJUSTMENT._serialized_end=805
-  _LINEITEMSEQUENCEANDSTATUS._serialized_start=807
-  _LINEITEMSEQUENCEANDSTATUS._serialized_end=927
-  _LINEITEMSEQUENCEANDSTATUSVALUE._serialized_start=929
-  _LINEITEMSEQUENCEANDSTATUSVALUE._serialized_end=1051
-  _LINEITEMANDSTATUS._serialized_start=1054
-  _LINEITEMANDSTATUS._serialized_end=1199
-  _LINEITEMRESPONSEVALUE._serialized_start=1201
-  _LINEITEMRESPONSEVALUE._serialized_end=1297
+  _SURCHARGE.fields_by_name['amount']._options = None
+  _SURCHARGE.fields_by_name['amount']._serialized_options = b'\372B\034r\032\020\001\03022\024^([0-9]*[.])?[0-9]+$'
+  _ADJUSTMENTTYPE._serialized_start=1408
+  _ADJUSTMENTTYPE._serialized_end=1672
+  _LINEITEM._serialized_start=198
+  _LINEITEM._serialized_end=457
+  _LINEITEMWRAPPER._serialized_start=459
+  _LINEITEMWRAPPER._serialized_end=528
+  _ADJUSTMENT._serialized_start=531
+  _ADJUSTMENT._serialized_end=830
+  _LINEITEMSEQUENCEANDSTATUS._serialized_start=832
+  _LINEITEMSEQUENCEANDSTATUS._serialized_end=952
+  _LINEITEMSEQUENCEANDSTATUSVALUE._serialized_start=954
+  _LINEITEMSEQUENCEANDSTATUSVALUE._serialized_end=1076
+  _LINEITEMANDSTATUS._serialized_start=1079
+  _LINEITEMANDSTATUS._serialized_end=1224
+  _LINEITEMRESPONSEVALUE._serialized_start=1226
+  _LINEITEMRESPONSEVALUE._serialized_end=1322
+  _SURCHARGE._serialized_start=1324
+  _SURCHARGE._serialized_end=1405
 # @@protoc_insertion_point(module_scope)

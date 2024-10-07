@@ -1,3 +1,7 @@
+ifndef VERSION
+VERSION=main
+endif
+
 SUBDIRS := networksdk micacommon discount partner serviceprovider
 TOPTARGETS := clean build test publish
 
@@ -16,3 +20,7 @@ setup_common:
 .PHONY: generate
 generate:
 	./generate.sh
+
+.PHONY: protoupdate
+protoupdate:
+	cd proto && git fetch --tags && git checkout $(VERSION)

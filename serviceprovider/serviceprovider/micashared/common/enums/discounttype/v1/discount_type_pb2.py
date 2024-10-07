@@ -20,14 +20,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n;micashared/common/enums/discounttype/v1/discount_type.proto\x12\'micashared.common.enums.discounttype.v1*\xa1\x01\n\x0c\x44iscountType\x12\x1d\n\x19\x44ISCOUNT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x44ISCOUNT_TYPE_CPG\x10\x01\x12\x1c\n\x18\x44ISCOUNT_TYPE_GOVERNMENT\x10\x02\x12\x19\n\x15\x44ISCOUNT_TYPE_PARTNER\x10\x03\x12\"\n\x1e\x44ISCOUNT_TYPE_SERVICE_PROVIDER\x10\x04\x42`\n\x1dio.micashared.common.enums.v1B\x10\x44iscountTypeEnumZ&micashared/common/enums/discounttypev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n;micashared/common/enums/discounttype/v1/discount_type.proto\x12\'micashared.common.enums.discounttype.v1*\xa1\x01\n\x0c\x44iscountType\x12\x1d\n\x19\x44ISCOUNT_TYPE_UNSPECIFIED\x10\x00\x12\x15\n\x11\x44ISCOUNT_TYPE_CPG\x10\x01\x12\x1c\n\x18\x44ISCOUNT_TYPE_GOVERNMENT\x10\x02\x12\x19\n\x15\x44ISCOUNT_TYPE_PARTNER\x10\x03\x12\"\n\x1e\x44ISCOUNT_TYPE_SERVICE_PROVIDER\x10\x04\x42\x65\n\x1dio.micashared.common.enums.v1B\x15\x44iscountTypeEnumProtoZ&micashared/common/enums/discounttypev1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.enums.discounttype.v1.discount_type_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\035io.micashared.common.enums.v1B\020DiscountTypeEnumZ&micashared/common/enums/discounttypev1\242\002\004MICA'
+  DESCRIPTOR._serialized_options = b'\n\035io.micashared.common.enums.v1B\025DiscountTypeEnumProtoZ&micashared/common/enums/discounttypev1\242\002\004MICA'
   _DISCOUNTTYPE._serialized_start=105
   _DISCOUNTTYPE._serialized_end=266
 # @@protoc_insertion_point(module_scope)

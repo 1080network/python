@@ -68,6 +68,11 @@ class ServiceProviderFromMicaServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.FromString,
                 )
+        self.AmendHoldValue = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/AmendHoldValue',
+                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.AmendHoldValueRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.AmendHoldValueResponse.FromString,
+                )
         self.ReleaseHoldValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReleaseHoldValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReleaseHoldValueRequest.SerializeToString,
@@ -162,6 +167,13 @@ class ServiceProviderFromMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AmendHoldValue(self, request, context):
+        """Release a previously placed hold
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ReleaseHoldValue(self, request, context):
         """Release a value that was previously held
         """
@@ -234,6 +246,11 @@ def add_ServiceProviderFromMicaServiceServicer_to_server(servicer, server):
                     servicer.HoldValue,
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.SerializeToString,
+            ),
+            'AmendHoldValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.AmendHoldValue,
+                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.AmendHoldValueRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.AmendHoldValueResponse.SerializeToString,
             ),
             'ReleaseHoldValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ReleaseHoldValue,
@@ -395,6 +412,23 @@ class ServiceProviderFromMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/HoldValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.HoldValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AmendHoldValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/AmendHoldValue',
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.AmendHoldValueRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.AmendHoldValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

@@ -22,7 +22,7 @@ from sdk.micashared.common.v1 import bank_account_detail_pb2 as micashared_dot_c
 from sdk.micashared.common.v1 import error_pb2 as micashared_dot_common_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%mica/partner/account/v1/account.proto\x12\x17mica.partner.account.v1\x1a.micashared/common/v1/bank_account_detail.proto\x1a micashared/common/v1/error.proto\",\n\x17SearchABAAccountRequest\x12\x11\n\tbank_name\x18\x01 \x01(\t\"\xab\x02\n\x18SearchABAAccountResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.mica.partner.account.v1.SearchABAAccountResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12;\n\x0c\x61\x62\x61_accounts\x18\x03 \x03(\x0b\x32%.micashared.common.v1.ABAAccountEntry\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42I\n\x1aio.mica.partner.account.v1B\x0c\x41\x63\x63ountProtoZ\x16mica/partner/accountv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%mica/partner/account/v1/account.proto\x12\x17mica.partner.account.v1\x1a.micashared/common/v1/bank_account_detail.proto\x1a micashared/common/v1/error.proto\",\n\x17SearchABAAccountRequest\x12\x11\n\tbank_name\x18\x01 \x01(\t\"\xab\x02\n\x18SearchABAAccountResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.mica.partner.account.v1.SearchABAAccountResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12;\n\x0c\x61\x62\x61_accounts\x18\x03 \x03(\x0b\x32%.micashared.common.v1.ABAAccountEntry\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"R\n\x17\x43reateABAAccountRequest\x12\x37\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32&.micashared.common.v1.ABAAccountNumber\"\xa0\x02\n\x18\x43reateABAAccountResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.mica.partner.account.v1.CreateABAAccountResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x13\n\x0b\x61\x63\x63ount_key\x18\x03 \x01(\t\"y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x1c\n\x18STATUS_DUPLICATE_ACCOUNT\x10\x02\x12%\n!STATUS_ROUTING_NUMBER_NOT_ALLOWED\x10\x03\"+\n\x14GetABAAccountRequest\x12\x13\n\x0b\x61\x63\x63ount_key\x18\x01 \x01(\t\"\x8f\x02\n\x15GetABAAccountResponse\x12\x45\n\x06status\x18\x01 \x01(\x0e\x32\x35.mica.partner.account.v1.GetABAAccountResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x37\n\x07\x61\x63\x63ount\x18\x03 \x01(\x0b\x32&.micashared.common.v1.ABAAccountNumber\"J\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x42I\n\x1aio.mica.partner.account.v1B\x0c\x41\x63\x63ountProtoZ\x16mica/partner/accountv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.partner.account.v1.account_pb2', globals())
@@ -36,4 +36,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SEARCHABAACCOUNTRESPONSE._serialized_end=494
   _SEARCHABAACCOUNTRESPONSE_STATUS._serialized_start=402
   _SEARCHABAACCOUNTRESPONSE_STATUS._serialized_end=494
+  _CREATEABAACCOUNTREQUEST._serialized_start=496
+  _CREATEABAACCOUNTREQUEST._serialized_end=578
+  _CREATEABAACCOUNTRESPONSE._serialized_start=581
+  _CREATEABAACCOUNTRESPONSE._serialized_end=869
+  _CREATEABAACCOUNTRESPONSE_STATUS._serialized_start=748
+  _CREATEABAACCOUNTRESPONSE_STATUS._serialized_end=869
+  _GETABAACCOUNTREQUEST._serialized_start=871
+  _GETABAACCOUNTREQUEST._serialized_end=914
+  _GETABAACCOUNTRESPONSE._serialized_start=917
+  _GETABAACCOUNTRESPONSE._serialized_end=1188
+  _GETABAACCOUNTRESPONSE_STATUS._serialized_start=1114
+  _GETABAACCOUNTRESPONSE_STATUS._serialized_end=1188
 # @@protoc_insertion_point(module_scope)

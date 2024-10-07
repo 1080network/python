@@ -19,10 +19,11 @@ _sym_db = _symbol_database.Default()
 
 
 from partner.micashared.common.v1 import error_pb2 as micashared_dot_common_dot_v1_dot_error__pb2
+from partner.micashared.common.v1 import instrument_pb2 as micashared_dot_common_dot_v1_dot_instrument__pb2
 from partner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+mica/partner/instrument/v1/instrument.proto\x12\x1amica.partner.instrument.v1\x1a micashared/common/v1/error.proto\x1a\x17validate/validate.proto\"\xaa\x01\n\x19\x45xchangeSessionKeyRequest\x12\x1e\n\x0bsession_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1b\x18\x32\x12!\n\x10partner_user_ref\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\'\n\x16partner_instrument_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12!\n\x10partner_uuek_ref\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\"\xb9\x02\n\x1a\x45xchangeSessionKeyResponse\x12M\n\x06status\x18\x01 \x01(\x0e\x32=.mica.partner.instrument.v1.ExchangeSessionKeyResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x1f\n\x0cpartner_uuek\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\x7f\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12!\n\x1dSTATUS_MATCHING_CODE_MISMATCH\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\x42R\n\x1dio.mica.partner.instrument.v1B\x0fInstrumentProtoZ\x19mica/partner/instrumentv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+mica/partner/instrument/v1/instrument.proto\x12\x1amica.partner.instrument.v1\x1a micashared/common/v1/error.proto\x1a%micashared/common/v1/instrument.proto\x1a\x17validate/validate.proto\"\xaa\x01\n\x19\x45xchangeSessionKeyRequest\x12\x1e\n\x0bsession_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1b\x18\x32\x12!\n\x10partner_user_ref\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\'\n\x16partner_instrument_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12!\n\x10partner_uuek_ref\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\"\xb9\x02\n\x1a\x45xchangeSessionKeyResponse\x12M\n\x06status\x18\x01 \x01(\x0e\x32=.mica.partner.instrument.v1.ExchangeSessionKeyResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x1f\n\x0cpartner_uuek\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"\x7f\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12!\n\x1dSTATUS_MATCHING_CODE_MISMATCH\x10\x03\x12\x14\n\x10STATUS_NOT_FOUND\x10\x04\"M\n&ProvisionUUEKWithLinkSessionKeyRequest\x12#\n\x10link_session_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1b\x18\x32\"\xa5\x02\n\'ProvisionUUEKWithLinkSessionKeyResponse\x12Z\n\x06status\x18\x01 \x01(\x0e\x32J.mica.partner.instrument.v1.ProvisionUUEKWithLinkSessionKeyResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x14\n\x0cpartner_uuek\x18\x03 \x01(\t\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xc8\x01\n\x1dLinkInstrumentWithCodeRequest\x12\x14\n\x0clinking_code\x18\x01 \x01(\t\x12\x17\n\x0fis_one_time_use\x18\x02 \x01(\x08\x12\x13\n\x0b\x63reate_uuek\x18\x03 \x01(\x08\x12#\n\x10organization_key\x18\x04 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x12#\n\x10organization_ref\x18\x05 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x42\x19\n\x17organization_identifier\"\xe4\x02\n\x1eLinkInstrumentWithCodeResponse\x12Q\n\x06status\x18\x01 \x01(\x0e\x32\x41.mica.partner.instrument.v1.LinkInstrumentWithCodeResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x17\n\x0fis_one_time_use\x18\x03 \x01(\x08\x12\x18\n\x10link_session_key\x18\x04 \x01(\t\x12\x0c\n\x04uuek\x18\x05 \x01(\t\x12:\n\x06\x63laims\x18\x06 \x01(\x0b\x32*.micashared.common.v1.InstrumentLinkClaims\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42R\n\x1dio.mica.partner.instrument.v1B\x0fInstrumentProtoZ\x19mica/partner/instrumentv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.partner.instrument.v1.instrument_pb2', globals())
@@ -40,10 +41,28 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _EXCHANGESESSIONKEYREQUEST.fields_by_name['partner_uuek_ref']._serialized_options = b'\372B\004r\002\030d'
   _EXCHANGESESSIONKEYRESPONSE.fields_by_name['partner_uuek']._options = None
   _EXCHANGESESSIONKEYRESPONSE.fields_by_name['partner_uuek']._serialized_options = b'\372B\006r\004\020\036\0302'
-  _EXCHANGESESSIONKEYREQUEST._serialized_start=135
-  _EXCHANGESESSIONKEYREQUEST._serialized_end=305
-  _EXCHANGESESSIONKEYRESPONSE._serialized_start=308
-  _EXCHANGESESSIONKEYRESPONSE._serialized_end=621
-  _EXCHANGESESSIONKEYRESPONSE_STATUS._serialized_start=494
-  _EXCHANGESESSIONKEYRESPONSE_STATUS._serialized_end=621
+  _PROVISIONUUEKWITHLINKSESSIONKEYREQUEST.fields_by_name['link_session_key']._options = None
+  _PROVISIONUUEKWITHLINKSESSIONKEYREQUEST.fields_by_name['link_session_key']._serialized_options = b'\372B\006r\004\020\033\0302'
+  _LINKINSTRUMENTWITHCODEREQUEST.fields_by_name['organization_key']._options = None
+  _LINKINSTRUMENTWITHCODEREQUEST.fields_by_name['organization_key']._serialized_options = b'\372B\004r\002\0302'
+  _LINKINSTRUMENTWITHCODEREQUEST.fields_by_name['organization_ref']._options = None
+  _LINKINSTRUMENTWITHCODEREQUEST.fields_by_name['organization_ref']._serialized_options = b'\372B\004r\002\030d'
+  _EXCHANGESESSIONKEYREQUEST._serialized_start=174
+  _EXCHANGESESSIONKEYREQUEST._serialized_end=344
+  _EXCHANGESESSIONKEYRESPONSE._serialized_start=347
+  _EXCHANGESESSIONKEYRESPONSE._serialized_end=660
+  _EXCHANGESESSIONKEYRESPONSE_STATUS._serialized_start=533
+  _EXCHANGESESSIONKEYRESPONSE_STATUS._serialized_end=660
+  _PROVISIONUUEKWITHLINKSESSIONKEYREQUEST._serialized_start=662
+  _PROVISIONUUEKWITHLINKSESSIONKEYREQUEST._serialized_end=739
+  _PROVISIONUUEKWITHLINKSESSIONKEYRESPONSE._serialized_start=742
+  _PROVISIONUUEKWITHLINKSESSIONKEYRESPONSE._serialized_end=1035
+  _PROVISIONUUEKWITHLINKSESSIONKEYRESPONSE_STATUS._serialized_start=943
+  _PROVISIONUUEKWITHLINKSESSIONKEYRESPONSE_STATUS._serialized_end=1035
+  _LINKINSTRUMENTWITHCODEREQUEST._serialized_start=1038
+  _LINKINSTRUMENTWITHCODEREQUEST._serialized_end=1238
+  _LINKINSTRUMENTWITHCODERESPONSE._serialized_start=1241
+  _LINKINSTRUMENTWITHCODERESPONSE._serialized_end=1597
+  _LINKINSTRUMENTWITHCODERESPONSE_STATUS._serialized_start=533
+  _LINKINSTRUMENTWITHCODERESPONSE_STATUS._serialized_end=603
 # @@protoc_insertion_point(module_scope)
