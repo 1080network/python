@@ -27,14 +27,14 @@ function generate_sdk(){
     mkdir -p $SDK_PROTO/mica
     mkdir -p $SDK_GEN
     #Prepare the proto files to generate only for the sdk that was requested
-    cp -r proto/micashared $SDK_PROTO/.
-    cp -r proto/mica/common $SDK_PROTO/mica
-    cp -r proto/mica/member $SDK_PROTO/mica
-    cp -r proto/mica/$sdk $SDK_PROTO/mica
+    cp -r golang/proto/micashared $SDK_PROTO/.
+    cp -r golang/proto/mica/common $SDK_PROTO/mica
+    cp -r golang/proto/mica/member $SDK_PROTO/mica
+    cp -r golang/proto/mica/$sdk $SDK_PROTO/mica
 
     #Mega hack, right now the service provider depends on the discount definition
     if [[ $sdk == "serviceprovider" ]]; then
-        cp -r proto/mica/discount $SDK_PROTO/mica
+        cp -r golang/proto/mica/discount $SDK_PROTO/mica
     fi
     docker run --rm -it -v $SDK_PROTO:/defs/proto -v $SDK_GEN:/defs/out namely/protoc-all -d /defs/proto -l python -o /defs/out
     if [[ $? -ne 0 ]]; then
@@ -77,10 +77,12 @@ function generate_full_sdk(){
     mkdir -p $SDK_PROTO/mica
     mkdir -p $SDK_GEN
     #Prepare the proto files to generate only for the sdk that was requested
-    cp -r proto/micashared $SDK_PROTO/.
-    cp -r proto/mica/partner $SDK_PROTO/mica/.
-    cp -r proto/mica/serviceprovider $SDK_PROTO/mica/.
-    cp -r proto/mica/discount $SDK_PROTO/mica/.
+    cp -r golang/proto/micashared $SDK_PROTO/.
+    cp -r golang/proto/mica/common $SDK_PROTO/mica
+    cp -r golang/proto/mica/member $SDK_PROTO/mica
+    cp -r golang/proto/mica/partner $SDK_PROTO/mica/.
+    cp -r golang/proto/mica/serviceprovider $SDK_PROTO/mica/.
+    cp -r golang/proto/mica/discount $SDK_PROTO/mica/.
 
     docker run --rm -it -v $SDK_PROTO:/defs/proto -v $SDK_GEN:/defs/out namely/protoc-all -d /defs/proto -l python -o /defs/out
     if [[ $? -ne 0 ]]; then

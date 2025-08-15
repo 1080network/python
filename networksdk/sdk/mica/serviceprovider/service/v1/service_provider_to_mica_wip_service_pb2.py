@@ -18,15 +18,21 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from sdk.mica.common.v1 import currency_pb2 as mica_dot_common_dot_v1_dot_currency__pb2
+from sdk.mica.discount.discount.v1 import discount_pb2 as mica_dot_discount_dot_discount_dot_v1_dot_discount__pb2
+from sdk.mica.serviceprovider.instrument.v1 import instrument_pb2 as mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2
 from sdk.micashared.common.enums.currency.v1 import currency_pb2 as micashared_dot_common_dot_enums_dot_currency_dot_v1_dot_currency__pb2
+from sdk.micashared.common.enums.discounttype.v1 import discount_type_pb2 as micashared_dot_common_dot_enums_dot_discounttype_dot_v1_dot_discount__type__pb2
 from sdk.micashared.common.enums.instrumenttype.v1 import instrument_type_pb2 as micashared_dot_common_dot_enums_dot_instrumenttype_dot_v1_dot_instrument__type__pb2
 from sdk.micashared.common.v1 import error_pb2 as micashared_dot_common_dot_v1_dot_error__pb2
 from sdk.micashared.common.v1 import pagination_pb2 as micashared_dot_common_dot_v1_dot_pagination__pb2
+from sdk.micashared.common.v1 import risk_signals_pb2 as micashared_dot_common_dot_v1_dot_risk__signals__pb2
 from sdk.micashared.common.v1 import user_pb2 as micashared_dot_common_dot_v1_dot_user__pb2
 from sdk.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nJmica/serviceprovider/service/v1/service_provider_to_mica_wip_service.proto\x12\x1fmica.serviceprovider.service.v1\x1a\x32micashared/common/enums/currency/v1/currency.proto\x1a?micashared/common/enums/instrumenttype/v1/instrument_type.proto\x1a micashared/common/v1/error.proto\x1a%micashared/common/v1/pagination.proto\x1a\x1fmicashared/common/v1/user.proto\x1a\x17validate/validate.proto\"\xcc\x01\n\x1aSetVisibilityStatusRequest\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x32\n\x1fservice_provider_instrument_key\x18\x03 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12L\n\x11visibility_status\x18\x07 \x01(\x0e\x32\x31.mica.serviceprovider.service.v1.VisibilityStatus\"\xfc\x01\n\x1bSetVisibilityStatusResponse\x12S\n\x06status\x18\x01 \x01(\x0e\x32\x43.mica.serviceprovider.service.v1.SetVisibilityStatusResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\x8c\x01\n\x13\x44iscoverUserRequest\x12?\n\x10user_demographic\x18\x02 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\x12\x34\n\npagination\x18\x04 \x01(\x0b\x32 .micashared.common.v1.Pagination\"\xc4\x02\n\x14\x44iscoverUserResponse\x12L\n\x06status\x18\x01 \x01(\x0e\x32<.mica.serviceprovider.service.v1.DiscoverUserResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x34\n\x05users\x18\x03 \x03(\x0b\x32%.mica.serviceprovider.service.v1.User\x12\x34\n\npagination\x18\x05 \x01(\x0b\x32 .micashared.common.v1.Pagination\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"-\n\x1dGetServiceProviderUUEKRequest\x12\x0c\n\x04uuek\x18\x04 \x01(\t\"\xce\x02\n\x1eGetServiceProviderUUEKResponse\x12V\n\x06status\x18\x01 \x01(\x0e\x32\x46.mica.serviceprovider.service.v1.GetServiceProviderUUEKResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12?\n\x10user_demographic\x18\x03 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\"g\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1f\n\x1bSTATUS_INSTRUMENT_NOT_FOUND\x10\x03\"\x92\x01\n\rSetPINRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12,\n\x19service_provider_user_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x0b\n\x03pin\x18\x03 \x01(\tB\x16\n\x0fuser_identifier\x12\x03\xf8\x42\x01\"\xfe\x01\n\x0eSetPINResponse\x12\x46\n\x06status\x18\x01 \x01(\x0e\x32\x36.mica.serviceprovider.service.v1.SetPINResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"x\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x1a\n\x16STATUS_PIN_ALREADY_SET\x10\x04\"\x97\x01\n\x12ValidatePINRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12,\n\x19service_provider_user_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x0b\n\x03pin\x18\x03 \x01(\tB\x16\n\x0fuser_identifier\x12\x03\xf8\x42\x01\"\x9d\x02\n\x13ValidatePINResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.mica.serviceprovider.service.v1.ValidatePINResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\x8c\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x17\n\x13STATUS_PIN_MISMATCH\x10\x04\x12\x15\n\x11STATUS_PIN_LOCKED\x10\x05\"\xa9\x01\n\x0fResetPINRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12,\n\x19service_provider_user_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x0f\n\x07old_pin\x18\x03 \x01(\t\x12\x0f\n\x07new_pin\x18\x04 \x01(\tB\x16\n\x0fuser_identifier\x12\x03\xf8\x42\x01\"\xff\x01\n\x10ResetPINResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.mica.serviceprovider.service.v1.ResetPINResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"u\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x17\n\x13STATUS_PIN_MISMATCH\x10\x04\"\x88\x01\n\x10RemovePINRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12,\n\x19service_provider_user_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x42\x16\n\x0fuser_identifier\x12\x03\xf8\x42\x01\"\xe8\x01\n\x11RemovePINResponse\x12I\n\x06status\x18\x01 \x01(\x0e\x32\x39.mica.serviceprovider.service.v1.RemovePINResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xc9\x02\n\x04User\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12?\n\x10user_demographic\x18\x02 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\x12\x1d\n\x15service_provider_name\x18\x03 \x01(\t\x12R\n\x0finstrument_type\x18\x04 \x01(\x0e\x32\x39.micashared.common.enums.instrumenttype.v1.InstrumentType\x12?\n\x08\x63urrency\x18\x05 \x01(\x0e\x32-.micashared.common.enums.currency.v1.Currency\x12\x10\n\x08nickname\x18\x06 \x01(\t\x12\x0c\n\x04uuek\x18\x07 \x01(\t\"\xda\x02\n(ProvisionEnrollmentValidationCodeRequest\x12,\n\x19service_provider_user_ref\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12#\n\x19service_provider_user_key\x18\x02 \x01(\tH\x00\x12\x32\n\x1fservice_provider_instrument_ref\x18\x03 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x01\x12)\n\x1fservice_provider_instrument_key\x18\x04 \x01(\tH\x01\x12\x46\n\x17shared_user_information\x18\x05 \x01(\x0b\x32%.micashared.common.v1.UserDemographicB\x16\n\x0fuser_identifier\x12\x03\xf8\x42\x01\x42\x1c\n\x15instrument_identifier\x12\x03\xf8\x42\x01\"\xd8\x02\n)ProvisionEnrollmentValidationCodeResponse\x12\x61\n\x06status\x18\x01 \x01(\x0e\x32Q.mica.serviceprovider.service.v1.ProvisionEnrollmentValidationCodeResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x17\n\x0fvalidation_code\x18\x03 \x01(\t\"\x82\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x1f\n\x1bSTATUS_INSTRUMENT_NOT_FOUND\x10\x03\x12\x19\n\x15STATUS_USER_NOT_FOUND\x10\x04*w\n\x10VisibilityStatus\x12!\n\x1dVISIBILITY_STATUS_UNSPECIFIED\x10\x00\x12\"\n\x1eVISIBILITY_STATUS_DISCOVERABLE\x10\x01\x12\x1c\n\x18VISIBILITY_STATUS_HIDDEN\x10\x02\x32\xe4\x08\n\x1fServiceProviderToMicaWIPService\x12\x92\x01\n\x13SetVisibilityStatus\x12;.mica.serviceprovider.service.v1.SetVisibilityStatusRequest\x1a<.mica.serviceprovider.service.v1.SetVisibilityStatusResponse\"\x00\x12}\n\x0c\x44iscoverUser\x12\x34.mica.serviceprovider.service.v1.DiscoverUserRequest\x1a\x35.mica.serviceprovider.service.v1.DiscoverUserResponse\"\x00\x12\x9b\x01\n\x16GetServiceProviderUUEK\x12>.mica.serviceprovider.service.v1.GetServiceProviderUUEKRequest\x1a?.mica.serviceprovider.service.v1.GetServiceProviderUUEKResponse\"\x00\x12k\n\x06SetPIN\x12..mica.serviceprovider.service.v1.SetPINRequest\x1a/.mica.serviceprovider.service.v1.SetPINResponse\"\x00\x12z\n\x0bValidatePIN\x12\x33.mica.serviceprovider.service.v1.ValidatePINRequest\x1a\x34.mica.serviceprovider.service.v1.ValidatePINResponse\"\x00\x12q\n\x08ResetPIN\x12\x30.mica.serviceprovider.service.v1.ResetPINRequest\x1a\x31.mica.serviceprovider.service.v1.ResetPINResponse\"\x00\x12t\n\tRemovePIN\x12\x31.mica.serviceprovider.service.v1.RemovePINRequest\x1a\x32.mica.serviceprovider.service.v1.RemovePINResponse\"\x00\x12\xbc\x01\n!ProvisionEnrollmentValidationCode\x12I.mica.serviceprovider.service.v1.ProvisionEnrollmentValidationCodeRequest\x1aJ.mica.serviceprovider.service.v1.ProvisionEnrollmentValidationCodeResponse\"\x00\x42q\n\"io.mica.serviceprovider.service.v1B$ServiceProviderToMicaWIPServiceProtoZ\x1emica/serviceprovider/servicev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nJmica/serviceprovider/service/v1/service_provider_to_mica_wip_service.proto\x12\x1fmica.serviceprovider.service.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dmica/common/v1/currency.proto\x1a(mica/discount/discount/v1/discount.proto\x1a\x33mica/serviceprovider/instrument/v1/instrument.proto\x1a\x32micashared/common/enums/currency/v1/currency.proto\x1a;micashared/common/enums/discounttype/v1/discount_type.proto\x1a?micashared/common/enums/instrumenttype/v1/instrument_type.proto\x1a micashared/common/v1/error.proto\x1a%micashared/common/v1/pagination.proto\x1a\'micashared/common/v1/risk_signals.proto\x1a\x1fmicashared/common/v1/user.proto\x1a\x17validate/validate.proto\"\x8c\x01\n\x13\x44iscoverUserRequest\x12?\n\x10user_demographic\x18\x02 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\x12\x34\n\npagination\x18\x04 \x01(\x0b\x32 .micashared.common.v1.Pagination\"\xc4\x02\n\x14\x44iscoverUserResponse\x12L\n\x06status\x18\x01 \x01(\x0e\x32<.mica.serviceprovider.service.v1.DiscoverUserResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x34\n\x05users\x18\x03 \x03(\x0b\x32%.mica.serviceprovider.service.v1.User\x12\x34\n\npagination\x18\x05 \x01(\x0b\x32 .micashared.common.v1.Pagination\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\x92\x01\n\rSetPINRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12,\n\x19service_provider_user_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x0b\n\x03pin\x18\x03 \x01(\tB\x16\n\x0fuser_identifier\x12\x03\xf8\x42\x01\"\xfe\x01\n\x0eSetPINResponse\x12\x46\n\x06status\x18\x01 \x01(\x0e\x32\x36.mica.serviceprovider.service.v1.SetPINResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"x\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x1a\n\x16STATUS_PIN_ALREADY_SET\x10\x04\"\x97\x01\n\x12ValidatePINRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12,\n\x19service_provider_user_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x0b\n\x03pin\x18\x03 \x01(\tB\x16\n\x0fuser_identifier\x12\x03\xf8\x42\x01\"\x9d\x02\n\x13ValidatePINResponse\x12K\n\x06status\x18\x01 \x01(\x0e\x32;.mica.serviceprovider.service.v1.ValidatePINResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\x8c\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x17\n\x13STATUS_PIN_MISMATCH\x10\x04\x12\x15\n\x11STATUS_PIN_LOCKED\x10\x05\"\xa9\x01\n\x0fResetPINRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12,\n\x19service_provider_user_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x0f\n\x07old_pin\x18\x03 \x01(\t\x12\x0f\n\x07new_pin\x18\x04 \x01(\tB\x16\n\x0fuser_identifier\x12\x03\xf8\x42\x01\"\xff\x01\n\x10ResetPINResponse\x12H\n\x06status\x18\x01 \x01(\x0e\x32\x38.mica.serviceprovider.service.v1.ResetPINResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"u\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x12\x17\n\x13STATUS_PIN_MISMATCH\x10\x04\"\x88\x01\n\x10RemovePINRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12,\n\x19service_provider_user_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x42\x16\n\x0fuser_identifier\x12\x03\xf8\x42\x01\"\xe8\x01\n\x11RemovePINResponse\x12I\n\x06status\x18\x01 \x01(\x0e\x32\x39.mica.serviceprovider.service.v1.RemovePINResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xc9\x02\n\x04User\x12,\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12?\n\x10user_demographic\x18\x02 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\x12\x1d\n\x15service_provider_name\x18\x03 \x01(\t\x12R\n\x0finstrument_type\x18\x04 \x01(\x0e\x32\x39.micashared.common.enums.instrumenttype.v1.InstrumentType\x12?\n\x08\x63urrency\x18\x05 \x01(\x0e\x32-.micashared.common.enums.currency.v1.Currency\x12\x10\n\x08nickname\x18\x06 \x01(\t\x12\x0c\n\x04uuek\x18\x07 \x01(\t\"2\n\x1eGetLinkedAccountBalanceRequest\x12\x10\n\x08link_key\x18\x01 \x01(\t\"\x8a\x03\n\x1fGetLinkedAccountBalanceResponse\x12W\n\x06status\x18\x01 \x01(\x0e\x32G.mica.serviceprovider.service.v1.GetLinkedAccountBalanceResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x14\n\x08\x63urrency\x18\x03 \x01(\tB\x02\x18\x01\x12\x19\n\x11\x61vailable_balance\x18\x04 \x01(\t\x12#\n\x1bvalue_provider_balance_unit\x18\x05 \x01(\t\x12\x1e\n\x16value_provider_balance\x18\x06 \x01(\t\x12 \n\x18\x65nable_for_purchase_flag\x18\x07 \x01(\x08\"J\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x14\n\x10STATUS_NOT_FOUND\x10\x02\"[\n%UpdateAccountEnableForPurchaseRequest\x12\x10\n\x08link_key\x18\x01 \x01(\t\x12 \n\x18\x65nable_for_purchase_flag\x18\x02 \x01(\x08\"\x92\x02\n&UpdateAccountEnableForPurchaseResponse\x12^\n\x06status\x18\x01 \x01(\x0e\x32N.mica.serviceprovider.service.v1.UpdateAccountEnableForPurchaseResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x14\n\x10STATUS_NOT_FOUND\x10\x02\x12\x10\n\x0cSTATUS_ERROR\x10\x03\"\xa7\x03\n\x10RecurringPayment\x12\x1d\n\x15recurring_payment_key\x18\x01 \x01(\t\x12\x10\n\x08nickname\x18\x02 \x01(\t\x12\x16\n\x0einstrument_key\x18\x03 \x01(\t\x12`\n\x17instrument_external_ref\x18\x04 \x01(\x0b\x32?.mica.serviceprovider.instrument.v1.InstrumentExternalReference\x12*\n\x08\x63urrency\x18\x05 \x01(\x0b\x32\x18.mica.common.v1.Currency\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x45\n\x05usage\x18\x07 \x01(\x0b\x32\x36.mica.serviceprovider.service.v1.RecurringPaymentUsage\x12\x45\n\x05terms\x18\x08 \x01(\x0b\x32\x36.mica.serviceprovider.service.v1.RecurringPaymentTerms\"\xa5\x01\n\x15RecurringPaymentUsage\x12\x30\n\x0clast_payment\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1b\n\x13last_payment_amount\x18\x02 \x01(\t\x12\x1f\n\x17number_of_payments_made\x18\x03 \x01(\r\x12\x1c\n\x14total_payment_amount\x18\x04 \x01(\t\"2\n\x15RecurringPaymentTerms\x12\x19\n\x11total_spend_limit\x18\x01 \x01(\t\"\xca\x01\n\x1eSearchRecurringPaymentsRequest\x12V\n\x04user\x18\x01 \x01(\x0b\x32\x46.mica.serviceprovider.service.v1.SearchRecurringPaymentsRequest.ByUserH\x00\x1aJ\n\x06\x42yUser\x12\x1b\n\x08user_ref\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x1d\n\x08user_key\x18\x02 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x42\x04\n\x02idB\x04\n\x02\x62y\"\xc1\x02\n\x1fSearchRecurringPaymentsResponse\x12W\n\x06status\x18\x01 \x01(\x0e\x32G.mica.serviceprovider.service.v1.SearchRecurringPaymentsResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12M\n\x12recurring_payments\x18\x04 \x03(\x0b\x32\x31.mica.serviceprovider.service.v1.RecurringPayment\"J\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x14\n\x10STATUS_NOT_FOUND\x10\x02\"\xee\x03\n\x10SendValueRequest\x12/\n\x1e\x66rom_service_provider_user_key\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12,\n\x19service_provider_user_key\x18\x06 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x00\x12,\n\x19service_provider_user_ref\x18\x07 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x35\n$from_service_provider_instrument_key\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32\x12\x32\n\x1fservice_provider_instrument_key\x18\x08 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x32H\x01\x12\x32\n\x1fservice_provider_instrument_ref\x18\t \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x01\x12\x0f\n\x07to_uuek\x18\x03 \x01(\t\x12*\n\x08\x63urrency\x18\x04 \x01(\x0b\x32\x18.mica.common.v1.Currency\x12\x0e\n\x06\x61mount\x18\x05 \x01(\t\x12\x35\n\x0brisk_signal\x18\n \x01(\x0b\x32 .micashared.common.v1.RiskSignalB\x11\n\x0fuser_identifierB\x17\n\x15instrument_identifier\"\xeb\x01\n\x11SendValueResponse\x12I\n\x06status\x18\x01 \x01(\x0e\x32\x39.mica.serviceprovider.service.v1.SendValueResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x17\n\x0ftransaction_key\x18\x03 \x01(\t\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xc8\x05\n\x1bServiceProviderUserDiscount\x12\x1f\n\x0c\x64iscount_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\x12\x19\n\x08headline\x18\x0b \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64\x12\x19\n\x07summary\x18\x0c \x01(\tB\x08\xfa\x42\x05r\x03\x18\xac\x02\x12%\n\x13receipt_description\x18\x02 \x01(\tB\x08\xfa\x42\x05r\x03\x18\xc8\x01\x12\x39\n\x06status\x18\x03 \x01(\x0e\x32).mica.discount.discount.v1.DiscountStatus\x12\x43\n\x04type\x18\x04 \x01(\x0e\x32\x35.micashared.common.enums.discounttype.v1.DiscountType\x12\x38\n\nvalid_from\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\xfa\x42\x05\xb2\x01\x02\x08\x00\x12\x38\n\x08valid_to\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\n\xfa\x42\x07\xb2\x01\x04\x08\x00@\x01\x12L\n\x11obsolete_currency\x18\x07 \x01(\x0e\x32-.micashared.common.enums.currency.v1.CurrencyB\x02\x18\x01\x12\x44\n\x0fmonetary_amount\x18\x08 \x01(\x0b\x32).mica.discount.discount.v1.MonetaryAmountH\x00\x12H\n\x11percentage_amount\x18\t \x01(\x0b\x32+.mica.discount.discount.v1.PercentageAmountH\x00\x12\x15\n\rthumbnail_url\x18\n \x01(\t\x12*\n\x08\x63urrency\x18\r \x01(\x0b\x32\x18.mica.common.v1.CurrencyB\x16\n\x0f\x64iscount_amount\x12\x03\xf8\x42\x01\"\x80\x02\n\x19SearchUserDiscountRequest\x12.\n\x19service_provider_user_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32H\x00\x12,\n\x19service_provider_user_ref\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x18\x64H\x00\x12\x43\n\x04type\x18\x03 \x01(\x0e\x32\x35.micashared.common.enums.discounttype.v1.DiscountType\x12\x34\n\npagination\x18\x05 \x01(\x0b\x32 .micashared.common.v1.PaginationB\n\n\x08\x63riteria\"\xf0\x02\n\x1aSearchUserDiscountResponse\x12R\n\x06status\x18\x01 \x01(\x0e\x32\x42.mica.serviceprovider.service.v1.SearchUserDiscountResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12T\n\x0euser_discounts\x18\x03 \x03(\x0b\x32<.mica.serviceprovider.service.v1.ServiceProviderUserDiscount\x12\x34\n\npagination\x18\x05 \x01(\x0b\x32 .micashared.common.v1.Pagination\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x32\xf6\t\n\x1fServiceProviderToMicaWIPService\x12k\n\x06SetPIN\x12..mica.serviceprovider.service.v1.SetPINRequest\x1a/.mica.serviceprovider.service.v1.SetPINResponse\"\x00\x12z\n\x0bValidatePIN\x12\x33.mica.serviceprovider.service.v1.ValidatePINRequest\x1a\x34.mica.serviceprovider.service.v1.ValidatePINResponse\"\x00\x12q\n\x08ResetPIN\x12\x30.mica.serviceprovider.service.v1.ResetPINRequest\x1a\x31.mica.serviceprovider.service.v1.ResetPINResponse\"\x00\x12t\n\tRemovePIN\x12\x31.mica.serviceprovider.service.v1.RemovePINRequest\x1a\x32.mica.serviceprovider.service.v1.RemovePINResponse\"\x00\x12\x9e\x01\n\x17GetLinkedAccountBalance\x12?.mica.serviceprovider.service.v1.GetLinkedAccountBalanceRequest\x1a@.mica.serviceprovider.service.v1.GetLinkedAccountBalanceResponse\"\x00\x12\xb3\x01\n\x1eUpdateAccountEnableForPurchase\x12\x46.mica.serviceprovider.service.v1.UpdateAccountEnableForPurchaseRequest\x1aG.mica.serviceprovider.service.v1.UpdateAccountEnableForPurchaseResponse\"\x00\x12\x9e\x01\n\x17SearchRecurringPayments\x12?.mica.serviceprovider.service.v1.SearchRecurringPaymentsRequest\x1a@.mica.serviceprovider.service.v1.SearchRecurringPaymentsResponse\"\x00\x12w\n\tSendValue\x12\x31.mica.serviceprovider.service.v1.SendValueRequest\x1a\x32.mica.serviceprovider.service.v1.SendValueResponse\"\x03\x88\x02\x01\x12\x8f\x01\n\x12SearchUserDiscount\x12:.mica.serviceprovider.service.v1.SearchUserDiscountRequest\x1a;.mica.serviceprovider.service.v1.SearchUserDiscountResponse\"\x00\x42q\n\"io.mica.serviceprovider.service.v1B$ServiceProviderToMicaWIPServiceProtoZ\x1emica/serviceprovider/servicev1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.serviceprovider.service.v1.service_provider_to_mica_wip_service_pb2', globals())
@@ -34,10 +40,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\"io.mica.serviceprovider.service.v1B$ServiceProviderToMicaWIPServiceProtoZ\036mica/serviceprovider/servicev1\242\002\004MICA'
-  _SETVISIBILITYSTATUSREQUEST.fields_by_name['service_provider_user_key']._options = None
-  _SETVISIBILITYSTATUSREQUEST.fields_by_name['service_provider_user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
-  _SETVISIBILITYSTATUSREQUEST.fields_by_name['service_provider_instrument_key']._options = None
-  _SETVISIBILITYSTATUSREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\006r\004\020\036\0302'
   _SETPINREQUEST.oneofs_by_name['user_identifier']._options = None
   _SETPINREQUEST.oneofs_by_name['user_identifier']._serialized_options = b'\370B\001'
   _SETPINREQUEST.fields_by_name['service_provider_user_key']._options = None
@@ -64,66 +66,118 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _REMOVEPINREQUEST.fields_by_name['service_provider_user_ref']._serialized_options = b'\372B\004r\002\030d'
   _USER.fields_by_name['service_provider_user_key']._options = None
   _USER.fields_by_name['service_provider_user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
-  _PROVISIONENROLLMENTVALIDATIONCODEREQUEST.oneofs_by_name['user_identifier']._options = None
-  _PROVISIONENROLLMENTVALIDATIONCODEREQUEST.oneofs_by_name['user_identifier']._serialized_options = b'\370B\001'
-  _PROVISIONENROLLMENTVALIDATIONCODEREQUEST.oneofs_by_name['instrument_identifier']._options = None
-  _PROVISIONENROLLMENTVALIDATIONCODEREQUEST.oneofs_by_name['instrument_identifier']._serialized_options = b'\370B\001'
-  _PROVISIONENROLLMENTVALIDATIONCODEREQUEST.fields_by_name['service_provider_user_ref']._options = None
-  _PROVISIONENROLLMENTVALIDATIONCODEREQUEST.fields_by_name['service_provider_user_ref']._serialized_options = b'\372B\004r\002\030d'
-  _PROVISIONENROLLMENTVALIDATIONCODEREQUEST.fields_by_name['service_provider_instrument_ref']._options = None
-  _PROVISIONENROLLMENTVALIDATIONCODEREQUEST.fields_by_name['service_provider_instrument_ref']._serialized_options = b'\372B\004r\002\030d'
-  _VISIBILITYSTATUS._serialized_start=4355
-  _VISIBILITYSTATUS._serialized_end=4474
-  _SETVISIBILITYSTATUSREQUEST._serialized_start=360
-  _SETVISIBILITYSTATUSREQUEST._serialized_end=564
-  _SETVISIBILITYSTATUSRESPONSE._serialized_start=567
-  _SETVISIBILITYSTATUSRESPONSE._serialized_end=819
-  _SETVISIBILITYSTATUSRESPONSE_STATUS._serialized_start=727
-  _SETVISIBILITYSTATUSRESPONSE_STATUS._serialized_end=819
-  _DISCOVERUSERREQUEST._serialized_start=822
-  _DISCOVERUSERREQUEST._serialized_end=962
-  _DISCOVERUSERRESPONSE._serialized_start=965
-  _DISCOVERUSERRESPONSE._serialized_end=1289
-  _DISCOVERUSERRESPONSE_STATUS._serialized_start=727
-  _DISCOVERUSERRESPONSE_STATUS._serialized_end=797
-  _GETSERVICEPROVIDERUUEKREQUEST._serialized_start=1291
-  _GETSERVICEPROVIDERUUEKREQUEST._serialized_end=1336
-  _GETSERVICEPROVIDERUUEKRESPONSE._serialized_start=1339
-  _GETSERVICEPROVIDERUUEKRESPONSE._serialized_end=1673
-  _GETSERVICEPROVIDERUUEKRESPONSE_STATUS._serialized_start=1570
-  _GETSERVICEPROVIDERUUEKRESPONSE_STATUS._serialized_end=1673
-  _SETPINREQUEST._serialized_start=1676
-  _SETPINREQUEST._serialized_end=1822
-  _SETPINRESPONSE._serialized_start=1825
-  _SETPINRESPONSE._serialized_end=2079
-  _SETPINRESPONSE_STATUS._serialized_start=1959
-  _SETPINRESPONSE_STATUS._serialized_end=2079
-  _VALIDATEPINREQUEST._serialized_start=2082
-  _VALIDATEPINREQUEST._serialized_end=2233
-  _VALIDATEPINRESPONSE._serialized_start=2236
-  _VALIDATEPINRESPONSE._serialized_end=2521
-  _VALIDATEPINRESPONSE_STATUS._serialized_start=2381
-  _VALIDATEPINRESPONSE_STATUS._serialized_end=2521
-  _RESETPINREQUEST._serialized_start=2524
-  _RESETPINREQUEST._serialized_end=2693
-  _RESETPINRESPONSE._serialized_start=2696
-  _RESETPINRESPONSE._serialized_end=2951
-  _RESETPINRESPONSE_STATUS._serialized_start=2381
-  _RESETPINRESPONSE_STATUS._serialized_end=2498
-  _REMOVEPINREQUEST._serialized_start=2954
-  _REMOVEPINREQUEST._serialized_end=3090
-  _REMOVEPINRESPONSE._serialized_start=3093
-  _REMOVEPINRESPONSE._serialized_end=3325
-  _REMOVEPINRESPONSE_STATUS._serialized_start=727
-  _REMOVEPINRESPONSE_STATUS._serialized_end=819
-  _USER._serialized_start=3328
-  _USER._serialized_end=3657
-  _PROVISIONENROLLMENTVALIDATIONCODEREQUEST._serialized_start=3660
-  _PROVISIONENROLLMENTVALIDATIONCODEREQUEST._serialized_end=4006
-  _PROVISIONENROLLMENTVALIDATIONCODERESPONSE._serialized_start=4009
-  _PROVISIONENROLLMENTVALIDATIONCODERESPONSE._serialized_end=4353
-  _PROVISIONENROLLMENTVALIDATIONCODERESPONSE_STATUS._serialized_start=4223
-  _PROVISIONENROLLMENTVALIDATIONCODERESPONSE_STATUS._serialized_end=4353
-  _SERVICEPROVIDERTOMICAWIPSERVICE._serialized_start=4477
-  _SERVICEPROVIDERTOMICAWIPSERVICE._serialized_end=5601
+  _GETLINKEDACCOUNTBALANCERESPONSE.fields_by_name['currency']._options = None
+  _GETLINKEDACCOUNTBALANCERESPONSE.fields_by_name['currency']._serialized_options = b'\030\001'
+  _SEARCHRECURRINGPAYMENTSREQUEST_BYUSER.fields_by_name['user_ref']._options = None
+  _SEARCHRECURRINGPAYMENTSREQUEST_BYUSER.fields_by_name['user_ref']._serialized_options = b'\372B\004r\002\030d'
+  _SEARCHRECURRINGPAYMENTSREQUEST_BYUSER.fields_by_name['user_key']._options = None
+  _SEARCHRECURRINGPAYMENTSREQUEST_BYUSER.fields_by_name['user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SENDVALUEREQUEST.fields_by_name['from_service_provider_user_key']._options = None
+  _SENDVALUEREQUEST.fields_by_name['from_service_provider_user_key']._serialized_options = b'\372B\004r\002\0302'
+  _SENDVALUEREQUEST.fields_by_name['service_provider_user_key']._options = None
+  _SENDVALUEREQUEST.fields_by_name['service_provider_user_key']._serialized_options = b'\372B\004r\002\0302'
+  _SENDVALUEREQUEST.fields_by_name['service_provider_user_ref']._options = None
+  _SENDVALUEREQUEST.fields_by_name['service_provider_user_ref']._serialized_options = b'\372B\004r\002\030d'
+  _SENDVALUEREQUEST.fields_by_name['from_service_provider_instrument_key']._options = None
+  _SENDVALUEREQUEST.fields_by_name['from_service_provider_instrument_key']._serialized_options = b'\372B\004r\002\0302'
+  _SENDVALUEREQUEST.fields_by_name['service_provider_instrument_key']._options = None
+  _SENDVALUEREQUEST.fields_by_name['service_provider_instrument_key']._serialized_options = b'\372B\004r\002\0302'
+  _SENDVALUEREQUEST.fields_by_name['service_provider_instrument_ref']._options = None
+  _SENDVALUEREQUEST.fields_by_name['service_provider_instrument_ref']._serialized_options = b'\372B\004r\002\030d'
+  _SERVICEPROVIDERUSERDISCOUNT.oneofs_by_name['discount_amount']._options = None
+  _SERVICEPROVIDERUSERDISCOUNT.oneofs_by_name['discount_amount']._serialized_options = b'\370B\001'
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['discount_key']._options = None
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['discount_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['headline']._options = None
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['headline']._serialized_options = b'\372B\004r\002\030d'
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['summary']._options = None
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['summary']._serialized_options = b'\372B\005r\003\030\254\002'
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['receipt_description']._options = None
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['receipt_description']._serialized_options = b'\372B\005r\003\030\310\001'
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['valid_from']._options = None
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['valid_from']._serialized_options = b'\372B\005\262\001\002\010\000'
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['valid_to']._options = None
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['valid_to']._serialized_options = b'\372B\007\262\001\004\010\000@\001'
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['obsolete_currency']._options = None
+  _SERVICEPROVIDERUSERDISCOUNT.fields_by_name['obsolete_currency']._serialized_options = b'\030\001'
+  _SEARCHUSERDISCOUNTREQUEST.fields_by_name['service_provider_user_key']._options = None
+  _SEARCHUSERDISCOUNTREQUEST.fields_by_name['service_provider_user_key']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _SEARCHUSERDISCOUNTREQUEST.fields_by_name['service_provider_user_ref']._options = None
+  _SEARCHUSERDISCOUNTREQUEST.fields_by_name['service_provider_user_ref']._serialized_options = b'\372B\004r\002\030d'
+  _SERVICEPROVIDERTOMICAWIPSERVICE.methods_by_name['SendValue']._options = None
+  _SERVICEPROVIDERTOMICAWIPSERVICE.methods_by_name['SendValue']._serialized_options = b'\210\002\001'
+  _DISCOVERUSERREQUEST._serialized_start=621
+  _DISCOVERUSERREQUEST._serialized_end=761
+  _DISCOVERUSERRESPONSE._serialized_start=764
+  _DISCOVERUSERRESPONSE._serialized_end=1088
+  _DISCOVERUSERRESPONSE_STATUS._serialized_start=1018
+  _DISCOVERUSERRESPONSE_STATUS._serialized_end=1088
+  _SETPINREQUEST._serialized_start=1091
+  _SETPINREQUEST._serialized_end=1237
+  _SETPINRESPONSE._serialized_start=1240
+  _SETPINRESPONSE._serialized_end=1494
+  _SETPINRESPONSE_STATUS._serialized_start=1374
+  _SETPINRESPONSE_STATUS._serialized_end=1494
+  _VALIDATEPINREQUEST._serialized_start=1497
+  _VALIDATEPINREQUEST._serialized_end=1648
+  _VALIDATEPINRESPONSE._serialized_start=1651
+  _VALIDATEPINRESPONSE._serialized_end=1936
+  _VALIDATEPINRESPONSE_STATUS._serialized_start=1796
+  _VALIDATEPINRESPONSE_STATUS._serialized_end=1936
+  _RESETPINREQUEST._serialized_start=1939
+  _RESETPINREQUEST._serialized_end=2108
+  _RESETPINRESPONSE._serialized_start=2111
+  _RESETPINRESPONSE._serialized_end=2366
+  _RESETPINRESPONSE_STATUS._serialized_start=1796
+  _RESETPINRESPONSE_STATUS._serialized_end=1913
+  _REMOVEPINREQUEST._serialized_start=2369
+  _REMOVEPINREQUEST._serialized_end=2505
+  _REMOVEPINRESPONSE._serialized_start=2508
+  _REMOVEPINRESPONSE._serialized_end=2740
+  _REMOVEPINRESPONSE_STATUS._serialized_start=1374
+  _REMOVEPINRESPONSE_STATUS._serialized_end=1466
+  _USER._serialized_start=2743
+  _USER._serialized_end=3072
+  _GETLINKEDACCOUNTBALANCEREQUEST._serialized_start=3074
+  _GETLINKEDACCOUNTBALANCEREQUEST._serialized_end=3124
+  _GETLINKEDACCOUNTBALANCERESPONSE._serialized_start=3127
+  _GETLINKEDACCOUNTBALANCERESPONSE._serialized_end=3521
+  _GETLINKEDACCOUNTBALANCERESPONSE_STATUS._serialized_start=3447
+  _GETLINKEDACCOUNTBALANCERESPONSE_STATUS._serialized_end=3521
+  _UPDATEACCOUNTENABLEFORPURCHASEREQUEST._serialized_start=3523
+  _UPDATEACCOUNTENABLEFORPURCHASEREQUEST._serialized_end=3614
+  _UPDATEACCOUNTENABLEFORPURCHASERESPONSE._serialized_start=3617
+  _UPDATEACCOUNTENABLEFORPURCHASERESPONSE._serialized_end=3891
+  _UPDATEACCOUNTENABLEFORPURCHASERESPONSE_STATUS._serialized_start=3799
+  _UPDATEACCOUNTENABLEFORPURCHASERESPONSE_STATUS._serialized_end=3891
+  _RECURRINGPAYMENT._serialized_start=3894
+  _RECURRINGPAYMENT._serialized_end=4317
+  _RECURRINGPAYMENTUSAGE._serialized_start=4320
+  _RECURRINGPAYMENTUSAGE._serialized_end=4485
+  _RECURRINGPAYMENTTERMS._serialized_start=4487
+  _RECURRINGPAYMENTTERMS._serialized_end=4537
+  _SEARCHRECURRINGPAYMENTSREQUEST._serialized_start=4540
+  _SEARCHRECURRINGPAYMENTSREQUEST._serialized_end=4742
+  _SEARCHRECURRINGPAYMENTSREQUEST_BYUSER._serialized_start=4662
+  _SEARCHRECURRINGPAYMENTSREQUEST_BYUSER._serialized_end=4736
+  _SEARCHRECURRINGPAYMENTSRESPONSE._serialized_start=4745
+  _SEARCHRECURRINGPAYMENTSRESPONSE._serialized_end=5066
+  _SEARCHRECURRINGPAYMENTSRESPONSE_STATUS._serialized_start=3447
+  _SEARCHRECURRINGPAYMENTSRESPONSE_STATUS._serialized_end=3521
+  _SENDVALUEREQUEST._serialized_start=5069
+  _SENDVALUEREQUEST._serialized_end=5563
+  _SENDVALUERESPONSE._serialized_start=5566
+  _SENDVALUERESPONSE._serialized_end=5801
+  _SENDVALUERESPONSE_STATUS._serialized_start=1018
+  _SENDVALUERESPONSE_STATUS._serialized_end=1088
+  _SERVICEPROVIDERUSERDISCOUNT._serialized_start=5804
+  _SERVICEPROVIDERUSERDISCOUNT._serialized_end=6516
+  _SEARCHUSERDISCOUNTREQUEST._serialized_start=6519
+  _SEARCHUSERDISCOUNTREQUEST._serialized_end=6775
+  _SEARCHUSERDISCOUNTRESPONSE._serialized_start=6778
+  _SEARCHUSERDISCOUNTRESPONSE._serialized_end=7146
+  _SEARCHUSERDISCOUNTRESPONSE_STATUS._serialized_start=1018
+  _SEARCHUSERDISCOUNTRESPONSE_STATUS._serialized_end=1088
+  _SERVICEPROVIDERTOMICAWIPSERVICE._serialized_start=7149
+  _SERVICEPROVIDERTOMICAWIPSERVICE._serialized_end=8419
 # @@protoc_insertion_point(module_scope)

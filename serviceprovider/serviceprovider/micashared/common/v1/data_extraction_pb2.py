@@ -19,11 +19,10 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from serviceprovider.micashared.common.v1 import error_pb2 as micashared_dot_common_dot_v1_dot_error__pb2
 from serviceprovider.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*micashared/common/v1/data_extraction.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a micashared/common/v1/error.proto\x1a\x17validate/validate.proto\"\xc3\x01\n\x0e\x44\x61taExtraction\x12\x1f\n\x0e\x65xtractor_name\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\x12<\n\x0ewatermark_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\xfa\x42\x05\xb2\x01\x02\x08\x01\x12\x37\n\x13last_execution_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11records_processed\x18\x04 \x01(\r\";\n\x18GetDataExtractionRequest\x12\x1f\n\x0e\x65xtractor_name\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\"\xa7\x02\n\x19GetDataExtractionResponse\x12\x46\n\x06status\x18\x01 \x01(\x0e\x32\x36.micashared.common.v1.GetDataExtractionResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x38\n\nextraction\x18\x03 \x01(\x0b\x32$.micashared.common.v1.DataExtraction\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x14\n\x10STATUS_NOT_FOUND\x10\x02\x12\x10\n\x0cSTATUS_ERROR\x10\x03\"\x1d\n\x1bSearchDataExtractionRequest\"\x98\x02\n\x1cSearchDataExtractionResponse\x12I\n\x06status\x18\x01 \x01(\x0e\x32\x39.micashared.common.v1.SearchDataExtractionResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x39\n\x0b\x65xtractions\x18\x03 \x03(\x0b\x32$.micashared.common.v1.DataExtraction\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x42T\n\x17io.micashared.common.v1B\x13\x44\x61taExtractionProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*micashared/common/v1/data_extraction.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17validate/validate.proto\"\xc3\x01\n\x0e\x44\x61taExtraction\x12\x1f\n\x0e\x65xtractor_name\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\x12<\n\x0ewatermark_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\xfa\x42\x05\xb2\x01\x02\x08\x01\x12\x37\n\x13last_execution_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11records_processed\x18\x04 \x01(\rBT\n\x17io.micashared.common.v1B\x13\x44\x61taExtractionProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.data_extraction_pb2', globals())
@@ -35,20 +34,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DATAEXTRACTION.fields_by_name['extractor_name']._serialized_options = b'\372B\004r\002\020\001'
   _DATAEXTRACTION.fields_by_name['watermark_time']._options = None
   _DATAEXTRACTION.fields_by_name['watermark_time']._serialized_options = b'\372B\005\262\001\002\010\001'
-  _GETDATAEXTRACTIONREQUEST.fields_by_name['extractor_name']._options = None
-  _GETDATAEXTRACTIONREQUEST.fields_by_name['extractor_name']._serialized_options = b'\372B\004r\002\020\001'
-  _DATAEXTRACTION._serialized_start=161
-  _DATAEXTRACTION._serialized_end=356
-  _GETDATAEXTRACTIONREQUEST._serialized_start=358
-  _GETDATAEXTRACTIONREQUEST._serialized_end=417
-  _GETDATAEXTRACTIONRESPONSE._serialized_start=420
-  _GETDATAEXTRACTIONRESPONSE._serialized_end=715
-  _GETDATAEXTRACTIONRESPONSE_STATUS._serialized_start=623
-  _GETDATAEXTRACTIONRESPONSE_STATUS._serialized_end=715
-  _SEARCHDATAEXTRACTIONREQUEST._serialized_start=717
-  _SEARCHDATAEXTRACTIONREQUEST._serialized_end=746
-  _SEARCHDATAEXTRACTIONRESPONSE._serialized_start=749
-  _SEARCHDATAEXTRACTIONRESPONSE._serialized_end=1029
-  _SEARCHDATAEXTRACTIONRESPONSE_STATUS._serialized_start=959
-  _SEARCHDATAEXTRACTIONRESPONSE_STATUS._serialized_end=1029
+  _DATAEXTRACTION._serialized_start=127
+  _DATAEXTRACTION._serialized_end=322
 # @@protoc_insertion_point(module_scope)

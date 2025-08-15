@@ -19,9 +19,10 @@ _sym_db = _symbol_database.Default()
 
 
 from sdk.micashared.common.v1 import user_pb2 as micashared_dot_common_dot_v1_dot_user__pb2
+from sdk.micashared.common.enums.instrumenttype.v1 import instrument_type_pb2 as micashared_dot_common_dot_enums_dot_instrumenttype_dot_v1_dot_instrument__type__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%micashared/common/v1/instrument.proto\x12\x14micashared.common.v1\x1a\x1fmicashared/common/v1/user.proto\"\x1a\n\nInstrument\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x90\x02\n\x14InstrumentLinkClaims\x12N\n\nassertions\x18\x01 \x03(\x0b\x32:.micashared.common.v1.InstrumentLinkClaims.AssertionsEntry\x12?\n\x10user_demographic\x18\x02 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\x12\x34\n\ninstrument\x18\x03 \x01(\x0b\x32 .micashared.common.v1.Instrument\x1a\x31\n\x0f\x41ssertionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42P\n\x17io.micashared.common.v1B\x0fInstrumentProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%micashared/common/v1/instrument.proto\x12\x14micashared.common.v1\x1a\x1fmicashared/common/v1/user.proto\x1a?micashared/common/enums/instrumenttype/v1/instrument_type.proto\"\x7f\n\x14LinkedInstrumentData\x12\x0c\n\x04name\x18\x01 \x01(\t\x12G\n\x04type\x18\x02 \x01(\x0e\x32\x39.micashared.common.enums.instrumenttype.v1.InstrumentType\x12\x10\n\x08icon_url\x18\x03 \x01(\t\"\xda\x01\n\x14InstrumentLinkClaims\x12N\n\nassertions\x18\x01 \x03(\x0b\x32:.micashared.common.v1.InstrumentLinkClaims.AssertionsEntry\x12?\n\x10user_demographic\x18\x02 \x01(\x0b\x32%.micashared.common.v1.UserDemographic\x1a\x31\n\x0f\x41ssertionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42P\n\x17io.micashared.common.v1B\x0fInstrumentProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.instrument_pb2', globals())
@@ -31,10 +32,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n\027io.micashared.common.v1B\017InstrumentProtoZ\035micashared/common/v1;commonv1\242\002\004MICA'
   _INSTRUMENTLINKCLAIMS_ASSERTIONSENTRY._options = None
   _INSTRUMENTLINKCLAIMS_ASSERTIONSENTRY._serialized_options = b'8\001'
-  _INSTRUMENT._serialized_start=96
-  _INSTRUMENT._serialized_end=122
-  _INSTRUMENTLINKCLAIMS._serialized_start=125
-  _INSTRUMENTLINKCLAIMS._serialized_end=397
-  _INSTRUMENTLINKCLAIMS_ASSERTIONSENTRY._serialized_start=348
-  _INSTRUMENTLINKCLAIMS_ASSERTIONSENTRY._serialized_end=397
+  _LINKEDINSTRUMENTDATA._serialized_start=161
+  _LINKEDINSTRUMENTDATA._serialized_end=288
+  _INSTRUMENTLINKCLAIMS._serialized_start=291
+  _INSTRUMENTLINKCLAIMS._serialized_end=509
+  _INSTRUMENTLINKCLAIMS_ASSERTIONSENTRY._serialized_start=460
+  _INSTRUMENTLINKCLAIMS_ASSERTIONSENTRY._serialized_end=509
 # @@protoc_insertion_point(module_scope)

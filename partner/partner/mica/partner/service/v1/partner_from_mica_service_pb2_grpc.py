@@ -10,12 +10,10 @@
 import grpc
 
 from partner.mica.partner.user.v1 import user_pb2 as mica_dot_partner_dot_user_dot_v1_dot_user__pb2
-from partner.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 
 
 class PartnerFromMicaServiceStub(object):
-    """<editor-fold desc="User Instrument Operations">
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -28,30 +26,15 @@ class PartnerFromMicaServiceStub(object):
                 request_serializer=mica_dot_partner_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentResponse.FromString,
                 )
-        self.Ping = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerFromMicaService/Ping',
-                request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
-                )
 
 
 class PartnerFromMicaServiceServicer(object):
-    """<editor-fold desc="User Instrument Operations">
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def EnrollUserInstrument(self, request, context):
         """operation to support reverse onboarding. Instead of the Partner calling Mica, Mica will call the Partner with a
-        new enrollment. For example, a User starting at the mica user website could sign up for Netflix assuming that
-        Netflix supported mica and have implemented this API.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Ping(self, request, context):
-        """<editor-fold desc="Admin Operations">
-
-        An operation to ping the server to ensure it's up and running and that the connection is good.
+        new enrollment. For example, a User starting at the Mica user website could sign up for Netflix assuming that
+        Netflix supported Mica and have implemented this API.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -65,11 +48,6 @@ def add_PartnerFromMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_partner_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentRequest.FromString,
                     response_serializer=mica_dot_partner_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentResponse.SerializeToString,
             ),
-            'Ping': grpc.unary_unary_rpc_method_handler(
-                    servicer.Ping,
-                    request_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
-            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'mica.partner.service.v1.PartnerFromMicaService', rpc_method_handlers)
@@ -78,8 +56,7 @@ def add_PartnerFromMicaServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class PartnerFromMicaService(object):
-    """<editor-fold desc="User Instrument Operations">
-    """
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
     def EnrollUserInstrument(request,
@@ -95,22 +72,5 @@ class PartnerFromMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerFromMicaService/EnrollUserInstrument',
             mica_dot_partner_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentRequest.SerializeToString,
             mica_dot_partner_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Ping(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerFromMicaService/Ping',
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

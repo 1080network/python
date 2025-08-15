@@ -20,7 +20,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?micashared/common/enums/instrumenttype/v1/instrument_type.proto\x12)micashared.common.enums.instrumenttype.v1*\x9c\x02\n\x0eInstrumentType\x12\x1f\n\x1bINSTRUMENT_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n\x18INSTRUMENT_TYPE_CHECKING\x10\x01\x12\x1b\n\x17INSTRUMENT_TYPE_SAVINGS\x10\x02\x12 \n\x1cINSTRUMENT_TYPE_MONEY_MARKET\x10\x03\x12\"\n\x1eINSTRUMENT_TYPE_LINE_OF_CREDIT\x10\x04\x12\x18\n\x14INSTRUMENT_TYPE_SNAP\x10\x05\x12\x18\n\x14INSTRUMENT_TYPE_TANF\x10\x06\x12\x17\n\x13INSTRUMENT_TYPE_WIC\x10\x07\x12\x1b\n\x17INSTRUMENT_TYPE_NYCLOOP\x10\x08\x42i\n\x1dio.micashared.common.enums.v1B\x17InstrumentTypeEnumProtoZ(micashared/common/enums/instrumenttypev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?micashared/common/enums/instrumenttype/v1/instrument_type.proto\x12)micashared.common.enums.instrumenttype.v1*\xe1\x02\n\x0eInstrumentType\x12\x1f\n\x1bINSTRUMENT_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n\x18INSTRUMENT_TYPE_CHECKING\x10\x01\x12\x1b\n\x17INSTRUMENT_TYPE_SAVINGS\x10\x02\x12 \n\x1cINSTRUMENT_TYPE_MONEY_MARKET\x10\x03\x12\"\n\x1eINSTRUMENT_TYPE_LINE_OF_CREDIT\x10\x04\x12\x18\n\x14INSTRUMENT_TYPE_SNAP\x10\x05\x12\x18\n\x14INSTRUMENT_TYPE_TANF\x10\x06\x12\x17\n\x13INSTRUMENT_TYPE_WIC\x10\x07\x12\x1b\n\x17INSTRUMENT_TYPE_NYCLOOP\x10\x08\x12\"\n\x1eINSTRUMENT_TYPE_POSITIVE_VALUE\x10\t\x12\x1f\n\x1bINSTRUMENT_TYPE_ADJUDICATED\x10\nBi\n\x1dio.micashared.common.enums.v1B\x17InstrumentTypeEnumProtoZ(micashared/common/enums/instrumenttypev1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.enums.instrumenttype.v1.instrument_type_pb2', globals())
@@ -29,5 +29,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035io.micashared.common.enums.v1B\027InstrumentTypeEnumProtoZ(micashared/common/enums/instrumenttypev1\242\002\004MICA'
   _INSTRUMENTTYPE._serialized_start=111
-  _INSTRUMENTTYPE._serialized_end=395
+  _INSTRUMENTTYPE._serialized_end=464
 # @@protoc_insertion_point(module_scope)

@@ -18,13 +18,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from discount.micashared.common.enums.currency.v1 import currency_pb2 as micashared_dot_common_dot_enums_dot_currency_dot_v1_dot_currency__pb2
-from discount.micashared.common.enums.uuektype.v1 import uuek_type_pb2 as micashared_dot_common_dot_enums_dot_uuektype_dot_v1_dot_uuek__type__pb2
-from discount.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fmicashared/common/v1/uuek.proto\x12\x14micashared.common.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x32micashared/common/enums/currency/v1/currency.proto\x1a\x33micashared/common/enums/uuektype/v1/uuek_type.proto\x1a\x17validate/validate.proto\"\xc8\x03\n\nCommonUUEK\x12@\n\tuuek_type\x18\x01 \x01(\x0e\x32-.micashared.common.enums.uuektype.v1.UUEKType\x12\x0c\n\x04uuek\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\x03\x12+\n\x07\x63reated\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nvalid_from\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08valid_to\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0bspend_limit\x18\n \x01(\t\x12!\n\x0enumber_of_uses\x18\x0b \x01(\rB\x07\xfa\x42\x04*\x02 \x00H\x00\x12\x13\n\tunlimited\x18\x0c \x01(\x08H\x00\x12?\n\x08\x63urrency\x18\x08 \x01(\x0e\x32-.micashared.common.enums.currency.v1.CurrencyB\x13\n\x0cuse_criteria\x12\x03\xf8\x42\x01\"0\n\x1aImmutableInstrumentDetails\x12\x12\n\nidentifier\x18\x01 \x01(\tBJ\n\x17io.micashared.common.v1B\tUUEKProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fmicashared/common/v1/uuek.proto\x12\x14micashared.common.v1\"0\n\x1aImmutableInstrumentDetails\x12\x12\n\nidentifier\x18\x01 \x01(\tBJ\n\x17io.micashared.common.v1B\tUUEKProtoZ\x1dmicashared/common/v1;commonv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micashared.common.v1.uuek_pb2', globals())
@@ -32,12 +28,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027io.micashared.common.v1B\tUUEKProtoZ\035micashared/common/v1;commonv1\242\002\004MICA'
-  _COMMONUUEK.oneofs_by_name['use_criteria']._options = None
-  _COMMONUUEK.oneofs_by_name['use_criteria']._serialized_options = b'\370B\001'
-  _COMMONUUEK.fields_by_name['number_of_uses']._options = None
-  _COMMONUUEK.fields_by_name['number_of_uses']._serialized_options = b'\372B\004*\002 \000'
-  _COMMONUUEK._serialized_start=221
-  _COMMONUUEK._serialized_end=677
-  _IMMUTABLEINSTRUMENTDETAILS._serialized_start=679
-  _IMMUTABLEINSTRUMENTDETAILS._serialized_end=727
+  _IMMUTABLEINSTRUMENTDETAILS._serialized_start=57
+  _IMMUTABLEINSTRUMENTDETAILS._serialized_end=105
 # @@protoc_insertion_point(module_scope)

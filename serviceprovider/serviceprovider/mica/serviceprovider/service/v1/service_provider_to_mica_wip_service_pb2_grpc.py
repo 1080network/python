@@ -14,7 +14,6 @@ from serviceprovider.mica.serviceprovider.service.v1 import service_provider_to_
 
 class ServiceProviderToMicaWIPServiceStub(object):
     """Service for Work In Progress or experimental operations that may become a standard product feature in the future
-    <editor-fold desc="Directory Proxy Operations">
     """
 
     def __init__(self, channel):
@@ -23,21 +22,6 @@ class ServiceProviderToMicaWIPServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.SetVisibilityStatus = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SetVisibilityStatus',
-                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetVisibilityStatusRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetVisibilityStatusResponse.FromString,
-                )
-        self.DiscoverUser = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/DiscoverUser',
-                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.DiscoverUserRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.DiscoverUserResponse.FromString,
-                )
-        self.GetServiceProviderUUEK = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/GetServiceProviderUUEK',
-                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKResponse.FromString,
-                )
         self.SetPIN = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SetPIN',
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINRequest.SerializeToString,
@@ -58,65 +42,95 @@ class ServiceProviderToMicaWIPServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINResponse.FromString,
                 )
-        self.ProvisionEnrollmentValidationCode = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ProvisionEnrollmentValidationCode',
-                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeResponse.FromString,
+        self.GetLinkedAccountBalance = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/GetLinkedAccountBalance',
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetLinkedAccountBalanceRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetLinkedAccountBalanceResponse.FromString,
+                )
+        self.UpdateAccountEnableForPurchase = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/UpdateAccountEnableForPurchase',
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.UpdateAccountEnableForPurchaseRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.UpdateAccountEnableForPurchaseResponse.FromString,
+                )
+        self.SearchRecurringPayments = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SearchRecurringPayments',
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchRecurringPaymentsRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchRecurringPaymentsResponse.FromString,
+                )
+        self.SendValue = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SendValue',
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SendValueRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SendValueResponse.FromString,
+                )
+        self.SearchUserDiscount = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SearchUserDiscount',
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchUserDiscountRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchUserDiscountResponse.FromString,
                 )
 
 
 class ServiceProviderToMicaWIPServiceServicer(object):
     """Service for Work In Progress or experimental operations that may become a standard product feature in the future
-    <editor-fold desc="Directory Proxy Operations">
     """
 
-    def SetVisibilityStatus(self, request, context):
-        """set visibility_status
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DiscoverUser(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetServiceProviderUUEK(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def SetPIN(self, request, context):
-        """<editor-fold desc="PIN Operations">
-
+        """Set the network PIN for a user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ValidatePIN(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Validate the network PIN for a user.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ResetPIN(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Reset the network PIN for a user.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RemovePIN(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Remove the network PIN for a user.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ProvisionEnrollmentValidationCode(self, request, context):
-        """<editor-fold desc="Service Provider initiated enrollment authentication">
+    def GetLinkedAccountBalance(self, request, context):
+        """Retrieve the balance of a linked account (if available).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAccountEnableForPurchase(self, request, context):
+        """Update the enable for purchase flag for a linked account so that it will be used in a multi-tender transaction.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SearchRecurringPayments(self, request, context):
+        """Search for recurring payments of a given user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SendValue(self, request, context):
+        """Send value from one user to another (P2P).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SearchUserDiscount(self, request, context):
+        """Search for discounts available to a user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -125,21 +139,6 @@ class ServiceProviderToMicaWIPServiceServicer(object):
 
 def add_ServiceProviderToMicaWIPServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SetVisibilityStatus': grpc.unary_unary_rpc_method_handler(
-                    servicer.SetVisibilityStatus,
-                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetVisibilityStatusRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetVisibilityStatusResponse.SerializeToString,
-            ),
-            'DiscoverUser': grpc.unary_unary_rpc_method_handler(
-                    servicer.DiscoverUser,
-                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.DiscoverUserRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.DiscoverUserResponse.SerializeToString,
-            ),
-            'GetServiceProviderUUEK': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetServiceProviderUUEK,
-                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKResponse.SerializeToString,
-            ),
             'SetPIN': grpc.unary_unary_rpc_method_handler(
                     servicer.SetPIN,
                     request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetPINRequest.FromString,
@@ -160,10 +159,30 @@ def add_ServiceProviderToMicaWIPServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.RemovePINResponse.SerializeToString,
             ),
-            'ProvisionEnrollmentValidationCode': grpc.unary_unary_rpc_method_handler(
-                    servicer.ProvisionEnrollmentValidationCode,
-                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeResponse.SerializeToString,
+            'GetLinkedAccountBalance': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLinkedAccountBalance,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetLinkedAccountBalanceRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetLinkedAccountBalanceResponse.SerializeToString,
+            ),
+            'UpdateAccountEnableForPurchase': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccountEnableForPurchase,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.UpdateAccountEnableForPurchaseRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.UpdateAccountEnableForPurchaseResponse.SerializeToString,
+            ),
+            'SearchRecurringPayments': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchRecurringPayments,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchRecurringPaymentsRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchRecurringPaymentsResponse.SerializeToString,
+            ),
+            'SendValue': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendValue,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SendValueRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SendValueResponse.SerializeToString,
+            ),
+            'SearchUserDiscount': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchUserDiscount,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchUserDiscountRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchUserDiscountResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -174,59 +193,7 @@ def add_ServiceProviderToMicaWIPServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class ServiceProviderToMicaWIPService(object):
     """Service for Work In Progress or experimental operations that may become a standard product feature in the future
-    <editor-fold desc="Directory Proxy Operations">
     """
-
-    @staticmethod
-    def SetVisibilityStatus(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SetVisibilityStatus',
-            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetVisibilityStatusRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SetVisibilityStatusResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DiscoverUser(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/DiscoverUser',
-            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.DiscoverUserRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.DiscoverUserResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetServiceProviderUUEK(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/GetServiceProviderUUEK',
-            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetServiceProviderUUEKResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def SetPIN(request,
@@ -297,7 +264,7 @@ class ServiceProviderToMicaWIPService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ProvisionEnrollmentValidationCode(request,
+    def GetLinkedAccountBalance(request,
             target,
             options=(),
             channel_credentials=None,
@@ -307,8 +274,76 @@ class ServiceProviderToMicaWIPService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/ProvisionEnrollmentValidationCode',
-            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.ProvisionEnrollmentValidationCodeResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/GetLinkedAccountBalance',
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetLinkedAccountBalanceRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.GetLinkedAccountBalanceResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAccountEnableForPurchase(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/UpdateAccountEnableForPurchase',
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.UpdateAccountEnableForPurchaseRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.UpdateAccountEnableForPurchaseResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SearchRecurringPayments(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SearchRecurringPayments',
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchRecurringPaymentsRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchRecurringPaymentsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SendValue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SendValue',
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SendValueRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SendValueResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SearchUserDiscount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaWIPService/SearchUserDiscount',
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchUserDiscountRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__wip__service__pb2.SearchUserDiscountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

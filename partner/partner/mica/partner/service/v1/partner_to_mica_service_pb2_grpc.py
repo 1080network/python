@@ -13,17 +13,14 @@ from partner.mica.partner.account.v1 import account_pb2 as mica_dot_partner_dot_
 from partner.mica.partner.instrument.v1 import instrument_pb2 as mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2
 from partner.mica.partner.organization.v1 import organization_pb2 as mica_dot_partner_dot_organization_dot_v1_dot_organization__pb2
 from partner.mica.partner.partner.v1 import partner_pb2 as mica_dot_partner_dot_partner_dot_v1_dot_partner__pb2
+from partner.mica.partner.service.v1 import partner_to_mica_service_pb2 as mica_dot_partner_dot_service_dot_v1_dot_partner__to__mica__service__pb2
 from partner.mica.partner.serviceprovider.v1 import service_provider_pb2 as mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2
 from partner.mica.partner.store.v1 import store_pb2 as mica_dot_partner_dot_store_dot_v1_dot_store__pb2
-from partner.mica.partner.uuek.v1 import uuek_pb2 as mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2
 from partner.mica.partner.value.v1 import value_pb2 as mica_dot_partner_dot_value_dot_v1_dot_value__pb2
-from partner.mica.partner.widget.v1 import widget_pb2 as mica_dot_partner_dot_widget_dot_v1_dot_widget__pb2
-from partner.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 
 
 class PartnerToMicaServiceStub(object):
-    """<editor-fold desc="Partner Operations">
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -40,11 +37,6 @@ class PartnerToMicaServiceStub(object):
                 '/mica.partner.service.v1.PartnerToMicaService/CreateABAAccount',
                 request_serializer=mica_dot_partner_dot_account_dot_v1_dot_account__pb2.CreateABAAccountRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_account_dot_v1_dot_account__pb2.CreateABAAccountResponse.FromString,
-                )
-        self.GetABAAccount = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/GetABAAccount',
-                request_serializer=mica_dot_partner_dot_account_dot_v1_dot_account__pb2.GetABAAccountRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_account_dot_v1_dot_account__pb2.GetABAAccountResponse.FromString,
                 )
         self.SearchABAAccount = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/SearchABAAccount',
@@ -116,21 +108,6 @@ class PartnerToMicaServiceStub(object):
                 request_serializer=mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderResponse.FromString,
                 )
-        self.RemoveUUEK = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/RemoveUUEK',
-                request_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKResponse.FromString,
-                )
-        self.ExchangeUUEK = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/ExchangeUUEK',
-                request_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKResponse.FromString,
-                )
-        self.SearchUUEK = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/SearchUUEK',
-                request_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKResponse.FromString,
-                )
         self.ObtainValue = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/ObtainValue',
                 request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainValueRequest.SerializeToString,
@@ -138,7 +115,7 @@ class PartnerToMicaServiceStub(object):
                 )
         self.ReverseObtainValue = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/ReverseObtainValue',
-                request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+                request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueResponse.FromString,
                 )
         self.ReturnValue = channel.unary_unary(
@@ -148,7 +125,7 @@ class PartnerToMicaServiceStub(object):
                 )
         self.ReverseReturnValue = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/ReverseReturnValue',
-                request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+                request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.FromString,
                 )
         self.GetValue = channel.unary_unary(
@@ -176,66 +153,59 @@ class PartnerToMicaServiceStub(object):
                 request_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.SerializeToString,
                 response_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.FromString,
                 )
-        self.LinkInstrumentWithCode = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/LinkInstrumentWithCode',
-                request_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.LinkInstrumentWithCodeRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.LinkInstrumentWithCodeResponse.FromString,
+        self.CompleteLinkingWithCode = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/CompleteLinkingWithCode',
+                request_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeResponse.FromString,
                 )
-        self.ProvisionUUEKWithLinkSessionKey = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/ProvisionUUEKWithLinkSessionKey',
-                request_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKWithLinkSessionKeyRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKWithLinkSessionKeyResponse.FromString,
+        self.GetLink = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/GetLink',
+                request_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.GetLinkRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.GetLinkResponse.FromString,
                 )
-        self.InitializeWidget = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/InitializeWidget',
-                request_serializer=mica_dot_partner_dot_widget_dot_v1_dot_widget__pb2.InitializeWidgetRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_widget_dot_v1_dot_widget__pb2.InitializeWidgetResponse.FromString,
+        self.RemoveInstrumentLink = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/RemoveInstrumentLink',
+                request_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkResponse.FromString,
                 )
-        self.ExchangeSessionKey = channel.unary_unary(
-                '/mica.partner.service.v1.PartnerToMicaService/ExchangeSessionKey',
-                request_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyRequest.SerializeToString,
-                response_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyResponse.FromString,
+        self.ProvisionUUEKFromLink = channel.unary_unary(
+                '/mica.partner.service.v1.PartnerToMicaService/ProvisionUUEKFromLink',
+                request_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKFromLinkRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKFromLinkResponse.FromString,
                 )
         self.Ping = channel.unary_unary(
                 '/mica.partner.service.v1.PartnerToMicaService/Ping',
-                request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+                request_serializer=mica_dot_partner_dot_service_dot_v1_dot_partner__to__mica__service__pb2.PingRequest.SerializeToString,
+                response_deserializer=mica_dot_partner_dot_service_dot_v1_dot_partner__to__mica__service__pb2.PingResponse.FromString,
                 )
 
 
 class PartnerToMicaServiceServicer(object):
-    """<editor-fold desc="Partner Operations">
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def GetPartner(self, request, context):
-        """Retrieves the details of the Partner at mica.
+        """Retrieves the details of the Partner at Mica.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateABAAccount(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetABAAccount(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create an ABA account for a partner for use in settling transactions.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SearchABAAccount(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Search for ABA accounts based on the criteria in the request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateOrganization(self, request, context):
-        """<editor-fold desc="Organization Operations">
-
-        A method to create an organization.
+        """A method to create an organization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -256,7 +226,7 @@ class PartnerToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateOrganizationSettlementData(self, request, context):
-        """Update an organization financial data
+        """Update an organization financial data for use by settlement.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -284,9 +254,7 @@ class PartnerToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateStore(self, request, context):
-        """<editor-fold desc="Store Operations">
-
-        Create a store that sits under an Organization.
+        """Create a store that sits under an Organization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -321,41 +289,14 @@ class PartnerToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SearchServiceProvider(self, request, context):
-        """<editor-fold desc="Service Provider Operations">
-
-        Used to retrieve SPs based on the criteria in the request.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RemoveUUEK(self, request, context):
-        """<editor-fold desc="UUEK Operations">
-
-        When a user no longer wishes to use their UUEKs this method can remove them from mica.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ExchangeUUEK(self, request, context):
-        """A Partner can proactively replace a UUEK with a new one for future use.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SearchUUEK(self, request, context):
-        """Search for UUEKs that the Partner has created.
+        """Used to retrieve issuers/service providers based on the criteria in the request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ObtainValue(self, request, context):
-        """<editor-fold desc="Value Operations">
-
-        A method to obtain value from a user in order to pay for goods or services rendered to the user.
+        """A method to obtain value from a user in order to pay for goods or services rendered to the user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -417,28 +358,30 @@ class PartnerToMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def LinkInstrumentWithCode(self, request, context):
-        """<editor-fold desc="account linking operations">
+    def CompleteLinkingWithCode(self, request, context):
+        """Complete a link between a user and an instrument operation using a code
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ProvisionUUEKWithLinkSessionKey(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def InitializeWidget(self, request, context):
-        """<editor-fold desc="Widget Operations">
+    def GetLink(self, request, context):
+        """Retrieve a link record based on it's key
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ExchangeSessionKey(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def RemoveInstrumentLink(self, request, context):
+        """Remove a instrument link preventing it from being used in the future
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ProvisionUUEKFromLink(self, request, context):
+        """Provision a UUEK from a link in order to process a transaction
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -462,11 +405,6 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     servicer.CreateABAAccount,
                     request_deserializer=mica_dot_partner_dot_account_dot_v1_dot_account__pb2.CreateABAAccountRequest.FromString,
                     response_serializer=mica_dot_partner_dot_account_dot_v1_dot_account__pb2.CreateABAAccountResponse.SerializeToString,
-            ),
-            'GetABAAccount': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetABAAccount,
-                    request_deserializer=mica_dot_partner_dot_account_dot_v1_dot_account__pb2.GetABAAccountRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_account_dot_v1_dot_account__pb2.GetABAAccountResponse.SerializeToString,
             ),
             'SearchABAAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.SearchABAAccount,
@@ -538,21 +476,6 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderRequest.FromString,
                     response_serializer=mica_dot_partner_dot_serviceprovider_dot_v1_dot_service__provider__pb2.SearchServiceProviderResponse.SerializeToString,
             ),
-            'RemoveUUEK': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemoveUUEK,
-                    request_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKResponse.SerializeToString,
-            ),
-            'ExchangeUUEK': grpc.unary_unary_rpc_method_handler(
-                    servicer.ExchangeUUEK,
-                    request_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKResponse.SerializeToString,
-            ),
-            'SearchUUEK': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchUUEK,
-                    request_deserializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKResponse.SerializeToString,
-            ),
             'ObtainValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ObtainValue,
                     request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainValueRequest.FromString,
@@ -560,7 +483,7 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
             ),
             'ReverseObtainValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ReverseObtainValue,
-                    request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.FromString,
+                    request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueRequest.FromString,
                     response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueResponse.SerializeToString,
             ),
             'ReturnValue': grpc.unary_unary_rpc_method_handler(
@@ -570,7 +493,7 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
             ),
             'ReverseReturnValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ReverseReturnValue,
-                    request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.FromString,
+                    request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueRequest.FromString,
                     response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.SerializeToString,
             ),
             'GetValue': grpc.unary_unary_rpc_method_handler(
@@ -598,30 +521,30 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.FromString,
                     response_serializer=mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.SerializeToString,
             ),
-            'LinkInstrumentWithCode': grpc.unary_unary_rpc_method_handler(
-                    servicer.LinkInstrumentWithCode,
-                    request_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.LinkInstrumentWithCodeRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.LinkInstrumentWithCodeResponse.SerializeToString,
+            'CompleteLinkingWithCode': grpc.unary_unary_rpc_method_handler(
+                    servicer.CompleteLinkingWithCode,
+                    request_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeResponse.SerializeToString,
             ),
-            'ProvisionUUEKWithLinkSessionKey': grpc.unary_unary_rpc_method_handler(
-                    servicer.ProvisionUUEKWithLinkSessionKey,
-                    request_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKWithLinkSessionKeyRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKWithLinkSessionKeyResponse.SerializeToString,
+            'GetLink': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLink,
+                    request_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.GetLinkRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.GetLinkResponse.SerializeToString,
             ),
-            'InitializeWidget': grpc.unary_unary_rpc_method_handler(
-                    servicer.InitializeWidget,
-                    request_deserializer=mica_dot_partner_dot_widget_dot_v1_dot_widget__pb2.InitializeWidgetRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_widget_dot_v1_dot_widget__pb2.InitializeWidgetResponse.SerializeToString,
+            'RemoveInstrumentLink': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveInstrumentLink,
+                    request_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkResponse.SerializeToString,
             ),
-            'ExchangeSessionKey': grpc.unary_unary_rpc_method_handler(
-                    servicer.ExchangeSessionKey,
-                    request_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyRequest.FromString,
-                    response_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyResponse.SerializeToString,
+            'ProvisionUUEKFromLink': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProvisionUUEKFromLink,
+                    request_deserializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKFromLinkRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKFromLinkResponse.SerializeToString,
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
-                    request_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
+                    request_deserializer=mica_dot_partner_dot_service_dot_v1_dot_partner__to__mica__service__pb2.PingRequest.FromString,
+                    response_serializer=mica_dot_partner_dot_service_dot_v1_dot_partner__to__mica__service__pb2.PingResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -631,8 +554,7 @@ def add_PartnerToMicaServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class PartnerToMicaService(object):
-    """<editor-fold desc="Partner Operations">
-    """
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
     def GetPartner(request,
@@ -665,23 +587,6 @@ class PartnerToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/CreateABAAccount',
             mica_dot_partner_dot_account_dot_v1_dot_account__pb2.CreateABAAccountRequest.SerializeToString,
             mica_dot_partner_dot_account_dot_v1_dot_account__pb2.CreateABAAccountResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetABAAccount(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/GetABAAccount',
-            mica_dot_partner_dot_account_dot_v1_dot_account__pb2.GetABAAccountRequest.SerializeToString,
-            mica_dot_partner_dot_account_dot_v1_dot_account__pb2.GetABAAccountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -924,57 +829,6 @@ class PartnerToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def RemoveUUEK(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/RemoveUUEK',
-            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKRequest.SerializeToString,
-            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.RemoveUUEKResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ExchangeUUEK(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ExchangeUUEK',
-            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKRequest.SerializeToString,
-            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.ExchangeUUEKResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchUUEK(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/SearchUUEK',
-            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKRequest.SerializeToString,
-            mica_dot_partner_dot_uuek_dot_v1_dot_uuek__pb2.SearchUUEKResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def ObtainValue(request,
             target,
             options=(),
@@ -1003,7 +857,7 @@ class PartnerToMicaService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ReverseObtainValue',
-            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueRequest.SerializeToString,
             mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -1037,7 +891,7 @@ class PartnerToMicaService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ReverseReturnValue',
-            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
+            mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueRequest.SerializeToString,
             mica_dot_partner_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -1128,7 +982,7 @@ class PartnerToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def LinkInstrumentWithCode(request,
+    def CompleteLinkingWithCode(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1138,14 +992,14 @@ class PartnerToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/LinkInstrumentWithCode',
-            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.LinkInstrumentWithCodeRequest.SerializeToString,
-            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.LinkInstrumentWithCodeResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/CompleteLinkingWithCode',
+            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeRequest.SerializeToString,
+            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ProvisionUUEKWithLinkSessionKey(request,
+    def GetLink(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1155,14 +1009,14 @@ class PartnerToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ProvisionUUEKWithLinkSessionKey',
-            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKWithLinkSessionKeyRequest.SerializeToString,
-            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKWithLinkSessionKeyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/GetLink',
+            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.GetLinkRequest.SerializeToString,
+            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.GetLinkResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def InitializeWidget(request,
+    def RemoveInstrumentLink(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1172,14 +1026,14 @@ class PartnerToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/InitializeWidget',
-            mica_dot_partner_dot_widget_dot_v1_dot_widget__pb2.InitializeWidgetRequest.SerializeToString,
-            mica_dot_partner_dot_widget_dot_v1_dot_widget__pb2.InitializeWidgetResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/RemoveInstrumentLink',
+            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkRequest.SerializeToString,
+            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ExchangeSessionKey(request,
+    def ProvisionUUEKFromLink(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1189,9 +1043,9 @@ class PartnerToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ExchangeSessionKey',
-            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyRequest.SerializeToString,
-            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ExchangeSessionKeyResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/ProvisionUUEKFromLink',
+            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKFromLinkRequest.SerializeToString,
+            mica_dot_partner_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionUUEKFromLinkResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1207,7 +1061,7 @@ class PartnerToMicaService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.partner.service.v1.PartnerToMicaService/Ping',
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+            mica_dot_partner_dot_service_dot_v1_dot_partner__to__mica__service__pb2.PingRequest.SerializeToString,
+            mica_dot_partner_dot_service_dot_v1_dot_partner__to__mica__service__pb2.PingResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
