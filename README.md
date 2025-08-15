@@ -50,7 +50,7 @@ make build
 
 To test the SDK, you will need to have the appropriate certificates (they are referenced in the Python example below (in the three lines that include the open function).
 
-Start an interactive Python shell by running the following:
+In order to test the Discount SDK, start an interactive Python shell by running the following:
 
 ```bash
 python3 -m venv venv
@@ -60,7 +60,7 @@ pip install discount/dist/micadiscount-1.1.2-py3-none-any.whl
 python3.13
 ```
 
-Next in the Python shell, run the following commands to test the SDK:
+Next in the Python shell, run the following commands to exercise the SDK:
 
 ```python
 import grpc
