@@ -48,7 +48,7 @@ make build
 
 ## Manual Testing
 
-To test the SDK, you will need to have the appropriate certificates (they are referenced in the Python example below (in the three lines that include the open function).
+To test the SDK, you will need to have the appropriate certificates. They are referenced in the Python example below (in the three lines that include the open function).
 
 In order to test the Discount SDK, start an interactive Python shell by running the following:
 
