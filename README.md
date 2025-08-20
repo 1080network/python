@@ -19,7 +19,7 @@ Mica client code for python
 git clone --recurse-submodules git@github.com:1080network/golang.git
 ```
 
-1. Update the version number in `about.py` at the root of the repository to reflect the version of the protos being used:
+2. Update the `__version__` line in `about.py` at the root of the repository to reflect the version of the protos being used:
 
 ```bash
 cat about.py
@@ -34,7 +34,7 @@ __url__ = "https://mica.io/"
 __python_requires__ = ">=3.10"
 ```
 
-1. Update the generated files from the protos
+3. Update the generated files from the protos
 
 ```bash
 make generate
@@ -75,6 +75,8 @@ pip install micacommon/dist/micacommon-${version}-py3-none-any.whl
 pip install discount/dist/micadiscount-${version}-py3-none-any.whl
 python3.10
 ```
+
+Note that you should be usign the same version of Python that is specified in `about.py`.
 
 Next in the Python shell, run the following commands to exercise the SDK:
 
