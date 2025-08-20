@@ -15,30 +15,30 @@ Mica client code for python
 
 1. Start by cloning with recursive so you get the submodules
 
-```bash
-git clone --recurse-submodules git@github.com:1080network/golang.git
-```
+    ```bash
+    git clone --recurse-submodules git@github.com:1080network/golang.git
+    ```
 
 2. Update the `__version__` line in `about.py` at the root of the repository to reflect the version of the protos being used:
 
-```bash
-cat about.py
-# common versioning and other indicators
+    ```bash
+    cat about.py
+    # common versioning and other indicators
 
-__version__ = "v1.8.0"
-__author__ = "Mica"
-__author_email__ = "engineering@mica.io"
-__license__ = "Apache 2.0"
-__copyright__ = "Copyright (c) 2023 Mica"
-__url__ = "https://mica.io/"
-__python_requires__ = ">=3.10"
-```
+    __version__ = "v1.8.0"
+    __author__ = "Mica"
+    __author_email__ = "engineering@mica.io"
+    __license__ = "Apache 2.0"
+    __copyright__ = "Copyright (c) 2023 Mica"
+    __url__ = "https://mica.io/"
+    __python_requires__ = ">=3.10"
+    ```
 
 3. Update the generated files from the protos
 
-```bash
-make generate
-```
+    ```bash
+    make generate
+    ```
 
 ### Building the SDK(s)
 
