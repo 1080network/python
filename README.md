@@ -55,9 +55,9 @@ In order to test the Discount SDK, start an interactive Python shell by running 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install micacommon/dist/micacommon-1.1.2-py3-none-any.whl
-pip install discount/dist/micadiscount-1.1.2-py3-none-any.whl
-python3.13
+pip install micacommon/dist/micacommon-1.8.0-py3-none-any.whl
+pip install discount/dist/micadiscount-1.8.0-py3-none-any.whl
+python3.10
 ```
 
 Next in the Python shell, run the following commands to exercise the SDK:

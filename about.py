@@ -1,6 +1,6 @@
 # common versioning and other indicators
 
-__version__ = "v1.1.2"
+__version__ = "v1.8.0"
 __author__ = "Mica"
 __author_email__ = "engineering@mica.io"
 __license__ = "Apache 2.0"
