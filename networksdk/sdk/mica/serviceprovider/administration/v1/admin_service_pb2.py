@@ -18,15 +18,15 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from sdk.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
-from sdk.micashared.common.v1 import console_user_pb2 as micashared_dot_common_dot_v1_dot_console__user__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from sdk.micashared.common.v1 import data_extraction_pb2 as micashared_dot_common_dot_v1_dot_data__extraction__pb2
+from sdk.micashared.common.v1 import error_pb2 as micashared_dot_common_dot_v1_dot_error__pb2
 from sdk.micashared.common.v1 import external_client_pb2 as micashared_dot_common_dot_v1_dot_external__client__pb2
 from sdk.micashared.common.v1 import mtls_certificate_pb2 as micashared_dot_common_dot_v1_dot_mtls__certificate__pb2
 from sdk.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:mica/serviceprovider/administration/v1/admin_service.proto\x12&mica.serviceprovider.administration.v1\x1a$micashared/common/ping/v1/ping.proto\x1a\'micashared/common/v1/console_user.proto\x1a*micashared/common/v1/data_extraction.proto\x1a*micashared/common/v1/external_client.proto\x1a+micashared/common/v1/mtls_certificate.proto\x1a\x17validate/validate.proto\"L\n\"PingExternalWithCertificateRequest\x12&\n\x13\x63\x65rtificate_ref_key\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"}\n#PingExternalWithCertificateResponse\x12\x1b\n\x13\x63\x65rtificate_ref_key\x18\x01 \x01(\t\x12\x39\n\x08response\x18\x02 \x01(\x0b\x32\'.micashared.common.ping.v1.PingResponse2\xb4\x15\n$ServiceProviderAdministrationService\x12\x88\x01\n\x17GenerateMTLSCertificate\x12\x34.micashared.common.v1.GenerateMTLSCertificateRequest\x1a\x35.micashared.common.v1.GenerateMTLSCertificateResponse\"\x00\x12\x82\x01\n\x15UpdateMTLSCertificate\x12\x32.micashared.common.v1.UpdateMTLSCertificateRequest\x1a\x33.micashared.common.v1.UpdateMTLSCertificateResponse\"\x00\x12\x82\x01\n\x15SearchMTLSCertificate\x12\x32.micashared.common.v1.SearchMTLSCertificateRequest\x1a\x33.micashared.common.v1.SearchMTLSCertificateResponse\"\x00\x12y\n\x12GetMTLSCertificate\x12/.micashared.common.v1.GetMTLSCertificateRequest\x1a\x30.micashared.common.v1.GetMTLSCertificateResponse\"\x00\x12\x9a\x01\n\x1d\x43reateSingleSignOnConsoleUser\x12:.micashared.common.v1.CreateSingleSignOnConsoleUserRequest\x1a;.micashared.common.v1.CreateSingleSignOnConsoleUserResponse\"\x00\x12\x9a\x01\n\x1dUpdateSingleSignOnConsoleUser\x12:.micashared.common.v1.UpdateSingleSignOnConsoleUserRequest\x1a;.micashared.common.v1.UpdateSingleSignOnConsoleUserResponse\"\x00\x12\x93\x01\n\x16SearchSingleSignOnUser\x12:.micashared.common.v1.SearchSingleSignOnConsoleUserRequest\x1a;.micashared.common.v1.SearchSingleSignOnConsoleUserResponse\"\x00\x12\x91\x01\n\x1aGetSingleSignOnConsoleUser\x12\x37.micashared.common.v1.GetSingleSignOnConsoleUserRequest\x1a\x38.micashared.common.v1.GetSingleSignOnConsoleUserResponse\"\x00\x12\x8e\x01\n\x19GetExternalClientSettings\x12\x36.micashared.common.v1.GetExternalClientSettingsRequest\x1a\x37.micashared.common.v1.GetExternalClientSettingsResponse\"\x00\x12\xac\x01\n#UpdateExternalClientCallbackAddress\x12@.micashared.common.v1.UpdateExternalClientCallBackAddressRequest\x1a\x41.micashared.common.v1.UpdateExternalClientCallBackAddressResponse\"\x00\x12\xb2\x01\n%GenerateExternalClientMTLSCertificate\x12\x42.micashared.common.v1.GenerateExternalClientMTLSCertificateRequest\x1a\x43.micashared.common.v1.GenerateExternalClientMTLSCertificateResponse\"\x00\x12\xac\x01\n#UpdateExternalClientMTLSCertificate\x12@.micashared.common.v1.UpdateExternalClientMTLSCertificateRequest\x1a\x41.micashared.common.v1.UpdateExternalClientMTLSCertificateResponse\"\x00\x12\xac\x01\n#SearchExternalClientMTLSCertificate\x12@.micashared.common.v1.SearchExternalClientMTLSCertificateRequest\x1a\x41.micashared.common.v1.SearchExternalClientMTLSCertificateResponse\"\x00\x12\x97\x01\n\x1cGenerateQuickstartPackageZip\x12\x39.micashared.common.v1.GenerateQuickstartPackageZipRequest\x1a:.micashared.common.v1.GenerateQuickstartPackageZipResponse\"\x00\x12\x89\x01\n\x1eSearchDataExtractionStatistics\x12\x31.micashared.common.v1.SearchDataExtractionRequest\x1a\x32.micashared.common.v1.SearchDataExtractionResponse\"\x00\x12\x80\x01\n\x1bGetDataExtractionStatistics\x12..micashared.common.v1.GetDataExtractionRequest\x1a/.micashared.common.v1.GetDataExtractionResponse\"\x00\x12\x61\n\x0cPingExternal\x12&.micashared.common.ping.v1.PingRequest\x1a\'.micashared.common.ping.v1.PingResponse\"\x00\x12\xb8\x01\n\x1bPingExternalWithCertificate\x12J.mica.serviceprovider.administration.v1.PingExternalWithCertificateRequest\x1aK.mica.serviceprovider.administration.v1.PingExternalWithCertificateResponse\"\x00\x42u\n)io.mica.serviceprovider.administration.v1B\x1a\x41\x64ministrationServiceProtoZ%mica/serviceprovider/administrationv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:mica/serviceprovider/administration/v1/admin_service.proto\x12&mica.serviceprovider.administration.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a*micashared/common/v1/data_extraction.proto\x1a micashared/common/v1/error.proto\x1a*micashared/common/v1/external_client.proto\x1a+micashared/common/v1/mtls_certificate.proto\x1a\x17validate/validate.proto\"\x15\n\x13PingExternalRequest\"\x16\n\x14PingExternalResponse\"G\n\"PingExternalWithCertificateRequest\x12!\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\t\xfa\x42\x06r\x04\x10\x1e\x18\x32\"=\n#PingExternalWithCertificateResponse\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"x\n*UpdateFromMicaClientCallbackAddressRequest\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12\x30\n\x10\x63\x61llback_address\x18\x02 \x01(\tB\x16\xfa\x42\x13r\x11\x32\x0f^[^/]+:\\d{3,6}$\"\xa7\x02\n+UpdateFromMicaClientCallbackAddressResponse\x12j\n\x06status\x18\x01 \x01(\x0e\x32Z.mica.serviceprovider.administration.v1.UpdateFromMicaClientCallbackAddressResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\"\n GetFromMicaClientSettingsRequest\"\xb9\x02\n!GetFromMicaClientSettingsResponse\x12`\n\x06status\x18\x01 \x01(\x0e\x32P.mica.serviceprovider.administration.v1.GetFromMicaClientSettingsResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12>\n\x08settings\x18\x03 \x01(\x0b\x32,.micashared.common.v1.ExternalClientSettings\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xb2\x01\n-UpdateFromMicaClientAuthenticationTypeRequest\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12g\n\x13\x61uthentication_type\x18\x03 \x01(\x0e\x32@.mica.serviceprovider.administration.v1.ClientAuthenticationTypeB\x08\xfa\x42\x05\x82\x01\x02 \x00\"\xad\x02\n.UpdateFromMicaClientAuthenticationTypeResponse\x12m\n\x06status\x18\x01 \x01(\x0e\x32].mica.serviceprovider.administration.v1.UpdateFromMicaClientAuthenticationTypeResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xa0\x02\n\x16\x45xternalClientSettings\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12+\n\x07\x63reated\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07updated\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12$\n\x10\x63\x61llback_address\x18\x04 \x01(\tB\n\xfa\x42\x07r\x05\x10\x03\x18\xc8\x01\x12l\n\x1e\x63lient_authentication_settings\x18\x05 \x01(\x0b\x32\x44.mica.serviceprovider.administration.v1.ClientAuthenticationSettings\"\xf5\x01\n\x1c\x43lientAuthenticationSettings\x12n\n$suported_client_authentication_types\x18\x01 \x03(\x0e\x32@.mica.serviceprovider.administration.v1.ClientAuthenticationType\x12\x65\n\x1b\x63urrent_authentication_type\x18\x02 \x01(\x0e\x32@.mica.serviceprovider.administration.v1.ClientAuthenticationType\"@\n(GenerateFromMicaClientCertificateRequest\x12\x14\n\x0c\x64isplay_name\x18\x01 \x01(\t\"\xd7\x02\n)GenerateFromMicaClientCertificateResponse\x12h\n\x06status\x18\x01 \x01(\x0e\x32X.mica.serviceprovider.administration.v1.GenerateFromMicaClientCertificateResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12L\n\x13\x63\x65rtificate_to_sign\x18\x03 \x01(\x0b\x32/.micashared.common.v1.FromMicaClientCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\x9a\x01\n&UpdateFromMicaClientCertificateRequest\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\'\n\x1f\x62\x61se64_signed_cert_pem_from_csr\x18\x03 \x01(\t\x12\x19\n\x11\x62\x61se64_rootca_pem\x18\x04 \x01(\t\"\xcb\x02\n\'UpdateFromMicaClientCertificateResponse\x12\x66\n\x06status\x18\x01 \x01(\x0e\x32V.mica.serviceprovider.administration.v1.UpdateFromMicaClientCertificateResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x44\n\x0b\x63\x65rtificate\x18\x03 \x01(\x0b\x32/.micashared.common.v1.FromMicaClientCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"@\n&EnableFromMicaClientCertificateRequest\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xcb\x02\n\'EnableFromMicaClientCertificateResponse\x12\x66\n\x06status\x18\x01 \x01(\x0e\x32V.mica.serviceprovider.administration.v1.EnableFromMicaClientCertificateResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x44\n\x0b\x63\x65rtificate\x18\x03 \x01(\x0b\x32/.micashared.common.v1.FromMicaClientCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"(\n&SearchFromMicaClientCertificateRequest\"\xcc\x02\n\'SearchFromMicaClientCertificateResponse\x12\x66\n\x06status\x18\x01 \x01(\x0e\x32V.mica.serviceprovider.administration.v1.SearchFromMicaClientCertificateResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x45\n\x0c\x63\x65rtificates\x18\x03 \x03(\x0b\x32/.micashared.common.v1.FromMicaClientCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"E\n\"GetDataExtractionStatisticsRequest\x12\x1f\n\x0e\x65xtractor_name\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\"\xcd\x02\n#GetDataExtractionStatisticsResponse\x12\x62\n\x06status\x18\x01 \x01(\x0e\x32R.mica.serviceprovider.administration.v1.GetDataExtractionStatisticsResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x38\n\nextraction\x18\x03 \x01(\x0b\x32$.micashared.common.v1.DataExtraction\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x14\n\x10STATUS_NOT_FOUND\x10\x02\x12\x10\n\x0cSTATUS_ERROR\x10\x03\"\'\n%SearchDataExtractionStatisticsRequest\"\xbe\x02\n&SearchDataExtractionStatisticsResponse\x12\x65\n\x06status\x18\x01 \x01(\x0e\x32U.mica.serviceprovider.administration.v1.SearchDataExtractionStatisticsResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x39\n\x0b\x65xtractions\x18\x03 \x03(\x0b\x32$.micashared.common.v1.DataExtraction\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02*\xa3\x01\n\x18\x43lientAuthenticationType\x12*\n&CLIENT_AUTHENTICATION_TYPE_UNSPECIFIED\x10\x00\x12\x31\n-CLIENT_AUTHENTICATION_TYPE_CLIENT_CERTIFICATE\x10\x01\x12(\n$CLIENT_AUTHENTICATION_TYPE_API_TOKEN\x10\x02\x32\x98\x0f\n$ServiceProviderAdministrationService\x12\xca\x01\n!GenerateFromMicaClientCertificate\x12P.mica.serviceprovider.administration.v1.GenerateFromMicaClientCertificateRequest\x1aQ.mica.serviceprovider.administration.v1.GenerateFromMicaClientCertificateResponse\"\x00\x12\xc4\x01\n\x1fUpdateFromMicaClientCertificate\x12N.mica.serviceprovider.administration.v1.UpdateFromMicaClientCertificateRequest\x1aO.mica.serviceprovider.administration.v1.UpdateFromMicaClientCertificateResponse\"\x00\x12\xc4\x01\n\x1f\x45nableFromMicaClientCertificate\x12N.mica.serviceprovider.administration.v1.EnableFromMicaClientCertificateRequest\x1aO.mica.serviceprovider.administration.v1.EnableFromMicaClientCertificateResponse\"\x00\x12\xc4\x01\n\x1fSearchFromMicaClientCertificate\x12N.mica.serviceprovider.administration.v1.SearchFromMicaClientCertificateRequest\x1aO.mica.serviceprovider.administration.v1.SearchFromMicaClientCertificateResponse\"\x00\x12\xb2\x01\n\x19GetFromMicaClientSettings\x12H.mica.serviceprovider.administration.v1.GetFromMicaClientSettingsRequest\x1aI.mica.serviceprovider.administration.v1.GetFromMicaClientSettingsResponse\"\x00\x12\xd0\x01\n#UpdateFromMicaClientCallbackAddress\x12R.mica.serviceprovider.administration.v1.UpdateFromMicaClientCallbackAddressRequest\x1aS.mica.serviceprovider.administration.v1.UpdateFromMicaClientCallbackAddressResponse\"\x00\x12\xc1\x01\n\x1eSearchDataExtractionStatistics\x12M.mica.serviceprovider.administration.v1.SearchDataExtractionStatisticsRequest\x1aN.mica.serviceprovider.administration.v1.SearchDataExtractionStatisticsResponse\"\x00\x12\xb8\x01\n\x1bGetDataExtractionStatistics\x12J.mica.serviceprovider.administration.v1.GetDataExtractionStatisticsRequest\x1aK.mica.serviceprovider.administration.v1.GetDataExtractionStatisticsResponse\"\x00\x12\x8b\x01\n\x0cPingExternal\x12;.mica.serviceprovider.administration.v1.PingExternalRequest\x1a<.mica.serviceprovider.administration.v1.PingExternalResponse\"\x00\x12\xb8\x01\n\x1bPingExternalWithCertificate\x12J.mica.serviceprovider.administration.v1.PingExternalWithCertificateRequest\x1aK.mica.serviceprovider.administration.v1.PingExternalWithCertificateResponse\"\x00\x42u\n)io.mica.serviceprovider.administration.v1B\x1a\x41\x64ministrationServiceProtoZ%mica/serviceprovider/administrationv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.serviceprovider.administration.v1.admin_service_pb2', globals())
@@ -34,12 +34,94 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n)io.mica.serviceprovider.administration.v1B\032AdministrationServiceProtoZ%mica/serviceprovider/administrationv1\242\002\004MICA'
-  _PINGEXTERNALWITHCERTIFICATEREQUEST.fields_by_name['certificate_ref_key']._options = None
-  _PINGEXTERNALWITHCERTIFICATEREQUEST.fields_by_name['certificate_ref_key']._serialized_options = b'\372B\006r\004\020\036\0302'
-  _PINGEXTERNALWITHCERTIFICATEREQUEST._serialized_start=339
-  _PINGEXTERNALWITHCERTIFICATEREQUEST._serialized_end=415
-  _PINGEXTERNALWITHCERTIFICATERESPONSE._serialized_start=417
-  _PINGEXTERNALWITHCERTIFICATERESPONSE._serialized_end=542
-  _SERVICEPROVIDERADMINISTRATIONSERVICE._serialized_start=545
-  _SERVICEPROVIDERADMINISTRATIONSERVICE._serialized_end=3285
+  _PINGEXTERNALWITHCERTIFICATEREQUEST.fields_by_name['certificate_id']._options = None
+  _PINGEXTERNALWITHCERTIFICATEREQUEST.fields_by_name['certificate_id']._serialized_options = b'\372B\006r\004\020\036\0302'
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST.fields_by_name['version']._options = None
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST.fields_by_name['callback_address']._options = None
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST.fields_by_name['callback_address']._serialized_options = b'\372B\023r\0212\017^[^/]+:\\d{3,6}$'
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE.fields_by_name['version']._options = None
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPEREQUEST.fields_by_name['version']._options = None
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPEREQUEST.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPEREQUEST.fields_by_name['authentication_type']._options = None
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPEREQUEST.fields_by_name['authentication_type']._serialized_options = b'\372B\005\202\001\002 \000'
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPERESPONSE.fields_by_name['version']._options = None
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPERESPONSE.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _EXTERNALCLIENTSETTINGS.fields_by_name['version']._options = None
+  _EXTERNALCLIENTSETTINGS.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _EXTERNALCLIENTSETTINGS.fields_by_name['callback_address']._options = None
+  _EXTERNALCLIENTSETTINGS.fields_by_name['callback_address']._serialized_options = b'\372B\007r\005\020\003\030\310\001'
+  _GETDATAEXTRACTIONSTATISTICSREQUEST.fields_by_name['extractor_name']._options = None
+  _GETDATAEXTRACTIONSTATISTICSREQUEST.fields_by_name['extractor_name']._serialized_options = b'\372B\004r\002\020\001'
+  _CLIENTAUTHENTICATIONTYPE._serialized_start=4756
+  _CLIENTAUTHENTICATIONTYPE._serialized_end=4919
+  _PINGEXTERNALREQUEST._serialized_start=327
+  _PINGEXTERNALREQUEST._serialized_end=348
+  _PINGEXTERNALRESPONSE._serialized_start=350
+  _PINGEXTERNALRESPONSE._serialized_end=372
+  _PINGEXTERNALWITHCERTIFICATEREQUEST._serialized_start=374
+  _PINGEXTERNALWITHCERTIFICATEREQUEST._serialized_end=445
+  _PINGEXTERNALWITHCERTIFICATERESPONSE._serialized_start=447
+  _PINGEXTERNALWITHCERTIFICATERESPONSE._serialized_end=508
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST._serialized_start=510
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST._serialized_end=630
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE._serialized_start=633
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE._serialized_end=928
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE_STATUS._serialized_start=858
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE_STATUS._serialized_end=928
+  _GETFROMMICACLIENTSETTINGSREQUEST._serialized_start=930
+  _GETFROMMICACLIENTSETTINGSREQUEST._serialized_end=964
+  _GETFROMMICACLIENTSETTINGSRESPONSE._serialized_start=967
+  _GETFROMMICACLIENTSETTINGSRESPONSE._serialized_end=1280
+  _GETFROMMICACLIENTSETTINGSRESPONSE_STATUS._serialized_start=858
+  _GETFROMMICACLIENTSETTINGSRESPONSE_STATUS._serialized_end=928
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPEREQUEST._serialized_start=1283
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPEREQUEST._serialized_end=1461
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPERESPONSE._serialized_start=1464
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPERESPONSE._serialized_end=1765
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPERESPONSE_STATUS._serialized_start=858
+  _UPDATEFROMMICACLIENTAUTHENTICATIONTYPERESPONSE_STATUS._serialized_end=928
+  _EXTERNALCLIENTSETTINGS._serialized_start=1768
+  _EXTERNALCLIENTSETTINGS._serialized_end=2056
+  _CLIENTAUTHENTICATIONSETTINGS._serialized_start=2059
+  _CLIENTAUTHENTICATIONSETTINGS._serialized_end=2304
+  _GENERATEFROMMICACLIENTCERTIFICATEREQUEST._serialized_start=2306
+  _GENERATEFROMMICACLIENTCERTIFICATEREQUEST._serialized_end=2370
+  _GENERATEFROMMICACLIENTCERTIFICATERESPONSE._serialized_start=2373
+  _GENERATEFROMMICACLIENTCERTIFICATERESPONSE._serialized_end=2716
+  _GENERATEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_start=858
+  _GENERATEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_end=928
+  _UPDATEFROMMICACLIENTCERTIFICATEREQUEST._serialized_start=2719
+  _UPDATEFROMMICACLIENTCERTIFICATEREQUEST._serialized_end=2873
+  _UPDATEFROMMICACLIENTCERTIFICATERESPONSE._serialized_start=2876
+  _UPDATEFROMMICACLIENTCERTIFICATERESPONSE._serialized_end=3207
+  _UPDATEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_start=858
+  _UPDATEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_end=928
+  _ENABLEFROMMICACLIENTCERTIFICATEREQUEST._serialized_start=3209
+  _ENABLEFROMMICACLIENTCERTIFICATEREQUEST._serialized_end=3273
+  _ENABLEFROMMICACLIENTCERTIFICATERESPONSE._serialized_start=3276
+  _ENABLEFROMMICACLIENTCERTIFICATERESPONSE._serialized_end=3607
+  _ENABLEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_start=858
+  _ENABLEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_end=928
+  _SEARCHFROMMICACLIENTCERTIFICATEREQUEST._serialized_start=3609
+  _SEARCHFROMMICACLIENTCERTIFICATEREQUEST._serialized_end=3649
+  _SEARCHFROMMICACLIENTCERTIFICATERESPONSE._serialized_start=3652
+  _SEARCHFROMMICACLIENTCERTIFICATERESPONSE._serialized_end=3984
+  _SEARCHFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_start=858
+  _SEARCHFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_end=928
+  _GETDATAEXTRACTIONSTATISTICSREQUEST._serialized_start=3986
+  _GETDATAEXTRACTIONSTATISTICSREQUEST._serialized_end=4055
+  _GETDATAEXTRACTIONSTATISTICSRESPONSE._serialized_start=4058
+  _GETDATAEXTRACTIONSTATISTICSRESPONSE._serialized_end=4391
+  _GETDATAEXTRACTIONSTATISTICSRESPONSE_STATUS._serialized_start=4299
+  _GETDATAEXTRACTIONSTATISTICSRESPONSE_STATUS._serialized_end=4391
+  _SEARCHDATAEXTRACTIONSTATISTICSREQUEST._serialized_start=4393
+  _SEARCHDATAEXTRACTIONSTATISTICSREQUEST._serialized_end=4432
+  _SEARCHDATAEXTRACTIONSTATISTICSRESPONSE._serialized_start=4435
+  _SEARCHDATAEXTRACTIONSTATISTICSRESPONSE._serialized_end=4753
+  _SEARCHDATAEXTRACTIONSTATISTICSRESPONSE_STATUS._serialized_start=858
+  _SEARCHDATAEXTRACTIONSTATISTICSRESPONSE_STATUS._serialized_end=928
+  _SERVICEPROVIDERADMINISTRATIONSERVICE._serialized_start=4922
+  _SERVICEPROVIDERADMINISTRATIONSERVICE._serialized_end=6866
 # @@protoc_insertion_point(module_scope)

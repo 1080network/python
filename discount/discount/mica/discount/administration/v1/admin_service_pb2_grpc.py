@@ -9,10 +9,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from discount.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
-from discount.micashared.common.v1 import authentication_token_pb2 as micashared_dot_common_dot_v1_dot_authentication__token__pb2
-from discount.micashared.common.v1 import external_client_pb2 as micashared_dot_common_dot_v1_dot_external__client__pb2
-from discount.micashared.common.v1 import mtls_certificate_pb2 as micashared_dot_common_dot_v1_dot_mtls__certificate__pb2
+from discount.mica.discount.administration.v1 import admin_service_pb2 as mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2
 
 
 class DiscountAdministrationServiceStub(object):
@@ -24,130 +21,97 @@ class DiscountAdministrationServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GenerateMTLSCertificate = channel.unary_unary(
-                '/mica.discount.administration.v1.DiscountAdministrationService/GenerateMTLSCertificate',
-                request_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateMTLSCertificateRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateMTLSCertificateResponse.FromString,
+        self.GenerateFromMicaClientCertificate = channel.unary_unary(
+                '/mica.discount.administration.v1.DiscountAdministrationService/GenerateFromMicaClientCertificate',
+                request_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GenerateFromMicaClientCertificateRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GenerateFromMicaClientCertificateResponse.FromString,
                 )
-        self.UpdateMTLSCertificate = channel.unary_unary(
-                '/mica.discount.administration.v1.DiscountAdministrationService/UpdateMTLSCertificate',
-                request_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateMTLSCertificateRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateMTLSCertificateResponse.FromString,
+        self.UpdateFromMicaClientCertificate = channel.unary_unary(
+                '/mica.discount.administration.v1.DiscountAdministrationService/UpdateFromMicaClientCertificate',
+                request_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCertificateRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCertificateResponse.FromString,
                 )
-        self.SearchMTLSCertificate = channel.unary_unary(
-                '/mica.discount.administration.v1.DiscountAdministrationService/SearchMTLSCertificate',
-                request_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchMTLSCertificateRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchMTLSCertificateResponse.FromString,
+        self.EnableFromMicaClientCertificate = channel.unary_unary(
+                '/mica.discount.administration.v1.DiscountAdministrationService/EnableFromMicaClientCertificate',
+                request_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.EnableFromMicaClientCertificateRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.EnableFromMicaClientCertificateResponse.FromString,
                 )
-        self.GetMTLSCertificate = channel.unary_unary(
-                '/mica.discount.administration.v1.DiscountAdministrationService/GetMTLSCertificate',
-                request_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GetMTLSCertificateRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GetMTLSCertificateResponse.FromString,
+        self.SearchFromMicaClientCertificate = channel.unary_unary(
+                '/mica.discount.administration.v1.DiscountAdministrationService/SearchFromMicaClientCertificate',
+                request_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.SearchFromMicaClientCertificateRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.SearchFromMicaClientCertificateResponse.FromString,
                 )
-        self.GetExternalClientSettings = channel.unary_unary(
-                '/mica.discount.administration.v1.DiscountAdministrationService/GetExternalClientSettings',
-                request_serializer=micashared_dot_common_dot_v1_dot_external__client__pb2.GetExternalClientSettingsRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_external__client__pb2.GetExternalClientSettingsResponse.FromString,
+        self.GetFromMicaClientSettings = channel.unary_unary(
+                '/mica.discount.administration.v1.DiscountAdministrationService/GetFromMicaClientSettings',
+                request_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetFromMicaClientSettingsRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetFromMicaClientSettingsResponse.FromString,
                 )
-        self.UpdateExternalClientCallbackAddress = channel.unary_unary(
-                '/mica.discount.administration.v1.DiscountAdministrationService/UpdateExternalClientCallbackAddress',
-                request_serializer=micashared_dot_common_dot_v1_dot_external__client__pb2.UpdateExternalClientCallBackAddressRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_external__client__pb2.UpdateExternalClientCallBackAddressResponse.FromString,
-                )
-        self.GenerateExternalClientMTLSCertificate = channel.unary_unary(
-                '/mica.discount.administration.v1.DiscountAdministrationService/GenerateExternalClientMTLSCertificate',
-                request_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateExternalClientMTLSCertificateRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateExternalClientMTLSCertificateResponse.FromString,
-                )
-        self.UpdateExternalClientMTLSCertificate = channel.unary_unary(
-                '/mica.discount.administration.v1.DiscountAdministrationService/UpdateExternalClientMTLSCertificate',
-                request_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateExternalClientMTLSCertificateRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateExternalClientMTLSCertificateResponse.FromString,
-                )
-        self.SearchExternalClientMTLSCertificate = channel.unary_unary(
-                '/mica.discount.administration.v1.DiscountAdministrationService/SearchExternalClientMTLSCertificate',
-                request_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateResponse.FromString,
+        self.UpdateFromMicaClientCallbackAddress = channel.unary_unary(
+                '/mica.discount.administration.v1.DiscountAdministrationService/UpdateFromMicaClientCallbackAddress',
+                request_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCallbackAddressRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCallbackAddressResponse.FromString,
                 )
         self.CreateApiTokenConfiguration = channel.unary_unary(
                 '/mica.discount.administration.v1.DiscountAdministrationService/CreateApiTokenConfiguration',
-                request_serializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.CreateApiTokenConfigurationRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.CreateApiTokenConfigurationResponse.FromString,
+                request_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.CreateApiTokenConfigurationRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.CreateApiTokenConfigurationResponse.FromString,
                 )
         self.GetApiTokenConfiguration = channel.unary_unary(
                 '/mica.discount.administration.v1.DiscountAdministrationService/GetApiTokenConfiguration',
-                request_serializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.GetApiTokenConfigurationRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.GetApiTokenConfigurationResponse.FromString,
+                request_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetApiTokenConfigurationRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetApiTokenConfigurationResponse.FromString,
                 )
         self.UpdateAPITokenAuthenticationConfiguration = channel.unary_unary(
                 '/mica.discount.administration.v1.DiscountAdministrationService/UpdateAPITokenAuthenticationConfiguration',
-                request_serializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.UpdateApiTokenConfigurationRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.UpdateApiTokenConfigurationResponse.FromString,
+                request_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateAPITokenAuthenticationConfigurationRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateAPITokenAuthenticationConfigurationResponse.FromString,
                 )
         self.PingExternal = channel.unary_unary(
                 '/mica.discount.administration.v1.DiscountAdministrationService/PingExternal',
-                request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+                request_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalResponse.FromString,
                 )
 
 
 class DiscountAdministrationServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def GenerateMTLSCertificate(self, request, context):
-        """Certificate authentication to call from a provider onto mica
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdateMTLSCertificate(self, request, context):
-        """Update the certificate with a given serial number, only supports enable/disable for now
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SearchMTLSCertificate(self, request, context):
-        """Search for certificates and return the ones that match the criteria provided
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetMTLSCertificate(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetExternalClientSettings(self, request, context):
-        """External authentication mechanisms for Mica to call provider endpoints
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdateExternalClientCallbackAddress(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GenerateExternalClientMTLSCertificate(self, request, context):
+    def GenerateFromMicaClientCertificate(self, request, context):
         """Client certificates are used when mica needs to call out to a customers environment.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateExternalClientMTLSCertificate(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+    def UpdateFromMicaClientCertificate(self, request, context):
+        """After signing the CSR the member will upload the signed cert
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SearchExternalClientMTLSCertificate(self, request, context):
+    def EnableFromMicaClientCertificate(self, request, context):
+        """there can only be one enable cert for each endpoint
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SearchFromMicaClientCertificate(self, request, context):
+        """return all from mica certs for now
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFromMicaClientSettings(self, request, context):
+        """External authentication mechanisms for Mica to call provider endpoints
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateFromMicaClientCallbackAddress(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -185,70 +149,55 @@ class DiscountAdministrationServiceServicer(object):
 
 def add_DiscountAdministrationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GenerateMTLSCertificate': grpc.unary_unary_rpc_method_handler(
-                    servicer.GenerateMTLSCertificate,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateMTLSCertificateRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateMTLSCertificateResponse.SerializeToString,
+            'GenerateFromMicaClientCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateFromMicaClientCertificate,
+                    request_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GenerateFromMicaClientCertificateRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GenerateFromMicaClientCertificateResponse.SerializeToString,
             ),
-            'UpdateMTLSCertificate': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateMTLSCertificate,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateMTLSCertificateRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateMTLSCertificateResponse.SerializeToString,
+            'UpdateFromMicaClientCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateFromMicaClientCertificate,
+                    request_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCertificateRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCertificateResponse.SerializeToString,
             ),
-            'SearchMTLSCertificate': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchMTLSCertificate,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchMTLSCertificateRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchMTLSCertificateResponse.SerializeToString,
+            'EnableFromMicaClientCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.EnableFromMicaClientCertificate,
+                    request_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.EnableFromMicaClientCertificateRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.EnableFromMicaClientCertificateResponse.SerializeToString,
             ),
-            'GetMTLSCertificate': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetMTLSCertificate,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GetMTLSCertificateRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GetMTLSCertificateResponse.SerializeToString,
+            'SearchFromMicaClientCertificate': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchFromMicaClientCertificate,
+                    request_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.SearchFromMicaClientCertificateRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.SearchFromMicaClientCertificateResponse.SerializeToString,
             ),
-            'GetExternalClientSettings': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetExternalClientSettings,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_external__client__pb2.GetExternalClientSettingsRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_external__client__pb2.GetExternalClientSettingsResponse.SerializeToString,
+            'GetFromMicaClientSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFromMicaClientSettings,
+                    request_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetFromMicaClientSettingsRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetFromMicaClientSettingsResponse.SerializeToString,
             ),
-            'UpdateExternalClientCallbackAddress': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateExternalClientCallbackAddress,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_external__client__pb2.UpdateExternalClientCallBackAddressRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_external__client__pb2.UpdateExternalClientCallBackAddressResponse.SerializeToString,
-            ),
-            'GenerateExternalClientMTLSCertificate': grpc.unary_unary_rpc_method_handler(
-                    servicer.GenerateExternalClientMTLSCertificate,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateExternalClientMTLSCertificateRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateExternalClientMTLSCertificateResponse.SerializeToString,
-            ),
-            'UpdateExternalClientMTLSCertificate': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateExternalClientMTLSCertificate,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateExternalClientMTLSCertificateRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateExternalClientMTLSCertificateResponse.SerializeToString,
-            ),
-            'SearchExternalClientMTLSCertificate': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchExternalClientMTLSCertificate,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateResponse.SerializeToString,
+            'UpdateFromMicaClientCallbackAddress': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateFromMicaClientCallbackAddress,
+                    request_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCallbackAddressRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCallbackAddressResponse.SerializeToString,
             ),
             'CreateApiTokenConfiguration': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateApiTokenConfiguration,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.CreateApiTokenConfigurationRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.CreateApiTokenConfigurationResponse.SerializeToString,
+                    request_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.CreateApiTokenConfigurationRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.CreateApiTokenConfigurationResponse.SerializeToString,
             ),
             'GetApiTokenConfiguration': grpc.unary_unary_rpc_method_handler(
                     servicer.GetApiTokenConfiguration,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.GetApiTokenConfigurationRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.GetApiTokenConfigurationResponse.SerializeToString,
+                    request_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetApiTokenConfigurationRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetApiTokenConfigurationResponse.SerializeToString,
             ),
             'UpdateAPITokenAuthenticationConfiguration': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAPITokenAuthenticationConfiguration,
-                    request_deserializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.UpdateApiTokenConfigurationRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_v1_dot_authentication__token__pb2.UpdateApiTokenConfigurationResponse.SerializeToString,
+                    request_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateAPITokenAuthenticationConfigurationRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateAPITokenAuthenticationConfigurationResponse.SerializeToString,
             ),
             'PingExternal': grpc.unary_unary_rpc_method_handler(
                     servicer.PingExternal,
-                    request_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
+                    request_deserializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -261,7 +210,7 @@ class DiscountAdministrationService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def GenerateMTLSCertificate(request,
+    def GenerateFromMicaClientCertificate(request,
             target,
             options=(),
             channel_credentials=None,
@@ -271,14 +220,14 @@ class DiscountAdministrationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/GenerateMTLSCertificate',
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateMTLSCertificateRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateMTLSCertificateResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/GenerateFromMicaClientCertificate',
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GenerateFromMicaClientCertificateRequest.SerializeToString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GenerateFromMicaClientCertificateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateMTLSCertificate(request,
+    def UpdateFromMicaClientCertificate(request,
             target,
             options=(),
             channel_credentials=None,
@@ -288,14 +237,14 @@ class DiscountAdministrationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/UpdateMTLSCertificate',
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateMTLSCertificateRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateMTLSCertificateResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/UpdateFromMicaClientCertificate',
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCertificateRequest.SerializeToString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCertificateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def SearchMTLSCertificate(request,
+    def EnableFromMicaClientCertificate(request,
             target,
             options=(),
             channel_credentials=None,
@@ -305,14 +254,14 @@ class DiscountAdministrationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/SearchMTLSCertificate',
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchMTLSCertificateRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchMTLSCertificateResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/EnableFromMicaClientCertificate',
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.EnableFromMicaClientCertificateRequest.SerializeToString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.EnableFromMicaClientCertificateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetMTLSCertificate(request,
+    def SearchFromMicaClientCertificate(request,
             target,
             options=(),
             channel_credentials=None,
@@ -322,14 +271,14 @@ class DiscountAdministrationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/GetMTLSCertificate',
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GetMTLSCertificateRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GetMTLSCertificateResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/SearchFromMicaClientCertificate',
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.SearchFromMicaClientCertificateRequest.SerializeToString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.SearchFromMicaClientCertificateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetExternalClientSettings(request,
+    def GetFromMicaClientSettings(request,
             target,
             options=(),
             channel_credentials=None,
@@ -339,14 +288,14 @@ class DiscountAdministrationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/GetExternalClientSettings',
-            micashared_dot_common_dot_v1_dot_external__client__pb2.GetExternalClientSettingsRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_external__client__pb2.GetExternalClientSettingsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/GetFromMicaClientSettings',
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetFromMicaClientSettingsRequest.SerializeToString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetFromMicaClientSettingsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateExternalClientCallbackAddress(request,
+    def UpdateFromMicaClientCallbackAddress(request,
             target,
             options=(),
             channel_credentials=None,
@@ -356,60 +305,9 @@ class DiscountAdministrationService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/UpdateExternalClientCallbackAddress',
-            micashared_dot_common_dot_v1_dot_external__client__pb2.UpdateExternalClientCallBackAddressRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_external__client__pb2.UpdateExternalClientCallBackAddressResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GenerateExternalClientMTLSCertificate(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/GenerateExternalClientMTLSCertificate',
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateExternalClientMTLSCertificateRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.GenerateExternalClientMTLSCertificateResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateExternalClientMTLSCertificate(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/UpdateExternalClientMTLSCertificate',
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateExternalClientMTLSCertificateRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.UpdateExternalClientMTLSCertificateResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchExternalClientMTLSCertificate(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/SearchExternalClientMTLSCertificate',
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_mtls__certificate__pb2.SearchExternalClientMTLSCertificateResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/UpdateFromMicaClientCallbackAddress',
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCallbackAddressRequest.SerializeToString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateFromMicaClientCallbackAddressResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -425,8 +323,8 @@ class DiscountAdministrationService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/CreateApiTokenConfiguration',
-            micashared_dot_common_dot_v1_dot_authentication__token__pb2.CreateApiTokenConfigurationRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_authentication__token__pb2.CreateApiTokenConfigurationResponse.FromString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.CreateApiTokenConfigurationRequest.SerializeToString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.CreateApiTokenConfigurationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -442,8 +340,8 @@ class DiscountAdministrationService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/GetApiTokenConfiguration',
-            micashared_dot_common_dot_v1_dot_authentication__token__pb2.GetApiTokenConfigurationRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_authentication__token__pb2.GetApiTokenConfigurationResponse.FromString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetApiTokenConfigurationRequest.SerializeToString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.GetApiTokenConfigurationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -459,8 +357,8 @@ class DiscountAdministrationService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/UpdateAPITokenAuthenticationConfiguration',
-            micashared_dot_common_dot_v1_dot_authentication__token__pb2.UpdateApiTokenConfigurationRequest.SerializeToString,
-            micashared_dot_common_dot_v1_dot_authentication__token__pb2.UpdateApiTokenConfigurationResponse.FromString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateAPITokenAuthenticationConfigurationRequest.SerializeToString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.UpdateAPITokenAuthenticationConfigurationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -476,7 +374,7 @@ class DiscountAdministrationService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.discount.administration.v1.DiscountAdministrationService/PingExternal',
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalRequest.SerializeToString,
+            mica_dot_discount_dot_administration_dot_v1_dot_admin__service__pb2.PingExternalResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

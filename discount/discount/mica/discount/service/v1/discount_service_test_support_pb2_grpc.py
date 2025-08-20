@@ -23,18 +23,18 @@ class DiscountTestSupportServiceStub(object):
         """
         self.TestDetermineDiscount = channel.unary_unary(
                 '/mica.discount.service.v1.DiscountTestSupportService/TestDetermineDiscount',
-                request_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.DetermineDiscountRequest.SerializeToString,
-                response_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.DetermineDiscountResponse.FromString,
+                request_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestDetermineDiscountRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestDetermineDiscountResponse.FromString,
                 )
         self.TestApplyDiscount = channel.unary_unary(
                 '/mica.discount.service.v1.DiscountTestSupportService/TestApplyDiscount',
-                request_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountRequest.SerializeToString,
-                response_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountResponse.FromString,
+                request_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestApplyDiscountRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestApplyDiscountResponse.FromString,
                 )
         self.TestReleaseDiscount = channel.unary_unary(
                 '/mica.discount.service.v1.DiscountTestSupportService/TestReleaseDiscount',
-                request_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountRequest.SerializeToString,
-                response_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountResponse.FromString,
+                request_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestReleaseDiscountRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestReleaseDiscountResponse.FromString,
                 )
 
 
@@ -66,18 +66,18 @@ def add_DiscountTestSupportServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'TestDetermineDiscount': grpc.unary_unary_rpc_method_handler(
                     servicer.TestDetermineDiscount,
-                    request_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.DetermineDiscountRequest.FromString,
-                    response_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.DetermineDiscountResponse.SerializeToString,
+                    request_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestDetermineDiscountRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestDetermineDiscountResponse.SerializeToString,
             ),
             'TestApplyDiscount': grpc.unary_unary_rpc_method_handler(
                     servicer.TestApplyDiscount,
-                    request_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountRequest.FromString,
-                    response_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountResponse.SerializeToString,
+                    request_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestApplyDiscountRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestApplyDiscountResponse.SerializeToString,
             ),
             'TestReleaseDiscount': grpc.unary_unary_rpc_method_handler(
                     servicer.TestReleaseDiscount,
-                    request_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountRequest.FromString,
-                    response_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountResponse.SerializeToString,
+                    request_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestReleaseDiscountRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestReleaseDiscountResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -101,8 +101,8 @@ class DiscountTestSupportService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.discount.service.v1.DiscountTestSupportService/TestDetermineDiscount',
-            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.DetermineDiscountRequest.SerializeToString,
-            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.DetermineDiscountResponse.FromString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestDetermineDiscountRequest.SerializeToString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestDetermineDiscountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -118,8 +118,8 @@ class DiscountTestSupportService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.discount.service.v1.DiscountTestSupportService/TestApplyDiscount',
-            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountRequest.SerializeToString,
-            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ApplyDiscountResponse.FromString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestApplyDiscountRequest.SerializeToString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestApplyDiscountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -135,7 +135,7 @@ class DiscountTestSupportService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.discount.service.v1.DiscountTestSupportService/TestReleaseDiscount',
-            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountRequest.SerializeToString,
-            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.ReleaseDiscountResponse.FromString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestReleaseDiscountRequest.SerializeToString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__service__test__support__pb2.TestReleaseDiscountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -5,7 +5,7 @@ from concurrent import futures
 from sdk import build_partner_client
 from sdk.mica.partner.service.v1.partner_to_mica_service_pb2_grpc import PartnerToMicaService, \
     add_PartnerToMicaServiceServicer_to_server
-import sdk.micashared.common.ping.v1.ping_pb2 as ping
+import sdk.mica.member.ping.v1.ping_service_pb2 as ping
 
 
 def test_partner_client():

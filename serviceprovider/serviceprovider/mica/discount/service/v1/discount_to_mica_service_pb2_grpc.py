@@ -14,13 +14,12 @@ from serviceprovider.mica.discount.discountdefinition.v1 import discount_definit
 from serviceprovider.mica.discount.discountprovider.v1 import discount_provider_pb2 as mica_dot_discount_dot_discountprovider_dot_v1_dot_discount__provider__pb2
 from serviceprovider.mica.discount.discountprovideraccount.v1 import discount_provider_account_pb2 as mica_dot_discount_dot_discountprovideraccount_dot_v1_dot_discount__provider__account__pb2
 from serviceprovider.mica.discount.productgroup.v1 import product_group_pb2 as mica_dot_discount_dot_productgroup_dot_v1_dot_product__group__pb2
+from serviceprovider.mica.discount.service.v1 import discount_to_mica_service_pb2 as mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2
 from serviceprovider.mica.discount.user.v1 import user_pb2 as mica_dot_discount_dot_user_dot_v1_dot_user__pb2
-from serviceprovider.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 
 
 class DiscountToMicaServiceStub(object):
-    """<editor-fold desc="Discount Provider Operations">
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -160,19 +159,18 @@ class DiscountToMicaServiceStub(object):
                 )
         self.Ping = channel.unary_unary(
                 '/mica.discount.service.v1.DiscountToMicaService/Ping',
-                request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+                request_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingResponse.FromString,
                 )
         self.PingWithRoundTrip = channel.unary_unary(
                 '/mica.discount.service.v1.DiscountToMicaService/PingWithRoundTrip',
-                request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+                request_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingWithRoundTripRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingWithRoundTripResponse.FromString,
                 )
 
 
 class DiscountToMicaServiceServicer(object):
-    """<editor-fold desc="Discount Provider Operations">
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def GetDiscountProvider(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -187,11 +185,7 @@ class DiscountToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateDiscountProviderAccount(self, request, context):
-        """</editor-fold>
-
-        <editor-fold desc="Product Group Operations">
-
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -227,9 +221,7 @@ class DiscountToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateProductGroup(self, request, context):
-        """<editor-fold desc="Product Group Operations">
-
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -259,9 +251,7 @@ class DiscountToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateDiscountDefinition(self, request, context):
-        """<editor-fold desc="DiscountDefinition Group Operations">
-
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -297,9 +287,7 @@ class DiscountToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateDiscount(self, request, context):
-        """<editor-fold desc="Discount Operations">
-
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -341,9 +329,7 @@ class DiscountToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Ping(self, request, context):
-        """<editor-fold desc="Admin Operations">
-
-        An operation to ping the server to ensure it's up and running and that the connection is good.
+        """An operation to ping the server to ensure it's up and running and that the connection is good.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -492,13 +478,13 @@ def add_DiscountToMicaServiceServicer_to_server(servicer, server):
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
-                    request_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
+                    request_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingResponse.SerializeToString,
             ),
             'PingWithRoundTrip': grpc.unary_unary_rpc_method_handler(
                     servicer.PingWithRoundTrip,
-                    request_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
+                    request_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingWithRoundTripRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingWithRoundTripResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -508,8 +494,7 @@ def add_DiscountToMicaServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DiscountToMicaService(object):
-    """<editor-fold desc="Discount Provider Operations">
-    """
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
     def GetDiscountProvider(request,
@@ -965,8 +950,8 @@ class DiscountToMicaService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.discount.service.v1.DiscountToMicaService/Ping',
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingRequest.SerializeToString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -982,7 +967,7 @@ class DiscountToMicaService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.discount.service.v1.DiscountToMicaService/PingWithRoundTrip',
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingWithRoundTripRequest.SerializeToString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__to__mica__service__pb2.PingWithRoundTripResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

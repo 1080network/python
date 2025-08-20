@@ -19,10 +19,9 @@ _sym_db = _symbol_database.Default()
 
 
 from discount.mica.discount.discount.v1 import discount_pb2 as mica_dot_discount_dot_discount_dot_v1_dot_discount__pb2
-from discount.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n9mica/discount/service/v1/discount_from_mica_service.proto\x12\x18mica.discount.service.v1\x1a(mica/discount/discount/v1/discount.proto\x1a$micashared/common/ping/v1/ping.proto2\x8f\x02\n\x17\x44iscountFromMicaService\x12\x98\x01\n\x19\x41pplyDiscountNotification\x12;.mica.discount.discount.v1.ApplyDiscountNotificationRequest\x1a<.mica.discount.discount.v1.ApplyDiscountNotificationResponse\"\x00\x12Y\n\x04Ping\x12&.micashared.common.ping.v1.PingRequest\x1a\'.micashared.common.ping.v1.PingResponse\"\x00\x42[\n\x1bio.mica.discount.service.v1B\x1c\x44iscountFromMicaServiceProtoZ\x17mica/discount/servicev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n9mica/discount/service/v1/discount_from_mica_service.proto\x12\x18mica.discount.service.v1\x1a(mica/discount/discount/v1/discount.proto\"$\n\"DiscountFromMicaServicePingRequest\"%\n#DiscountFromMicaServicePingResponse2\xbc\x02\n\x17\x44iscountFromMicaService\x12\x98\x01\n\x19\x41pplyDiscountNotification\x12;.mica.discount.discount.v1.ApplyDiscountNotificationRequest\x1a<.mica.discount.discount.v1.ApplyDiscountNotificationResponse\"\x00\x12\x85\x01\n\x04Ping\x12<.mica.discount.service.v1.DiscountFromMicaServicePingRequest\x1a=.mica.discount.service.v1.DiscountFromMicaServicePingResponse\"\x00\x42[\n\x1bio.mica.discount.service.v1B\x1c\x44iscountFromMicaServiceProtoZ\x17mica/discount/servicev1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.discount.service.v1.discount_from_mica_service_pb2', globals())
@@ -30,6 +29,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\033io.mica.discount.service.v1B\034DiscountFromMicaServiceProtoZ\027mica/discount/servicev1\242\002\004MICA'
-  _DISCOUNTFROMMICASERVICE._serialized_start=168
-  _DISCOUNTFROMMICASERVICE._serialized_end=439
+  _DISCOUNTFROMMICASERVICEPINGREQUEST._serialized_start=129
+  _DISCOUNTFROMMICASERVICEPINGREQUEST._serialized_end=165
+  _DISCOUNTFROMMICASERVICEPINGRESPONSE._serialized_start=167
+  _DISCOUNTFROMMICASERVICEPINGRESPONSE._serialized_end=204
+  _DISCOUNTFROMMICASERVICE._serialized_start=207
+  _DISCOUNTFROMMICASERVICE._serialized_end=523
 # @@protoc_insertion_point(module_scope)

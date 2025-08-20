@@ -10,7 +10,7 @@
 import grpc
 
 from serviceprovider.mica.discount.discount.v1 import discount_pb2 as mica_dot_discount_dot_discount_dot_v1_dot_discount__pb2
-from serviceprovider.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
+from serviceprovider.mica.discount.service.v1 import discount_from_mica_service_pb2 as mica_dot_discount_dot_service_dot_v1_dot_discount__from__mica__service__pb2
 
 
 class DiscountFromMicaServiceStub(object):
@@ -29,8 +29,8 @@ class DiscountFromMicaServiceStub(object):
                 )
         self.Ping = channel.unary_unary(
                 '/mica.discount.service.v1.DiscountFromMicaService/Ping',
-                request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+                request_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__from__mica__service__pb2.DiscountFromMicaServicePingRequest.SerializeToString,
+                response_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__from__mica__service__pb2.DiscountFromMicaServicePingResponse.FromString,
                 )
 
 
@@ -60,8 +60,8 @@ def add_DiscountFromMicaServiceServicer_to_server(servicer, server):
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
-                    request_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
+                    request_deserializer=mica_dot_discount_dot_service_dot_v1_dot_discount__from__mica__service__pb2.DiscountFromMicaServicePingRequest.FromString,
+                    response_serializer=mica_dot_discount_dot_service_dot_v1_dot_discount__from__mica__service__pb2.DiscountFromMicaServicePingResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -102,7 +102,7 @@ class DiscountFromMicaService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.discount.service.v1.DiscountFromMicaService/Ping',
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__from__mica__service__pb2.DiscountFromMicaServicePingRequest.SerializeToString,
+            mica_dot_discount_dot_service_dot_v1_dot_discount__from__mica__service__pb2.DiscountFromMicaServicePingResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

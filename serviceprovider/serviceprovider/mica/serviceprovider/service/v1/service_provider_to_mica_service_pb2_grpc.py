@@ -9,13 +9,12 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from serviceprovider.mica.serviceprovider.discount.v1 import discount_pb2 as mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2
 from serviceprovider.mica.serviceprovider.instrument.v1 import instrument_pb2 as mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2
+from serviceprovider.mica.serviceprovider.service.v1 import service_provider_to_mica_service_pb2 as mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__service__pb2
 from serviceprovider.mica.serviceprovider.serviceprovider.v1 import service_provider_pb2 as mica_dot_serviceprovider_dot_serviceprovider_dot_v1_dot_service__provider__pb2
 from serviceprovider.mica.serviceprovider.user.v1 import user_pb2 as mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2
 from serviceprovider.mica.serviceprovider.uuek.v1 import uuek_pb2 as mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2
 from serviceprovider.mica.serviceprovider.value.v1 import value_pb2 as mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2
-from serviceprovider.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 from serviceprovider.micashared.common.v1 import receipt_pb2 as micashared_dot_common_dot_v1_dot_receipt__pb2
 
 
@@ -33,7 +32,6 @@ class ServiceProviderToMicaServiceStub(object):
     organizationKey and the specific category being used for this request. If the SP wants to get
     more information about the organization (e.g. name, all categories, and it's address) they can
     use the GetOrganization and SearchOrganization calls.
-    <editor-fold desc="Service Provider Operations">
     """
 
     def __init__(self, channel):
@@ -97,35 +95,35 @@ class ServiceProviderToMicaServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKResponse.FromString,
                 )
-        self.RemoveServiceProviderUUEK = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveServiceProviderUUEK',
-                request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKResponse.FromString,
-                )
-        self.SearchServiceProviderUUEK = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchServiceProviderUUEK',
-                request_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.FromString,
-                )
         self.ProvisionInstrumentLinkingCode = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/ProvisionInstrumentLinkingCode',
                 request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionInstrumentLinkingCodeRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionInstrumentLinkingCodeResponse.FromString,
                 )
-        self.SendValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SendValue',
-                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.FromString,
+        self.CompleteLinkingWithCode = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/CompleteLinkingWithCode',
+                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeResponse.FromString,
+                )
+        self.GetInstrumentLink = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetInstrumentLink',
+                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.GetInstrumentLinkRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.GetInstrumentLinkResponse.FromString,
+                )
+        self.SearchInstrumentLinks = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchInstrumentLinks',
+                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentLinksRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentLinksResponse.FromString,
+                )
+        self.RemoveInstrumentLink = channel.unary_unary(
+                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveInstrumentLink',
+                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkResponse.FromString,
                 )
         self.GetValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
-                )
-        self.SearchUserDiscount = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchUserDiscount',
-                request_serializer=mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountResponse.FromString,
                 )
         self.GetReceipt = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetReceipt',
@@ -134,8 +132,8 @@ class ServiceProviderToMicaServiceStub(object):
                 )
         self.Ping = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/Ping',
-                request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__service__pb2.PingRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__service__pb2.PingResponse.FromString,
                 )
 
 
@@ -153,57 +151,52 @@ class ServiceProviderToMicaServiceServicer(object):
     organizationKey and the specific category being used for this request. If the SP wants to get
     more information about the organization (e.g. name, all categories, and it's address) they can
     use the GetOrganization and SearchOrganization calls.
-    <editor-fold desc="Service Provider Operations">
     """
 
     def GetServiceProvider(self, request, context):
-        """Retrieves the details of the SP at mica.
+        """Retrieves the details of the service provider record at Mica.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RegisterUser(self, request, context):
-        """<editor-fold desc="User Operations">
-
-        Called when the Service Provider wants to register one of their users for mica. Note that this does only the user and not the instrument (account).
+        """Called when the Service Provider wants to register one of their users for Mica. Note that this does only the user and not the instrument (account).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetUser(self, request, context):
-        """Retrieve a user based on it's key.
+        """Retrieve a user based on it's identifier.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateUser(self, request, context):
-        """Update the User demographic data held at mica.
+        """Update a user's demographic data held at Mica.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RemoveUser(self, request, context):
-        """Remove a User from mica. Typically called when a User ends their relationship with the SP.
+        """Remove a User from Mica. Typically called when a User ends their relationship with the issuer (e.g. closes their account).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SearchUser(self, request, context):
-        """Searches for Users held at mica..
+        """Searches for Users held at Mica.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RegisterInstrument(self, request, context):
-        """<editor-fold desc="Instrument Operations">
-
-        Called to register a Users instrument (account) for use at mica. This requires a user to already have been registered.
+        """Called to register a Users instrument (account) for use at Mica. This requires a user to already have been registered.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -217,7 +210,7 @@ class ServiceProviderToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def RemoveInstrument(self, request, context):
-        """Remove an instrument (and any SP or Partner UUEKs) from mica. This renders any existing UUEKs as inoperative.
+        """Remove an instrument from Mica.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -231,68 +224,68 @@ class ServiceProviderToMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ProvisionServiceProviderUUEK(self, request, context):
-        """<editor-fold desc="UUEK Operations">
-
-        Used to create a UUEK that can be given to the SP's users in order to transact at Partners (merhants) that support mica.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RemoveServiceProviderUUEK(self, request, context):
-        """Used to remove an existing UUEK from mica rendering it inoperable.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SearchServiceProviderUUEK(self, request, context):
-        """Searches for UUEKs by criteria.
+        """Used to create a UUEK that can be given to the Issuer's users in order to transact at Merchants (Partners) that support Mica.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ProvisionInstrumentLinkingCode(self, request, context):
-        """<editor-fold desc="Account linking operations">
+        """Initiates a linking process by returning a code based on the account owned by this user which will be linked to
+        another member. This would typically be used by the user to establish a persistent payment method at a merchant.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SendValue(self, request, context):
-        """<editor-fold desc="Person to Person Operations">
+    def CompleteLinkingWithCode(self, request, context):
+        """If another member of the network initiated a link then this allows the link to be completed.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
+    def GetInstrumentLink(self, request, context):
+        """Retrieve a specific instrument link between two members.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SearchInstrumentLinks(self, request, context):
+        """Search for instrument links.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveInstrumentLink(self, request, context):
+        """Remove a instrument link.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetValue(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SearchUserDiscount(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve a given transaction based on the transaction identifier. This is used to retrieve the details of a
+        transaction that has already occurred and is intended to be used in a pre-production environment. Mica aggressively
+        purges transaction data from the operational data store within a short period of time and this call retrieves
+        transactions from the operational data store.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetReceipt(self, request, context):
-        """<editor-fold desc="Transaction Operations">
-
-        Retrieve a receipt based on the transaction key.
+        """Retrieve a receipt based on the transaction key.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Ping(self, request, context):
-        """<editor-fold desc="Admin Operations">
-
-        An operation to ping the server to ensure it's up and running and that the connection is good.
+        """An operation to ping the server to ensure it's up and running and that the connection is good.
+        DEPRECATED. Please switch use cases to dedicated mica.member.ping.v1.PingService
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -356,35 +349,35 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.ProvisionServiceProviderUUEKResponse.SerializeToString,
             ),
-            'RemoveServiceProviderUUEK': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemoveServiceProviderUUEK,
-                    request_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKResponse.SerializeToString,
-            ),
-            'SearchServiceProviderUUEK': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchServiceProviderUUEK,
-                    request_deserializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.SerializeToString,
-            ),
             'ProvisionInstrumentLinkingCode': grpc.unary_unary_rpc_method_handler(
                     servicer.ProvisionInstrumentLinkingCode,
                     request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionInstrumentLinkingCodeRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.ProvisionInstrumentLinkingCodeResponse.SerializeToString,
             ),
-            'SendValue': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendValue,
-                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.SerializeToString,
+            'CompleteLinkingWithCode': grpc.unary_unary_rpc_method_handler(
+                    servicer.CompleteLinkingWithCode,
+                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeResponse.SerializeToString,
+            ),
+            'GetInstrumentLink': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetInstrumentLink,
+                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.GetInstrumentLinkRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.GetInstrumentLinkResponse.SerializeToString,
+            ),
+            'SearchInstrumentLinks': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchInstrumentLinks,
+                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentLinksRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentLinksResponse.SerializeToString,
+            ),
+            'RemoveInstrumentLink': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveInstrumentLink,
+                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkResponse.SerializeToString,
             ),
             'GetValue': grpc.unary_unary_rpc_method_handler(
                     servicer.GetValue,
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.SerializeToString,
-            ),
-            'SearchUserDiscount': grpc.unary_unary_rpc_method_handler(
-                    servicer.SearchUserDiscount,
-                    request_deserializer=mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountResponse.SerializeToString,
             ),
             'GetReceipt': grpc.unary_unary_rpc_method_handler(
                     servicer.GetReceipt,
@@ -393,8 +386,8 @@ def add_ServiceProviderToMicaServiceServicer_to_server(servicer, server):
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
-                    request_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__service__pb2.PingRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__service__pb2.PingResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -417,7 +410,6 @@ class ServiceProviderToMicaService(object):
     organizationKey and the specific category being used for this request. If the SP wants to get
     more information about the organization (e.g. name, all categories, and it's address) they can
     use the GetOrganization and SearchOrganization calls.
-    <editor-fold desc="Service Provider Operations">
     """
 
     @staticmethod
@@ -608,40 +600,6 @@ class ServiceProviderToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def RemoveServiceProviderUUEK(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveServiceProviderUUEK',
-            mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.RemoveServiceProviderUUEKResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchServiceProviderUUEK(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchServiceProviderUUEK',
-            mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_uuek_dot_v1_dot_uuek__pb2.SearchServiceProviderUUEKResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def ProvisionInstrumentLinkingCode(request,
             target,
             options=(),
@@ -659,7 +617,7 @@ class ServiceProviderToMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def SendValue(request,
+    def CompleteLinkingWithCode(request,
             target,
             options=(),
             channel_credentials=None,
@@ -669,9 +627,60 @@ class ServiceProviderToMicaService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SendValue',
-            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.SendValueResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/CompleteLinkingWithCode',
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.CompleteLinkingWithCodeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetInstrumentLink(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetInstrumentLink',
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.GetInstrumentLinkRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.GetInstrumentLinkResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SearchInstrumentLinks(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchInstrumentLinks',
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentLinksRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.SearchInstrumentLinksResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveInstrumentLink(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/RemoveInstrumentLink',
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RemoveInstrumentLinkResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -689,23 +698,6 @@ class ServiceProviderToMicaService(object):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/GetValue',
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueRequest.SerializeToString,
             mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.GetValueResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SearchUserDiscount(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/SearchUserDiscount',
-            mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_discount_dot_v1_dot_discount__pb2.SearchUserDiscountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -738,7 +730,7 @@ class ServiceProviderToMicaService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderToMicaService/Ping',
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__service__pb2.PingRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__to__mica__service__pb2.PingResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

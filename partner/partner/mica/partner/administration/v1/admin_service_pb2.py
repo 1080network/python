@@ -18,14 +18,12 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from partner.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
-from partner.micashared.common.v1 import console_user_pb2 as micashared_dot_common_dot_v1_dot_console__user__pb2
-from partner.micashared.common.v1 import data_extraction_pb2 as micashared_dot_common_dot_v1_dot_data__extraction__pb2
-from partner.micashared.common.v1 import external_client_pb2 as micashared_dot_common_dot_v1_dot_external__client__pb2
-from partner.micashared.common.v1 import mtls_certificate_pb2 as micashared_dot_common_dot_v1_dot_mtls__certificate__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from partner.micashared.common.v1 import error_pb2 as micashared_dot_common_dot_v1_dot_error__pb2
+from partner.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2mica/partner/administration/v1/admin_service.proto\x12\x1emica.partner.administration.v1\x1a$micashared/common/ping/v1/ping.proto\x1a\'micashared/common/v1/console_user.proto\x1a*micashared/common/v1/data_extraction.proto\x1a*micashared/common/v1/external_client.proto\x1a+micashared/common/v1/mtls_certificate.proto2\xf1\x13\n\x1cPartnerAdministrationService\x12\x88\x01\n\x17GenerateMTLSCertificate\x12\x34.micashared.common.v1.GenerateMTLSCertificateRequest\x1a\x35.micashared.common.v1.GenerateMTLSCertificateResponse\"\x00\x12\x82\x01\n\x15UpdateMTLSCertificate\x12\x32.micashared.common.v1.UpdateMTLSCertificateRequest\x1a\x33.micashared.common.v1.UpdateMTLSCertificateResponse\"\x00\x12\x82\x01\n\x15SearchMTLSCertificate\x12\x32.micashared.common.v1.SearchMTLSCertificateRequest\x1a\x33.micashared.common.v1.SearchMTLSCertificateResponse\"\x00\x12y\n\x12GetMTLSCertificate\x12/.micashared.common.v1.GetMTLSCertificateRequest\x1a\x30.micashared.common.v1.GetMTLSCertificateResponse\"\x00\x12\x9a\x01\n\x1d\x43reateSingleSignOnConsoleUser\x12:.micashared.common.v1.CreateSingleSignOnConsoleUserRequest\x1a;.micashared.common.v1.CreateSingleSignOnConsoleUserResponse\"\x00\x12\x9a\x01\n\x1dUpdateSingleSignOnConsoleUser\x12:.micashared.common.v1.UpdateSingleSignOnConsoleUserRequest\x1a;.micashared.common.v1.UpdateSingleSignOnConsoleUserResponse\"\x00\x12\x93\x01\n\x16SearchSingleSignOnUser\x12:.micashared.common.v1.SearchSingleSignOnConsoleUserRequest\x1a;.micashared.common.v1.SearchSingleSignOnConsoleUserResponse\"\x00\x12\x91\x01\n\x1aGetSingleSignOnConsoleUser\x12\x37.micashared.common.v1.GetSingleSignOnConsoleUserRequest\x1a\x38.micashared.common.v1.GetSingleSignOnConsoleUserResponse\"\x00\x12\x8e\x01\n\x19GetExternalClientSettings\x12\x36.micashared.common.v1.GetExternalClientSettingsRequest\x1a\x37.micashared.common.v1.GetExternalClientSettingsResponse\"\x00\x12\xac\x01\n#UpdateExternalClientCallbackAddress\x12@.micashared.common.v1.UpdateExternalClientCallBackAddressRequest\x1a\x41.micashared.common.v1.UpdateExternalClientCallBackAddressResponse\"\x00\x12\xb2\x01\n%GenerateExternalClientMTLSCertificate\x12\x42.micashared.common.v1.GenerateExternalClientMTLSCertificateRequest\x1a\x43.micashared.common.v1.GenerateExternalClientMTLSCertificateResponse\"\x00\x12\x97\x01\n\x1cGenerateQuickstartPackageZip\x12\x39.micashared.common.v1.GenerateQuickstartPackageZipRequest\x1a:.micashared.common.v1.GenerateQuickstartPackageZipResponse\"\x00\x12\xac\x01\n#UpdateExternalClientMTLSCertificate\x12@.micashared.common.v1.UpdateExternalClientMTLSCertificateRequest\x1a\x41.micashared.common.v1.UpdateExternalClientMTLSCertificateResponse\"\x00\x12\xac\x01\n#SearchExternalClientMTLSCertificate\x12@.micashared.common.v1.SearchExternalClientMTLSCertificateRequest\x1a\x41.micashared.common.v1.SearchExternalClientMTLSCertificateResponse\"\x00\x12\x89\x01\n\x1eSearchDataExtractionStatistics\x12\x31.micashared.common.v1.SearchDataExtractionRequest\x1a\x32.micashared.common.v1.SearchDataExtractionResponse\"\x00\x12\x80\x01\n\x1bGetDataExtractionStatistics\x12..micashared.common.v1.GetDataExtractionRequest\x1a/.micashared.common.v1.GetDataExtractionResponse\"\x00\x12\x61\n\x0cPingExternal\x12&.micashared.common.ping.v1.PingRequest\x1a\'.micashared.common.ping.v1.PingResponse\"\x00\x42\x65\n!io.mica.partner.administration.v1B\x1a\x41\x64ministrationServiceProtoZ\x1dmica/partner/administrationv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2mica/partner/administration/v1/admin_service.proto\x12\x1emica.partner.administration.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a micashared/common/v1/error.proto\x1a\x17validate/validate.proto\"\xc3\x01\n\x0e\x44\x61taExtraction\x12\x1f\n\x0e\x65xtractor_name\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\x12<\n\x0ewatermark_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x08\xfa\x42\x05\xb2\x01\x02\x08\x01\x12\x37\n\x13last_execution_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11records_processed\x18\x04 \x01(\r\"E\n\"GetDataExtractionStatisticsRequest\x12\x1f\n\x0e\x65xtractor_name\x18\x01 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\"\xcf\x02\n#GetDataExtractionStatisticsResponse\x12Z\n\x06status\x18\x01 \x01(\x0e\x32J.mica.partner.administration.v1.GetDataExtractionStatisticsResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x42\n\nextraction\x18\x03 \x01(\x0b\x32..mica.partner.administration.v1.DataExtraction\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x14\n\x10STATUS_NOT_FOUND\x10\x02\x12\x10\n\x0cSTATUS_ERROR\x10\x03\"\'\n%SearchDataExtractionStatisticsRequest\"\xc0\x02\n&SearchDataExtractionStatisticsResponse\x12]\n\x06status\x18\x01 \x01(\x0e\x32M.mica.partner.administration.v1.SearchDataExtractionStatisticsResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x43\n\x0b\x65xtractions\x18\x03 \x03(\x0b\x32..mica.partner.administration.v1.DataExtraction\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x32\xfd\x02\n\x1cPartnerAdministrationService\x12\xb1\x01\n\x1eSearchDataExtractionStatistics\x12\x45.mica.partner.administration.v1.SearchDataExtractionStatisticsRequest\x1a\x46.mica.partner.administration.v1.SearchDataExtractionStatisticsResponse\"\x00\x12\xa8\x01\n\x1bGetDataExtractionStatistics\x12\x42.mica.partner.administration.v1.GetDataExtractionStatisticsRequest\x1a\x43.mica.partner.administration.v1.GetDataExtractionStatisticsResponse\"\x00\x42\x65\n!io.mica.partner.administration.v1B\x1a\x41\x64ministrationServiceProtoZ\x1dmica/partner/administrationv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.partner.administration.v1.admin_service_pb2', globals())
@@ -33,6 +31,26 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n!io.mica.partner.administration.v1B\032AdministrationServiceProtoZ\035mica/partner/administrationv1\242\002\004MICA'
-  _PARTNERADMINISTRATIONSERVICE._serialized_start=299
-  _PARTNERADMINISTRATIONSERVICE._serialized_end=2844
+  _DATAEXTRACTION.fields_by_name['extractor_name']._options = None
+  _DATAEXTRACTION.fields_by_name['extractor_name']._serialized_options = b'\372B\004r\002\020\001'
+  _DATAEXTRACTION.fields_by_name['watermark_time']._options = None
+  _DATAEXTRACTION.fields_by_name['watermark_time']._serialized_options = b'\372B\005\262\001\002\010\001'
+  _GETDATAEXTRACTIONSTATISTICSREQUEST.fields_by_name['extractor_name']._options = None
+  _GETDATAEXTRACTIONSTATISTICSREQUEST.fields_by_name['extractor_name']._serialized_options = b'\372B\004r\002\020\001'
+  _DATAEXTRACTION._serialized_start=179
+  _DATAEXTRACTION._serialized_end=374
+  _GETDATAEXTRACTIONSTATISTICSREQUEST._serialized_start=376
+  _GETDATAEXTRACTIONSTATISTICSREQUEST._serialized_end=445
+  _GETDATAEXTRACTIONSTATISTICSRESPONSE._serialized_start=448
+  _GETDATAEXTRACTIONSTATISTICSRESPONSE._serialized_end=783
+  _GETDATAEXTRACTIONSTATISTICSRESPONSE_STATUS._serialized_start=691
+  _GETDATAEXTRACTIONSTATISTICSRESPONSE_STATUS._serialized_end=783
+  _SEARCHDATAEXTRACTIONSTATISTICSREQUEST._serialized_start=785
+  _SEARCHDATAEXTRACTIONSTATISTICSREQUEST._serialized_end=824
+  _SEARCHDATAEXTRACTIONSTATISTICSRESPONSE._serialized_start=827
+  _SEARCHDATAEXTRACTIONSTATISTICSRESPONSE._serialized_end=1147
+  _SEARCHDATAEXTRACTIONSTATISTICSRESPONSE_STATUS._serialized_start=1077
+  _SEARCHDATAEXTRACTIONSTATISTICSRESPONSE_STATUS._serialized_end=1147
+  _PARTNERADMINISTRATIONSERVICE._serialized_start=1150
+  _PARTNERADMINISTRATIONSERVICE._serialized_end=1531
 # @@protoc_insertion_point(module_scope)

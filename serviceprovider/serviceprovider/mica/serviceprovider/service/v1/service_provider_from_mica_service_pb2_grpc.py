@@ -9,10 +9,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from serviceprovider.mica.serviceprovider.instrument.v1 import instrument_pb2 as mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2
-from serviceprovider.mica.serviceprovider.user.v1 import user_pb2 as mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2
+from serviceprovider.mica.serviceprovider.service.v1 import service_provider_from_mica_service_pb2 as mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__from__mica__service__pb2
 from serviceprovider.mica.serviceprovider.value.v1 import value_pb2 as mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2
-from serviceprovider.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 
 
 class ServiceProviderFromMicaServiceStub(object):
@@ -33,16 +31,6 @@ class ServiceProviderFromMicaServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.EnrollUserInstrument = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/EnrollUserInstrument',
-                request_serializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentResponse.FromString,
-                )
-        self.RetrieveTransaction = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/RetrieveTransaction',
-                request_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RetrieveTransactionRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RetrieveTransactionResponse.FromString,
-                )
         self.ObtainValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ObtainValue',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainValueRequest.SerializeToString,
@@ -50,8 +38,8 @@ class ServiceProviderFromMicaServiceStub(object):
                 )
         self.ReverseObtainValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseObtainValue',
-                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
+                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueResponse.FromString,
                 )
         self.ReturnValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReturnValue',
@@ -60,8 +48,8 @@ class ServiceProviderFromMicaServiceStub(object):
                 )
         self.ReverseReturnValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseReturnValue',
-                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
+                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.FromString,
                 )
         self.HoldValue = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/HoldValue',
@@ -83,11 +71,6 @@ class ServiceProviderFromMicaServiceStub(object):
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.SerializeToString,
                 response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.FromString,
                 )
-        self.ReceiveValue = channel.unary_unary(
-                '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReceiveValue',
-                request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueRequest.SerializeToString,
-                response_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueResponse.FromString,
-                )
         self.ValueAdvice = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ValueAdvice',
                 request_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceRequest.SerializeToString,
@@ -95,8 +78,8 @@ class ServiceProviderFromMicaServiceStub(object):
                 )
         self.Ping = channel.unary_unary(
                 '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/Ping',
-                request_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-                response_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+                request_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__from__mica__service__pb2.ServiceProviderFromMicaServicePingRequest.SerializeToString,
+                response_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__from__mica__service__pb2.ServiceProviderFromMicaServicePingResponse.FromString,
                 )
 
 
@@ -112,27 +95,8 @@ class ServiceProviderFromMicaServiceServicer(object):
     items the user is purchasing or returning.
     """
 
-    def EnrollUserInstrument(self, request, context):
-        """When a User initiates an enrollment at a Partner, mica will call this operation in order to
-        pass the SP the matching code. The SP will then send the matching code to their User through
-        whatever channel they already use to message their users.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RetrieveTransaction(self, request, context):
-        """Operation that can be used to retrieve a very simple transaction history for a given
-        instrument and date range.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ObtainValue(self, request, context):
-        """<editor-fold desc="Value Operations">
-
-        Operation to obtain value from a given instrument. Along with a common Value object (see
+        """Operation to obtain value from a given instrument. Along with a common Value object (see
         above), it includes an approval type of either FULL or PARTIAL.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -188,12 +152,6 @@ class ServiceProviderFromMicaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ReceiveValue(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ValueAdvice(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -201,9 +159,7 @@ class ServiceProviderFromMicaServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Ping(self, request, context):
-        """<editor-fold desc="Admin Operations">
-
-        An operation to ping the server to ensure it's up and running and that the connection is good.
+        """An operation to ping the server to ensure it's up and running and that the connection is good.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -212,16 +168,6 @@ class ServiceProviderFromMicaServiceServicer(object):
 
 def add_ServiceProviderFromMicaServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'EnrollUserInstrument': grpc.unary_unary_rpc_method_handler(
-                    servicer.EnrollUserInstrument,
-                    request_deserializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentResponse.SerializeToString,
-            ),
-            'RetrieveTransaction': grpc.unary_unary_rpc_method_handler(
-                    servicer.RetrieveTransaction,
-                    request_deserializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RetrieveTransactionRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RetrieveTransactionResponse.SerializeToString,
-            ),
             'ObtainValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ObtainValue,
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainValueRequest.FromString,
@@ -229,8 +175,8 @@ def add_ServiceProviderFromMicaServiceServicer_to_server(servicer, server):
             ),
             'ReverseObtainValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ReverseObtainValue,
-                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.SerializeToString,
+                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueResponse.SerializeToString,
             ),
             'ReturnValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ReturnValue,
@@ -239,8 +185,8 @@ def add_ServiceProviderFromMicaServiceServicer_to_server(servicer, server):
             ),
             'ReverseReturnValue': grpc.unary_unary_rpc_method_handler(
                     servicer.ReverseReturnValue,
-                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.SerializeToString,
+                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.SerializeToString,
             ),
             'HoldValue': grpc.unary_unary_rpc_method_handler(
                     servicer.HoldValue,
@@ -262,11 +208,6 @@ def add_ServiceProviderFromMicaServiceServicer_to_server(servicer, server):
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueRequest.FromString,
                     response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ObtainHoldValueResponse.SerializeToString,
             ),
-            'ReceiveValue': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReceiveValue,
-                    request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueRequest.FromString,
-                    response_serializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueResponse.SerializeToString,
-            ),
             'ValueAdvice': grpc.unary_unary_rpc_method_handler(
                     servicer.ValueAdvice,
                     request_deserializer=mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ValueAdviceRequest.FromString,
@@ -274,8 +215,8 @@ def add_ServiceProviderFromMicaServiceServicer_to_server(servicer, server):
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
-                    request_deserializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.FromString,
-                    response_serializer=micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.SerializeToString,
+                    request_deserializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__from__mica__service__pb2.ServiceProviderFromMicaServicePingRequest.FromString,
+                    response_serializer=mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__from__mica__service__pb2.ServiceProviderFromMicaServicePingResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -295,40 +236,6 @@ class ServiceProviderFromMicaService(object):
     the currency, the organization and store the transaction occurred in and optionally a list of
     items the user is purchasing or returning.
     """
-
-    @staticmethod
-    def EnrollUserInstrument(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/EnrollUserInstrument',
-            mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_user_dot_v1_dot_user__pb2.EnrollUserInstrumentResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RetrieveTransaction(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/RetrieveTransaction',
-            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RetrieveTransactionRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_instrument_dot_v1_dot_instrument__pb2.RetrieveTransactionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ObtainValue(request,
@@ -359,8 +266,8 @@ class ServiceProviderFromMicaService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseObtainValue',
-            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseObtainValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -393,8 +300,8 @@ class ServiceProviderFromMicaService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReverseReturnValue',
-            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseValueResponse.FromString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReverseReturnValueResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -467,23 +374,6 @@ class ServiceProviderFromMicaService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ReceiveValue(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/ReceiveValue',
-            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueRequest.SerializeToString,
-            mica_dot_serviceprovider_dot_value_dot_v1_dot_value__pb2.ReceiveValueResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def ValueAdvice(request,
             target,
             options=(),
@@ -512,7 +402,7 @@ class ServiceProviderFromMicaService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/mica.serviceprovider.service.v1.ServiceProviderFromMicaService/Ping',
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingRequest.SerializeToString,
-            micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2.PingResponse.FromString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__from__mica__service__pb2.ServiceProviderFromMicaServicePingRequest.SerializeToString,
+            mica_dot_serviceprovider_dot_service_dot_v1_dot_service__provider__from__mica__service__pb2.ServiceProviderFromMicaServicePingResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

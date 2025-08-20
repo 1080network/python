@@ -18,13 +18,15 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from discount.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from discount.micashared.common.v1 import authentication_token_pb2 as micashared_dot_common_dot_v1_dot_authentication__token__pb2
+from discount.micashared.common.v1 import error_pb2 as micashared_dot_common_dot_v1_dot_error__pb2
 from discount.micashared.common.v1 import external_client_pb2 as micashared_dot_common_dot_v1_dot_external__client__pb2
 from discount.micashared.common.v1 import mtls_certificate_pb2 as micashared_dot_common_dot_v1_dot_mtls__certificate__pb2
+from discount.validate import validate_pb2 as validate_dot_validate__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3mica/discount/administration/v1/admin_service.proto\x12\x1fmica.discount.administration.v1\x1a$micashared/common/ping/v1/ping.proto\x1a/micashared/common/v1/authentication_token.proto\x1a*micashared/common/v1/external_client.proto\x1a+micashared/common/v1/mtls_certificate.proto2\xaf\x0f\n\x1d\x44iscountAdministrationService\x12\x88\x01\n\x17GenerateMTLSCertificate\x12\x34.micashared.common.v1.GenerateMTLSCertificateRequest\x1a\x35.micashared.common.v1.GenerateMTLSCertificateResponse\"\x00\x12\x82\x01\n\x15UpdateMTLSCertificate\x12\x32.micashared.common.v1.UpdateMTLSCertificateRequest\x1a\x33.micashared.common.v1.UpdateMTLSCertificateResponse\"\x00\x12\x82\x01\n\x15SearchMTLSCertificate\x12\x32.micashared.common.v1.SearchMTLSCertificateRequest\x1a\x33.micashared.common.v1.SearchMTLSCertificateResponse\"\x00\x12y\n\x12GetMTLSCertificate\x12/.micashared.common.v1.GetMTLSCertificateRequest\x1a\x30.micashared.common.v1.GetMTLSCertificateResponse\"\x00\x12\x8e\x01\n\x19GetExternalClientSettings\x12\x36.micashared.common.v1.GetExternalClientSettingsRequest\x1a\x37.micashared.common.v1.GetExternalClientSettingsResponse\"\x00\x12\xac\x01\n#UpdateExternalClientCallbackAddress\x12@.micashared.common.v1.UpdateExternalClientCallBackAddressRequest\x1a\x41.micashared.common.v1.UpdateExternalClientCallBackAddressResponse\"\x00\x12\xb2\x01\n%GenerateExternalClientMTLSCertificate\x12\x42.micashared.common.v1.GenerateExternalClientMTLSCertificateRequest\x1a\x43.micashared.common.v1.GenerateExternalClientMTLSCertificateResponse\"\x00\x12\xac\x01\n#UpdateExternalClientMTLSCertificate\x12@.micashared.common.v1.UpdateExternalClientMTLSCertificateRequest\x1a\x41.micashared.common.v1.UpdateExternalClientMTLSCertificateResponse\"\x00\x12\xac\x01\n#SearchExternalClientMTLSCertificate\x12@.micashared.common.v1.SearchExternalClientMTLSCertificateRequest\x1a\x41.micashared.common.v1.SearchExternalClientMTLSCertificateResponse\"\x00\x12\x94\x01\n\x1b\x43reateApiTokenConfiguration\x12\x38.micashared.common.v1.CreateApiTokenConfigurationRequest\x1a\x39.micashared.common.v1.CreateApiTokenConfigurationResponse\"\x00\x12\x8b\x01\n\x18GetApiTokenConfiguration\x12\x35.micashared.common.v1.GetApiTokenConfigurationRequest\x1a\x36.micashared.common.v1.GetApiTokenConfigurationResponse\"\x00\x12\xa2\x01\n)UpdateAPITokenAuthenticationConfiguration\x12\x38.micashared.common.v1.UpdateApiTokenConfigurationRequest\x1a\x39.micashared.common.v1.UpdateApiTokenConfigurationResponse\"\x00\x12\x61\n\x0cPingExternal\x12&.micashared.common.ping.v1.PingRequest\x1a\'.micashared.common.ping.v1.PingResponse\"\x00\x42g\n\"io.mica.discount.administration.v1B\x1a\x41\x64ministrationServiceProtoZ\x1emica/discount/administrationv1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3mica/discount/administration/v1/admin_service.proto\x12\x1fmica.discount.administration.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a/micashared/common/v1/authentication_token.proto\x1a micashared/common/v1/error.proto\x1a*micashared/common/v1/external_client.proto\x1a+micashared/common/v1/mtls_certificate.proto\x1a\x17validate/validate.proto\"\x15\n\x13PingExternalRequest\"\xd6\x02\n\x14PingExternalResponse\x12L\n\x06status\x18\x01 \x01(\x0e\x32<.mica.discount.administration.v1.PingExternalResponse.Status\x12/\n\x0bserver_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x35\n\x11server_start_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\rbuild_version\x18\x03 \x01(\t\x12\x11\n\tbuild_sha\x18\x04 \x01(\t\x12\x12\n\nbuild_time\x18\x05 \x01(\t\x12\x14\n\x0cservice_type\x18\x06 \x01(\t\"4\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\"@\n(GenerateFromMicaClientCertificateRequest\x12\x14\n\x0c\x64isplay_name\x18\x01 \x01(\t\"\xd0\x02\n)GenerateFromMicaClientCertificateResponse\x12\x61\n\x06status\x18\x01 \x01(\x0e\x32Q.mica.discount.administration.v1.GenerateFromMicaClientCertificateResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12L\n\x13\x63\x65rtificate_to_sign\x18\x03 \x01(\x0b\x32/.micashared.common.v1.FromMicaClientCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\x9a\x01\n&UpdateFromMicaClientCertificateRequest\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\'\n\x1f\x62\x61se64_signed_cert_pem_from_csr\x18\x03 \x01(\t\x12\x19\n\x11\x62\x61se64_rootca_pem\x18\x04 \x01(\t\"\xc4\x02\n\'UpdateFromMicaClientCertificateResponse\x12_\n\x06status\x18\x01 \x01(\x0e\x32O.mica.discount.administration.v1.UpdateFromMicaClientCertificateResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x44\n\x0b\x63\x65rtificate\x18\x03 \x01(\x0b\x32/.micashared.common.v1.FromMicaClientCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"@\n&EnableFromMicaClientCertificateRequest\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xc4\x02\n\'EnableFromMicaClientCertificateResponse\x12_\n\x06status\x18\x01 \x01(\x0e\x32O.mica.discount.administration.v1.EnableFromMicaClientCertificateResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x44\n\x0b\x63\x65rtificate\x18\x03 \x01(\x0b\x32/.micashared.common.v1.FromMicaClientCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"(\n&SearchFromMicaClientCertificateRequest\"\xc5\x02\n\'SearchFromMicaClientCertificateResponse\x12_\n\x06status\x18\x01 \x01(\x0e\x32O.mica.discount.administration.v1.SearchFromMicaClientCertificateResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x45\n\x0c\x63\x65rtificates\x18\x03 \x03(\x0b\x32/.micashared.common.v1.FromMicaClientCertificate\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\"\n GetFromMicaClientSettingsRequest\"\xb2\x02\n!GetFromMicaClientSettingsResponse\x12Y\n\x06status\x18\x01 \x01(\x0e\x32I.mica.discount.administration.v1.GetFromMicaClientSettingsResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12>\n\x08settings\x18\x03 \x01(\x0b\x32,.micashared.common.v1.ExternalClientSettings\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"x\n*UpdateFromMicaClientCallbackAddressRequest\x12\x18\n\x07version\x18\x01 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\x12\x30\n\x10\x63\x61llback_address\x18\x02 \x01(\tB\x16\xfa\x42\x13r\x11\x32\x0f^[^/]+:\\d{3,6}$\"\xa0\x02\n+UpdateFromMicaClientCallbackAddressResponse\x12\x63\n\x06status\x18\x01 \x01(\x0e\x32S.mica.discount.administration.v1.UpdateFromMicaClientCallbackAddressResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"\xc7\x01\n\"CreateApiTokenConfigurationRequest\x12_\n\x14header_configuration\x18\x01 \x01(\x0b\x32\x37.micashared.common.v1.AuthenticationHeaderConfigurationB\x08\xfa\x42\x05\x8a\x01\x02\x10\x01\x12 \n\x0f\x61pi_token_value\x18\x02 \x01(\tB\x07\xfa\x42\x04r\x02\x10\x01\x12\x1e\n\x0cpem_ca_chain\x18\x03 \x03(\tB\x08\xfa\x42\x05\x92\x01\x02\x08\x01\"\x90\x02\n#CreateApiTokenConfigurationResponse\x12[\n\x06status\x18\x01 \x01(\x0e\x32K.mica.discount.administration.v1.CreateApiTokenConfigurationResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12\x18\n\x07version\x18\x03 \x01(\x03\x42\x07\xfa\x42\x04\"\x02(\x00\"F\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\"!\n\x1fGetApiTokenConfigurationRequest\"\xd4\x02\n GetApiTokenConfigurationResponse\x12X\n\x06status\x18\x01 \x01(\x0e\x32H.mica.discount.administration.v1.GetApiTokenConfigurationResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\x12L\n\x17\x61pi_token_configuration\x18\x03 \x01(\x0b\x32+.micashared.common.v1.ApiTokenConfiguration\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\"\xb8\x01\n0UpdateAPITokenAuthenticationConfigurationRequest\x12U\n\x14header_configuration\x18\x02 \x01(\x0b\x32\x37.micashared.common.v1.AuthenticationHeaderConfiguration\x12\x17\n\x0f\x61pi_token_value\x18\x03 \x01(\t\x12\x14\n\x0cpem_ca_chain\x18\x04 \x03(\t\"\xa8\x02\n1UpdateAPITokenAuthenticationConfigurationResponse\x12i\n\x06status\x18\x01 \x01(\x0e\x32Y.mica.discount.administration.v1.UpdateAPITokenAuthenticationConfigurationResponse.Status\x12*\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1b.micashared.common.v1.Error\"\\\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATUS_SUCCESS\x10\x01\x12\x10\n\x0cSTATUS_ERROR\x10\x02\x12\x14\n\x10STATUS_NOT_FOUND\x10\x03\x32\x9c\x0e\n\x1d\x44iscountAdministrationService\x12\xbc\x01\n!GenerateFromMicaClientCertificate\x12I.mica.discount.administration.v1.GenerateFromMicaClientCertificateRequest\x1aJ.mica.discount.administration.v1.GenerateFromMicaClientCertificateResponse\"\x00\x12\xb6\x01\n\x1fUpdateFromMicaClientCertificate\x12G.mica.discount.administration.v1.UpdateFromMicaClientCertificateRequest\x1aH.mica.discount.administration.v1.UpdateFromMicaClientCertificateResponse\"\x00\x12\xb6\x01\n\x1f\x45nableFromMicaClientCertificate\x12G.mica.discount.administration.v1.EnableFromMicaClientCertificateRequest\x1aH.mica.discount.administration.v1.EnableFromMicaClientCertificateResponse\"\x00\x12\xb6\x01\n\x1fSearchFromMicaClientCertificate\x12G.mica.discount.administration.v1.SearchFromMicaClientCertificateRequest\x1aH.mica.discount.administration.v1.SearchFromMicaClientCertificateResponse\"\x00\x12\xa4\x01\n\x19GetFromMicaClientSettings\x12\x41.mica.discount.administration.v1.GetFromMicaClientSettingsRequest\x1a\x42.mica.discount.administration.v1.GetFromMicaClientSettingsResponse\"\x00\x12\xc2\x01\n#UpdateFromMicaClientCallbackAddress\x12K.mica.discount.administration.v1.UpdateFromMicaClientCallbackAddressRequest\x1aL.mica.discount.administration.v1.UpdateFromMicaClientCallbackAddressResponse\"\x00\x12\xaa\x01\n\x1b\x43reateApiTokenConfiguration\x12\x43.mica.discount.administration.v1.CreateApiTokenConfigurationRequest\x1a\x44.mica.discount.administration.v1.CreateApiTokenConfigurationResponse\"\x00\x12\xa1\x01\n\x18GetApiTokenConfiguration\x12@.mica.discount.administration.v1.GetApiTokenConfigurationRequest\x1a\x41.mica.discount.administration.v1.GetApiTokenConfigurationResponse\"\x00\x12\xd4\x01\n)UpdateAPITokenAuthenticationConfiguration\x12Q.mica.discount.administration.v1.UpdateAPITokenAuthenticationConfigurationRequest\x1aR.mica.discount.administration.v1.UpdateAPITokenAuthenticationConfigurationResponse\"\x00\x12}\n\x0cPingExternal\x12\x34.mica.discount.administration.v1.PingExternalRequest\x1a\x35.mica.discount.administration.v1.PingExternalResponse\"\x00\x42g\n\"io.mica.discount.administration.v1B\x1a\x41\x64ministrationServiceProtoZ\x1emica/discount/administrationv1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.discount.administration.v1.admin_service_pb2', globals())
@@ -32,6 +34,80 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\"io.mica.discount.administration.v1B\032AdministrationServiceProtoZ\036mica/discount/administrationv1\242\002\004MICA'
-  _DISCOUNTADMINISTRATIONSERVICE._serialized_start=265
-  _DISCOUNTADMINISTRATIONSERVICE._serialized_end=2232
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST.fields_by_name['version']._options = None
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST.fields_by_name['callback_address']._options = None
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST.fields_by_name['callback_address']._serialized_options = b'\372B\023r\0212\017^[^/]+:\\d{3,6}$'
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE.fields_by_name['version']._options = None
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _CREATEAPITOKENCONFIGURATIONREQUEST.fields_by_name['header_configuration']._options = None
+  _CREATEAPITOKENCONFIGURATIONREQUEST.fields_by_name['header_configuration']._serialized_options = b'\372B\005\212\001\002\020\001'
+  _CREATEAPITOKENCONFIGURATIONREQUEST.fields_by_name['api_token_value']._options = None
+  _CREATEAPITOKENCONFIGURATIONREQUEST.fields_by_name['api_token_value']._serialized_options = b'\372B\004r\002\020\001'
+  _CREATEAPITOKENCONFIGURATIONREQUEST.fields_by_name['pem_ca_chain']._options = None
+  _CREATEAPITOKENCONFIGURATIONREQUEST.fields_by_name['pem_ca_chain']._serialized_options = b'\372B\005\222\001\002\010\001'
+  _CREATEAPITOKENCONFIGURATIONRESPONSE.fields_by_name['version']._options = None
+  _CREATEAPITOKENCONFIGURATIONRESPONSE.fields_by_name['version']._serialized_options = b'\372B\004\"\002(\000'
+  _PINGEXTERNALREQUEST._serialized_start=318
+  _PINGEXTERNALREQUEST._serialized_end=339
+  _PINGEXTERNALRESPONSE._serialized_start=342
+  _PINGEXTERNALRESPONSE._serialized_end=684
+  _PINGEXTERNALRESPONSE_STATUS._serialized_start=632
+  _PINGEXTERNALRESPONSE_STATUS._serialized_end=684
+  _GENERATEFROMMICACLIENTCERTIFICATEREQUEST._serialized_start=686
+  _GENERATEFROMMICACLIENTCERTIFICATEREQUEST._serialized_end=750
+  _GENERATEFROMMICACLIENTCERTIFICATERESPONSE._serialized_start=753
+  _GENERATEFROMMICACLIENTCERTIFICATERESPONSE._serialized_end=1089
+  _GENERATEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_start=1019
+  _GENERATEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_end=1089
+  _UPDATEFROMMICACLIENTCERTIFICATEREQUEST._serialized_start=1092
+  _UPDATEFROMMICACLIENTCERTIFICATEREQUEST._serialized_end=1246
+  _UPDATEFROMMICACLIENTCERTIFICATERESPONSE._serialized_start=1249
+  _UPDATEFROMMICACLIENTCERTIFICATERESPONSE._serialized_end=1573
+  _UPDATEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_start=1019
+  _UPDATEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_end=1089
+  _ENABLEFROMMICACLIENTCERTIFICATEREQUEST._serialized_start=1575
+  _ENABLEFROMMICACLIENTCERTIFICATEREQUEST._serialized_end=1639
+  _ENABLEFROMMICACLIENTCERTIFICATERESPONSE._serialized_start=1642
+  _ENABLEFROMMICACLIENTCERTIFICATERESPONSE._serialized_end=1966
+  _ENABLEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_start=1019
+  _ENABLEFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_end=1089
+  _SEARCHFROMMICACLIENTCERTIFICATEREQUEST._serialized_start=1968
+  _SEARCHFROMMICACLIENTCERTIFICATEREQUEST._serialized_end=2008
+  _SEARCHFROMMICACLIENTCERTIFICATERESPONSE._serialized_start=2011
+  _SEARCHFROMMICACLIENTCERTIFICATERESPONSE._serialized_end=2336
+  _SEARCHFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_start=1019
+  _SEARCHFROMMICACLIENTCERTIFICATERESPONSE_STATUS._serialized_end=1089
+  _GETFROMMICACLIENTSETTINGSREQUEST._serialized_start=2338
+  _GETFROMMICACLIENTSETTINGSREQUEST._serialized_end=2372
+  _GETFROMMICACLIENTSETTINGSRESPONSE._serialized_start=2375
+  _GETFROMMICACLIENTSETTINGSRESPONSE._serialized_end=2681
+  _GETFROMMICACLIENTSETTINGSRESPONSE_STATUS._serialized_start=1019
+  _GETFROMMICACLIENTSETTINGSRESPONSE_STATUS._serialized_end=1089
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST._serialized_start=2683
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSREQUEST._serialized_end=2803
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE._serialized_start=2806
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE._serialized_end=3094
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE_STATUS._serialized_start=1019
+  _UPDATEFROMMICACLIENTCALLBACKADDRESSRESPONSE_STATUS._serialized_end=1089
+  _CREATEAPITOKENCONFIGURATIONREQUEST._serialized_start=3097
+  _CREATEAPITOKENCONFIGURATIONREQUEST._serialized_end=3296
+  _CREATEAPITOKENCONFIGURATIONRESPONSE._serialized_start=3299
+  _CREATEAPITOKENCONFIGURATIONRESPONSE._serialized_end=3571
+  _CREATEAPITOKENCONFIGURATIONRESPONSE_STATUS._serialized_start=1019
+  _CREATEAPITOKENCONFIGURATIONRESPONSE_STATUS._serialized_end=1089
+  _GETAPITOKENCONFIGURATIONREQUEST._serialized_start=3573
+  _GETAPITOKENCONFIGURATIONREQUEST._serialized_end=3606
+  _GETAPITOKENCONFIGURATIONRESPONSE._serialized_start=3609
+  _GETAPITOKENCONFIGURATIONRESPONSE._serialized_end=3949
+  _GETAPITOKENCONFIGURATIONRESPONSE_STATUS._serialized_start=3857
+  _GETAPITOKENCONFIGURATIONRESPONSE_STATUS._serialized_end=3949
+  _UPDATEAPITOKENAUTHENTICATIONCONFIGURATIONREQUEST._serialized_start=3952
+  _UPDATEAPITOKENAUTHENTICATIONCONFIGURATIONREQUEST._serialized_end=4136
+  _UPDATEAPITOKENAUTHENTICATIONCONFIGURATIONRESPONSE._serialized_start=4139
+  _UPDATEAPITOKENAUTHENTICATIONCONFIGURATIONRESPONSE._serialized_end=4435
+  _UPDATEAPITOKENAUTHENTICATIONCONFIGURATIONRESPONSE_STATUS._serialized_start=3857
+  _UPDATEAPITOKENAUTHENTICATIONCONFIGURATIONRESPONSE_STATUS._serialized_end=3949
+  _DISCOUNTADMINISTRATIONSERVICE._serialized_start=4438
+  _DISCOUNTADMINISTRATIONSERVICE._serialized_end=6258
 # @@protoc_insertion_point(module_scope)

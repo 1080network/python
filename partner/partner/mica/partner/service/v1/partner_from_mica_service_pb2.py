@@ -19,10 +19,9 @@ _sym_db = _symbol_database.Default()
 
 
 from partner.mica.partner.user.v1 import user_pb2 as mica_dot_partner_dot_user_dot_v1_dot_user__pb2
-from partner.micashared.common.ping.v1 import ping_pb2 as micashared_dot_common_dot_ping_dot_v1_dot_ping__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7mica/partner/service/v1/partner_from_mica_service.proto\x12\x17mica.partner.service.v1\x1a\x1fmica/partner/user/v1/user.proto\x1a$micashared/common/ping/v1/ping.proto2\xf4\x01\n\x16PartnerFromMicaService\x12\x7f\n\x14\x45nrollUserInstrument\x12\x31.mica.partner.user.v1.EnrollUserInstrumentRequest\x1a\x32.mica.partner.user.v1.EnrollUserInstrumentResponse\"\x00\x12Y\n\x04Ping\x12&.micashared.common.ping.v1.PingRequest\x1a\'.micashared.common.ping.v1.PingResponse\"\x00\x42X\n\x1aio.mica.partner.service.v1B\x1bPartnerFromMicaServiceProtoZ\x16mica/partner/servicev1\xa2\x02\x04MICAb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7mica/partner/service/v1/partner_from_mica_service.proto\x12\x17mica.partner.service.v1\x1a\x1fmica/partner/user/v1/user.proto2\x99\x01\n\x16PartnerFromMicaService\x12\x7f\n\x14\x45nrollUserInstrument\x12\x31.mica.partner.user.v1.EnrollUserInstrumentRequest\x1a\x32.mica.partner.user.v1.EnrollUserInstrumentResponse\"\x00\x42X\n\x1aio.mica.partner.service.v1B\x1bPartnerFromMicaServiceProtoZ\x16mica/partner/servicev1\xa2\x02\x04MICAb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'mica.partner.service.v1.partner_from_mica_service_pb2', globals())
@@ -30,6 +29,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\032io.mica.partner.service.v1B\033PartnerFromMicaServiceProtoZ\026mica/partner/servicev1\242\002\004MICA'
-  _PARTNERFROMMICASERVICE._serialized_start=156
-  _PARTNERFROMMICASERVICE._serialized_end=400
+  _PARTNERFROMMICASERVICE._serialized_start=118
+  _PARTNERFROMMICASERVICE._serialized_end=271
 # @@protoc_insertion_point(module_scope)

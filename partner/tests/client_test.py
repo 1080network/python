@@ -2,16 +2,15 @@ from concurrent import futures
 
 import grpc
 
-from micapartner.partner.service.v1.partner_to_mica_service_pb2_grpc import PartnerToMicaService, add_PartnerToMicaServiceServicer_to_server
-import micapartner.common.ping.v1.ping_pb2 as ping
-from micapartner import create_channel, build_partner_client
+from partner.mica.partner.service.v1.partner_to_mica_service_pb2_grpc import PartnerToMicaService, add_PartnerToMicaServiceServicer_to_server
+import partner.mica.member.ping.v1.ping_service_pb2 as ping
+from partner import create_test_channel, build_test_partner_client
 
 
 def test_discount_ping():
-    server = get_discount_server()
+    server = get_partner_server()
     server.start()
-    channel = create_channel(addr='localhost:50051')
-    client = build_partner_client(channel=channel)
+    client = build_test_partner_client(tenant='micatenant', addr='[::]:50051')
     response = client.Ping(ping.PingRequest())
     assert response.status == ping.PingResponse.STATUS_SUCCESS
     assert response.build_version == 'test version'
@@ -22,7 +21,7 @@ def test_discount_ping():
     server.wait_for_termination()
 
 
-def get_discount_server():
+def get_partner_server():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     add_PartnerToMicaServiceServicer_to_server(MockMicaPartner(), server)
     server.add_insecure_port('[::]:50051')
