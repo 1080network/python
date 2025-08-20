@@ -13,13 +13,28 @@ Mica client code for python
 
 ### Update the protos
 
-Start by cloning with recursive so you get the submodules
+1. Start by cloning with recursive so you get the submodules
 
 ```bash
 git clone --recurse-submodules git@github.com:1080network/golang.git
 ```
 
-Update the generated files from the protos
+1. Update the version number in `about.py` at the root of the repository to reflect the version of the protos being used:
+
+```bash
+cat about.py
+# common versioning and other indicators
+
+__version__ = "v1.8.0"
+__author__ = "Mica"
+__author_email__ = "engineering@mica.io"
+__license__ = "Apache 2.0"
+__copyright__ = "Copyright (c) 2023 Mica"
+__url__ = "https://mica.io/"
+__python_requires__ = ">=3.10"
+```
+
+1. Update the generated files from the protos
 
 ```bash
 make generate
@@ -55,8 +70,9 @@ In order to test the Discount SDK, start an interactive Python shell by running 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install micacommon/dist/micacommon-1.8.0-py3-none-any.whl
-pip install discount/dist/micadiscount-1.8.0-py3-none-any.whl
+version=`grep "__version__" about.py | cut -d '"' -f 2 | tr -d 'v'`
+pip install micacommon/dist/micacommon-${version}-py3-none-any.whl
+pip install discount/dist/micadiscount-${version}-py3-none-any.whl
 python3.10
 ```
 
