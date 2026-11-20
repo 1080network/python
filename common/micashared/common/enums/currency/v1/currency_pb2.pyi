@@ -1,0 +1,366 @@
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
+from google.protobuf import descriptor as _descriptor
+from typing import ClassVar as _ClassVar
+
+DESCRIPTOR: _descriptor.FileDescriptor
+
+class Currency(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = ()
+    CURRENCY_UNSPECIFIED: _ClassVar[Currency]
+    CURRENCY_ALL: _ClassVar[Currency]
+    CURRENCY_DZD: _ClassVar[Currency]
+    CURRENCY_ARS: _ClassVar[Currency]
+    CURRENCY_AUD: _ClassVar[Currency]
+    CURRENCY_BSD: _ClassVar[Currency]
+    CURRENCY_BHD: _ClassVar[Currency]
+    CURRENCY_BDT: _ClassVar[Currency]
+    CURRENCY_AMD: _ClassVar[Currency]
+    CURRENCY_BBD: _ClassVar[Currency]
+    CURRENCY_BMD: _ClassVar[Currency]
+    CURRENCY_BTN: _ClassVar[Currency]
+    CURRENCY_BOB: _ClassVar[Currency]
+    CURRENCY_BWP: _ClassVar[Currency]
+    CURRENCY_BZD: _ClassVar[Currency]
+    CURRENCY_SBD: _ClassVar[Currency]
+    CURRENCY_BND: _ClassVar[Currency]
+    CURRENCY_MMK: _ClassVar[Currency]
+    CURRENCY_BIF: _ClassVar[Currency]
+    CURRENCY_KHR: _ClassVar[Currency]
+    CURRENCY_CAD: _ClassVar[Currency]
+    CURRENCY_CVE: _ClassVar[Currency]
+    CURRENCY_KYD: _ClassVar[Currency]
+    CURRENCY_LKR: _ClassVar[Currency]
+    CURRENCY_CLP: _ClassVar[Currency]
+    CURRENCY_CNY: _ClassVar[Currency]
+    CURRENCY_COP: _ClassVar[Currency]
+    CURRENCY_KMF: _ClassVar[Currency]
+    CURRENCY_CRC: _ClassVar[Currency]
+    CURRENCY_HRK: _ClassVar[Currency]
+    CURRENCY_CUP: _ClassVar[Currency]
+    CURRENCY_CZK: _ClassVar[Currency]
+    CURRENCY_DKK: _ClassVar[Currency]
+    CURRENCY_DOP: _ClassVar[Currency]
+    CURRENCY_SVC: _ClassVar[Currency]
+    CURRENCY_ETB: _ClassVar[Currency]
+    CURRENCY_ERN: _ClassVar[Currency]
+    CURRENCY_FKP: _ClassVar[Currency]
+    CURRENCY_FJD: _ClassVar[Currency]
+    CURRENCY_DJF: _ClassVar[Currency]
+    CURRENCY_GMD: _ClassVar[Currency]
+    CURRENCY_GIP: _ClassVar[Currency]
+    CURRENCY_GTQ: _ClassVar[Currency]
+    CURRENCY_GNF: _ClassVar[Currency]
+    CURRENCY_GYD: _ClassVar[Currency]
+    CURRENCY_HTG: _ClassVar[Currency]
+    CURRENCY_HNL: _ClassVar[Currency]
+    CURRENCY_HKD: _ClassVar[Currency]
+    CURRENCY_HUF: _ClassVar[Currency]
+    CURRENCY_ISK: _ClassVar[Currency]
+    CURRENCY_INR: _ClassVar[Currency]
+    CURRENCY_IDR: _ClassVar[Currency]
+    CURRENCY_IRR: _ClassVar[Currency]
+    CURRENCY_IQD: _ClassVar[Currency]
+    CURRENCY_ILS: _ClassVar[Currency]
+    CURRENCY_JMD: _ClassVar[Currency]
+    CURRENCY_JPY: _ClassVar[Currency]
+    CURRENCY_KZT: _ClassVar[Currency]
+    CURRENCY_JOD: _ClassVar[Currency]
+    CURRENCY_KES: _ClassVar[Currency]
+    CURRENCY_KPW: _ClassVar[Currency]
+    CURRENCY_KRW: _ClassVar[Currency]
+    CURRENCY_KWD: _ClassVar[Currency]
+    CURRENCY_KGS: _ClassVar[Currency]
+    CURRENCY_LAK: _ClassVar[Currency]
+    CURRENCY_LBP: _ClassVar[Currency]
+    CURRENCY_LSL: _ClassVar[Currency]
+    CURRENCY_LRD: _ClassVar[Currency]
+    CURRENCY_LYD: _ClassVar[Currency]
+    CURRENCY_MOP: _ClassVar[Currency]
+    CURRENCY_MWK: _ClassVar[Currency]
+    CURRENCY_MYR: _ClassVar[Currency]
+    CURRENCY_MVR: _ClassVar[Currency]
+    CURRENCY_MRO: _ClassVar[Currency]
+    CURRENCY_MUR: _ClassVar[Currency]
+    CURRENCY_MXN: _ClassVar[Currency]
+    CURRENCY_MNT: _ClassVar[Currency]
+    CURRENCY_MDL: _ClassVar[Currency]
+    CURRENCY_MAD: _ClassVar[Currency]
+    CURRENCY_OMR: _ClassVar[Currency]
+    CURRENCY_NAD: _ClassVar[Currency]
+    CURRENCY_NPR: _ClassVar[Currency]
+    CURRENCY_ANG: _ClassVar[Currency]
+    CURRENCY_AWG: _ClassVar[Currency]
+    CURRENCY_VUV: _ClassVar[Currency]
+    CURRENCY_NZD: _ClassVar[Currency]
+    CURRENCY_NIO: _ClassVar[Currency]
+    CURRENCY_NGN: _ClassVar[Currency]
+    CURRENCY_NOK: _ClassVar[Currency]
+    CURRENCY_PKR: _ClassVar[Currency]
+    CURRENCY_PAB: _ClassVar[Currency]
+    CURRENCY_PGK: _ClassVar[Currency]
+    CURRENCY_PYG: _ClassVar[Currency]
+    CURRENCY_PEN: _ClassVar[Currency]
+    CURRENCY_PHP: _ClassVar[Currency]
+    CURRENCY_QAR: _ClassVar[Currency]
+    CURRENCY_RUB: _ClassVar[Currency]
+    CURRENCY_RWF: _ClassVar[Currency]
+    CURRENCY_SHP: _ClassVar[Currency]
+    CURRENCY_STD: _ClassVar[Currency]
+    CURRENCY_SAR: _ClassVar[Currency]
+    CURRENCY_SCR: _ClassVar[Currency]
+    CURRENCY_SLL: _ClassVar[Currency]
+    CURRENCY_SGD: _ClassVar[Currency]
+    CURRENCY_VND: _ClassVar[Currency]
+    CURRENCY_SOS: _ClassVar[Currency]
+    CURRENCY_ZAR: _ClassVar[Currency]
+    CURRENCY_SSP: _ClassVar[Currency]
+    CURRENCY_SZL: _ClassVar[Currency]
+    CURRENCY_SEK: _ClassVar[Currency]
+    CURRENCY_CHF: _ClassVar[Currency]
+    CURRENCY_SYP: _ClassVar[Currency]
+    CURRENCY_THB: _ClassVar[Currency]
+    CURRENCY_TOP: _ClassVar[Currency]
+    CURRENCY_TTD: _ClassVar[Currency]
+    CURRENCY_AED: _ClassVar[Currency]
+    CURRENCY_TND: _ClassVar[Currency]
+    CURRENCY_UGX: _ClassVar[Currency]
+    CURRENCY_MKD: _ClassVar[Currency]
+    CURRENCY_EGP: _ClassVar[Currency]
+    CURRENCY_GBP: _ClassVar[Currency]
+    CURRENCY_TZS: _ClassVar[Currency]
+    CURRENCY_USD: _ClassVar[Currency]
+    CURRENCY_UYU: _ClassVar[Currency]
+    CURRENCY_UZS: _ClassVar[Currency]
+    CURRENCY_WST: _ClassVar[Currency]
+    CURRENCY_YER: _ClassVar[Currency]
+    CURRENCY_TWD: _ClassVar[Currency]
+    CURRENCY_CUC: _ClassVar[Currency]
+    CURRENCY_ZWL: _ClassVar[Currency]
+    CURRENCY_BYN: _ClassVar[Currency]
+    CURRENCY_TMT: _ClassVar[Currency]
+    CURRENCY_GHS: _ClassVar[Currency]
+    CURRENCY_VEF: _ClassVar[Currency]
+    CURRENCY_SDG: _ClassVar[Currency]
+    CURRENCY_UYI: _ClassVar[Currency]
+    CURRENCY_RSD: _ClassVar[Currency]
+    CURRENCY_MZN: _ClassVar[Currency]
+    CURRENCY_AZN: _ClassVar[Currency]
+    CURRENCY_RON: _ClassVar[Currency]
+    CURRENCY_CHE: _ClassVar[Currency]
+    CURRENCY_CHW: _ClassVar[Currency]
+    CURRENCY_TRY: _ClassVar[Currency]
+    CURRENCY_XAF: _ClassVar[Currency]
+    CURRENCY_XCD: _ClassVar[Currency]
+    CURRENCY_XOF: _ClassVar[Currency]
+    CURRENCY_XPF: _ClassVar[Currency]
+    CURRENCY_XBA: _ClassVar[Currency]
+    CURRENCY_XBB: _ClassVar[Currency]
+    CURRENCY_XBC: _ClassVar[Currency]
+    CURRENCY_XBD: _ClassVar[Currency]
+    CURRENCY_XAU: _ClassVar[Currency]
+    CURRENCY_XDR: _ClassVar[Currency]
+    CURRENCY_XAG: _ClassVar[Currency]
+    CURRENCY_XPT: _ClassVar[Currency]
+    CURRENCY_XTS: _ClassVar[Currency]
+    CURRENCY_XPD: _ClassVar[Currency]
+    CURRENCY_XUA: _ClassVar[Currency]
+    CURRENCY_ZMW: _ClassVar[Currency]
+    CURRENCY_SRD: _ClassVar[Currency]
+    CURRENCY_MGA: _ClassVar[Currency]
+    CURRENCY_COU: _ClassVar[Currency]
+    CURRENCY_AFN: _ClassVar[Currency]
+    CURRENCY_TJS: _ClassVar[Currency]
+    CURRENCY_AOA: _ClassVar[Currency]
+    CURRENCY_BGN: _ClassVar[Currency]
+    CURRENCY_CDF: _ClassVar[Currency]
+    CURRENCY_BAM: _ClassVar[Currency]
+    CURRENCY_EUR: _ClassVar[Currency]
+    CURRENCY_MXV: _ClassVar[Currency]
+    CURRENCY_UAH: _ClassVar[Currency]
+    CURRENCY_GEL: _ClassVar[Currency]
+    CURRENCY_BOV: _ClassVar[Currency]
+    CURRENCY_PLN: _ClassVar[Currency]
+    CURRENCY_BRL: _ClassVar[Currency]
+    CURRENCY_CLF: _ClassVar[Currency]
+    CURRENCY_XSU: _ClassVar[Currency]
+    CURRENCY_USN: _ClassVar[Currency]
+    CURRENCY_XXX: _ClassVar[Currency]
+CURRENCY_UNSPECIFIED: Currency
+CURRENCY_ALL: Currency
+CURRENCY_DZD: Currency
+CURRENCY_ARS: Currency
+CURRENCY_AUD: Currency
+CURRENCY_BSD: Currency
+CURRENCY_BHD: Currency
+CURRENCY_BDT: Currency
+CURRENCY_AMD: Currency
+CURRENCY_BBD: Currency
+CURRENCY_BMD: Currency
+CURRENCY_BTN: Currency
+CURRENCY_BOB: Currency
+CURRENCY_BWP: Currency
+CURRENCY_BZD: Currency
+CURRENCY_SBD: Currency
+CURRENCY_BND: Currency
+CURRENCY_MMK: Currency
+CURRENCY_BIF: Currency
+CURRENCY_KHR: Currency
+CURRENCY_CAD: Currency
+CURRENCY_CVE: Currency
+CURRENCY_KYD: Currency
+CURRENCY_LKR: Currency
+CURRENCY_CLP: Currency
+CURRENCY_CNY: Currency
+CURRENCY_COP: Currency
+CURRENCY_KMF: Currency
+CURRENCY_CRC: Currency
+CURRENCY_HRK: Currency
+CURRENCY_CUP: Currency
+CURRENCY_CZK: Currency
+CURRENCY_DKK: Currency
+CURRENCY_DOP: Currency
+CURRENCY_SVC: Currency
+CURRENCY_ETB: Currency
+CURRENCY_ERN: Currency
+CURRENCY_FKP: Currency
+CURRENCY_FJD: Currency
+CURRENCY_DJF: Currency
+CURRENCY_GMD: Currency
+CURRENCY_GIP: Currency
+CURRENCY_GTQ: Currency
+CURRENCY_GNF: Currency
+CURRENCY_GYD: Currency
+CURRENCY_HTG: Currency
+CURRENCY_HNL: Currency
+CURRENCY_HKD: Currency
+CURRENCY_HUF: Currency
+CURRENCY_ISK: Currency
+CURRENCY_INR: Currency
+CURRENCY_IDR: Currency
+CURRENCY_IRR: Currency
+CURRENCY_IQD: Currency
+CURRENCY_ILS: Currency
+CURRENCY_JMD: Currency
+CURRENCY_JPY: Currency
+CURRENCY_KZT: Currency
+CURRENCY_JOD: Currency
+CURRENCY_KES: Currency
+CURRENCY_KPW: Currency
+CURRENCY_KRW: Currency
+CURRENCY_KWD: Currency
+CURRENCY_KGS: Currency
+CURRENCY_LAK: Currency
+CURRENCY_LBP: Currency
+CURRENCY_LSL: Currency
+CURRENCY_LRD: Currency
+CURRENCY_LYD: Currency
+CURRENCY_MOP: Currency
+CURRENCY_MWK: Currency
+CURRENCY_MYR: Currency
+CURRENCY_MVR: Currency
+CURRENCY_MRO: Currency
+CURRENCY_MUR: Currency
+CURRENCY_MXN: Currency
+CURRENCY_MNT: Currency
+CURRENCY_MDL: Currency
+CURRENCY_MAD: Currency
+CURRENCY_OMR: Currency
+CURRENCY_NAD: Currency
+CURRENCY_NPR: Currency
+CURRENCY_ANG: Currency
+CURRENCY_AWG: Currency
+CURRENCY_VUV: Currency
+CURRENCY_NZD: Currency
+CURRENCY_NIO: Currency
+CURRENCY_NGN: Currency
+CURRENCY_NOK: Currency
+CURRENCY_PKR: Currency
+CURRENCY_PAB: Currency
+CURRENCY_PGK: Currency
+CURRENCY_PYG: Currency
+CURRENCY_PEN: Currency
+CURRENCY_PHP: Currency
+CURRENCY_QAR: Currency
+CURRENCY_RUB: Currency
+CURRENCY_RWF: Currency
+CURRENCY_SHP: Currency
+CURRENCY_STD: Currency
+CURRENCY_SAR: Currency
+CURRENCY_SCR: Currency
+CURRENCY_SLL: Currency
+CURRENCY_SGD: Currency
+CURRENCY_VND: Currency
+CURRENCY_SOS: Currency
+CURRENCY_ZAR: Currency
+CURRENCY_SSP: Currency
+CURRENCY_SZL: Currency
+CURRENCY_SEK: Currency
+CURRENCY_CHF: Currency
+CURRENCY_SYP: Currency
+CURRENCY_THB: Currency
+CURRENCY_TOP: Currency
+CURRENCY_TTD: Currency
+CURRENCY_AED: Currency
+CURRENCY_TND: Currency
+CURRENCY_UGX: Currency
+CURRENCY_MKD: Currency
+CURRENCY_EGP: Currency
+CURRENCY_GBP: Currency
+CURRENCY_TZS: Currency
+CURRENCY_USD: Currency
+CURRENCY_UYU: Currency
+CURRENCY_UZS: Currency
+CURRENCY_WST: Currency
+CURRENCY_YER: Currency
+CURRENCY_TWD: Currency
+CURRENCY_CUC: Currency
+CURRENCY_ZWL: Currency
+CURRENCY_BYN: Currency
+CURRENCY_TMT: Currency
+CURRENCY_GHS: Currency
+CURRENCY_VEF: Currency
+CURRENCY_SDG: Currency
+CURRENCY_UYI: Currency
+CURRENCY_RSD: Currency
+CURRENCY_MZN: Currency
+CURRENCY_AZN: Currency
+CURRENCY_RON: Currency
+CURRENCY_CHE: Currency
+CURRENCY_CHW: Currency
+CURRENCY_TRY: Currency
+CURRENCY_XAF: Currency
+CURRENCY_XCD: Currency
+CURRENCY_XOF: Currency
+CURRENCY_XPF: Currency
+CURRENCY_XBA: Currency
+CURRENCY_XBB: Currency
+CURRENCY_XBC: Currency
+CURRENCY_XBD: Currency
+CURRENCY_XAU: Currency
+CURRENCY_XDR: Currency
+CURRENCY_XAG: Currency
+CURRENCY_XPT: Currency
+CURRENCY_XTS: Currency
+CURRENCY_XPD: Currency
+CURRENCY_XUA: Currency
+CURRENCY_ZMW: Currency
+CURRENCY_SRD: Currency
+CURRENCY_MGA: Currency
+CURRENCY_COU: Currency
+CURRENCY_AFN: Currency
+CURRENCY_TJS: Currency
+CURRENCY_AOA: Currency
+CURRENCY_BGN: Currency
+CURRENCY_CDF: Currency
+CURRENCY_BAM: Currency
+CURRENCY_EUR: Currency
+CURRENCY_MXV: Currency
+CURRENCY_UAH: Currency
+CURRENCY_GEL: Currency
+CURRENCY_BOV: Currency
+CURRENCY_PLN: Currency
+CURRENCY_BRL: Currency
+CURRENCY_CLF: Currency
+CURRENCY_XSU: Currency
+CURRENCY_USN: Currency
+CURRENCY_XXX: Currency

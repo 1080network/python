@@ -1,4 +1,0 @@
-protobuf>=6.32.0
-grpcio>=1.74.0
-setuptools>=80.9.0
-protoc-gen-validate>=1.2.1
