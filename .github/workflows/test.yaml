@@ -1,0 +1,24 @@
+name: Test
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Build the wheels and test them in a clean environment
+        run: |
+          python -m pip install build
+          for d in common issuer acceptor; do python -m build --wheel --outdir dist "$d"; done
+          python -m venv /tmp/test
+          /tmp/test/bin/pip install --find-links dist dist/micacommon-*.whl dist/micaissuer-*.whl dist/micaacceptor-*.whl pytest cryptography
+          cd /tmp && /tmp/test/bin/python -m pytest -q "$GITHUB_WORKSPACE/common/tests"
